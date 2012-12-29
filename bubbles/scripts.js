@@ -125,7 +125,16 @@ var icons = {
             
             
             var giggle = new Audio();
-                giggle.src = "../sounds/giggle.m4a";
+            
+           
+                if (document.createElement('audio').canPlayType('audio/mpeg')) {
+                    giggle.src= '../sounds/giggle.m4a';
+                } else {
+                    giggle.src= '../sounds/giggle.ogg';
+                }
+            
+            
+               
             
             var giggleState = false;
             

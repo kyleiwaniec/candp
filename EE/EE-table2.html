@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8"/>
+
+    <style>
+        body, html{
+            margin:0;
+            padding:0;
+        }
+
+        table{
+            width:100%;
+        }
+        /* NOTE: column 1 */
+        td{
+            width:300px;
+            min-width:300px;
+            height:100px;
+            text-align: center;
+            border:1px solid #333;
+        }
+        
+        /* column 2 */
+        td:nth-child(2){
+            width:100%;
+        }
+        
+        /* just for colors: */
+        tr:nth-child(1) .button{
+            background-color:red;
+        }
+        tr:nth-child(2) .button{
+            background-color:blue;
+        }
+        tr:nth-child(3) .button{
+            background-color:purple;
+        }
+    </style>
+        <script language="javascript" type="text/javascript">
+  // <![CDATA[  
+
+function redirect(){
+    var full = location.pathname.match(/full/);
+    
+
+    var mobile = (/iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));  
+
+
+    if (full) {  
+        
+       document.location = "/EE/full/index.html"; 
+    }else if(mobile){
+      document.location = "/EE/mobile/index.html";  
+}
+}
+//window.onload = function() {
+  redirect();
+//};
+// ]]>
+  </script>
+    <body>
+
+        <table>
+            <tr>
+                <td class="button">
+                    <a href="full/index.html">button 1   </a>         </td>
+                <td>Column 2 : Row 1</td>
+            </tr>
+            <tr>
+                <td class="button">
+                    <a href="mobile/index.html">button 2   </a>         </td>
+                <td>Column 2 : Row 2</td>
+                </tr>
+                <tr>
+                <td class="button">
+                    button 3            </td>
+                <td>Column 2 : Row 3</td>
+            </tr>
+        </table>
+    </body>
+</html>

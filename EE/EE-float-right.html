@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+
+<style>
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: black; text-decoration: none; font-weight: bold; }
+a:visited { color: black; text-decoration: none; font-weight: bold; }
+a:hover { color: black;text-decoration: none; font-weight: bold; }
+a:focus { outline: thin dotted; }
+
+#page {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    width: 960px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+    header img {
+        float: left;
+    }
+
+nav {
+    float: right;
+    width: 600px;
+    height: 52px;
+    margin-right: 40px;
+    margin-top: 20px;
+    background-color: #ccc;
+    -webkit-border-radius: 10px; /*WebKit Implementation */
+    -moz-border-radius: 10px; /* Mozilla Implementation */
+    border-radius: 10px;
+    
+/*     IE8 
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+     IE5-7 
+    filter: alpha(opacity=20);   
+    -moz-opacity: 0.2;
+    -khtml-opacity: 0.2;
+     Good Browsers 
+    opacity: 0.2;*/
+}
+
+    nav ul {
+        padding-top: 15px;
+        padding-left: 20px;
+        /* I added the property below so that my links would be on top of the opacity that I set for nav */
+        position: absolute;
+        width:570px;
+    }
+
+        nav ul li {
+            display: inline;
+            padding-right: 10px;
+        }
+
+article {
+    float: right;
+    width: 620px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+    article h1 {
+        font: inherit;
+        font-size: 1.375em; /* 22px / 16px */
+        color: black;
+    }
+
+    article h2 {
+        font: inherit;
+        font-size: 1.125em; /* 18px /16px */
+        color: black;
+    }
+
+    article p {
+        font: inherit;
+        font-size: 0.9375em; /* 15px /16px */
+        color: black;
+        line-height: 1.6;
+    }
+
+aside {
+    float: left;
+    width: 300px;
+    padding-top: 20px;
+}
+
+    aside h2 {
+        font: inherit;
+        font-size: 1.375em; /* 22px / 16px */
+        color: black;
+    }
+
+    .rgt{
+        float:right;
+    }
+
+</style>
+
+<body>
+<form id="form1" runat="server">
+        <div id="page">
+            <header>
+                <img src="img/logo.png" alt="Shape-Up Logo" />
+                <nav>
+                    <ul>
+                        <li><a href="index.aspx">Home</a></li>
+                        <li><a href="information/">Information</a></li>
+                        <li><a href="contact/">Contact Us</a></li>
+                        <li class="rgt"><label ID="lblFullName">Johnathan Doeswer</label> <link ID="hl_SignOut">Sign Out</link></li>
+<!--                        <asp:Label ID="lblFullName" runat="server" Text="John Doe / "></asp:Label>
+                        <asp:HyperLink ID="hl_SignOut" runat="server">Sign Out</asp:HyperLink>-->
+                    </ul>
+                </nav>
+            </header>
+
+            <article>
+                <h1>Shape-Up</h1>
+                <p>.</p>
+            </article>
+
+            <aside>
+                <h2>Steps to Complete</h2>
+            </aside>
+            </div>
+            <footer></footer>
+
+    </form>
+
+</body>
+</html>

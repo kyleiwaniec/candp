@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700' rel='stylesheet' type='text/css'>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Powers w/ Nav</title>
+
+<link rel="stylesheet" type="text/css" href="EE-centered-aes-200-2.css" />
+
+</head>
+
+<style type="text/css">
+body {
+	background-image: url(images/slc_main-bkg.jpg);
+	background-repeat: repeat-x;
+	background-color: #5b5b5b;
+	margin: 0 0 0 0;
+}
+#container{
+	width:979px;
+	margin:0 auto;
+}
+#header{
+	width:979px;
+	height:111px;
+	position:relative;
+	}
+#logo{
+	position:absolute;
+	left:26px;
+	top:26px;
+	width:369px;
+	z-index:100;
+}
+#leftcolumn{
+	width:643px;
+	float:left;
+	min-height:540px;
+	z-index:1;
+	background-color:#FFF;
+	}
+#rightcolumn{
+	width:324px;
+	float:left;
+	background-color:#E3E3E1;
+	border-left:1px solid #5F859E;
+	border-right:1px solid #5F859E;
+	min-height:540px;
+	background-image:url(images/rightcolumnbg.jpg);
+	z-index:1;
+	}
+#rightarrow{
+	z-index:100;
+	float:left;
+	position: relative;
+	left:-1px;
+	top:55px;	
+}
+#righttitle{
+	z-index:100;
+	float:left;
+	position: relative;
+	left:10px;
+	top:50px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+}
+#righttext{
+	z-index:101;
+	float:left;
+	position: relative;
+	left:18px;
+	top:70px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	width:300px;
+	clear:left;
+}
+#bottom{
+	background-image:url(images/bottom.png);
+	height:21px;
+	width:350px;
+	float:left;	
+	position: relative;
+	left:615px;
+	top:-21px;
+	z-index:999;
+}
+#menu-trigger{
+    
+}
+</style>
+
+<body>
+<div id="container">
+	<div id="header">
+        <div id="menu-wrap">    
+			<ul id="menu">
+				<li><a href="/">Services</a>
+                                    <div class="drop-down-wrapper">
+                                    <ul>
+            			<li><a href="">Tax Incentives</a></li>
+                		<li><a href="">National Register</a></li>
+                		<li><a href="">Compliance</a></li>
+                		<li><a href="">Conservation</a></li>
+					</ul>
+                                    </div>
+        		</li>
+				<li><a href="">Portfolio</a>
+                                    <div class="drop-down-wrapper">
+					<ul>
+            			<li><a href="">Commercial</a></li>
+                		<li><a href="">Residential</a></li>
+               		 	<li><a href="">Mixed</a></li>
+                		<li><a href="">Cultural</a></li>
+					</ul>
+                                    </div>
+        		</li>
+        		<li><a href="">News</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="">Contact</a></li>
+			</ul>
+		</div>
+<!--		<img style="z-index:10;" src="images/header.png" width="979" height="130" />-->
+        <div id="logo"></div>
+	</div>
+    
+	<div id="leftcolumn">
+    	left
+	</div>
+
+	<div id="rightcolumn">
+		<div id="rightarrow">
+        	<img src="images/rightcolumnarrow-graybg.jpg" width="8" height="15" />
+		</div>
+  
+  		<div id="righttitle">
+        	right
+		</div>
+  
+  		<div id="righttext">
+        	right
+		</div>
+	</div>
+
+	<div id="bottom">
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+		if ($.browser.msie && $.browser.version.substr(0,1)<7)
+		{
+		$('li').has('ul').mouseover(function(){
+			$(this).children('div').css('visibility','visible');
+			}).mouseout(function(){
+			$(this).children('div').css('visibility','hidden');
+			})
+		}
+
+
+
+		// iPad & iPhone
+		var isiPad = navigator.userAgent.match(/iPad/i) != null;
+                var isiPhone = navigator.userAgent.match(/iPhone/i) != null;
+		if (isiPad || isiPhone) $('#menu div').addClass('no-transition');      
+    });          
+</script>
+</body>
+</html>

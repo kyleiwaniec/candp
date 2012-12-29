@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        ul, li{
+            list-style:none;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    
+    <script>
+      $(function(){
+        
+        var fonts = $(".fonts");
+//var vlist = "";
+        var path = "https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&callback=?";
+        
+        var apiUrl = [];
+            apiUrl.push('//fonts.googleapis.com/css?family=');
+        
+        $.getJSON(path,  function(data){
+          var fontfam = data.items;
+          //for (var i = 0; i < fontfam.length; i++){
+          for (var i = 0; i < 50; i++){
+            var t = fontfam[i];
+            
+//                vlist = "";
+//                for(var j = 0; j < t.variants.length; j++){
+//                  vlist += "<li style='color:#999;font-family:"+t.family+";font-weight:"+t.variants[j]+";font-size:.8em;'>"+t.variants[j]+"</li>";
+//                }
+               
+            
+            
+            
+           
+            apiUrl.push(t.family.replace(/ /g, '+'));
+            apiUrl.push('|');
+          
+//            if (t.variants) {
+//            apiUrl.push(':');
+//            apiUrl.push(t.variants);
+//            }
+//            if (t.subsets) {
+//            apiUrl.push('&subset=');
+//            apiUrl.push(t.subsets);
+//            }
+
+            
+            
+            $("<option id='"+t.family+"'>"+t.family+"<\/option>").appendTo(".fonts"); 
+            
+          }
+          var url = apiUrl.join('');
+            console.log(url);
+            
+            $("head").append("<link rel='stylesheet' type='text/css' href='"+url+"'>");
+          
+        });
+       
+       $("select").change(function(){
+           var font = $("option:selected").attr("id");
+           $(".display").html(font).css({"font-family":font});
+       });
+        
+        
+      });
+    </script>
+  </head>
+  <body>
+    <select class="fonts"></select>
+    <div class="display"></div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Matched Heights</title>
+<meta charset="UTF-8" />
+<meta name="author" content="Revive Marketing" />
+<meta name="keywords" lang="en-us" content="" />
+<meta name="date" content="2009-01-01T08:49:37+00:00" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<meta name="copyright" content="Copyright © 2010–2010" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.js"></script>    
+<script type="text/javascript" charset="utf-8">     
+function equalHeight(group) {
+        var tallest = 0;
+        group.each(function() {
+                var thisHeight = $(this).height();
+                if(thisHeight > tallest) {
+                        tallest = thisHeight;
+                }
+        });
+        group.height(tallest);
+}
+        $(document).ready(function(){
+               // you can use any class here that you want to, I used .column in this example 
+               equalHeight($(".row1"));
+               equalHeight($(".row2"));
+               equalHeight($(".row3"));
+        });  // end docready
+</script>  
+<style type="text/css" media="screen">  
+/* UGLY RESET, ONLY FOR DEMO PURPOSES, USE A REAL RESET */
+* {         
+	margin:0;
+	padding:0;
+} 
+#main {width:960px;margin:0 auto;}
+	.row1, .row2, .row3 {
+		width:45%;
+		float:left;  
+		padding:10px;  
+		background:#eee;
+		margin-bottom:20px;
+	}
+</style>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+      <div id="main">
+      	<div id="box1" class="row1">Box 1 content</div>
+      	<div id="box2" class="row1">Box 2 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>  
+         <div class="clear"></div>
+
+      	<div id="box3" class="row2">Box 3 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
+      	<div id="box4" class="row2">Box 4 content</div>
+        <div class="clear"></div>
+
+      	<div id="box5" class="row3">Box 5 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
+      	<div id="box6" class="row3">Box 6 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</div>
+        <div class="clear"></div>
+      </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<style>
+    .bodyResult{
+   overflow:hidden;
+   width:900px;
+   background-color: orange;
+}
+
+.leftResult{
+  float:left;
+  width:185px;
+  background-color: red;
+}
+.rightResult{
+  float:left;
+  width:715px;
+  background-color: blue;
+}
+table{
+    border-top:0;
+border-left:0;
+border-right:0;
+border-bottom:5px solid #000;
+}
+
+ul {
+    counter-reset: i;
+}
+li:before {
+    content: counter(i , lower-alpha) ") ";
+    counter-increment: i;
+    font-weight:bold;
+}
+li{
+list-style-type:none;
+}
+
+/*@counter-style alphaandbrackets {
+      type: alphabetic;
+      suffix: ')';
+}
+
+li{
+list-style-type:alphaandbrackets;
+}*/
+</style>
+
+<body>
+<div class="bodyResult">
+    <div class="leftResult">
+        <h1>Column1</h1>
+        some stuff
+    </div>
+    <div class="rightResult">
+        <h1>Column2</h1>
+        some other stuff<br/>
+        some other stuff<br/>
+        some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>some other stuff<br/>
+        
+        
+    </div>
+</div>
+    <table width="200" height="200">
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    
+    <ul>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+        <li>one</li>
+    </ul>
+</body>
+</html>

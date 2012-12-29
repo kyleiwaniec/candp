@@ -1,0 +1,40 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript"  src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+        <script>
+            $(function(){
+                $("button").click(function(){
+                    //alert("hi");
+                    $("#play").attr("value","MVI_0131.avi");
+                    $("#chrome").attr("data","MVI_0131.avi");
+                });
+            });
+            </script>
+
+    </head>
+    <body>
+       <!--This first part is for Internet Explorer -->
+
+<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" codebase="http://www.apple.com/qtactivex/qtplugin.cab" width="150" height="250">
+<param name="src" value="sounds/MVI_0109.AVI" id="play">
+<param name="controller" value="false" >
+<param name="autoplay" value="true">
+
+<!--The following section is for Firefox and Safari -->
+
+<object type="video/quicktime" data="sounds/MVI_0109.AVI" width="150" height="250" id="chrome">
+<param name="controller" value="false" >
+<param name="autoplay" value="true">
+alt : <a href="fireworks.avi">test.mov</a>
+</object>
+</object>
+       <button>click</button>
+    </body>
+</html>

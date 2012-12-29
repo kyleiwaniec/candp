@@ -1,0 +1,78 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <title>Select element by class, highlight, and go to inner link</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../mootools-core-1.4.5-full-nocompat.js"></script>
+        <style>
+            .module-hilite4{
+                background-color:#eee;
+                margin:10px;
+                cursor:pointer;
+            }
+            .active{
+                outline:2px solid blue;
+            }
+            .lt-ie9 .active{
+                outline:0;
+                border:2px solid blue;
+            }
+        </style>
+        <script type="text/javascript">
+            window.addEvent('domready', function(){	
+                $$('.module-hilite4').addEvents({
+                    'click'     :   function (e){
+                                    
+                                    var link = this.getElements('.link');
+                                    
+                                    //alert(link.get('href'));
+                                    window.location = link.get('href');
+                                    e.stop();
+                    },
+                    'mouseover' :   function(){this.addClass('active')},
+                    'mouseout'  :   function(){this.removeClass('active')}
+                    
+                });
+                $$('.link').addEvent('click', function(e){alert("woohoo!");e.stop();});
+            });
+        </script>
+    </head>
+    <body>
+        <div class="module-hilite4"><div><div><div>
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    
+                            <tr>
+    
+                                <td align="center">
+    
+                                    <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+    
+                                        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a href="http://google.com"><img src="../../images/logo.png" /></a><br></td><td align="left"><strong><a href="site1.com" rel="rokbox[fullscreen]" class="link">tratra</a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://experts-exchange.com"><img src="" alt=""/></a></td></tr></table>
+                                </td>
+    
+                            </tr>
+    
+                        </table>
+                    </div></div></div></div>
+        <div class="module-hilite4"><div><div><div>
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    
+                            <tr>
+    
+                                <td align="center">
+    
+                                    <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+    
+                                        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a href="http://google.com"><img src="../../images/logo.png" /></a><br></td><td align="left"><strong><a href="site2.com" rel="rokbox[fullscreen]" class="link">tratra</a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://site1.com/component/acctexp/act.html"><img src="" alt=""/></a></td></tr></table>
+                                </td>
+    
+                            </tr>
+    
+                        </table>
+                    </div></div></div></div>
+        <p><a href="http://google.com" onclick="alert('clicked'); return false;">Remember to give the link a class name of "link"</a></p>
+    </body>
+</html>

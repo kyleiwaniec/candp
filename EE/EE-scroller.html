@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slideshow Array</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script>
+          $(function(){
+              
+             var slidesArr = ['http://farm4.staticflickr.com/3441/3712989469_53393637bb_z.jpg', 'http://farm6.staticflickr.com/5448/7233330412_f4245ac54e.jpg', 'http://farm8.staticflickr.com/7071/7234904874_d11f3df3d1_z.jpg'];
+             
+             function updateSlide(){
+                 slidesArr.push(slidesArr[0]);
+                 slidesArr.shift();
+             }
+             setInterval(function(){
+                 updateSlide();
+                 $(".slide").css({"background":"url("+slidesArr[0]+")"});
+             }, 1000);
+             
+             
+             var str = 'something something_else and another thing';
+var substr = str.split('-');
+
+alert(substr[0]);
+             
+             
+          });
+          
+        </script>
+<style>
+
+#slideshow {
+
+      position: relative;
+      width:600px;
+      height:400px;
+      overflow:hidden;
+      
+      border: 1px dotted grey;
+}
+
+.slide{
+    position:absolute;
+    left:0;
+    width:600px;
+    height:400px;
+    background:url('http://farm4.staticflickr.com/3441/3712989469_53393637bb_z.jpg') no-repeat;
+}
+</style>
+</head>
+
+<body>
+    click slide to change image
+<div id="slideshow">
+    <div class="slide">
+
+    </div>
+
+</div>
+</body>
+
+</html>

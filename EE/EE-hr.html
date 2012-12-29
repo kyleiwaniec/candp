@@ -1,0 +1,560 @@
+
+       
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head runat="server">
+    <meta charset="utf-8" />
+
+    <!-- Use the .htaccess and remove these lines to avoid edge case issues. More info: h5bp.com/i/378 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title></title>
+    <meta name="description" content="" />
+
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <!-- All JavaScript at the bottom, except this Modernizr build. Modernizr enables HTML5 elements & feature detects for optimal performance. Create your own custom Modernizr build: www.modernizr.com/download/ -->
+    <script src="js/libs/modernizr-2.5.3.min.js"></script>
+     <style>/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+*/
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; /* 16px */ }
+
+html, button, input, select, textarea { font-family: SignikaRegular; color: #222; }
+/*html, button, input, select, textarea { font-family: Arial, Helvetica, sans-serif; color: #222; }*/
+
+body { margin: 0; font-size: 0.875em; line-height: 1.6; background-color: #fff; /* font-size 14px / 16px */ }
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+*/
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #c3c3c3; text-decoration: none; font: inherit; font-size: 1em; padding-bottom: 10px; padding-top: 50px; padding-left: 15px; padding-right: 15px; }
+a:visited { color: #c3c3c3; text-decoration: none; }
+a:hover { color: #98c633; text-decoration: none; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7: h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers: h5bp.com/i/440
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9
+*/
+
+svg:not(:root) { overflow: hidden; }
+
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/*
+ * 1. Correct color not inheriting in IE6/7/8/9
+ * 2. Correct alignment displayed oddly in IE6/7
+*/
+
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+*/
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+*/
+
+button, input { line-height: normal; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
+*/
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+
+/*
+ * Re-set default cursor for disabled elements
+*/
+
+button[disabled], input[disabled] { cursor: default; }
+
+/*
+ * Consistent box sizing and appearance
+*/
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in FF3/4: h5bp.com/l
+*/
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE6/7/8/9
+ * 2. Allow only vertical resizing
+*/
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+
+/* =============================================================================
+   Chrome Frame Prompt
+   ========================================================================== */
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+
+
+/* ==|== Primary Styles =====================================================
+   Author:
+   ========================================================================== */
+
+/* Font-Face Kits */
+
+@font-face {
+    font-family: 'SignikaLight';
+    src: url('../fonts/signika-fontfacekit/Signika-Light-webfont.eot');
+    src: url('../fonts/signika-fontfacekit/Signika-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/signika-fontfacekit/Signika-Light-webfont.woff') format('woff'),
+         url('../fonts/signika-fontfacekit/Signika-Light-webfont.ttf') format('truetype'),
+         url('../fonts/signika-fontfacekit/Signika-Light-webfont.svg#SignikaLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SignikaRegular';
+    src: url('../fonts/signika-fontfacekit/Signika-Regular-webfont.eot');
+    src: url('../fonts/signika-fontfacekit/Signika-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/signika-fontfacekit/Signika-Regular-webfont.woff') format('woff'),
+         url('../fonts/signika-fontfacekit/Signika-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/signika-fontfacekit/Signika-Regular-webfont.svg#SignikaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Body Classes */
+.home nav a.home {
+   color: #98c633; text-decoration: none;
+}
+
+.about nav a.about {
+   color: #98c633; text-decoration: none;
+}
+
+.galleries nav a.galleries {
+   color: #98c633; text-decoration: none;
+}
+
+.contact nav a.contact {
+   color: #98c633; text-decoration: none;
+}
+
+.prices nav a.prices {
+   color: #98c633; text-decoration: none;
+}
+
+#page {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    width: 97.91666666666667%; /* 940px / 960px */
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+header .logo {
+    float: left;
+}
+
+header nav {
+    float: right;
+    padding-top: 25px;
+}
+
+header nav ul {
+    text-align: right;
+}
+
+header nav ul li {
+    display: inline;
+    border-right: 1px dashed #898989;
+}
+
+header nav ul .no-border {
+    border: none;
+}
+
+hr {
+        border-top: none;
+        border-bottom: 1px solid #98c633;
+        clear: both;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+    }
+
+section {
+    margin: 0 auto;
+    width: 1176px;
+    padding-bottom: 10px;
+}
+
+footer {
+    width: 97.91666666666667%; /* 940px / 960px */
+}
+
+    footer p {
+        font: inherit;
+        font-size: 0.75%;
+        color: #000;
+    }
+
+
+
+img {
+    max-width: 100%;
+}
+
+
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a,
+.flexslider a,
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block; margin: 0 auto;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {background: #fff; position: relative; zoom: 1; margin: 100px auto;}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(theme/bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav .flex-next {background-position: -52px 0; right: -21px;}
+.flex-direction-nav .flex-prev {left: -20px;}
+.flex-direction-nav .flex-disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav a {width: 13px; height: 13px; display: block; background: url(theme/bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
+.flex-control-nav a:hover {background-position: 0 -13px;}
+.flex-control-nav a.flex-active {background-position: 0 -26px; cursor: default;}
+
+
+
+
+/* ==|== media queries ======================================================
+   EXAMPLE Media Query for Responsive Design.
+   This example overrides the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+
+
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+
+
+/* ==|== print styles =======================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+        </style>
+
+</head>
+<body class="home">
+    <form id="form1" runat="server">
+        <div id="page">
+            <header>
+               
+                <img src="img/Logo.png" class="logo" />
+                <nav>
+                    <ul>
+                        <li><a href="index.aspx" class="home">MAIN PAGE</a></li>
+                        <li><a href="about/index.aspx">ABOUT US</a></li>
+                        <li><a href="galleries/index.aspx">GALLERIES</a></li>
+                        <li><a href="prices/index.aspx">PRICING</a></li>
+                        <li class="no-border"><a href="contact/index.aspx">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <hr />
+            <section class="flexslider">
+                <ul class="slides">
+        <li><img src="img/home/1.jpg" /></li>
+                    <li><img src="img/home/2.jpg" /></li>
+                    <li><img src="img/home/3.jpg" /></li>
+                    <li><img src="img/home/4.jpg" /></li>
+                    <li><img src="img/home/5.jpg" /></li>
+                    <li><img src="img/home/6.jpg" /></li>
+                    <li><img src="img/home/7.jpg" /></li>
+                    <li><img src="img/home/8.jpg" /></li>
+                    <li><img src="img/home/9.jpg" /></li>
+                  </ul>
+            </section>
+
+            <footer>
+                <p>Copyright info</p>
+            </footer>
+
+        <script src="js/libs/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="js/libs/jquery.flexslider-min.js"></script>
+
+        <!-- scripts concatenated and minified via build script -->
+        <script src="js/plugins.js"></script>
+        <script src="js/script.js"></script>
+        <!-- end scripts -->
+
+        <!-- Begin FlexSlider script -->
+        <script type="text/javascript" charset="utf-8">
+            $(window).load(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlsContainer: ".flex-container",
+                    slideshowSpeed: 4000,
+                    animationSpeed: 600,
+                    directionNav: false,
+                    controlNav: false
+                });
+            });
+          </script>
+        <!-- end FlexSlider script -->
+
+        <!-- Begin Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID. mathiasbynens.be/notes/async-analytics-snippet -->
+        <script>
+            var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+            (function (d, t) {
+                var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g, s)
+            }(document, 'script'));
+        </script>
+        <!-- End Asynchronous Google Analytics snippet -->
+
+        </div>
+    </form>
+
+</body>
+</html>

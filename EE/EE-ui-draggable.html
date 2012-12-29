@@ -1,0 +1,86 @@
+<html>
+<head>
+	<style>
+	.maincontent { width: 960px; margin: 0 auto; }
+	.container { height: 600px; width: 100%; margin: 50px 0 0 0; position: relative; overflow: hidden;  }
+	.content	{ height: 500px; position: relative;  }
+	.column	{ width: 100px; height: 500px; background: red; float: left; }
+	.column.odd	{ background: #fff; }
+	.bottom-scroller	{ background: #000; height: 100px; position: relative;   }
+	.bottom-scroller .handle 	{ border: 3px solid #fafafa;  width: 140px; height: 48px; position: absolute; left: 0; top: 10px; cursor: pointer; }
+	
+	</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class='maincontent'>
+
+	
+	<div class='container'>
+		<div class='content'>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			<div class='column'></div>
+			<div class='column odd'></div>
+			
+		</div>
+		<div class='bottom-scroller'>
+			<div id='draggable' class='ui-widget-content handle'>
+			
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+
+<script type='text/javascript' src='jquery-ui-1.8.21.custom.min.js'></script>
+<!--<script type='text/javascript' src="js/ui/jquery-1.8.2.js"></script>
+<script type='text/javascript' src="js/ui/minified/jquery.ui.widget.min.js"></script>
+<script type='text/javascript' src="js/ui/minified/jquery.ui.mouse.min.js"></script>
+<script type='text/javascript' src="js/ui/minified/jquery.ui.draggable.min.js"></script>-->
+	
+<script>
+	$(function() {
+		$( "#draggable" ).draggable( {axis :'x', 
+                                  drag: function(event, ui) {
+                                      var offset = $("#draggable").css('left');
+                                            // offset = Math.pow(parseInt(offset), 2); // exponential
+                                            // offset = parseInt(offset) * 10; // linear
+
+                                      offset = -(parseInt(offset) * 10);
+                                      $('.content').css({left:offset});
+                                  } });
+                
+                
+                
+//                $( ".container" ).bind('mousemove', function(){
+//                    var offset = $("#draggable").css('left');
+//                    // offset = Math.pow(parseInt(offset), 2); // exponential
+//                    // offset = parseInt(offset) * 10; // linear
+//                    
+//                    offset = -(parseInt(offset) * 10);
+//                    $('.content').css({left:offset});
+//                })
+                
+	});
+	</script>
+	
+	</body>
+	
+</html>

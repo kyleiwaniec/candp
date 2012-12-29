@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8"/>
+    <style>
+
+
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+    <script>
+        $(function(){
+            var hash = window.location.hash;
+            
+            if (hash.substring(0, 11).toLowerCase() == "#printerid_" && hash.length > 11) {
+                $.post("quote_script.php",
+                    {
+                        printerid: hash.substring(11),
+                        printer_select: "true"
+                    },
+                    function(data) {
+                        //alert(data);
+                        $("#Selected_Printer_Quote").html(data);
+                        $(".QuoteForm").validate({
+				
+                            // Rules
+                            rules: {
+                                first_name: "required",
+                                last_name: "required",
+                                company: "required",
+                                address1: "required",
+                                town_city: "required",
+                                post_code: "required",
+                                email: {
+                                    required: true,
+                                    email: true
+                                }
+                            },
+		
+                            // Messages
+                            messages: {
+                                first_name: "Enter your firstname",
+                                last_name: "Enter your lastname",
+                                company: "Enter your Company",
+                                address1: "Enter your Address Line 1",
+                                town_city: "Enter your Town / City",
+                                post_code: "Enter your Post Code",
+                                email: "Invalid email address"
+                            },
+		
+                            errorElement: "span",
+	
+                            submitHandler: function() { 
+                                $(".QuoteForm").slideUp();
+                                $("#Quote_Success").slideDown();
+                                $("body").scrollTop(0);
+                            }
+   	
+                        });
+                    
+                        $("#brand_names").hide();
+                        $("#BrandGoBack").show();
+                        $("#printer_names").hide();
+                        $("#PrinterGoBack").show();
+                        $(".enter_details").show();
+                    });
+                
+            } else {
+                $("#Selected_Printer_Quote").html("<h1 class='Red'>No printer has been selected!</h1>")
+            }
+          
+        });
+    </script>
+
+</head>
+<body>
+    <div id="Selected_Printer_Quote">
+    </div>
+</body>
+</html>

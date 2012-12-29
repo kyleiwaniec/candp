@@ -1,0 +1,247 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <title>DD - Menus</title>
+        <meta charset="UTF-8">
+        <script>
+            function addArrow (){
+                var $el = document.getElementsByTagName("li");
+                
+                if(typeof $el != "undefined"){
+                    for(var i = 0, l = $el.length; i < l; i++){
+                        
+                        var uls = $el[i].getElementsByTagName("ul");
+                        
+                        
+                        for(var j = 0, h = uls.length; j < h; j++){
+                            get_prevSibling(uls[j]).className = "arr";
+                        }
+                        
+                    }
+                }
+            };
+            function get_prevSibling(n) {
+                var y = n.previousSibling;
+                while (y.nodeType!=1){ // loop until Node.ELEMENT_NODE == 1 is found
+                    y = y.previousSibling;
+                }
+                return y;
+            }
+       
+        
+            window.onload = function(){
+                addArrow();
+            }
+        </script>
+        <style type="text/css">
+            .dropdownMenu-Container a{
+                font-style: normal; 
+                font-variant: normal; 
+                font-weight: bold; 
+                font-size: 12px; 
+                line-height: normal; 
+                font-family: Arial; 
+                text-decoration: none; 
+                text-align: left; 
+                padding: 0px; color: rgb(0, 0, 0); 
+
+                white-space: nowrap;
+
+            }
+
+            .dropdownMenu-Container ul, .dropdownMenu-Container li{
+                margin:0;
+                padding:0;
+            }
+
+            .dropdownMenu li{
+                position:relative;
+                display:block;
+                list-style: none;
+            }
+            ul.dropdownMenu, .dropdownMenu ul{
+                position:absolute;
+                min-width: 120px;
+                padding: 5px 0;
+                margin: 2px 0 0;
+                list-style: none;
+                background-color: #D8D8D8;
+                border: 1px solid  rgba(0, 0, 0, .2);
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                background-clip: padding-box;
+            }
+            .dropdownMenu ul{
+                display:none;
+                left:99%;
+                top:-8px;
+            }
+
+
+            .dropdownMenu li a{
+                display:block;
+                padding: 3px 20px;
+
+
+                /* if you want to animate the basckground to fade in, uncomment the following transitions                */
+                /*                -webkit-transition: background 0.5s ease;
+                                -moz-transition: background 0.5s ease;
+                                -o-transition: background 0.5s ease;
+                                -ms-transition: background 0.5s ease;
+                                transition: background 0.5s ease;*/
+            }
+
+            .dropdownMenu li:hover > a{
+                color: #ffffff;
+                text-decoration: none;
+                background-color: #0088cc;
+                background-color: #0081c2;
+                background-image: -moz-linear-gradient(top, #0088cc, #5878f0);
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#5878f0));
+                background-image: -webkit-linear-gradient(top, #0088cc, #5878f0);
+                background-image: -o-linear-gradient(top, #0088cc, #5878f0);
+                background-image: linear-gradient(to bottom, #0088cc, #5878f0);
+                background-repeat: repeat-x;
+                filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+            }
+
+            .dropdownMenu li:hover > ul{
+                display:block;
+            }
+
+            .dropdownMenu  .divider {
+                height: 1px;
+                margin: 9px 0 !important;
+                overflow: hidden;
+                background-color: #E5E5E5;
+                border-bottom: 1px solid white;
+            }
+            .dropdownMenu a.arr::after {
+                display: block;
+                float: right;
+                width: 0;
+                height: 0;
+                margin-top: 3px;
+                margin-right: -10px;
+                border-color: transparent;
+                border-left-color: black;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                content: " ";
+            }
+            .dropdownMenu a.arr:hover::after{
+                border-left-color: #fff;
+            }
+            
+            /* IE fixes */
+
+            .lt-ie9 ul.dropdownMenu, .lt-ie9 .dropdownMenu ul{border: 1px solid #ccc}
+            .lt-ie8 .dropdownMenu li a{
+                padding: 3px 20px;
+            }
+
+            .lt-ie8 .dropdownMenu  .divider{margin:-2px 0;}
+            .lt-ie8 .dropdownMenu li{margin:0 0 -5px 0;}
+
+            .lt-ie9 .dropdownMenu a.arr{
+                background-image:url(images/arrow2.png);
+                background-position: right 8px;
+                background-repeat:no-repeat;
+                filter:none;
+            }
+            .lt-ie9 .dropdownMenu a.arr:hover{background-position:right -12px;}
+        </style>
+
+
+    <div class="dropdownMenu-Container">
+        <ul class="dropdownMenu">
+            <li><a href="#" class="arr">Official info</a>
+                <ul>
+                    <li><a tabindex="-1" href="fmjd.html">FMJD</a></li>
+                    <li><a tabindex="-1" href="stat.html">Statutes</a></li>
+                    <li><a tabindex="-1" href="reg.html">Bye-Laws</a></li>
+                    <li><a tabindex="-1" href="annex.html">Annexes</a></li>
+                    <li><a tabindex="-1" href="anthem.html">Anthem</a></li>
+                    <li><a tabindex="-1" href="org.html">Officials</a></li>
+                    <li><a tabindex="-1" href="forms.html">Forms</a></li>
+                    <li><a tabindex="-1" href="calend.html">Calendar</a></li>
+                    <li><a tabindex="-1" href="rat.html">Rating</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">Draughts</a>
+                <ul>
+                    <li><a tabindex="-1" href="genhist.html">General history</a></li>
+                    <li><a tabindex="-1" href="titles.html">History of World titles</a></li>
+                    <li><a tabindex="-1" href="records">World records</a></li>
+                    <li><a tabindex="-1" href="#" class="arr">Variants</a>
+                        <ul>
+                            <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">100 squares</a></li>
+                            <li><a tabindex="-1" href="#" class="arr">64 squares</a>
+                                <ul>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Brazilian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Checkers</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Czech</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Italian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Pool</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Russian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Spanish</a></li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">144 squares</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">Federations</a>
+                <ul>
+                    <li><a tabindex="-1" href="?p=all&cont=afr">Africa</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=amer">America</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=asia">Asia</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=aus">Australia & Oceania</a></li>
+                    <li><a tabindex="-1" href="?p=eur">Europe</a></li>
+                    <li><a tabindex="-1" href="?p=all">All</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">Commitees</a>
+                <ul>
+                    <li><a tabindex="-1" href="ethics.html">Ethical</a></li>
+                    <li><a tabindex="-1" href="med.html">Medical</a></li>
+                    <li><a tabindex="-1" href="comp.html">Problemism</a></li>
+                    <li><a tabindex="-1" href="tech.html">Technical</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">Computer</a>
+                <ul>
+                    <li><a tabindex="-1" href="progs.html">Software</a></li>
+                    <li><a tabindex="-1" href="online.html">Play online</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">Feedback</a>
+                <ul>
+                    <li><a tabindex="-1" href="contact.html">Contact FMJD</a></li>
+                    <li><a tabindex="-1" href="http://laatste.info">Forums</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="arr">This site</a>
+                <ul>
+                    <li><a tabindex="-1" href="sitemap.html">Sitemap</a></li>
+                    <li><a tabindex="-1" href="credits.html">Credits</a></li>
+                    <li><a tabindex="-1" href="changeslog.html">Changes log</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

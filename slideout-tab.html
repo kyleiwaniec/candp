@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script>
+            $(function(){
+                $("#label").on("click",function(){
+                    $("#slide_tab").toggleClass('closed');
+                });
+                
+            });
+        </script>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+            }
+            #slide_tab.closed{
+                width:130px;
+            }
+            #slide_tab{
+                position:fixed;
+                right: 0;
+                top: 30%;
+                width: 350px;
+                
+                transition:all .5s ease-in;
+            -ms-transition:all .5s ease-in;
+           -moz-transition:all .5s ease-in;
+        -webkit-transition:all .5s ease-in;
+             -o-transition:all .5s ease-in;
+            }
+            
+            #label{
+                transform:rotate(90deg);
+            -ms-transform:rotate(90deg); /* IE 9 */
+           -moz-transform:rotate(90deg); /* Firefox */
+        -webkit-transform:rotate(90deg); /* Safari and Chrome */
+             -o-transform:rotate(90deg); /* Opera */
+
+        -webkit-border-bottom-right-radius: 5px;
+ -webkit-border-bottom-left-radius: 5px;
+           -moz-border-radius-bottomright: 5px;
+           -moz-border-radius-bottomleft: 5px;
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+
+                background-color:#2e96d1;
+                color:white;
+                
+                height:20px;
+                padding:10px;
+                width:200px;
+                position:fixed;
+                
+                cursor:pointer;
+            }
+            #tab-content{
+                width:200px;
+                height:198px;
+                
+                margin-top:-90px;
+                margin-left:130px;
+                
+                position:fixed;
+                padding:10px;
+                
+                background-color:#eee;
+                border:1px solid #ccc;
+                
+            }
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="slide_tab" class="closed">
+            
+            <div id="tab-content">Something in here</div>
+            <div id="label">Pull tab</div>
+        </div>
+    </body>
+</html>

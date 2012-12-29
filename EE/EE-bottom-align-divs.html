@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+
+<style>
+    .container{
+        position:relative;
+        width:500px;
+        background-color:orange;
+        overflow:hidden;
+        
+    }
+    .container div{
+        padding:0 10px;
+        width:480px;
+        position:absolute;
+        bottom:0;
+        text-align:right;
+        background-color:#99cc00;
+    }
+  p{background-color: #0098ff;}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        
+        var cont = $(".container");
+        
+        // inner div. you can have as many as you want
+        var indiv = $(".container div"); 
+        
+        
+        var divs = indiv.get();
+        
+        var numberOfDivs = divs.length;
+        
+        var i, h, ch = 0;
+        
+        
+        // get and set the height of inner divs
+        for(i=0; i<numberOfDivs; i++){
+             
+            h = indiv.eq(i).height();
+            indiv.eq(i).css({"height": h});
+            
+            ch += h;
+            
+        }
+        
+        // set container height to sum of inner div heights plus 100
+        cont.height(ch+100); 
+        
+        // set the bottom offset of inner divs
+        for(i=0; i<numberOfDivs; i++){
+            
+            var n = indiv.eq(i).height();
+            
+            for(i=1; i<=numberOfDivs; i++){
+               indiv.eq(i).css({"bottom": n += 20});
+               var pn = indiv.eq(i).height();
+               n+=pn;
+               
+           }
+        }
+        
+        
+        
+        
+    });
+    
+    
+    </script>
+<body>
+<div class="container">
+    <div>
+        <p>
+            1.Proin porttitor, nisl eget ultrices tristique, nulla diam venenatis tortor, non mattis nibh sem ac nulla. Ut arcu enim, vulputate vel elementum sed, posuere at ipsum. Quisque quis augue lectus. Nunc rhoncus lo
+        </p>
+    </div>
+    <div>
+        <p>
+            2.Praesent at tortor eu ipsum ullamcorper consequat non ut felis. Nunc in leo risus, quis condimentum ligula. Etiam tempus enim id
+        </p>
+    </div>
+    <div>
+        <p>
+            3.Etiam eget quam ac leo ullamcorper cursus. Mauris in est id tortor rhoncus venenatis. Quisque semper leo at nisi sodales vitae auctor magna eleifend. Ut nisl leo, adipiscing vel feugiat vel, dapibus ac tortor. In hac habitasse platea dictumst. 
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

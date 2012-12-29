@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> animated menu</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+
+  
+  <style type='text/css'>
+/********************************************************/
+	#navlist, #navlist ul, #navlist li{
+	padding:0;
+	margin:0;
+	}
+	
+	#navlist li,#navlist li.logo,#navlist li.about,#navlist li.exh,
+	#navlist li.events,#navlist li.visit
+	{
+	list-style: none;
+	position: relative;
+	width:200px;
+	height: 30px;
+max-height:30px;
+max-width:200px;	
+	padding:0;
+	margin: 0 0 2px 0;	
+	line-height: 26px;
+	cursor:pointer;
+	}
+		
+					
+	#navlist li a{
+	text-decoration:none;
+	color: #fff;
+	text-align: right;
+max-height:30px;
+max-width:200px;
+display:block;
+width: 200px;
+height: 30px;	
+	}
+	#navlist li a span	
+	{
+	margin: 0 70px 0 0;	
+	}
+
+#navlist li#logo {
+
+  /*background-image: url(spritenav.png);
+  background-position: -10px -10px;
+  display:block;*/
+  width: 200px;
+  height: 56px;  
+}
+
+#navlist li a#about {
+	width:200px;
+	height: 30px;
+max-height:30px;
+max-width:200px;
+  background: #6e8874 url(images/about.gif);
+
+}
+#navlist li a#about:hover {
+width:200px;
+max-width:200px;
+background: #6e8874 url(images/about-over.gif);
+
+}
+
+
+#navlist li a#exh {
+  height: 30px;
+  background: #887f6e url(images/exh.gif);
+}
+
+#navlist li a#exh:hover {
+  height: 30px;
+  background: #887f6e url(images/exh-over.gif);
+}
+
+#navlist li a#events {
+  height: 30px;
+  background:#836e88 url(images/events.gif);
+}
+#navlist li a#events:hover {
+
+  background:#836e88 url(images/events-over.gif);
+}
+
+#navlist li a#visit {
+  height: 30px;
+  background:#6e7588 url(images/visit.gif);
+
+}
+
+#navlist li a#visit:hover {
+  height: 30px;
+  background:#6e7588 url(images/visit-over.gif);
+
+}
+
+	
+        #about2,
+        #exh2,
+        #events2,
+	#visit2
+	{
+	position: absolute;
+	top:0;
+	left:201px;
+	/*visibility:hidden;*/
+	display: none;
+	}
+
+/*	#navlist ul li:hover ul, #navlist ul li:hover ul#about2, #navlist ul li:hover ul#exh2,
+	 #navlist ul li:hover ul#events2,#navlist ul li:hover ul#visit2
+	{		
+	visibility:visible;
+	display: block;
+
+	}*/
+	#navlist ul li ul {padding: 5px; border-left: 5px solid #dbdada;}
+	#navlist ul li ul li {border-right: 0; border-bottom: 0; border-top: 0;}
+	#navlist ul li ul li a {text-align: left;}
+	#navlist ul li ul#about2{background: #6e8874;  width:200px;min-height:130px;max-width:200px; }
+	#navlist ul li ul#about2 a:hover{background: #000; }	
+	#navlist ul#exh2{background: #887f6e;  width:200px;min-height:150px;max-width:200px; }
+	#navlist ul#events2{background: #836e88;  width:200px;min-height:150px;max-width:200px; }
+	#navlist ul#visit2{background: #6e7588;  width:200px;min-height:150px;max-width:200px; }
+
+  </style>
+
+
+</head>
+<body>
+        <div id="navlist">
+	<ul>
+    <li>
+<a href="#" id="about"><span>About</span></a>
+			<ul class="submenu" id="about2">
+			<li><a href="">Link 1</a><a href="">Link 2</a>
+			<a href="">Link 3</a><a href="">Link 4</a></li> 
+			</ul>
+</li>
+<li>
+<a href="#" id="exh"><span>Exhibitions</span></a>
+			<ul class="submenu" id="exh2">
+			<li><a href="">Link 1</a><a href="">Link 2</a>
+			<a href="">Link 3</a><a href="">Link 4</a></li> 
+			</ul>
+</li>
+<li>
+<a href="#" id="events"><span>Events</span></a>
+			<ul class="submenu" id="events2">
+			<li><a href="#nogo">Link 4-1</a><a href="#nogo">Link 4-2</a><a href="#nogo">Link 4-3</a></li>
+			</ul>
+
+</li>
+<li>
+<a href="#" id="visit"><span>Visit</span></a>
+			<ul class="submenu" id="visit2">
+			<li><a href="">Link 1</a><a href="">Link 2</a>
+			<a href="">Link 3</a><a href="">Link 4</a></li> 
+			</ul>
+</li>
+	</ul>
+</div>
+<script type="text/javascript">
+
+//
+//jQuery(function(){
+//    jQuery("#navlist > ul > li").on("mouseenter mouseleave", function(e){
+//    e.type === "mouseenter" 
+//    ? jQuery(".submenu", this).fadeIn("slow")
+//    : jQuery(".submenu", this).fadeOut("slow"); 
+//
+//    });
+    
+    $(function(){
+        $("#navlist > ul > li").on({
+            mouseenter : function(){$(".submenu", this).fadeIn("slow")},
+            mouseleave : function(){$(".submenu", this).fadeOut("slow")}
+        });
+        
+//    })
+    
+    
+}); 
+	
+</script>  
+</body>
+
+
+</html>

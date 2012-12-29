@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>copy &amp; paste generation</title>
+
+<link rel="stylesheet" href="css/styles.css" media="screen" />
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    <link rel="stylesheet" href="css/IEstyles.css" media="screen" />
+		<![endif]--> 
+
+<script src="js/jquery.js"></script>
+
+<!--[if IE]> <link rel="stylesheet/less" href="js/desktop.less"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!--> <link rel="stylesheet/less" media="screen and (min-width: 480px)" href="http://flashtribe.net/sandbox_kyle/static/css/desktop.less">
+    <!--<![endif]-->
+    <script src="js/less.js"></script>
+    <script src="js/modernizr-1.7.min.js"></script>
+    <script src="js/humane.js"></script>
+    <script>
+    $(function(){
+        $(".date, .single-message-date").humane_date();
+        setInterval(function(){ $(".date, .single-message-date").humane_date(); }, 5000);
+        
+        
+        //var wdt = $(window).width(); 
+        //if (wdt > 480){
+        //$(".auth_navbar").text().replace(/\[.*\]/g, "");
+        
+        var element = $(".auth_navbar").html().split("["); 
+           //alert(element[1]);
+        $(".auth_navbar").html("<span class='thename'>"+element[0]+"<\/span><span class='therest'>["+element[1]+"<\/span>");
+        $(".thename").css({"text-transform":"capitalize"});
+        
+        var bracket = $('.therest').html().split('|'); 
+        $(".therest").html("<span class='therest1'>"+bracket[0]+" | "+bracket[1]+"<\/span><span class='therest2'> ]<\/span>");
+        
+        $("ul.mainNav ul li:last-child a, .profile-box:last-child, #messages  ul  li:last-child").css({"background-image":"none"}); // IE doesnt support the plain CSS version
+        //};
+        
+        
+    });
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+<p class="nothing">Here is some text<p>
+<section id="footer"></section>
+</div>
+
+</body>
+</html>

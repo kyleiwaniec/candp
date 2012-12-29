@@ -1,0 +1,203 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <title>Select element by class, highlight, and go to inner link</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .module-hilite4{
+                background-color:#eee;
+                margin:10px;
+                cursor:pointer;
+            }
+            .active{
+                outline:2px solid blue;
+            }
+            .lt-ie9 .module-hilite4:hover{
+                border:2px solid blue;
+            }
+        </style>
+        <script type="text/javascript">
+            /* safe logging from Paul Irish */
+            window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};
+
+            /*
+            Ultimate getElementsByClassName
+            Developed by Robert Nyman, http://www.robertnyman.com
+            Code/licensing: http://code.google.com/p/getelementsbyclassname/
+             */	
+            var getElementsByClassName = function (className, tag, elm){
+                if (document.getElementsByClassName) {
+                    getElementsByClassName = function (className, tag, elm) {
+                        elm = elm || document;
+                        var elements = elm.getElementsByClassName(className),
+                        nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
+                        returnElements = [],
+                        current;
+                        for(var i=0, il=elements.length; i<il; i+=1){
+                            current = elements[i];
+                            if(!nodeName || nodeName.test(current.nodeName)) {
+                                returnElements.push(current);
+                            }
+                        }
+                        return returnElements;
+                    };
+                }
+                else if (document.evaluate) {
+                    getElementsByClassName = function (className, tag, elm) {
+                        tag = tag || "*";
+                        elm = elm || document;
+                        var classes = className.split(" "),
+                        classesToCheck = "",
+                        xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+                        namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
+                        returnElements = [],
+                        elements,
+                        node;
+                        for(var j=0, jl=classes.length; j<jl; j+=1){
+                            classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+                        }
+                        try	{
+                            elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+                        }
+                        catch (e) {
+                            elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+                        }
+                        while ((node = elements.iterateNext())) {
+                            returnElements.push(node);
+                        }
+                        return returnElements;
+                    };
+                }
+                else {
+                    getElementsByClassName = function (className, tag, elm) {
+                        tag = tag || "*";
+                        elm = elm || document;
+                        var classes = className.split(" "),
+                        classesToCheck = [],
+                        elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
+                        current,
+                        returnElements = [],
+                        match;
+                        for(var k=0, kl=classes.length; k<kl; k+=1){
+                            classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+                        }
+                        for(var l=0, ll=elements.length; l<ll; l+=1){
+                            current = elements[l];
+                            match = false;
+                            for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
+                                match = classesToCheck[m].test(current.className);
+                                if (!match) {
+                                    break;
+                                }
+                            }
+                            if (match) {
+                                returnElements.push(current);
+                            }
+                        }
+                        return returnElements;
+                    };
+                }
+                return getElementsByClassName(className, tag, elm);
+            };
+
+            // end getelementsbyclassname
+
+            // event listeners:
+            var addEvent = (function () { 
+                var setListener = function (el, ev, fn) { 
+                    if (el.addEventListener) { 
+                        setListener = function (el, ev, fn) {
+                            el.addEventListener(ev, fn, false); 
+                            
+                        }; 
+                    } else if (el.attachEvent) { 
+                        setListener = function (el, ev, fn) { 
+                            el.attachEvent('on' + ev, fn);
+                        }; 
+                    } else { 
+                        setListener = function (el, ev, fn) { 
+                            el['on' + ev] = fn; 
+                        }; 
+                    } 
+                    setListener(el, ev, fn); 
+                }; 
+                return function (el, ev, fn) { 
+                    setListener(el, ev, fn); 
+                }; 
+            }()); 
+
+            
+            var goToLink = function (el){
+                
+                var link = this.getElementsByClassName("link");
+                
+                alert(link[0].getAttribute("href"));
+                
+            };
+            
+            function cancelBubble(e) {
+                var evt = e ? e:window.event;
+                if (evt.stopPropagation)    evt.stopPropagation();
+                if (evt.cancelBubble!=null) evt.cancelBubble = true;
+                }
+                
+            function cancel(e){
+                alert('you clicked! But nothing will happen because we disabled bubbling'); 
+                cancelBubble(e);
+            }
+            
+            window.onload = function() {
+                var one = getElementsByClassName("module-hilite4");
+                var link = getElementsByClassName("link");
+                for(var i = 0, l = one.length; i < l; i++){
+                    addEvent(one[i], "click", goToLink); 
+                    
+                    addEvent(one[i], "mouseover", function(){this.className += " active"});
+                    addEvent(one[i], "mouseout", function(){this.className = "module-hilite4"});
+                    
+                }
+                
+                
+            }  
+    
+        </script>
+    </head>
+    <body>
+        <div class="module-hilite4"><div><div><div>
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    
+                            <tr>
+    
+                                <td align="center">
+    
+                                    <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+    
+                                        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a href="http://google.com"><img src="../../images/logo.png" /></a><br></td><td align="left"><strong><a class="link" href="http://cnpgen.com">Great opportunity for ….. </a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://experts-exchange.com"><img src="" alt=""/></a></td></tr></table>
+                                </td>
+    
+                            </tr>
+    
+                        </table>
+                    </div></div></div></div>
+        <div class="module-hilite4"><div><div><div>
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    
+                            <tr>
+    
+                                <td align="center">
+    
+                                    <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+    
+                                        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a href="http://google.com"><img src="../../images/logo.png" /></a><br></td><td align="left"><strong><a class="link" href="http://google.com" >Great opportunity for ….. </a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://site1.com/component/acctexp/act.html"><img src="" alt=""/></a></td></tr></table>
+                                </td>
+    
+                            </tr>
+    
+                        </table>
+                    </div></div></div></div>
+        <p><a href="http://google.com" onclick="alert('clicked'); return false;">Remember to give the link a class name of "link"</a></p>
+    </body>
+</html>

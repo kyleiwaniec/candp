@@ -1,0 +1,462 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html class="ie6 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9 ie nojs" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="nojs"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+
+
+
+        <meta name="description" content="">
+        <meta name="author" content="kyle hamilton">
+
+        <link rel="stylesheet" href="main-styles.css"/>
+        <style>
+            .wrapper{
+                max-width:1200px;
+                
+            }
+            .graphWrapper{
+                position:relative;
+               
+/*                background:url(images/MtLionChasingMuleDeer6100.jpg) center center no-repeat;*/
+                
+            }
+            #graph{
+                float:left;
+                width:700px;
+                height:700px;
+                margin:20px;
+                -moz-transform: scaley(-1);
+                -webkit-transform: scaley(-1);
+                -o-transform: scaley(-1);
+                -ms-transform: scaley(-1);
+                transform: scaley(-1);
+                
+                
+/*                filter: flipv();*/
+            }
+            .analysis{
+                margin:20px;
+                float:left;
+                width:190px;
+            }
+            .legend{
+                position:absolute;
+                width:470px;
+                height:153px;
+                padding:10px;
+                background-color:white;
+                border:3px solid #ccc;
+                top: 460px;
+                left:46px;
+                border-radius:5px;
+            }
+            
+            .legend img{
+/*                border:3px solid #FC9B01;*/
+                width:200px;
+                float:left; 
+                margin-right:20px;
+            }
+            .deer{
+                color:#fc9b01;
+            }
+            .lions{
+                color:#1578ff;
+            }
+            .rlions{
+                color:#444;
+            }
+            .numbers{
+                text-align : right;
+                font-family : helvetica;
+                font-size : 10px;
+                position: absolute;
+                    width : 30px;
+                    height: 12px;
+                    color : #666;
+            }
+            
+            .years{
+                left: 430px;
+                top: 400px;
+                width:150px;
+            }
+            
+            .animals{
+                left: 240px;
+                top: 250px;
+                width:150px;
+                
+                -moz-transform: rotate(270deg);
+                -webkit-transform: rotate(270deg);
+                -o-transform: rotate(270deg);
+                -ms-transform: rotate(270deg);
+                transform: rotate(270deg);
+                
+            }
+            .label{
+                position:absolute;
+                min-width:40px;
+                min-height:10px;
+                background-color:#333;
+                font-family : helvetica;
+                font-size : 12px;
+                color:white;
+                padding:4px;
+                text-align: center;
+                border:2px solid #999;
+                border-radius:5px;
+            }
+        </style>
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="../js/scripts.js"></script> 
+        
+
+    </head>
+
+    <body>
+      
+        <div class="wrapper">
+
+          
+
+        <script src="../js/raphael-min.js"></script>
+
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        
+        <script>
+Raphael.fn.drawGrid = function (x, y, w, h, wv, hv, color) {
+    color = color || "#000";
+    var path = ["M", Math.round(x) + .5, Math.round(y) + .5, "L", Math.round(x + w) + .5, Math.round(y) + .5, Math.round(x + w) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y + h) + .5, Math.round(x) + .5, Math.round(y) + .5],
+        rowHeight = h / hv,
+        columnWidth = w / wv;
+    for (var i = 1; i < hv; i++) {
+        path = path.concat(["M", Math.round(x) + .5, Math.round(y + i * rowHeight) + .5, "H", Math.round(x + w) + .5]);
+    }
+    for (i = 1; i < wv; i++) {
+        path = path.concat(["M", Math.round(x + i * columnWidth) + .5, Math.round(y) + .5, "V", Math.round(y + h) + .5]);
+    }
+    return this.path(path.join(",")).attr({stroke: color});
+};
+Array.prototype.sum = function(){
+	for(var i=0,sum=0;i<this.length;sum+=this[i++]);
+	return sum;
+}
+Array.prototype.max = function(){
+                return Math.max.apply({},this)
+            };
+            Array.prototype.min = function( array ){
+                return Math.min.apply({},this)
+            };
+            
+$(function(){
+	  
+       
+var graph = (function(){
+            
+        var width = 700;
+	var height = 700;
+	var r = new Raphael("graph",width,height);
+        
+        var matrix = [32, 32];
+
+	r.rect(0,0,width,height).attr({fill: '#fefefe', stroke: '#9cf', 'stroke': 'none'});
+
+	r.drawGrid(0, 0, width-1, height-1, matrix[0], matrix[1], "#ddd");
+        var xaxis = r.path('M'+0+' '+height/2+'L'+width+' '+height/2);
+        var yaxis = r.path('M'+width/2+' '+0+'L'+width/2+' '+height);
+        
+        xaxis.attr({stroke: '#333'});
+        yaxis.attr({stroke: '#333'});
+        
+        
+        
+        
+        
+        
+        
+        
+        // default sine curve //
+        var offset = matrix[1];
+        var a = height/2; // amplitude minus a little breathing room
+        var p = 4; // periods on graph
+        var b = (Math.PI*2)/(width/p); // period
+        var c = b*width; // horizontal shift: c/b
+        var d = height/2; // vertical shift
+        // end default sine curve //
+        
+        // default curve:
+        var curve = "M"+0+" "+d;
+        
+        for(var i = 0; i < width; i++){
+            var y = a*(Math.sin((b*i)-c))+d;
+            curve += "L"+i+" "+y;
+            }
+            
+        var graphPath = r.path().attr({stroke: '#ccc', 'stroke-width': .5, path: curve});
+
+        var x  = [0, 2, 4, 6, 8, 10, 12, 14, 16];
+        var y1 = [1272, 1523, 1152, 891, 1284, 1543, 1128, 917, 1185];
+        var y2 = [39, 47, 63, 54, 37, 48, 60, 46, 40];
+        
+        // Lion curve:
+        
+        function lionCurve(){
+            
+            var adjustedLions = [];
+            for(var i = 0; i < y2.length; i++){
+                adjustedLions.push(adjustInput(y2[i], y2));
+                }
+            
+            var a = (adjustedLions.max() - adjustedLions.min())/2;
+            var d = 300 + (y1.max() - y1.min())/2;
+            var c = b*393;
+            
+            var lcurve = "M"+0+" "+d;
+                for(var i = 0; i < width; i++){
+                    var y = a*(Math.sin((b*i)-c))+d;
+                    lcurve += "L"+i+" "+y;
+                }
+            var lionPath = r.path().attr({stroke: '#008aea', 'stroke-width': .5, path: lcurve});
+        }
+        
+        lionCurve();
+        
+        function realLionCurve(){
+            
+            var adjustedLions = [];
+            for(var i = 0; i < y2.length; i++){
+                adjustedLions.push(adjustInput(y2[i], y2));
+                }
+            
+            var a = (y2.max() - y2.min())/2 -10;
+            var d = 348 + (y2.max() - y2.min())/2;
+            var c = b*385;
+            
+            var lcurve = "M"+0+" "+d;
+                for(var i = 0; i < width; i++){
+                    var y = a*(Math.sin((b*i)-c))+d;
+                    lcurve += "L"+i+" "+y;
+                }
+            var lionPath = r.path().attr({stroke: '#444', 'stroke-width': .5, path: lcurve});
+        }
+        
+        realLionCurve();
+        
+        
+        function deerCurve(){
+            
+            var adjustedDeer = [];
+            for(var i = 0; i < y1.length; i++){
+                adjustedDeer.push(adjustInput(y1[i], y1));
+                }
+            
+            
+            var a = (adjustedDeer.max() - adjustedDeer.min())/2;
+            var d = 300 + (y1.max() - y1.min())/2;
+            var c = b*350;
+            
+            var dcurve = "M"+0+" "+d;
+                for(var i = 0; i < width; i++){
+                    var y = a*(Math.sin((b*i)-c))+d;
+                    dcurve += "L"+i+" "+y;
+                }
+            var deerPath = r.path().attr({stroke: '#ff3e02', 'stroke-width': .5, path: dcurve});
+        }
+        deerCurve();
+        
+        
+        
+        
+        
+        
+        
+        
+        // plot points //
+        
+        
+        
+        
+                                        
+        function adjustInput(input, inputArr) {
+            
+//            var min1 = inputArr.min();
+            var min1 = 0;
+            var max1 = inputArr.max();
+            var max2 = height;
+            var min2 = height/2;
+            
+            return (((input - min1) * (max2 - min2)) / (max1 - min1)) + min2;
+        }                
+        
+        var realLions = [], realLionsData = [];
+        var deer = [], deerData = [];
+        
+        for(var i = 0; i < x.length; i++){
+            
+            var xpos = adjustInput(x[i], x);
+            var y1pos = adjustInput(y1[i], y1);
+            var y2pos = adjustInput(y2[i], y2);
+            
+            // deer
+            var deerCircles = r.circle(xpos, y1pos, 3).attr({fill:"#fc9b01", 'stroke': 'none'});
+            
+            deer.push(deerCircles);
+            deerData.push({x:xpos, y:y1pos});
+            
+            var deerCirc = deer[i].data('i', i);
+            
+            var deerLabel;
+           
+            deerCirc.hover(function(){
+                this.attr({fill:"#fc9b01", 'stroke': 'none', r:6});
+                
+                 //alert(dataArr[i-1]);
+                deerLabel = $('<div>', {
+                    'class': 'label',
+                    text : '( year '+x[this.data('i')] +',  '+ y1[this.data('i')] + ' deer )',
+                    css : {
+                        top: (deerData[this.data('i')].y) + height - (deerData[this.data('i')].y)*2 + 40,
+                        left : deerData[this.data('i')].x
+                    }
+                });
+                $('.graphWrapper').append(deerLabel);
+                
+            }, function(){
+                this.attr({fill:"#fc9b01", 'stroke': 'none', r:3});
+                deerLabel.detach();
+            });
+            
+            
+            
+            
+            
+            // relative lions
+            r.circle(xpos, y2pos, 3).attr({fill:"#1578ff", stroke: 'none'});
+            
+            
+            
+            // real lions:
+            var y3pos = adjustInput(y2[i], y1);
+            r.circle(xpos, y3pos, 3).attr({fill:"#444", stroke: 'none'});
+            
+            realLions.push(r.circle(xpos, y3pos, 3));
+            realLionsData.push({x:xpos, y:y3pos});
+            
+            var realLionsCirc = realLions[i].data('i', i);
+            
+            var realLionLabel;
+           
+            realLionsCirc.hover(function(){
+                this.attr({fill:"#ff0066", stroke: 'none', r:6});
+                
+                 //alert(dataArr[i-1]);
+                realLionLabel = $('<div>', {
+                    'class': 'label',
+                    text : '( year '+x[this.data('i')] +',  '+ y2[this.data('i')] + ' lions )',
+                    css : {
+                        top: (realLionsData[this.data('i')].y)-50,
+                        left : realLionsData[this.data('i')].x
+                    }
+                });
+                $('.graphWrapper').append(realLionLabel);
+                
+            }, function(){
+                this.attr({fill:"#444", stroke: 'none', r:3});
+                realLionLabel.detach();
+            });
+        }
+        
+        
+
+
+})(); //end graph
+
+var anum = 0;
+var apos = 370;
+var graphWrapper = $('.graphWrapper');
+// numbers of animals
+for(var i = 0; i <= 16; i++){
+        
+        
+        var animals = $('<div>', {
+                'class': 'numbers',
+                css : {
+                    
+                    top: apos,
+                    left: 335
+                    
+                },
+                text: Math.ceil(anum)
+                }).appendTo(graphWrapper);
+                anum += 1543/16;
+                apos -= 350/16;
+}
+// numbers of years
+var ynum = 1;
+var ypos = 360;
+
+for(var i = 1; i <= 16; i++){
+        
+        
+        var years = $('<div>', {
+                'class': 'numbers',
+                css : {
+                    
+                    left: ypos,
+                    top: 370
+                },
+                text: ynum
+                }).appendTo(graphWrapper);
+                ynum ++;
+                ypos += 350/16;
+}
+
+
+});
+
+        </script>
+        
+        
+        
+        
+        <div class="graphWrapper">        
+            <div id="graph"></div>
+            <div class="legend">
+                    <img src="images/MtLionChasingMuleDeer6100.jpg" />
+                    <span class="deer">•</span> Actual Deer Population<br/>
+                    f(x) = 296.6sin(0.8x + 0.3) + 1215.7<br/><br/>
+                    <span class="rlions">•</span> Actual Lion Population<br/>
+                    f(x) = 11.9sin(0.8x - 2.1) + 49.9<br/>
+                    <br/>
+                    <span class="lions">•</span> Lion Population - 
+                    <em>Relative to Deer Population</em><br/>
+             </div>
+            <div class="animals numbers">Number of Animals</div>
+             <div class="years numbers">Number of Years</div>   
+        </div>
+
+<div class="analysis">
+    <h2>Analysis</h2>
+    <p>The deer and lion populations fluctuate in ~8 year cycles.</p>
+    <p>The deer population fluctuations are more extreme than the lions.</p>
+    
+    <p>It takes approximately 2 years from the Deer population having reached its max, for the Lion population to reach its max.</p>
+    
+    <p>As the Lion population grows, it depletes the Deer population, which over time becomes insufficient to sustain the Lion population. Hence the Lion population begins to dwindle for lack of food supply, causing the Deer population to begin to recover. </p>
+    <p>As the Deer population recovers, the food supply to the lions becomes more plentiful, and the cycle repeats.</p>
+</div>
+        </div><!-- #wrapper -->
+
+
+        
+       
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script type='text/javascript' src='standardista_table_sorting/common.js'></script>
+		<script type='text/javascript' src='standardista_table_sorting/css.js'></script>
+                
+		<script type='text/javascript' src='standardista_table_sorting/standardista-table-sorting.js'></script>
+    <script>
+        
+        var obone = {
+            name  : "bob",
+            sing : function(){
+                alert("do re me fa sol la..");
+            }
+        };
+        
+        var obtwo = Object.create(standardistaTableSorting);
+        
+        standardistaTableSorting.headingClicked = function(){
+            
+          //standardistaTableSorting.headingClicked;
+          
+                var countCol = document.getElementsByClassName("colCount");
+
+                for (var i = 0; i < countCol.length; i++){
+                for(var j = 1; j < countCol[i].rows.length; j++){
+                    console.log(countCol[i].rows[j].cells[0]);
+                    countCol[i].rows[j].cells[0].innerHTML = j;
+                }
+            }
+        };
+        
+        //window.onload = obtwo.headingClicked();
+        
+    </script>
+
+    <style>
+        
+    </style>
+  </head>
+  <body>
+      <table id="accounts" class="sortable colCount">
+        <caption>Table in markup with data in it</caption>
+        <thead>
+            <tr>
+                <th>Row Count</th>
+                <th>Due Date</th>
+                <th>Account Number</th>
+                <th>Quantity</th>
+                <th>Amount Due</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+            <tr><td>1</td>
+                <td>1/23/1999</td>
+                <td>29e8548592d8c82</td>
+                <td>12</td>
+                <td>$150.00</td>
+            </tr>
+            <tr><td>2</td>
+                <td>5/19/1999</td>
+                <td>83849</td>
+                <td>8</td>
+                <td>$60.00</td>
+            </tr>
+            <tr><td>3</td>
+                <td>8/9/1999</td>
+                <td>11348</td>
+                <td>1</td>
+                <td>-$34.99</td>
+            </tr>
+            <tr><td>4</td>
+                <td>1/23/2000</td>
+                <td>29e8548592d8c82</td>
+                <td>10</td>
+                <td>-$1.00</td>
+            </tr>
+            <tr><td>5</td>
+                <td>4/28/2000</td>
+                <td>37892857482836437378273</td>
+                <td>123</td>
+                <td>$33.32</td>
+            </tr>
+            <tr><td>6</td>
+                <td>1/23/2001</td>
+                <td>83849</td>
+                <td>5</td>
+                <td>-$15.00</td>
+            </tr>
+            <tr><td>7</td>
+                <td>9/30/2001</td>
+                <td>224747</td>
+                <td>14</td>
+                <td>$56.78</td>
+            </tr>
+        </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8"/>
+    <style>
+
+#droppable{border:1px dotted black; height:200px;}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+            var container = $("#droppable");
+            var h = 200;
+            var committeedivcount = container.children("div").length;
+            $("#divcount").text(committeedivcount);
+            resize();
+            
+            $("#remove").on("click", function(){
+                container.children("div").last().detach();
+                resize();
+                var committeedivcount = container.children("div").length;
+                $("#divcount").text(committeedivcount);
+            });
+
+            $("#add").on("click", function(){
+                container.append("<div/>");
+                resize();
+                var committeedivcount = container.children("div").length;
+                 $("#divcount").text(committeedivcount);
+            });
+            
+            function resize(){
+                var committeedivcount = container.children("div").length;
+                var h = ((200/3)*committeedivcount) + 200;
+                
+                h = h - (h % 100); // remove extrenous pixels
+                
+                if(committeedivcount % 3 == 0){
+                    container.animate({ height: h, duration: 900});
+                }
+            }
+            
+        });
+    </script>
+    <body>
+        <div id="droppable">
+            
+            <div></div>
+            <div></div>
+        </div>
+        <button id="remove">remove</button>
+        <button id="add">add</button><br/>
+        <span>Number of divs: </span><span id="divcount"></span>
+    </body>
+</html>

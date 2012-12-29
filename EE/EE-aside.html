@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>HTML5</title>
+	<link rel="stylesheet" href="main4.css">
+        <style>
+        
+
+
+h1{
+	font: bold 20px Tahoma;
+}
+
+h2{
+	font: bold 14px Tahoma;
+}
+
+header, section, footer, aside, nav, article, hgroup{
+	display: block;
+}
+
+body{
+	width: 100%;
+	display: -webkit-box;
+	-webkit-box-pack: center; }
+
+#content{
+	max-width: 1000px;
+	margin: 20px 0px;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-box-flex: 1; 
+}
+
+#sub_content{
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+}
+
+
+nav{
+	border: red;
+	background: blue;
+	color: white;
+}
+
+nav li{
+	display: inline-block; 
+	list-style: none; 
+	padding: 5px;
+	font: bold 14px Tahoma;
+}
+
+section{
+	border: 1px solid blue;
+	-webkit-box-flex: 1;
+	margin: 20px;
+	padding: 20px;
+}
+aside{
+	border: 1px solid red;
+	width: 220px;
+	margin: 20px 0px;
+	padding: 30px;
+	background: #CC6666;
+}
+
+#main_footer{
+	text-align: center;
+	padding: 20px;
+	border-top: 2px solid blue;
+}    
+@media all and (max-width:500px) { 
+             #sub_content {
+             display: block;
+            }
+        } 
+        </style>
+            
+</head>
+<body>
+<div id="content">
+	<header>
+		<h1>HTML5</h1>
+	</header>
+	<nav>
+		<ul>
+			<li>Home</li>
+			<li>Test</li>
+			<li>Links</li>
+		</ul>
+	</nav>
+	<div id="sub_content">
+	<section>
+		<article>
+			<header>
+				<hgroup>
+					<h1>Title of an article</h1>
+					<h2>Subtitle for an article</h2>
+				</hgroup>
+			</header>
+			<p>Test paragraph</p>
+			<footer>
+				<p> - written by ...</p>
+			</footer>
+		</article>
+		<article>
+			<header>
+				<hgroup>
+					<h1>Title of an article2</h1>
+					<h2>Subtitle for an article2</h2>
+				</hgroup>
+			</header>
+			<p>Another Test paragraph</p>
+			<footer>
+				<p> - written by ...</p>
+			</footer>
+		</article>
+	</section>
+	<aside>
+		<h4>News</h4>
+		Test aside
+	</aside>
+	</div>
+	<footer id="main_footer">Copyright @ 2012
+	</footer>
+</div>
+</body>
+</html>

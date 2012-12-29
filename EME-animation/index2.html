@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>EME Animation</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<!-- include Cycle plugin -->
+<script src="js/jquery.cycle.all.js"></script>
+<script>
+$(function() {
+ 
+   //fx: 'fade,fade,fade, wipe, wipe, wipe, wipe, wipe, wipe, wipe, wipe, fade',
+    	$('.slides2, .slides3').cycle().hide();
+          
+        $('.slides1').cycle({
+				fx: 'fade', 
+                //randomizeEffects: 0,
+                speed:    400, // speed of transition
+                timeout:  400, // timeout between slides
+                autostop: true, // stop after nth slide
+                end: function() {
+                    $('.slides2').fadeIn(600);
+                    $('.slides1').fadeOut();
+                    $('.slides2').cycle({
+                    	fx: 'wipe',
+                    	delay: 600,
+                    	speed:130,
+                    	timeout:1,
+                    	autostop: true,
+                    	end: function() {
+                    		 $('.slides3').show();
+                    		 $('.slides2').hide();
+                   			 $('.slides3').cycle({
+                    				fx: 'fade',
+                    				speed:400,
+                    				timeout:400,
+                    				autostop: true
+                   			 });
+                   			 }
+                    	});
+                	}
+                });
+          
+     
+           
+});
+</script>
+<style>
+	.wrapper{
+		background-color:#c0d828;
+		width:284px;
+		height:168px;
+	}
+    .slideshow{
+        background-color:#c0d828;
+        position:absolute; 
+    }
+    .slideshow img{
+        width:284px;
+        height:168px;
+        
+    }
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+	<div class="slides1 slideshow">
+		<img src="images/EME_0.png" />
+    	<img src="images/EME_1.png" />
+    	<img src="images/EME_2.png" />
+    </div>
+    <div class="slides2 slideshow">
+    	<img src="images/EME_3.png" />
+    	<img src="images/EME_4.png" />
+   		<img src="images/EME_5.png" />
+    	<img src="images/EME_6.png" />
+    	<img src="images/EME_7.png" />
+    	<img src="images/EME_8.png" />
+    	<img src="images/EME_9.png" />
+    	<img src="images/EME_10.png" />
+    	<img src="images/EME_11.png" />
+    </div>
+    <div class="slides3 slideshow">
+    	<img src="images/EME_11.png" />
+    	<img src="images/EME_12.png" />
+    </div>
+ </div>   
+
+</body>
+</html>
+

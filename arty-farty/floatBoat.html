@@ -1,0 +1,107 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+<head> 
+<meta charset='UTF-8'> 
+<style>
+   
+    body{
+        background:url(landscape.jpg) right top no-repeat #000;
+        margin:0;
+        padding:0;
+    }
+    .boat{
+        width:200px;
+        height:200px;
+        margin-top:200px;
+        position:absolute;
+        left:0;
+        
+    }
+    .boater{
+        width:180px;
+        
+        height:220px;
+        background:url(toilet.png) no-repeat;
+        position:absolute;
+        top:20px;
+        left:20px;
+    }
+    
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+    
+    $(function(){
+    
+    var ww = $(document).width();
+    
+    
+    var boat = $(".boat");
+    
+    // move object to the right
+    var moveInt = setInterval(moveObj, 30);
+          
+                var xposObj = 0;
+                
+                function moveObj(){
+          
+                    boat.css({
+                        left:xposObj
+                    });
+                    if(xposObj>ww){
+                        xposObj=-100;
+                    }else{
+                        xposObj+=2;
+                    }
+                   
+                };
+   
+    
+    var boater = $(".boater");
+    boatfloat(boater);
+    
+    function boatfloat(elem){
+          
+      var throb = 100;
+      //var osc = Math.random();
+      var osc = 0;
+         
+      setInterval(function(){
+        
+        //var rand = Math.random() * (3 - 1) + 1;
+       
+        elem.css({"top":throb*5+"%", "left":throb+"%", "-webkit-transform":"rotateZ("+throb+"deg)"});
+        
+        
+        throb = 2 * Math.cos(osc);
+        osc += Math.random()/6;
+        
+
+       
+      }, 30);
+      
+         
+      };
+      
+      
+      
+      
+      
+      
+      });
+    </script>
+
+</head> 
+<body> 
+    <div id="wrapper">
+    <div class="boat"><div class="boater"></div></div>
+    </div>
+    
+<!--<canvas id="canvas" width="300">
+    <em> (You can't see this really cute animation, because your browser doesn't support &lt;canvas&gt;.<br />
+        For a better internet experience go <a href="http://www.google.com/chrome">download google chrome</a>)</em>
+      
+    </canvas>
+<script src="../js/heart_only.js"></script>-->
+</body>
+</html>

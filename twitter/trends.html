@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      body, html{
+        background: #eeeeee;
+        padding:25px;
+      }
+      *{font:12px/20px Helvetica; color:#444444;}
+      a{color:hotpink;}
+      .profilePic{width:50px; height:50px; border:1px solid #fff; outline:3px solid #cccccc; float:left; margin:0 20px 0 0;}
+      .entry{width:400px; padding:25px; border:1px dotted #ccc; outline:3px solid white; margin-bottom:25px; overflow:hidden; background: #ffffff;}
+      .content{float:left; width:300px;}
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        
+        // get twitter trends using json
+        var url = "https://api.twitter.com/1/trends/1.json?callback=?";
+        $.getJSON(url,  function(data){
+          var trends = data[0].trends;
+          for (var i = 0; i < trends.length; i++){
+            var t = trends[i];
+            $("<a class='trend' href='#' target='blank'>"
+              +t.name+"<\/a><div><\/div>").appendTo("body"); 
+          }
+        });
+        
+        $(".trend").live("click", function(e){
+          e.preventDefault();
+          var curr = $(this);
+          var content = curr.next();
+          var trend = curr.text();
+          var url = "http://search.twitter.com/search.json?&rpp=10&callback=?";
+          
+          
+          content.html("loading...");
+          
+          $.getJSON(url, {q:trend}, function(data){
+           content.html("");
+            var results = data.results;
+            for (var i = 0; i < results.length; i++){
+              content.addClass("entry")
+                     .append(results[i].text)
+                     .append("<br/>");
+                     
+            }
+      
+          });
+          
+          curr.siblings(".trend").next("div").removeClass("entry").html("");
+          
+        });
+      });
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

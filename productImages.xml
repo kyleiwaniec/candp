@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<!--
+    Document   : productImages.xml
+    Created on : September 20, 2011, 9:43 AM
+    Author     : kylehamilton
+    Description:
+        Purpose of the document follows.
+-->
+<products>
+<product>
+    <name>Prod1</name>
+    <link>
+        http://3.bp.blogspot.com/-ZJvm2f-sQSE/Ti_mwEy89JI/AAAAAAAACX4/yc9ch_apP6U/s1600/pictures+of+nature-1.jpg
+    </link>
+    <link>
+    http://3.bp.blogspot.com/-DDVlCy7Zilw/Ti_my1gTuKI/AAAAAAAACX8/WDzdYY-3nHA/s1600/pictures+of+nature-2.jpg
+    </link>
+    <link>
+     http://3.bp.blogspot.com/-GH9TdpVL2K8/Ti_mzvovHaI/AAAAAAAACYA/lhMHgy4Qm1U/s1600/pictures+of+nature-3.jpg
+    </link>
+  
+</product>
+<product>
+    <name>Prod2</name>
+    <link>
+        http://2black.files.wordpress.com/2007/08/digital_photos_of_nature-1.jpg
+    </link>
+    <link>
+    http://2black.files.wordpress.com/2007/08/digital_photos_of_nature.jpg
+    </link>
+    <link>
+     http://www.imagegossips.com/wp-content/uploads/2011/01/rupi-8744-nature-beauty.jpg
+    </link>
+    <link>
+    http://www.imagegossips.com/wp-content/uploads/2011/01/552506858fotocollection.jpg
+    </link>
+</product>
+</products>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BounceCircle</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /> 
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+    <link rel="apple-touch-startup-image" href="startup.jpg" /> 
+    
+    <script src="jquery-1.5.1.min.js" ></script>
+    <script src="raphael-min.js"></script>
+ 
+    <script>
+      
+      $(function(){
+        
+        // hide top bar on safari mobile
+        //setTimeout(function(){
+        //  window.scrollTo(0, 1);
+       // }, 100);
+        
+        var touchSupport = "createTouch" in document;
+        
+        var size = touchSupport ? 480 : "100%";
+        
+        var paper = new Raphael(0, 0, size, size);
+        
+        var rect = paper.rect(0, 0, paper.width, paper.height)
+                        .attr("fill", "white");
+        
+        
+        // handle regular and mobile events
+        $(document).bind("mousedown touchstart", function(e){
+          if (e.type == "mousedown"){
+            addCircle(e.pageX, e.pageY);
+          }else{
+            e.preventDefault();
+            var touches = e.originalEvent.touches;
+            for (var i = 0; i<touches.length; i++){
+              var touch = touches[i];
+              addCircle(touches[i].pageX, touches[i].pageY);
+            }
+          }
+        });
+        
+        
+        function addCircle(x, y){
+          var c = paper.circle(x, y, 10)
+                       .attr({
+                         fill:"rgba(100,155,25,0.5)", 
+                         stroke:""
+                       });
+                    
+          var scale = 1;
+          var targetScale = 2 + Math.random() * 2;
+          var vel = 0;
+          var iterations = 30;
+          var time = 0;
+          var deathDelay = 1000;
+          
+          var loop = setInterval(animateIn, 30);
+          
+          function animateIn(){
+            vel = (vel - (scale - targetScale) * 0.9) / 1.6;
+            scale += vel;
+            
+            c.attr("scale", scale);
+            time++;
+            if (time > iterations){
+              clearInterval(loop); 
+              setTimeout(function(){
+                loop = setInterval(animtateOut, 30);
+              }, deathDelay);
+            }
+          }
+          
+          function animtateOut(){
+            scale += (0 - scale) / 2;
+            c.attr("scale", scale);
+            if (scale < 0.1){
+              clearInterval(loop);
+              c.remove(); 
+            }
+          }
+                }
+      });
+      
+    </script>
+  </head>
+  <style>
+    body,html{
+      min-width : 480px;
+      min-height : 480px; 
+      background-color : black;
+    }
+  </style>
+  <body>
+    
+  </body>
+</html>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Mootools Slide Effect: collapse all, expand all and accordion</title>
+	<link rel="stylesheet" type="text/css" href="http://pr0digy.com/sandbox/mootools/slide-effect/style.css" />
+	<script type="text/javascript" src="http://pr0digy.com/sandbox/mootools/slide-effect/js/mootools.v1.11.js"></script>
+
+	
+	<script type="text/javascript">
+	//<![CDATA[
+	
+		var Site = {
+	
+			start: function(){
+				Site.vertical();
+				
+			},
+			
+			vertical: function(){
+				var list = $$('#vertical li div.collapse');
+				var headings = $$('#vertical li h3');
+				var collapsibles = new Array();
+				
+				headings.each( function(heading, i) {
+
+					var collapsible = new Fx.Slide(list[i], { 
+						duration: 500, 
+						transition: Fx.Transitions.linear,
+						onComplete: function(request){ 
+							var open = request.getStyle('margin-top').toInt();
+							if(open >= 0) new Fx.Scroll(window).toElement(headings[i]);
+						}
+					});
+					
+					collapsibles[i] = collapsible;
+					
+					heading.onclick = function(){
+						var span = $E('span', heading);
+
+						if(span){
+							var newHTML = span.innerHTML == '+' ? '-' : '+';
+							span.setHTML(newHTML);
+						}
+						
+						collapsible.toggle();
+						return false;
+					}
+					
+                                        if(i > 0)collapsible.hide();
+					
+				});
+				
+				
+				
+
+			}
+		};
+		window.addEvent('domready', Site.start);
+	//]]>	
+	</script>
+</head>
+
+
+<body id="slide-effect">
+
+	<div id="container">
+	
+	<div id="header">
+		<h1>Mootools Slide Effect Demo</h1>
+	</div>
+	
+	<div class="heading">
+		<h2>Vertical Slide</h2>
+		<a id="expand-all" href="#" title="Expand all">expand all</a> | <a id="collapse-all" href="#" title="Collapse all">collapse all</a>
+	</div>
+	
+	<ul id="vertical" class="simple">
+
+		<li>
+			<h3>
+				1. <a name="1" href="#1">Item 1</a>  <span>+</span>
+			</h3>
+			<div  class="collapse">
+				<div class="collapse-container">
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent elementum pretium felis. Aenean sed odio eget nulla suscipit consequat. Maecenas non orci. Morbi et eros. Donec libero nisi, facilisis et, gravida eu, iaculis quis, urna. Mauris tempor, tellus eu eleifend rutrum, dui nulla sagittis leo, et luctus quam nunc ut ipsum. Donec adipiscing leo id turpis. Nam felis massa, mollis sit amet, faucibus sed, eleifend auctor, nulla. Curabitur pharetra ante vitae est. Aenean ut nunc. Ut libero arcu, auctor sit amet, dignissim in, congue ut, diam. Vivamus magna eros, sodales at, condimentum vitae, sagittis tincidunt, magna. Quisque vehicula molestie purus. Fusce vel erat. Suspendisse blandit tortor id felis. Suspendisse vulputate faucibus nisl. In orci lorem, eleifend et, rutrum a, faucibus nec, sem.</p>
+				</div>
+			</div>
+		</li>
+		
+		<li>
+			<h3>
+				2. <a name="2" href="#2">Item 2</a>  <span>+</span>
+			</h3>
+			<div class="collapse">
+				<div class="collapse-container">
+					<p>Sed blandit. Curabitur luctus, nulla ac hendrerit interdum, eros quam tincidunt turpis, in adipiscing magna velit malesuada quam. Nunc lacinia neque at nisl. Donec et felis at nunc commodo cursus. Praesent fringilla consequat mauris. Nunc placerat, dolor quis placerat viverra, nunc orci molestie nunc, ut pretium odio velit at arcu. Phasellus mi orci, sodales in, lobortis non, dapibus vitae, erat. Aliquam accumsan libero sit amet ligula. In sed nisi in ante nonummy accumsan. Maecenas eleifend, augue et viverra sollicitudin, nulla risus ullamcorper enim, ut congue elit odio et orci. Aenean sagittis metus. Proin sagittis sodales est. Maecenas tristique dui. Praesent euismod mattis enim. Praesent imperdiet pede sed lorem. In ut orci. Suspendisse malesuada lacinia neque.</p>
+				</div>
+			</div>
+		</li>
+		
+		<li>
+			<h3>
+				3. <a name="3" href="#3">Item 3</a>  <span>+</span>
+			</h3>
+			<div  class="collapse">
+				<div class="collapse-container">
+					<p>Sed molestie eros sit amet lacus. In consectetuer porta dui. Cras rhoncus dui tristique est. Proin purus. Ut luctus, tellus sed congue fringilla, felis massa pretium justo, eget nonummy mi sapien et libero. Nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In feugiat, lacus ac suscipit laoreet, mauris magna volutpat ipsum, sit amet tincidunt risus lectus eu est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi facilisis dui ut urna.</p>
+				</div>
+			</div>
+		</li>
+		
+		<li>
+			<h3>
+				4. <a name="4" href="#4">Item 4</a>  <span>+</span>
+			</h3>
+			<div  class="collapse">
+				<div class="collapse-container">
+					<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer lorem. Phasellus ornare auctor metus. Phasellus augue purus, accumsan id, faucibus in, aliquam vel, sapien. Maecenas egestas neque. Duis at purus eu quam mollis vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla orci velit, congue eget, vehicula commodo, varius id, nisi. Nulla arcu eros, elementum eu, suscipit sed, rutrum a, erat. Vestibulum nonummy pulvinar arcu. Nulla ac eros quis nulla congue mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi porta sapien et nisi. Morbi ut pede nec massa bibendum blandit. Nulla aliquet nisi non dui. Aliquam magna orci, porttitor id, ullamcorper at, adipiscing eu, metus. Nam orci. Maecenas felis lectus, ultrices ut, mattis non, tincidunt sit amet, nisi. Proin felis orci, aliquet vel, vulputate a, tempor sit amet, turpis. Nam turpis ligula, semper ut, ultrices eu, imperdiet id, dolor.</p>
+				</div>
+			</div>
+		</li>
+		
+		<li>
+			<h3>
+				5. <a name="5" href="#5">Item 5</a>  <span>+</span>
+			</h3>
+			<div  class="collapse">
+				<div class="collapse-container">
+					<p>Suspendisse a eros at lacus mollis pretium. Vivamus nec eros cursus sem rhoncus volutpat. Fusce eget purus. Nulla imperdiet lorem ut pede. Maecenas et augue. Pellentesque dolor lorem, feugiat nec, iaculis sit amet, consectetuer vitae, odio. Integer ipsum orci, cursus fermentum, molestie in, tempus id, nulla. Duis nulla tortor, vehicula vel, tempus quis, imperdiet id, risus. Suspendisse vitae nunc. Ut dignissim adipiscing dolor. Etiam vestibulum mauris aliquet massa. Nam interdum, metus nec facilisis tempor, nunc libero imperdiet arcu, sit amet volutpat leo purus vitae lectus.</p>
+				</div>
+			</div>
+		</li>
+		
+	</ul>
+	
+	
+	
+	
+	</div><!-- end container -->
+
+
+</body>
+</html>
+

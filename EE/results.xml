@@ -1,0 +1,428 @@
+<Response>
+  <Success>True</Success>
+  <Message Code="000" Type="">
+    <Description />
+  </Message>
+  <Results>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Food and Wine Holidays</Item>
+          <Item>Luxury Eco Holidays</Item>
+          <Item>Luxury Romantic Holidays</Item>
+          <Item>Luxury Spa Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-310634</ID>
+        <ComponentTitle>New South Wales</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in New South Wales</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Cosmopolitan sophistication, mountain retreats and unspoiled beaches </TagLine>
+        <ShortDescription>Blessed with a temperate climate, natural beauty, and two of the world’s most striking feats of engineering dominating its harbour, Sydney is a vibrant and progressive city. With its fusion of international cultures producing a truly exciting culinary scene, the city’s restaurants will delight discerning gourmets.</ShortDescription>
+        <LongDescription>
+          <p>
+            A 2hr drive from Sydney will take you into the restful romance of the World Heritage listed Blue Mountains or, in the other direction, the Hunter Valley, one of the country’s most respected wine regions.
+
+            <br /><br />
+
+            In the far north of New South Wales, the region around laidback Byron Bay offers unspoiled beaches and volcanic mountains, while an interstate trip to Australia’s capital, Canberra, is an often overlooked pleasure.
+          </p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="New South Wales map" xlink:href="341-355826" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_NSW_003_tcm341-310616.jpg" alt="Sydney" title="Sydney" mediumimage="/Images/midsize_310616_tcm341-708784.jpg" Thumbnailimage="/Images/thumb_310616_tcm341-708783.jpg" />
+          <Image href="/Images/Australia_NSW_013_tcm341-310619.jpg" alt="Beach in New South Wales" title="Beach in New South Wales" mediumimage="/Images/midsize_310619_tcm341-310621.jpg" Thumbnailimage="/Images/thumb_310619_tcm341-310620.jpg" />
+          <Image href="/Images/Australia_NSW_016_tcm341-310622.jpg" alt="Sydeney Harbour Bridge" title="Sydeney Harbour Bridge" mediumimage="/Images/midsize_310622_tcm341-310624.jpg" Thumbnailimage="/Images/thumb_310622_tcm341-310623.jpg" />
+          <Image href="/Images/Australia_NSW_001_tcm341-310625.jpg" alt="New South Wales Nature" title="New South Wales Nature" mediumimage="/Images/midsize_310625_tcm341-310627.jpg" Thumbnailimage="/Images/thumb_310625_tcm341-310626.jpg" />
+          <Image href="/Images/Australia_NSW_011_tcm341-310628.jpg" alt="New South Wales Beach" title="New South Wales Beach" mediumimage="/Images/midsize_310628_tcm341-310630.jpg" Thumbnailimage="/Images/thumb_310628_tcm341-310629.jpg" />
+          <Image href="/Images/Australia_NSW_009_tcm341-310631.jpg" alt="Sydney" title="Sydney" mediumimage="/Images/midsize_310631_tcm341-310633.jpg" Thumbnailimage="/Images/thumb_310631_tcm341-310632.jpg" />
+        </Images>
+        <Highlights>Luxury hotels, beach resorts and romantic retreats</Highlights>
+        <Highlights>Unspoiled beaches and coastline</Highlights>
+        <Highlights>Gourmet and cutting-edge cuisine </Highlights>
+        <Highlights>Wine tasting and vineyard tours</Highlights>
+        <Highlights>Spectacular mountain scenery</Highlights>
+        <ClimateInfo>
+          
+        </ClimateInfo>
+        <Priority>1</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location New South Wales</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationNewSouthWales/NewSouthWales.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Food and Wine Holidays</Item>
+          <Item>Luxury Adventure Holidays</Item>
+          <Item>Luxury Eco Holidays</Item>
+          <Item>Luxury Private Hideaway</Item>
+          <Item>Luxury Romantic Holidays</Item>
+          <Item>Luxury Spa Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-310602</ID>
+        <ComponentTitle>Queensland</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in Queensland</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Luxury holidays along Australia’s Sunshine and Gold Coasts</TagLine>
+        <ShortDescription>The vibrant cities of Brisbane and Cairns are the starting points for many adventures in glorious Queensland. Here, luxurious hotels and first-class restaurants exist beside majestic coastal scenery. </ShortDescription>
+        <LongDescription>
+          <p>
+            Stretching north and south of Brisbane respectively, the Sunshine and Gold Coasts bring pristine beaches and sweeping bays. The Great Barrier Reef stretches along Queensland’s coast with excellent diving, snorkelling and leisurely boat tours across the world’s largest and most complex reef.
+
+            <br /><br />
+
+            Of the many secluded islands scattered throughout the aquamarine sea, the Whitsundays are surely the most dazzling – offering superb sailing waterways and exclusive, <a href="/Experience/Romance.aspx">romantic retreats</a> under a blanket of rich blue sky.
+          </p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="Queensland map" xlink:href="341-355828" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_QLD_013_tcm341-312201.jpg" alt="Great Barrier Reef" title="Great Barrier Reef" mediumimage="/Images/midsize_312201_tcm341-312203.jpg" Thumbnailimage="/Images/thumb_312201_tcm341-312202.jpg" />
+          <Image href="/Images/Australia_QLD_009_tcm341-312204.jpg" alt="Queensland's nature" title="Queensland's nature" mediumimage="/Images/midsize_312204_tcm341-708790.jpg" Thumbnailimage="/Images/thumb_312204_tcm341-708789.jpg" />
+          <Image href="/Images/Australia_QLD_010_tcm341-312207.jpg" alt="Great Barrier Reef" title="Great Barrier Reef" mediumimage="/Images/midsize_312207_tcm341-708792.jpg" Thumbnailimage="/Images/thumb_312207_tcm341-708791.jpg" />
+          <Image href="/Images/Australia_QLD_001_tcm341-312210.jpg" alt="Queensland's nature" title="Queensland's nature" mediumimage="/Images/midsize_312210_tcm341-312212.jpg" Thumbnailimage="/Images/thumb_312210_tcm341-312211.jpg" />
+          <Image href="/Images/Australia_QLD_003_tcm341-312213.jpg" alt="Forest" title="Forest" mediumimage="/Images/midsize_312213_tcm341-312215.jpg" Thumbnailimage="/Images/thumb_312213_tcm341-312214.jpg" />
+          <Image href="/Images/Australia_QLD_011_tcm341-312216.jpg" alt="Brisbane" title="Brisbane" mediumimage="/Images/midsize_312216_tcm341-312218.jpg" Thumbnailimage="/Images/thumb_312216_tcm341-312217.jpg" />
+        </Images>
+        <Highlights>Superb diving in the Great Barrier Reef</Highlights>
+        <Highlights>Gourmet dining and wine tasting experiences</Highlights>
+        <Highlights>Excellent winter sun destination</Highlights>
+        <Highlights>Romantic Australian hideaways</Highlights>
+        <ClimateInfo>
+          
+        </ClimateInfo>
+        <Priority>2</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location Queensland</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationQueensland/Queensland.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Food and Wine Holidays</Item>
+          <Item>Luxury Family Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-309198</ID>
+        <ComponentTitle>South Australia</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in South Australia</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Luxury holidays from Adelaide to the Clare Valley</TagLine>
+        <ShortDescription>With a climate described as Mediterranean, South Australia is home to the vibrant and charming city of Adelaide. Between gently rolling hills and the ocean, take in the capital’s energetic blend of urban culture, country town ease and elegant colonial architecture.</ShortDescription>
+        <LongDescription>
+          <p>Just an hour’s drive from Adelaide, the Barossa Valley is the tour de force of Australian wine making. Tour the vineyards in a vintage car, see the valley from a hot-air balloon, or take a stroll along the real Jacob’s Creek.</p>
+          <p>Slightly further north, the Clare Valley boasts tranquil heritage towns while beyond here lie the frontier towns and pink desert dunes of the Flinders Ranges and Simpson Desert.</p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="South Australia map" xlink:href="341-355829" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_SA_001_tcm341-309187.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309187_tcm341-309189.jpg" Thumbnailimage="/Images/thumb_309187_tcm341-309188.jpg" />
+          <Image href="/Images/Australia_SA_006_tcm341-309190.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309190_tcm341-309192.jpg" Thumbnailimage="/Images/thumb_309190_tcm341-309191.jpg" />
+          <Image href="/Images/Australia_SA_002_tcm341-309195.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309195_tcm341-309197.jpg" Thumbnailimage="/Images/thumb_309195_tcm341-309196.jpg" />
+          <Image href="/Images/Australia_SA_004_tcm341-309254.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309254_tcm341-826492.jpg" Thumbnailimage="/Images/thumb_309254_tcm341-826491.jpg" />
+          <Image href="/Images/Australia_SA_005_tcm341-309255.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309255_tcm341-309260.jpg" Thumbnailimage="/Images/thumb_309255_tcm341-309259.jpg" />
+          <Image href="/Images/Australia_SA_003_tcm341-309256.jpg" alt="South Australia" title="South Australia" mediumimage="/Images/midsize_309256_tcm341-309258.jpg" Thumbnailimage="/Images/thumb_309256_tcm341-309257.jpg" />
+        </Images>
+        <Highlights>Prestige luxury hotels in Australia’s capital city</Highlights>
+        <Highlights>Adelaide’s many cultural attractions</Highlights>
+        <Highlights>Beaches, lakes and watersports</Highlights>
+        <Highlights>Heritage towns in the Clare Valley</Highlights>
+        <Highlights>Gourmet dining and wine tasting experiences</Highlights>
+        <ClimateInfo>
+          
+        </ClimateInfo>
+        <Priority>3</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location South Australia</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationSouthAustralia/SouthAustralia.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Luxury Private Hideaway</Item>
+          <Item>Luxury Romantic Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-310793</ID>
+        <ComponentTitle>Victoria</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in Victoria</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Luxury holidays along the Mornington Peninsula and Great Ocean Road</TagLine>
+        <ShortDescription>On the northern banks of the Yarra River, the city of Melbourne is a conurbation of distinctive, charming districts spread around the shores of Port Phillip Bay. </ShortDescription>
+        <LongDescription>
+          <p>Just an hour’s drive south of the city, the Mornington Peninsula is peppered with tranquil seaside villages offering excellent restaurants, picturesque fishing harbours and spectacular scenery. There are just as many rich pickings inland, with an abundance of vineyards and orchards hidden among the rolling hills.</p>
+          <p>Travelling west out of Melbourne, the meandering Great Ocean Road brings superb seascapes, surf beaches, rainforests and dramatic rock formations, interspersed with laidback coastal towns such as Apollo Bay. Victoria’s interior reveals the fine restaurants and romantic retreats of the Yarra Valley.</p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="Victoria map" xlink:href="341-355831" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_VIC_003_tcm341-310775.jpg" alt="Twelve Apostels" title="Twelve Apostels" mediumimage="/Images/midsize_310775_tcm341-310777.jpg" Thumbnailimage="/Images/thumb_310775_tcm341-310776.jpg" />
+          <Image href="/Images/Australia_VIC_005_tcm341-310778.jpg" alt="Beautiful Sea" title="Beautiful Sea" mediumimage="/Images/midsize_310778_tcm341-310780.jpg" Thumbnailimage="/Images/thumb_310778_tcm341-310779.jpg" />
+          <Image href="/Images/Australia_VIC_009_tcm341-310781.jpg" alt="Melbourne by night" title="Melbourne by night" mediumimage="/Images/midsize_310781_tcm341-310783.jpg" Thumbnailimage="/Images/thumb_310781_tcm341-310782.jpg" />
+          <Image href="/Images/Australia_VIC_004_tcm341-310784.jpg" alt="Beach life" title="Beach life" mediumimage="/Images/midsize_310784_tcm341-826494.jpg" Thumbnailimage="/Images/thumb_310784_tcm341-826493.jpg" />
+          <Image href="/Images/Australia_VIC_008_tcm341-310787.jpg" alt="Beach" title="Beach" mediumimage="/Images/midsize_310787_tcm341-310789.jpg" Thumbnailimage="/Images/thumb_310787_tcm341-310788.jpg" />
+        </Images>
+        <Highlights>Wine tasting and gourmet dining experiences</Highlights>
+        <Highlights>Superb beaches, diving and water sports</Highlights>
+        <Highlights>Luxury city hotels and secluded romantic retreats </Highlights>
+        <Highlights>Vineyard tours and spectacular scenery</Highlights>
+        <Highlights>Areas of outstanding natural beauty</Highlights>
+        <ClimateInfo>
+         
+        </ClimateInfo>
+        <Priority>4</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location Victoria</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationVictoria/Victoria.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Food and Wine Holidays</Item>
+          <Item>Luxury Romantic Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-308965</ID>
+        <ComponentTitle>Western Australia</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in Western Australia</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Holidays with exceptional beaches and stunning landscapes</TagLine>
+        <ShortDescription>Western Australia enjoys long days of sunshine and spotless blue skies – the perfect backdrop to exceptional beaches and verdant landscapes.</ShortDescription>
+        <LongDescription>
+          <p>Explore the delights of Perth, situated at the widest point of the Swan River. The city enjoys a relaxed outdoor lifestyle, thanks to glorious beaches, bustling markets, lush city parks, al fresco cafés culture and a stunning array of marine adventures.</p>
+          <p>
+            Three hours from Perth, the globally renowned Margaret River Wine Region is a <a href="/Experience/Gastronomy.aspx">gourmet’s paradise</a> boasting premium cheeses and olive oils, divine handmade chocolates and full-bodied wines. Alternatively, the State’s northwest region is Australia’s secret unspoiled, romantic getaway – basking on the warm shores of the Indian Ocean.
+          </p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="Western Australia map" xlink:href="341-355832" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_WA_001_tcm341-308947.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308947_tcm341-308949.jpg" Thumbnailimage="/Images/thumb_308947_tcm341-308948.jpg" />
+          <Image href="/Images/Australia_WA_003_tcm341-308950.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308950_tcm341-308952.jpg" Thumbnailimage="/Images/thumb_308950_tcm341-308951.jpg" />
+          <Image href="/Images/Australia_WA_005_tcm341-308953.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308953_tcm341-308955.jpg" Thumbnailimage="/Images/thumb_308953_tcm341-308954.jpg" />
+          <Image href="/Images/Australia_WA_010_tcm341-308956.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308956_tcm341-308958.jpg" Thumbnailimage="/Images/thumb_308956_tcm341-308957.jpg" />
+          <Image href="/Images/Australia_WA_009_tcm341-308959.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308959_tcm341-308961.jpg" Thumbnailimage="/Images/thumb_308959_tcm341-308960.jpg" />
+          <Image href="/Images/Australia_WA_002_tcm341-308962.jpg" alt="Western Australia" title="Western Australia" mediumimage="/Images/midsize_308962_tcm341-308964.jpg" Thumbnailimage="/Images/thumb_308962_tcm341-308963.jpg" />
+        </Images>
+        <Highlights>Premium winter sun holiday destination</Highlights>
+        <Highlights>Excellent wine tasting and gourmet dining experience</Highlights>
+        <Highlights>Luxurious boutique hotels</Highlights>
+        <Highlights>Glorious beaches, diving and watersports</Highlights>
+        <Highlights>Stunning landscapes and spectacular scenery</Highlights>
+        <ClimateInfo>
+         
+        </ClimateInfo>
+        <Priority>5</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location Western Australia</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationWesternAustralia/Index.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Luxury Adventure Holidays</Item>
+          <Item>Luxury Eco Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-313921</ID>
+        <ComponentTitle>Tasmania</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in Tasmania</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>National Parks and beautiful scenery</TagLine>
+        <ShortDescription>Surrounded by the pristine waters of the Southern Ocean, Tasmania’s compact environs enable visitors to experience a huge variety of unspoiled environments and World Heritage sites – alpine meadows, dense rainforests, ancient lakes and mountain peaks all abundant with indigenous wildlife.</ShortDescription>
+        <LongDescription>
+          <p>
+            Farms producing delicious organic food and wine have earned Tasmania a glowing reputation in gastronomic circles. The wealth of bush trekking aside, the landscape offers a host of other activities, from fly-fishing and horse riding, to sailing and sea kayaking.
+
+            <br /><br />
+
+            To experience relaxed Tasmanian city life, the Victorian town of Launceston and the larger capital Hobart both sport elegant harbour-fronts with thriving restaurants and cafés – the perfect setting for lazy evenings watching the sunset.
+          </p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="Tasmania map" xlink:href="341-355830" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_TAS_002_tcm341-313852.jpg" alt="Ocean and mountains" title="Ocean and mountains" mediumimage="/Images/midsize_313852_tcm341-313854.jpg" Thumbnailimage="/Images/thumb_313852_tcm341-313853.jpg" />
+          <Image href="/Images/Australia_TAS_003_tcm341-313863.jpg" alt="Wineglass Bay" title="Wineglass Bay" mediumimage="/Images/midsize_313863_tcm341-313865.jpg" Thumbnailimage="/Images/thumb_313863_tcm341-313864.jpg" />
+          <Image href="/Images/Australia_TAS_006_tcm341-314121.jpg" alt="Tasmania's Mountains" title="Tasmania's Mountains" mediumimage="/Images/midsize_314121_tcm341-314123.jpg" Thumbnailimage="/Images/thumb_314121_tcm341-314122.jpg" />
+          <Image href="/Images/Australia_TAS_004_tcm341-313877.jpg" alt="Cradle Mountain" title="Cradle Mountain" mediumimage="/Images/midsize_313877_tcm341-313879.jpg" Thumbnailimage="/Images/thumb_313877_tcm341-313878.jpg" />
+          <Image href="/Images/Australia_TAS_005_tcm341-313881.jpg" alt="Village in Tasmania" title="Village in Tasmania" mediumimage="/Images/midsize_313881_tcm341-313883.jpg" Thumbnailimage="/Images/thumb_313881_tcm341-313882.jpg" />
+          <Image href="/Images/Australia_TAS_001_tcm341-313915.jpg" alt="Tasmania's Mountains" title="Tasmania's Mountains" mediumimage="/Images/midsize_313915_tcm341-313917.jpg" Thumbnailimage="/Images/thumb_313915_tcm341-313916.jpg" />
+        </Images>
+        <Highlights>Area of outstanding natural beauty</Highlights>
+        <Highlights>Excellent horse riding, sailing and water sports</Highlights>
+        <Highlights>Wine tasting and gourmet dining experiences</Highlights>
+        <Highlights>Wildlife trails and bush treks</Highlights>
+        <Highlights>Launceston and Hobart’s vibrant harbour-fronts</Highlights>
+        <ClimateInfo>
+          
+        </ClimateInfo>
+        <Priority>6</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location Tasmania</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationTasmania/Tasmania.aspx</Link>
+      </XmlContent>
+    </Result>
+    <Result AvailabilityStatus="">
+      <Metadata>
+        <MetadataItem Key="Code">
+          <Item>#</Item>
+        </MetadataItem>
+        <MetadataItem Key="Rating" />
+        <MetadataItem Key="Facilities" />
+        <MetadataItem Key="Experience">
+          <Item>Cultural Holidays</Item>
+        </MetadataItem>
+        <MetadataItem Key="Properties" />
+      </Metadata>
+      <XmlContent>
+        <ID>341-309177</ID>
+        <ComponentTitle>Northern Territory</ComponentTitle>
+        <test>test</test>
+        <Item>#</Item>
+        <Destination>Luxury Holidays in Australia</Destination>
+        <DestinationID>341-282371</DestinationID>
+        <RegionID>341-280724</RegionID>
+        <RegionName>Australasia Region</RegionName>
+        <SkiDestination />
+        <SkiDestinationID />
+        <Name>Luxury Holidays in the Northern Territory</Name>
+        <Parent xlink:type="simple" xlink:title="Destination Australia" xlink:href="341-282371" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <TagLine>Memorable holidays in beautiful North Australia</TagLine>
+        <ShortDescription>Set around its spectacular harbour, the tropical city of Darwin is the gateway to the magical Northern Territory. Blending cosmopolitan pleasures with lush scenery, Darwin’s close proximity to Asia brings a relaxed, multicultural atmosphere that makes exploring a real treat.</ShortDescription>
+        <LongDescription>
+          <p>
+            The area’s vast national parks reveal diverse ecosystems, home to the natural wonders of the bush. Nowhere more so than at the Garig Gunak Barlu National Park in Aboriginal Arnhem Land, where untouched wilderness meets the temperate waters flowing in from the <a href="/Destination/IndianOcean/index.aspx">Indian Ocean</a>.
+          </p>
+          <p>In the south, Australia’s most recognisable natural icon, Ayers Rock or ‘Uluru’, has great significance for the Aborigine people; an awe-inspiring place to discover Aboriginal culture. Moving southwest, Alice Springs sits surrounded by the red desert.</p>
+        </LongDescription>
+        <Map xlink:type="simple" xlink:title="Northern Territory map" xlink:href="341-355827" xmlns:xlink="http://www.w3.org/1999/xlink" />
+        <Images>
+          <Image href="/Images/Australia_NT_011_tcm341-309169.jpg" alt="Northern Territory" title="Northern Territory" mediumimage="/Images/midsize_309169_tcm341-309176.jpg" Thumbnailimage="/Images/thumb_309169_tcm341-309175.jpg" />
+          <Image href="/Images/Australia_NT_009_tcm341-309157.jpg" alt="Northern Territory" title="Northern Territory" mediumimage="/Images/midsize_309157_tcm341-309159.jpg" Thumbnailimage="/Images/thumb_309157_tcm341-309158.jpg" />
+          <Image href="/Images/Australia_NT_001_tcm341-309160.jpg" alt="Northern Territory" title="Northern Territory" mediumimage="/Images/midsize_309160_tcm341-309162.jpg" Thumbnailimage="/Images/thumb_309160_tcm341-309161.jpg" />
+          <Image href="/Images/Australia_NT_008_tcm341-309166.jpg" alt="Northern Territory" title="Northern Territory" mediumimage="/Images/midsize_309166_tcm341-309168.jpg" Thumbnailimage="/Images/thumb_309166_tcm341-309167.jpg" />
+          <Image href="/Images/Australia_NT_012_tcm341-309172.jpg" alt="Northern Territory" title="Northern Territory" mediumimage="/Images/midsize_309172_tcm341-309174.jpg" Thumbnailimage="/Images/thumb_309172_tcm341-309173.jpg" />
+        </Images>
+        <Highlights>Spectacular national parks; diverse ecosystems </Highlights>
+        <Highlights>Bush safaris and wildlife trails </Highlights>
+        <Highlights>Fantastic sunsets over Uluru – Ayer’s Rock</Highlights>
+        <Highlights>Luxury cabins in Aboriginal landscapes</Highlights>
+        <Highlights>Excellent beaches and watersports</Highlights>
+        <ClimateInfo>
+         
+        </ClimateInfo>
+        <Priority>7</Priority>
+        <ParentCategory>Destination</ParentCategory>
+        <Bookable />
+        <AssociatedCountry />
+        <offertitle>Location Northern Territory</offertitle>
+        <Link>/Destination/Australasia/DestinationAustralia/LocationNorthernTerritory/NorthernTerritory.aspx</Link>
+      </XmlContent>
+    </Result>
+  </Results>
+</Response>

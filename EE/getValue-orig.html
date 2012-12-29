@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style>
+            
+        </style>
+        <script language="javascript">
+            function gc(selectit,hideit,charc){
+
+                charc=String.fromCharCode(charc).toUpperCase();
+                hideit=eval("document.forms[0]."+hideit);
+
+                selectit=eval("document.forms[0]."+selectit);
+
+
+                hideit.value= selectit.options[selectit.selectedIndex].getAttribute('value');
+
+                i=selectit.selectedIndex;
+                while(i<selectit.options.length){
+                    if(selectit.options[i].innerText.toUpperCase().indexOf(hideit.value)==0){
+                        selectit.selectedIndex=i
+                        i=selectit.options.length+1
+                    };
+                    i++
+                };
+
+                if(i==selectit.options.length+2){return false}
+                        else{
+                            hideit.value = selectit.options[selectit.selectedIndex].getAttribute('value');
+                            return true
+                        };
+            };
+
+</script>
+
+    </head>
+    <body>
+        
+        <form>
+            <select style="text-transform:uppercase" name="TeamOption" onchange="gc('TeamOption','Teamname',window.event.keyCode);" tabindex="6">
+                <option value="4">Bears</option>
+                 <option value="6">Browns</option>
+                <option value="7">Bulldogs</option>
+                <option value="9">Champs</option>
+                <option value="11">Cubs</option>
+                <option value="34">Whiz Kids</option>
+                <option value="42">Zebras</option>
+            </select>
+            <input type="text" name="Teamname" />
+        </form>
+        
+     
+    </body>
+</html>

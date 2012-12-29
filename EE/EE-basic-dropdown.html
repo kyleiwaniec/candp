@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+  <title>Label Website</title>
+  
+    <style>
+        #navigation {
+	margin-right: 10px;
+	margin-left: 10px;
+	background-color: #d3d3d3;
+/*	overflow: hidden;*/
+}
+#navigation ul {
+  font-family: Arial, Verdana;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+#navigation ul li {
+  display: block;
+  float: left;
+}
+#navigation li ul { display: none; }
+#navigation ul li a {
+	color: #000;
+	text-decoration: none;
+	margin: 0 1px;
+	padding: 5px;
+	display: block;
+	border: 1px solid #d3d3d3;
+}
+#navigation ul li a:hover { background: #617F8A; }
+#navigation ul li:hover ul {
+  display: block;
+  position: absolute;
+}
+#navigation li li {
+  float: none;
+  font-size: 11px;
+}
+#navigation li:hover a { background: #617F8A; }
+#navigation li:hover li a:hover { background: #95A9B1; }
+    </style>
+</head>
+
+<body class="main">
+<div id="navigation">
+	<ul>
+  <li><a href="default.htm">Home</a></li>
+  <li><a href="about/about.htm">About</a></li>
+  <li><a href="news/news.htm">News</a></li>
+  <li><a href="services/services.htm">Services</a>
+    <ul>
+        <li><a href="">Estimating</a></li>
+        <li><a href="">Tendering</a></li>
+        <li><a href="">Project Management</a></li>
+        <li><a href="">Setting off site</a></li>
+        <li><a href="">Mediating disputes</a></li>
+        <li><a href="">Advice and Support</a></li>
+        <li><a href="">Individual rate build up</a></li>
+        </ul>
+  </li>
+  <li><a href="courses/courses.htm">Tuition</a></li>
+  <li><a href="contact/contact.htm">Contact</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+
+<style>
+    .container{
+        position:relative;
+        width:500px;
+        background-color:orange;
+        overflow:hidden;
+        
+    }
+    .container .bottomDiv{
+        padding:0;
+        maargin:0;
+        width:500px;
+        position:absolute;
+        bottom:0;
+        text-align:right;
+        background-color:greenyellow;
+    }
+    .container .bottomDiv div{
+        padding:10px;
+        margin-top:10px;
+        position:relative;
+        background-color: hotpink;
+    }
+    p{
+        
+        
+    }
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        
+        var cont = $(".container");
+        
+        // inner div. you can have as many as you want
+        var absdiv = $(".container .bottomDiv"); 
+        
+        var indiv = absdiv.children("div");
+        
+        
+        var divs = indiv.get();
+        
+        var numberOfDivs = divs.length;
+        
+        var i, h, ch = 0;
+        
+        
+        // get the height of inner divs
+        for(i=0; i<numberOfDivs; i++){
+             
+            h = indiv.eq(i).outerHeight(true);
+            ch += h;
+            
+        }
+        
+        // set container heights 
+        
+        absdiv.height(ch); 
+        cont.height(ch+200); 
+       
+    });
+    
+    
+    </script>
+<body>
+<!--<div class="container">
+    <div>
+        Some regular content
+    </div>
+    
+    
+    <div class="bottomDiv">
+        <div>
+            <p>
+                1.Proin porttitor, nisl eget ultrices tristique, nulla diam venenatis tortor, non mattis nibh sem ac nulla. Ut arcu enim, vulputate vel elementum sed, posuere at ipsum. Quisque quis augue lectus. Nunc rhoncus lo
+            </p>
+        </div>
+        <div>
+            <p>
+                2.Praesent at tortor eu ipsum ullamcorper consequat non ut felis. Nunc in leo risus, quis condimentum ligula. Etiam tempus enim id
+            </p>
+        </div>
+        <div>
+            <p>
+                3.Etiam eget quam ac leo ullamcorper cursus. Mauris in est id tortor rhoncus venenatis. Quisque semper leo at nisi sodales vitae auctor magna eleifend. Ut nisl leo, adipiscing vel feugiat vel, dapibus ac tortor. In hac habitasse platea dictumst. 
+            </p>
+        </div>
+        <div>
+            <p>
+                4.Etiam eget quam ac leo ullamcorper cursus. Mauris in est id tortor rhoncus venenatis. Quisque semper leo at nisi sodales vitae auctor magna eleifend. Ut nisl leo, adipiscing vel feugiat vel, dapibus ac tortor. In hac habitasse platea dictumst. 
+            </p>
+        </div>
+    </div>
+</div> -->
+<div style="border:1px solid #ccc; width:200px; position:relative; ">
+  <div style="position:absolute; bottom:0px; right:0px;">
+    <div><p>
+                1.Etiam eget quam ac leo ullamcorper cursus. Mauris in est id tortor rhoncus venenatis. Quisque semper leo at nisi sodales vitae auctor magna eleifend. Ut nisl leo, adipiscing vel feugiat vel, dapibus ac tortor. In hac habitasse platea dictumst. 
+            </p></div>            
+    <div><p>
+                2.Praesent at tortor eu ipsum ullamcorper consequat non ut felis. Nunc in leo risus, quis condimentum ligula. Etiam tempus enim id
+            </p></div>
+    <div><p>
+                3.Proin porttitor, nisl eget ultrices tristique, nulla diam venenatis tortor, non mattis nibh sem ac nulla. Ut arcu enim, vulputate vel elementum sed, posuere at ipsum. Quisque quis augue lectus. Nunc rhoncus lo
+            </p></div>
+  </div>
+</div>
+</body>
+</html>

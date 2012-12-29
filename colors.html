@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html class="ie6 nojs ie" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 nojs ie" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 nojs ie" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="nojs"> <!--<![endif]--><head>
+<meta charset="UTF-8">
+<title>copy &amp; paste generation</title>
+
+<link rel="stylesheet" href="css/styles2.css" media="screen" />
+  <!-- Mobile -->
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1;" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" /> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+<link rel="apple-touch-startup-image" href="/startup.png">
+
+<script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+
+
+<script src="js/raphael.js"></script>
+<script src="js/circlesMobileColors.js"></script>
+
+
+<script>
+$(function(){
+        
+	   // icons animate
+	    $("#chrome_clr, #safari_clr, #firefox_clr").css({"opacity":0});
+	   $("#chrome_clr, #safari_clr, #firefox_clr").mouseenter(function(){
+            $(this).animate({"opacity": 1});
+			}).mouseleave(function(){
+				$(this).stop().animate({"opacity":0});
+			  });
+		    // end icons animate
+             $("#logo").click(function(){
+                 
+                 location.href = "http://www.candpgeneration.com";
+             }).css({"cursor":"pointer"});       
+      });
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+<div id="circles"></div>
+<div id="innerWrapper">
+<section id="header"></section>
+<section id="content">
+<div id="logo" style="position:fixed; left:10px; bottom:10px;">
+<a href="/"></a>
+</div>
+<div id="IEelement">
+<pre>
+   // Seriously? Internet Explorer?
+   // Download a real browser!
+</pre>
+<div id="browsers">
+<div id="chrome_bw"><img src="images/chrome-icon_bw.png" width="87" height="113" alt="Chrome" ></div>
+<div id="chrome_clr"><a href="http://www.google.com/chrome" target="_blank"><img src="images/chrome-icon.png" width="87" height="113" alt="Chrome"  title="Recommended"></a></div>
+
+
+<div id="safari_bw"><img src="images/safari-icon_bw.png" width="87" height="113" alt="Safari"></div>
+<div id="safari_clr"><a href="http://www.apple.com/safari/download/" target="_blank"><img src="images/safari-icon.png" width="87" height="113" alt="Safari"></a></div>
+
+
+<div id="firefox_bw"><img src="images/firefox-icon_bw.png" width="87" height="113" alt="Firefox"></div>
+<div id="firefox_clr"><a href="http://www.mozilla.com/en-US/firefox/new/" target="_blank"><img src="images/firefox-icon.png" width="87" height="113" alt="Firefox"></a></div>
+
+
+</div>
+</div>
+</section>
+<section id="footer"></section>
+</div>
+</div>
+
+</body>
+</html>

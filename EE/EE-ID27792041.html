@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+  <title>Label Website</title>
+  <style>
+      #content{
+          position:absolute;
+          top:100px;
+          left:200px;
+          width:300px;
+          height:100px;
+          
+      }
+      .checker{background-color:red;}
+      .col{float:left;}
+  </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+	
+        $("#uniform-field_8_0, label[for='field_8_0'], label[for='field_8_0'] + br").wrapAll("<div class='wrap1'/>");
+        $("#uniform-field_8_1, label[for='field_8_1'], label[for='field_8_1'] + br").wrapAll("<div class='wrap2'/>");
+        $("#uniform-field_8_2, label[for='field_8_2'], label[for='field_8_2'] + br").wrapAll("<div class='wrap3'/>");
+        //$(".checker, .form_choice_text").wrap("<wrapper/>");
+	
+        $(".wrap1, .wrap2").wrapAll("<div class='col'/>");
+        $(".wrap3").wrapAll("<div class='col'/>");
+
+});
+    </script>
+</head>
+
+<body>
+   
+    <div class="col_field">
+        
+            
+  <div class="checker" id="uniform-field_8_0"><span>
+    <input type="checkbox" class="form_checkbox" value="Technology" id="field_8_0" name="Checkbox01_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_0" class="form_choice_text">Technology</label>
+  <br>
+  <div class="checker" id="uniform-field_8_1"><span>
+    <input type="checkbox" class="form_checkbox" value="Training and Education" id="field_8_1" name="Checkbox02_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_1" class="form_choice_text">Training and Education</label>
+  <br>
+      
+        
+        
+  <div class="checker" id="uniform-field_8_2"><span>
+    <input type="checkbox" class="form_checkbox" value="Head office support" id="field_8_2" name="Checkbox03_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_2" class="form_choice_text">Head office support</label>
+  
+ <br>
+ </div>
+</body>
+</html>

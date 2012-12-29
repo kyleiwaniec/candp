@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8"/>
+    <style>
+        .col1{
+            background-color: yellow;
+        }
+
+        .col2{
+            background-color: green;
+        }
+
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+            
+            var col1h = $('.col1').height();
+            var col2 = $('.col2');
+          
+            col2.css({height: col1h, 'overflow-y': 'auto'});
+     
+        });
+    </script>
+    <body>
+        <table>
+            <tr>
+                <td> <!-- 1st COLUMN -->
+                    <div class="col1">
+                        some stuff<br/>
+                        some stuff<br/>
+                        some stuff<br/>
+                    </div>
+                </td>
+                <td> <!-- 2nd COLUMN -->
+                    <div class="col2">   My 1st column might have content resulting in e.g. a 400px height, though it could be less or more.
+                        My 2nd column is a bunch of text data, perhaps document excerpts, that could be a line or two, or hundreds of lines. In the latter case, what I get is *all* hundreds of lines and the height of my is x-hundreds of px.
+                        What I'd like to do is limit the height of column 2 to be no taller than column 1 and, if there is more to display, have a scroll-bar on the 2nd column. The way I've shown it doesn't work.
+                        I'm open to any ideas: frames? position?
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

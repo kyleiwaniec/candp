@@ -1,0 +1,16 @@
+= HEAD
+
+  * Removed dependency on most external frameworks such as jQuery, Prototype,
+    Sizzle, Mootools, etc.
+
+  * Removed CSS support. This requires users to use arrays of objects instead of
+    CSS selectors when specifying content.
+
+  * Removed dependence on sniffing for various operating systems.
+
+  * Removed support for video playback using Windows Media Player.
+
+  * Removed dependence on various language-specific files in favor of using
+    universal symbols in the UI.
+
+  * Removed support for "inline" player type.

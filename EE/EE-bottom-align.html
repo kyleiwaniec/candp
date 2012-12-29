@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script>
+            var jq = jQuery.noConflict();  
+            jq(function(){
+            
+            jq("#header").click(function(){
+                //alert("hi");
+                location.href = "index.html";
+                });
+            });
+
+        </script>
+<style type="text/css">
+    body, html{
+        margin:0;
+        padding:0;
+    }
+#content-container {
+
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      /* to make a nice square margin in the corner I would use px instead of %
+      
+      bottom:20px;
+      left:20px;
+      
+      */
+      
+      border: 1px dotted blue;
+}
+
+.inner-content{
+    width:600px;
+    border:1px dotted grey;
+    margin-top:20px;
+    overflow:hidden;
+}
+.inner-content img{
+    float:left;
+}
+
+</style>
+</head>
+
+<body>
+<div id="content-container">
+<div class="inner-content">
+    <div id="header">header</div>
+    
+</div>
+<div class="inner-content">
+
+<img src="images/blue.jpg" alt=""/>
+content 2
+</div>
+<div class="inner-content">
+content 3
+</div>
+</div>
+</body>
+
+</html>

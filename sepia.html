@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>copy &amp; paste generation</title>
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    		<![endif]--> 
+
+<meta name="viewport" content="width=device-width; initial-scale=1;" /> 
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/startup.png">
+    <link rel="stylesheet" href="css/styles2.css"/>
+    <!--[if !IE]>-->
+    <link media="only screen and (max-device-width: 480px)" href="css/mobile.css" type="text/css" rel="stylesheet">
+    <!--<![endif]-->
+
+<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script src="js/jquery-ui-1.8.13.custom.min.js"></script> 
+
+
+<script src="js/pixastic/pixastic.core.js"></script> 
+<script src="js/pixastic/pixastic.jquery.js"></script> 
+<script src="js/pixastic/actions/sepia_animated.js"></script> 
+<script>
+$(function(){
+
+        // convert all images with class="photo" to sepia
+        $(".photo").load(function() {
+          $(this).pixastic("sepia");
+   });
+});
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+<img src="images/largeDemon3.jpg" alt="" class="photo" />
+</div>
+
+</body>
+</html>

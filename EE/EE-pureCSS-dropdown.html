@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<head>
+
+<meta  charset="UTF-8" />
+<title>Nav</title>
+
+<style>
+body { /* you don't need this */
+	margin:20px;
+	padding:0;
+}
+
+/* the main menu */
+.navigation {
+   display:block;
+   position:absolute;
+   width:500px;
+   z-index:1000;
+   
+}
+.navigation ul{
+	list-style :none;
+	margin:0; 
+	padding:0; /* gets rid of any inherited margins and padding */
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+        position:relative;
+	z-index:1000;
+}
+.navigation > ul > li { 
+	position : relative;
+	float : left;
+	margin-right : 20px;
+	font-size: 15px; /* this is here and not above, so that the subs can be made smaller using a % */
+
+}
+.navigation > ul > li > a {
+	background-color: #FFC90A; /* yellow */
+	display:block;
+	padding:8px 14px;
+	text-decoration:none;
+	color:#2C2C2C;
+}
+
+
+.navigation > ul > li > a:hover{
+	background-color:#2c2c2c;
+	color:#aaaaaa;
+}
+.navigation > ul > li:hover ul, .navigation > ul > li > a:hover ul{
+	display:block;
+}
+/* the drop-down box */
+
+.navigation ul li ul{
+	position:absolute;
+	display:none; 
+	background-color:#eaeaea;
+	z-index:100;
+	font-size:85%; /* this is just a sylistic decision. I think the sub items should be smaller than the main items */
+	}
+
+/* the drop-down items */
+
+.navigation ul ul {
+	width:170px; /* you need a width to avoid weird line breaks */
+}
+.navigation ul ul li:hover {
+	background-color:#666666;
+}
+.navigation ul ul li a {
+	display:block;
+	text-decoration:none;
+	margin:0 12px;
+	padding:5px 0;
+	color:#4c4c4c;
+	border-bottom:1px solid #dcdcdc;
+	}
+.navigation ul ul li a:hover {
+	color:#ffffff;
+	border-bottom:1px solid #666666;
+}
+
+.navigation ul ul li:last-child a{
+	border:0;
+		
+}
+/* relative and absolute content test  for IE7 which has a different way of generating the stacking order */
+.header{width: 500px; height:50px;}
+.content{position:relative; width: 500px; height:500px; background-color: orange;}
+.item{position:absolute; top:20px; width: 400px; height:400px; background-color: lightgrey;}
+</style>
+</head>
+
+<body>
+<div class="header">
+<div class="navigation">
+  <ul>
+    <li><a href="#">Main 1</a>
+        <ul>
+          <li><a href="h#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+          <li><a href="#">Item 4</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Main 2</a>
+        <ul>
+          <li><a href="h#">Item 1</a></li>
+          <li><a href="#">Item 2</a></li>
+          <li><a href="#">Item 3</a></li>
+          <li><a href="#">Item 4</a></li>
+        </ul>
+    </li>
+    <li><a href="#">Main 3</a></li>
+    <li><a href="#">Main 4</a></li>
+  </ul>
+</div> <!-- navigation -->
+</div><!-- header -->
+
+
+<div class="content">
+<div class="item">Aenean ac magna lacus, in vestibulum risus. Donec eros magna, tempus nec gravida a, porttitor nec libero. Cras quis tempus felis. Quisque nisl nisl, bibendum eu elementum et, volutpat et orci. Sed placerat nisi sit amet neque porta vitae molestie nisi mollis. Sed felis diam, pharetra et pellentesque ac, convallis ut metus. Vivamus massa lacus, faucibus et tempor eu, lacinia in odio. Fusce sodales imperdiet eros, at interdum augue elementum eget. Vivamus nec dignissim tellus. Aenean rhoncus elementum est, ut condimentum tortor tristique ut. Suspendisse at sem ante, at aliquam nunc. Maecenas id nulla arcu. In commodo tristique mi sed bibendum. Praesent quam nulla, congue a egestas et, ornare nec felis.</div>
+<div class="item"></div>
+<div class="item"></div>
+</div>
+
+
+</body>
+</html>

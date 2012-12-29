@@ -1,0 +1,270 @@
+
+
+html, body	{
+
+    margin:0; 
+    padding:0; 
+    font-family:'ARTechniRegular', Helvetica, Arial, sans-serif;
+    font-size:100%;
+    color:#666666;
+    -webkit-text-size-adjust: none;
+    line-height:1.4em;
+}
+
+
+button, .glossy-button{
+        font-family: helvetica, arial, sans-serif;
+        font-size:14px;
+        line-height:28px;
+        height:31px;
+        display:inline-block;
+        padding:0 10px;
+        color:white;
+        cursor:pointer;
+        width:auto;
+        
+       
+        border: 3px solid #Ff3366;
+        
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box; 
+        box-sizing: border-box; 
+        
+        text-decoration:none;
+        }
+button:hover, .glossy-button:hover{
+        background-color: #000000;
+        border-color: #333333;
+    /*    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#000000',GradientType=0 );  IE6-9 */
+
+    }
+button:active, .glossy-button:active{
+        background-color: #333333;
+        border-color: #333333;
+        color:#eeeeee;
+    /*    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#222222',GradientType=0 );  IE6-9 */
+
+    } 
+    
+/* for IE */    
+.butleft, .butright{
+        background-image:url(../images/butt-bg.png);
+        background-repeat: no-repeat;
+        height:31px;
+        float:left;
+        padding:0 0 0 10px;
+        display:block;
+    }
+.butright{
+        background-position: right top;
+        width:10px;
+        padding:0 !important;
+    }
+
+.smallButton{
+    -webkit-box-sizing: border-box;
+    background-color: #cccccc;
+
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.597656)), color-stop(0.49, rgba(255, 255, 255, 0.109375)), color-stop(0.51, rgba(0, 0, 0, 0.0390625)), to(rgba(255, 255, 255, 0.199219)));
+    background-image:-moz-linear-gradient(top, rgba(255, 255, 255, 0.597656), rgba(255, 255, 255, 0.109375) 49%, rgba(0, 0, 0, 0.0390625) 51%, rgba(255, 255, 255, 0.199219));
+
+    border:1px solid #aaaaaa;
+
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+
+    -webkit-box-shadow: 2px 2px 5px #cccccc; 
+    box-shadow: 2px 2px 5px #cccccc;
+
+    color: #666666;
+    cursor: pointer;
+    display: inline;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    height: 30px;
+    line-height: 24px;
+    padding: 0 15px;
+    margin:0 0 10px 0;
+    text-align: center;
+    text-decoration: none;
+    /*text-shadow: rgba(255, 255, 255, 0.199219) 0px 1px 1px, rgba(238, 45, 91, 0.496094) 1px 0px 1px, rgba(238, 45, 91, 0.496094) -1px 0px 1px, rgba(238, 45, 91, 0.796875) 0px -1px 1px;*/
+    width:auto;
+    vertical-align: 30%;
+}
+.notesArea{
+   min-height:100px;
+}
+.note{
+    margin-top:15px;
+    padding:15px;
+    border:1px solid #666666;
+}
+
+/* portfolio */
+
+        #corpidPortfolioContent{
+                width:320px;
+                margin:0 auto; /* for iPad set left-margin to 163px */
+        }
+            
+        .corpidItem{
+                border:1px solid #aeb2bf;
+                margin-bottom:50px;
+                width:310px;
+                height:205px;
+                padding: 5px;
+                position:relative;
+                background-color:#eeeeee;
+        }
+        .corpidItem div{
+                width:310px;
+                height:205px;
+                background-repeat: no-repeat;
+        }
+
+        #webPortfolioContent{
+            width:820px;
+            margin:0 0 0 163px; /* for iPad set left-margin to 163px */
+        }
+        .webItem{
+            border:1px solid #aeb2bf;
+            margin-bottom:50px;
+            height:342px;
+            padding: 5px;
+            position:relative;
+            background-color:#eeeeee;
+        }
+        .dev{
+            background-color:#ffffff;
+        }
+        h2.deve{
+            color:#ee3162;
+            border-top:1px dotted #cccccc;
+            border-bottom:1px dotted #cccccc;
+            margin:40px 0;
+        }
+        .info{
+            float:left;
+            width:280px;
+            padding:20px 0 20px 20px;
+            line-height:18px;
+            
+        }
+        
+        .info .link, .info .title{
+            font-family:Georgia, serif;
+            color: #ee3162;
+            
+        }
+        .info .link a{
+            text-decoration:underline;
+            font-size:18px;
+        }
+        .info .descrip{
+            font-family:Helvetica, sans-serif;
+            font-size:13px;
+            color:#2b2e3a;
+        }
+/* end  portfolio */
+
+
+
+.nojs body{}
+
+.nojs .nav .button:hover{background-color:#ee3162;}
+
+.nojs .panelContent{height:auto; overflow:visible; }
+
+#thanks{
+    display:none;
+}
+
+/* mobile */
+
+/* For smaller devices */
+@media screen and (max-device-width: 480px) {
+	html, body { 
+		
+	}
+}
+/* Portrait */
+@media screen and (max-width: 320px) {
+.panel {
+   float: none;
+   margin-bottom:10px;
+   width: 308px;
+   height:200px;
+   
+}
+		
+#portfolioBg{
+    width:100%;
+    height:100%;
+    margin:0;
+}
+
+.panel img{
+   width:100%;
+   height:auto;
+
+	
+}
+#innerContent{
+    padding:10px;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    width:100%;
+}
+#portfolioMenu{
+    font-size:.9em;
+}
+#sidebar{display:none;}
+
+input[type="text"], textarea{
+    width:300px;
+    -webkit-box-sizing: border-box;
+ 
+}
+}
+/* Landscape */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+	
+.panel {
+   float: none;
+   margin-bottom:10px;
+   width: 456px;
+   height:304px;
+   
+}
+		
+#portfolioBg{
+    width:100%;
+    height:100%;
+    margin:0;
+    
+}
+
+.panel img{
+   width:100%;
+   height:auto;
+
+	
+}
+#innerContent{
+    padding:10px;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    width:100%;
+}
+#sidebar{display:none;}
+
+input[type="text"], textarea{
+    width:100%;
+    -webkit-box-sizing: border-box;
+ 
+}
+
+}

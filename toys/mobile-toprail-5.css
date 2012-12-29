@@ -1,0 +1,480 @@
+/* XXX: start mobile */
+#adv_banner_mobile_wrapper{
+    display:none;
+    
+}
+
+@media
+only screen and (max-width: 524px),
+only screen and (-webkit-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (   min--moz-device-pixel-ratio: 2)      and (min-width: 320px), /* bug fix */
+only screen and (   -moz-min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (     -o-min-device-pixel-ratio: 2/1)    and (min-width: 320px),
+only screen and (        min-device-pixel-ratio: 2)      and (min-width: 320px),
+only screen and (                min-resolution: 192dpi) and (min-width: 320px),
+only screen and (                min-resolution: 2dppx)  and (min-width: 320px) 
+{
+    
+    
+    
+    #adv-banner, #adv-network, #pre{
+        display:none;
+    }
+
+    #adv_banner_mobile_wrapper{
+        display:block;
+        z-index: 100;
+        position: relative;
+    }
+    #Leaderboard{
+        height:50px;
+        background-color: orangered;
+
+    }
+    .touch .adv-weather{
+        display:block !important; /* remove this in prod, by removing the display:none in adv_toprail.css */
+    }
+    #adv_banner_mobile{
+        position: relative;
+        z-index: 100;
+        border-top:1px solid #444;
+        border-bottom:1px solid #444;
+
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,rgba(255,255,255,1)), color-stop(100%,rgba(242, 242, 242, 1)));
+        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 80%,rgba(242, 242, 242, 1) 100%);
+        background: -moz-linear-gradient(top, rgba(255,255,255,1) 80%,rgba(242, 242, 242, 1) 100%);
+
+-webkit-box-shadow:3px 3px 3px rgba(0, 0, 0, .2);
+   -moz-box-shadow:3px 3px 3px rgba(0, 0, 0, .2);
+        box-shadow:3px 3px 3px rgba(0, 0, 0, .2);
+        margin-left:-3px; /*  removes the drop shadow gap */
+        padding: 7px 8px 10px 12px;    
+
+        height: 55px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        position:relative;
+
+-webkit-text-size-adjust: none;
+        font-family: helvetica;
+        font-size: 16px;
+        line-height: 42px;
+        color:#787878;
+        text-shadow: 1px 1px 1px #f6f6f6;
+    }
+
+    .adv_bm_bar{
+        overflow:hidden;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    }
+
+    .bm_bar-left, .bm_bar-center{
+        float:left;
+    }
+    .bm_bar-center{
+        margin-left: 10px;
+    }
+    .bm_bar-right{
+        float:right;
+    }
+    .adv_bm_bar > div > div{
+        float:left;
+    }
+
+    .bm_btn{
+        background-color: #5091cd;  
+
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#5091cd), to(#447fb6));
+        background-image: -webkit-linear-gradient(top, #5091cd, #447fb6);
+        background-image: -moz-linear-gradient(top, #5091cd, #447fb6);
+        background-image: -o-linear-gradient(top, #5091cd, #447fb6);
+        background-image: -ms-linear-gradient(top, #5091cd, #447fb6);
+        background-image: linear-gradient(top, #5091cd, #447fb6);
+      
+-webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+        border-radius: 4px;
+        height:40px;
+        text-align: center;
+
+        padding:0 9px;
+        font-size: 14px;
+        text-shadow: none;
+        color:white;
+        font-weight:bold;
+        -webkit-tap-highlight-color: rgba(0,0,0,0); 
+
+
+    }
+    .bm_btn.open{
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#447fb6), to(#5091cd));
+        background-image: -webkit-linear-gradient(top, #447fb6, #5091cd);
+        background-image: -moz-linear-gradient(top, #447fb6, #5091cd);
+        background-image: -o-linear-gradient(top, #447fb6, #5091cd);
+        background-image: -ms-linear-gradient(top, #447fb6, #5091cd);
+        background-image: linear-gradient(top, #447fb6, #5091cd);
+    }
+    
+    .bm_menu_icon{
+/*        width:72px;*/
+    }
+    .bm_menu_icon:before{
+        content:'\2261';
+        font-weight:100;
+        font-family:arial;
+        font-size:22px;
+        line-height:42px;
+    }
+    .bm_menu_icon:after{
+        content: 'Sections';
+        line-height: 43px;
+        vertical-align: top;
+        padding-left:3px;
+    }
+    
+    
+    .bm_back_icon:before{
+        content: '\2039';
+        font-weight:500;
+        font-family:arial;
+        font-size: 27px;
+        line-height: 37px;
+    }
+    .bm_back_icon:after{
+        content: 'Back';
+        line-height: 42px;
+        vertical-align: top;
+        padding-left:5px;
+    }
+    
+    .bm_search_icon{
+        width:20px;
+        margin-left:7px;
+        padding-right: 11px;
+
+    }
+
+    .bm_search_icon:before{
+        content:url(/static/common/img/search-icon.png);
+    }
+
+    .adv-display_name.adv_mobile{
+        font-size:12px;
+        margin:0;
+        padding:0;
+    }
+
+    
+
+    #adv_bm_masthead{
+        height:55px;
+        background-color: #E9E1D2; /* #E9E1D2 => beige */
+        position:relative;
+    }
+    #adv_banner_mobile_wrapper .adv-logo {
+/*        background: url(logo-tiny.png) 8px 9px no-repeat;*/
+        
+        float: left;
+        height: 55px;
+        text-indent: -314159px;
+        width: 55px;
+    }
+    #adv_banner_mobile_wrapper .adv-chooser{
+        display: block;
+        position: relative;
+        float:left;
+        font-family: prelo-slab, georgia, serif;
+    }
+    
+    #adv_banner_mobile_wrapper .adv-chooser-title{
+        margin-top: 11px;
+        float: left;
+        font-size: 22px;
+        padding: 0 45px 3px 8px;
+
+        width:auto;
+        position:relative;
+        box-sizing: border-box;
+    }
+
+            #adv_bm_search_outer{
+                background-color: #eee;
+                display:block;
+                overflow: hidden;
+                padding:0;
+                height:0;
+        -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+            }
+            #adv_bm_search_outer.open{
+                height:50px;
+                border-bottom: 1px solid #AAA;
+            }
+
+            .adv_bm_search_inner{
+                padding:10px;
+            }
+    
+            #adv_bm_search_outer #adv-site-search{
+        -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, .3);
+                box-shadow: inset 0 0 4px rgba(0, 0, 0, .3);
+
+                background-color: white;
+                border: 1px solid #BBB;
+
+                border-radius:3px;
+        -webkit-border-radius:3px;
+
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+
+                width:100%;
+                padding: 16px 10px;
+                display: block;
+                font-size: 14px;
+                -webkit-appearance: none
+            }
+            #adv-site-search-submit{
+                display:none;
+            }
+            
+            
+            /* sections */
+            
+            #adv_bm_nav_outer{
+                position: relative;
+                height: 0;
+                overflow:hidden;
+
+        -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+
+            }
+
+            #adv_bm_nav_outer.open{
+                height: 386px;
+                border-bottom: 1px solid #AAA;
+            }
+
+            
+
+            #adv_bm_nav_inner {
+                display:block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+        -webkit-transition: -webkit-transform .5s ease;
+           -moz-transition: -moz-transform .5s ease;
+             -o-transition: -o-transform .5s ease;
+                transition: transform .5s ease;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+            }
+            /* slide to make sub-section visible: */
+            #adv_bm_nav_inner.open {
+        -webkit-transform: translate3d(-100%,0,0);
+           -moz-transform: translate3d(-100%,0,0);
+             -o-transform: translate3d(-100%,0,0);
+                transform: translate3d(-100%,0,0);
+            }
+            
+
+            .bm_nav_main, .bm_nav_sub{
+                display: block;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+            }
+
+            .bm_nav_main {
+                background-color: #EEE;
+                -webkit-tap-highlight-color: rgba(0,0,0,0); 
+            }
+
+            .bm_nav_sub {
+                background-color:#999;
+                left:100%;
+                z-index:10000;
+            }
+
+            .adv_bm_sec_nav, .adv_bm_class_nav{
+                float:left;
+                width:50%;
+                padding:0;
+                margin:0;
+                list-style: none;
+        -webkit-box-sizing: border-box;
+           -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+        .adv_bm_class_nav{
+            border-left:1px solid #aaa;
+            }
+
+        #adv_bm_nav_inner .bm_sli, #adv_bm_nav_inner .bm_csli{
+            border-bottom:1px solid #ccc;
+            
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding:10px;
+            display:block;
+
+        }
+        #adv_bm_nav_inner .bm_sli + .bm_sli, #adv_bm_nav_inner .bm_csli + .bm_csli{
+            border-top:1px solid #fff;
+        }
+        
+        
+        #adv_bm_nav_inner .bm_sli:hover, #adv_bm_nav_inner .bm_csli:hover{
+    /*        border-top:1px solid #333;*/
+            background-color: #333;
+        }
+
+
+        #adv_bm_nav_inner .bm_sli .bm_slia, #adv_bm_nav_inner .bm_csli .bm_cslia{
+            color:#555;
+            font-family: helvetica;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight:bold;
+            text-shadow: 1px 1px 1px #fff;
+            display:block;
+            -webkit-tap-highlight-color: rgba(0,0,0,0); 
+        }
+
+        #adv_bm_nav_inner .bm_sli:hover .bm_slia, #adv_bm_nav_inner .bm_csli:hover .bm_cslia{
+            color: #fff;
+            text-shadow: none;
+        }
+/*    sub-section nav => ssul, ssli, sslia*/
+    .bm_ssul{
+            display:block;
+            position:absolute;
+            background-color:#999;
+            height:100%;
+            width:100%;
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+
+        
+        .bm_ssli{
+            float: left;
+            display:block;
+            margin: 0;
+            
+            list-style: none;
+            width: 50%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-bottom: 1px solid #aaa;
+        }
+        #adv_banner_mobile_wrapper .bm_sslia{
+            color:white;
+            display: block;
+            text-decoration: none;
+            padding: 10px 15px;
+            font-weight:bold;
+        }
+        .bm_ssli.even{
+            clear:left;
+            border-right:1px solid #aaa;
+        }
+        .bm_ssli.odd{
+/*            border-left:1px solid #888;*/
+        }
+        .bm_sslia:hover{
+            background-color:#444;
+        }
+        
+            .bm_slide_btn{
+                float: right;
+                width: 44px;
+                height: 41px;
+                display: inline-block;
+                background: #eee url(http://www-dev.nj.com//fed/khamilton/mobile-toprail/icon-sprite.png) 100% -242px no-repeat; 
+/*                background: #eee url(http://www-dev.nj.com//fed/khamilton/mobile-toprail/icon-sprite.png) 100% -162px no-repeat;*/
+                margin-top: -31px;
+                margin-right:-10px;
+                cursor: pointer;
+                border-left:1px solid #ddd;
+            }
+            .bm_slide_btn:hover{
+                background-color:#444;
+                background-position: 100% -283px;
+/*                background-position: 100% -192px;*/
+            }
+            
+            /* weather */
+            
+            .adv-weather-inner.adv_mobile{
+                padding-left:40px;
+                width:30px;
+            }
+            #adv_banner_mobile .adv-weather{
+                background-position:0 5px;
+                background-repeat: no-repeat;
+            }
+            .adv-temp.adv_mobile{
+                font-weight:bold;
+            }
+
+            #adv_banner_mobile .sunny-01 { background-image:url(/static/common/img/weather/tiny/01.png); }
+            #adv_banner_mobile .mostly-sunny-02 { background-image:url(/static/common/img/weather/tiny/02.png); }
+            #adv_banner_mobile .partly-sunny-03 { background-image:url(/static/common/img/weather/tiny/03.png); }
+            #adv_banner_mobile .intermittent-clouds-04 { background-image:url(/static/common/img/weather/tiny/04.png); }
+            #adv_banner_mobile .hazy-sunshine-05 { background-image:url(/static/common/img/weather/tiny/05.png); }
+            #adv_banner_mobile .mostly-cloudy-06 { background-image:url(/static/common/img/weather/tiny/06.png); }
+            #adv_banner_mobile .cloudy-07 { background-image:url(/static/common/img/weather/tiny/07.png); }
+            #adv_banner_mobile .overcast-08 { background-image:url(/static/common/img/weather/tiny/08.png); }
+            #adv_banner_mobile .fog-11 { background-image:url(/static/common/img/weather/tiny/11.png); }
+            #adv_banner_mobile .showers-12 { background-image:url(/static/common/img/weather/tiny/12.png); }
+            #adv_banner_mobile .mostly-cloudy-with-showers-13 { background-image:url(/static/common/img/weather/tiny/13.png); }
+            #adv_banner_mobile .partly-sunny-with-showers-14 { background-image:url(/static/common/img/weather/tiny/14.png); }
+            #adv_banner_mobile .thunderstorms-15 { background-image:url(/static/common/img/weather/tiny/15.png); }
+            #adv_banner_mobile .mostly-cloudy-with-thunderstorms-16 { background-image:url(/static/common/img/weather/tiny/16.png); }
+            #adv_banner_mobile .partly-sunny-with-thunderstorms-17 { background-image:url(/static/common/img/weather/tiny/17.png); }
+            #adv_banner_mobile .rain-18 { background-image:url(/static/common/img/weather/tiny/18.png); }
+            #adv_banner_mobile .flurries-19 { background-image:url(/static/common/img/weather/tiny/19.png); }
+            #adv_banner_mobile .mostly-cloudy-with-flurries-20 { background-image:url(/static/common/img/weather/tiny/20.png); }
+            #adv_banner_mobile .partly-sunny-with-flurries-21 { background-image:url(/static/common/img/weather/tiny/21.png); }
+            #adv_banner_mobile .snow-22 { background-image:url(/static/common/img/weather/tiny/22.png); }
+            #adv_banner_mobile .mostly-cloudy-with-snow-23 { background-image:url(/static/common/img/weather/tiny/23.png); }
+            #adv_banner_mobile .ice-24 { background-image:url(/static/common/img/weather/tiny/24.png); }
+            #adv_banner_mobile .sleet-25 { background-image:url(/static/common/img/weather/tiny/25.png); }
+            #adv_banner_mobile .freezing-rain-26 { background-image:url(/static/common/img/weather/tiny/26.png); }
+            #adv_banner_mobile .rain-to-snow-29 { background-image:url(/static/common/img/weather/tiny/29.png); }
+            #adv_banner_mobile .hot-30 { background-image:url(/static/common/img/weather/tiny/30.png); }
+            #adv_banner_mobile .cold-31 { background-image:url(/static/common/img/weather/tiny/31.png); }
+            #adv_banner_mobile .windy-32 { background-image:url(/static/common/img/weather/tiny/32.png); }
+            #adv_banner_mobile .clear-33 { background-image:url(/static/common/img/weather/tiny/33.png); }
+            #adv_banner_mobile .mostly-clear-34 { background-image:url(/static/common/img/weather/tiny/34.png); }
+            #adv_banner_mobile .partly-cloudy-35 { background-image:url(/static/common/img/weather/tiny/35.png); }
+            #adv_banner_mobile .intermittent-clouds-36 { background-image:url(/static/common/img/weather/tiny/36.png); }
+            #adv_banner_mobile .hazy-moonlight-37 { background-image:url(/static/common/img/weather/tiny/37.png); }
+            #adv_banner_mobile .mostly-cloudy-38 { background-image:url(/static/common/img/weather/tiny/38.png); }
+            #adv_banner_mobile .partly-cloudy-with-showers-39 { background-image:url(/static/common/img/weather/tiny/39.png); }
+            #adv_banner_mobile .mostly-cloudy-with-showers-40 { background-image:url(/static/common/img/weather/tiny/40.png); }
+            #adv_banner_mobile .partly-cloudy-with-thunderstorms-41 { background-image:url(/static/common/img/weather/tiny/41.png); }
+            #adv_banner_mobile .mostly-cloudy-with-thunderstorms-42 { background-image:url(/static/common/img/weather/tiny/42.png); }
+            #adv_banner_mobile .partly-cloudy-with-flurries-43 { background-image:url(/static/common/img/weather/tiny/43.png); }
+            #adv_banner_mobile .partly-cloudy-with-snow-44 { background-image:url(/static/common/img/weather/tiny/44.png); }
+
+
+            
+}
+
+/* end mobile */

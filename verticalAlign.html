@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>copy &amp; paste generation</title>
+<link rel="stylesheet" href="css/styles2.css"/>
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    		<![endif]--> 
+
+<script src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+
+
+<script src="js/raphael.js"></script>
+<script src="js/circles.js"></script>
+
+
+<script>
+$(function(){
+        
+	   // icons animate
+	    $("#chrome_clr, #safari_clr, #firefox_clr").css({"opacity":0});
+	   $("#chrome_clr, #safari_clr, #firefox_clr").mouseenter(function(){
+            $(this).animate({"opacity": 1});
+			}).mouseleave(function(){
+				$(this).stop().animate({"opacity":0});
+			  });
+		    // end icons animate
+	
+      });
+</script>
+
+
+</head>
+
+<body>
+<div id="circles"></div>
+
+<div id="floater"></div>
+<div id="content">
+
+<img src="images/logo.png" alt="c & p generation" id="logo"/>
+
+<h1 style="margin:0 0 25px 0; padding:0;">design meets technology</h1>
+
+<img src="images/littlePeople.png" alt="c & p generation" />
+
+we're in the beautification process... in the meantime, you can contact us via email: <a href="mailto:info@candpgen.com">info@candpgeneration.com</a>
+	   
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery cursor menu</title>
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/images/favicon/apple-touch-icon.png" rel="apple-touch-icon">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>
+
+
+
+var yesterday = new Date();
+yesterday.setDate(yesterday.getDate()-1);
+
+var dayofWeek = yesterday.getDay(); // day o fthe week
+var month = yesterday.getMonth() + 1; // the month 0-11
+var dayofmonth = yesterday.getDate(); // day of the month
+var year = yesterday.getFullYear(); // the year
+
+var y = month +"-"+ dayofmonth +"-"+ year;
+
+function setyesterday() {
+    var formObject = document.forms["form1"];
+    formObject.elements["datefilter"].value = y;
+};
+
+ 
+</script>
+
+<style>
+ul > li > ul > li:hover > ul{
+  display: block;
+}
+
+ul {
+  padding: 0;
+/*  margin: 0;*/
+  list-style: none;
+  }
+li{
+  float: left;
+/*  position: relative;*/
+  width: 10em;
+  }
+li ul, ul > li  > ul > li > ul{
+  display: none;
+  position: absolute; 
+/*  top: 1em;
+  left: 0;*/
+  }
+li > ul {
+/*      top: auto;
+      left: auto;*/
+      }
+li:hover > ul, li.over ul { display: block; }                                           
+
+</style>
+</head>
+<body>
+<ul id = "nav" >
+  <li>Sunfishes
+    <ul>
+            <div>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+                  Conce Conce Conce Conce Conce Conce Conce <br>
+            </div>
+      <li><a href="">Sunfish</a></li>
+      
+        <li>
+            Fruits
+            <ul>
+                  <li><a>Orange</a></li>
+                  <li>Apple</li>
+                  <li>Banana</li>
+                  <li>Mango</li>
+                  <li>Pear</li>
+            </ul>
+        </li>
+        
+      <li><a href="">Ozark bass</a></li>
+      <li><a href="">White crappie</a></li>
+            </ul>
+      </li>
+
+  <li>Grunts
+    <ul>
+      <li><a href="">Smallmouth grunt
+        </a></li>
+      <li><a href="">Burrito</a></li>
+      <li><a href="">Pigfish</a></li>
+    </ul>
+  </li>
+
+  <li>Remoras
+    <ul>
+      <li><a href="">Whalesucker</a></li>
+      <li><a href="">Marlinsucker</a></li>
+      <li><a href="">Ceylonese remora</a></li>
+      <li><a href="">Spearfish remora</a></li>
+      <li><a href="">Slender suckerfish</a></li>
+    </ul>
+  </li>
+</ul>
+    <form name="form1">
+    <a href="#" onclick="setyesterday();">Get yesterday't date</a><br/>
+    <textarea name="datefilter"></textarea>
+    </form>
+</body>
+</html>

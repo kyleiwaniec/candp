@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+            div{
+                width:200px;
+                height:200px;
+                }
+                #menuItems{background-color:red;}
+                #mask{background-color:blue;}
+                #toolbar{
+                        background-color:grey;
+                        -webkit-transition: background-color 0.3s ease;
+                        -moz-transition: background-color 0.3s ease;
+                        -o-transition: background-color 0.3s ease;
+                        -ms-transition: background-color 0.3s ease;
+                        transition: background-color 0.3s ease;
+                }
+        </style>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+           
+                var $MenuItems = $("#menuItems");
+                var $mask = $("#mask");
+                var $Toolbar = $("#toolbar");
+           
+                $MenuItems.stop(true,true).animate({opacity:0}, {
+                                                        queue:false, 
+                                                        duration: 2000, 
+                                                        complete: function() {
+                                                                    $(this).hide();
+                                                                    }
+                                                        });   
+                
+
+                $mask.stop(true,true).animate({opacity:0}, {
+                                                        queue:false, 
+                                                        duration: 2000,
+                                                        complete: function(){
+                                                                    $(this).hide().css('z-index', '0');
+                                                                    }
+                                                        });
+                $Toolbar.css({
+                        'background-color':'grey',
+                        '-webkit-transition': 'background-color 0.3s ease',
+                        '-moz-transition': 'background-color 0.3s ease',
+                        '-o-transition': 'background-color 0.3s ease',
+                        '-ms-transition': 'background-color 0.3s ease',
+                        'transition': 'background-color 0.3s ease'
+                });                                        
+
+                $Toolbar.css({ 'background-color': 'orange'}).stop(true, true).animate({'height': '500px' }, {queue:false, duration: 2000} );
+		
+            });
+            
+           
+            
+        </script>
+
+    </head>
+    <body>
+        <div id="content">
+
+            <div id="menuItems"></div>
+            <div id="mask"></div>
+            <div id="toolbar"></div>
+
+           
+        </div>
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+<head> 
+<meta charset='UTF-8'> 
+<style>
+   
+    body{
+/*        background:url(landscape.jpg) right top no-repeat #000;*/
+        margin:0;
+        padding:0;
+    }
+    #canvas{
+        position:absolute;
+        width:800px;
+        height:800px;
+        right:0;
+        
+    }
+    
+    #reload{
+        position:absolute;
+        top:15px;
+        left:15px;
+        cursor:pointer;
+    }
+    #hidden
+{
+	position:absolute;
+	position:fixed;
+	top:0;
+	left:0;
+	overflow:hidden;
+	width:0;
+	height:1px;
+}
+#render
+{
+	display:block;
+	margin:1em auto;
+	background:#000;
+	padding:1px;
+	border:1px solid #333;
+	overflow:hidden;
+	width:384px;
+	height:384px;
+}
+    
+</style>
+
+    <script type="text/javascript">
+//<![CDATA[
+
+/*    */
+/*    */
+/*    */	//	chain( func )
+/*    */	//	make func chainable by making it return itsReturnValue||this
+/*    */	function chain( func )
+/*    */	{
+/* 01 */ 		return function()
+/*    */		{
+/* 02 */			return func.apply( this, arguments )||this;
+/*    */		}
+/*    */	}
+/*    */
+/*    */
+/*    */	//	initialize everything
+/*    */	onload = function()
+/*    */	{
+/*    */		//	initialize the contexts and the fractal
+/* 03 */		window.fx =
+/*    */		{
+/*    */		    'barCtx':		document.getElementById('bar'	).getContext('2d'),
+/*    */		    'fooCtx':		document.getElementById('foo'	).getContext('2d'),
+/*    */		    'logicCtx':		document.getElementById('logic'	).getContext('2d'),
+/*    */		    'renderCtx':	document.getElementById('render').getContext('2d'),
+/*    */		    'fractal':		[0,0,0,0,2,0,0,0,0],
+/*    */		    //	work around Safari's non exposure of the CanvasRenderingContext2D
+/*    */		    CanvasRenderingContext2D:	(window.CanvasRenderingContext2D?CanvasRenderingContext2D.prototype:document.getElementById('bar'	).getContext('2d').__proto__)
+/*    */		}
+/*    */
+/*    */		//	set( what, to )
+/*    */		//	sets a property of the CanvasRenderingContext2D, making such operation chainable
+/*    */		window.fx.CanvasRenderingContext2D.set = function( what, to )
+/* 	  */		{
+/* 04 */			this[what] = to;
+/*    */		}
+/*    */
+/*    */		//	switchTo( context )
+/*    */		//	returns another CanvasRenderingContext2D, making such operation chainable
+/*    */		window.fx.CanvasRenderingContext2D.switchTo = function( context )
+/* 	  */		{
+/* 05 */			return context;
+/*    */		}
+/*    */
+/*    */		//	chain a bunch of CanvasRenderingContext2D methods
+/* 06 */		for( chainThat in {set:1,switchTo:1,clearRect:1,save:1,translate:1,rotate:1,drawImage:1,scale:1,restore:1,fillRect:1,moveTo:1,lineTo:1,beginPath:1,closePath:1,stroke:1,fill:1,arc:1} )
+/* 	  */		{
+/* 07 */			window.fx.CanvasRenderingContext2D[chainThat] = chain( window.fx.CanvasRenderingContext2D[chainThat] );
+/*    */		}
+/*    */
+/*    */		//	let's get the party started
+/* 08 */		render();
+/*    */	}
+/*    */
+/*    */
+/*    */	//	render()
+/*    */	function render()
+/*    */	{
+/*    */		//	the time is now
+/* 09 */		var	now		= new Date().getTime();
+/*    */
+/*    */		//	mutate the outer cells of the rug
+/* 10 */		fx
+/*    */			.fractal[ Math.floor(Math.random()*8+5)%9 ] = Math.floor( Math.random()*3 );
+/*    */
+/*    */		//	softly kills the previous generations of the rug
+/* 11 */		fx
+/*    */			.fooCtx
+/*    */				.set( 'fillStyle', 'rgba(0,0,0,.1)' )
+/*    */				.fillRect( 0, 0, 192, 192 )
+/*    */				.set( 'fillStyle', '#653' )
+/*    */			.switchTo( fx.barCtx )
+/*    */				.clearRect( 0, 0, 192, 192 );
+/*    */
+/*    */		//	render 1st generation of the rug
+/* 12 */		for( var i=-1; ++i<9; fx.fooCtx.fillRect( (i%3)*64+1,Math.floor(i/3)*64+1,(fx.fractal[i]&1)*62,(fx.fractal[i]&1)*62 ))
+/*    */		{
+/*    */		}
+/*    */		//	render next generations of the rug
+/* 13 */		for( var j=0; j++<3; fx.fooCtx.drawImage( fx.barCtx.canvas,0,0 ) )
+/*    */		{
+/* 14 */			for( var i=-1; ++i<9; fx.barCtx.drawImage( fx.fooCtx.canvas,0,0,192,192, (i%3)*64+1,Math.floor(i/3)*64+1, (fx.fractal[i]&2)*31, (fx.fractal[i]&2)*31 ) )
+/*    */			{
+/*    */			}
+/*    */		}
+/*    */
+/*    */		//	render rotozoomed rug
+/* 15 */		fx
+/*    */			.logicCtx
+/*    */				.set( 'globalCompositeOperation', 'source-over' )
+/*    */				.clearRect( 0, 0, 256, 192 )
+/*    */				.save()
+/*    */				.translate( 96, 96 )
+/*    */				.rotate( (now/5841%2)*Math.PI )
+/*    */				.scale( 1+2*((now/1274)%1), 1+2*((now/1274)%1) )
+/*    */				.drawImage( fx.fooCtx.canvas,0,0,192,192, -288,-288,576,576 )
+/*    */				.drawImage( fx.fooCtx.canvas,0,0,192,192, -96 ,-96 ,192,192 )
+/*    */				.drawImage( fx.fooCtx.canvas,0,0,192,192, -32 ,-32 ,64 ,64  )
+/*    */				.restore()
+/*    */				.set( 'globalCompositeOperation', 'copy' )
+/*    */			//	prepare for hypnoglow
+/*    */			.switchTo( fx.renderCtx )
+/*    */				.set( 'globalCompositeOperation', 'source-over' )
+/*    */				.clearRect( 0, 0, 192, 192 )
+/*    */				.drawImage( fx.logicCtx.canvas, 0, 0 )
+/*    */				.set( 'globalCompositeOperation', 'lighter' );
+/*    */
+/*    */		//	hypnoglow
+/* 16 */		for( var i=-1; ++i<6; fx.renderCtx.drawImage( fx.logicCtx.drawImage( fx.logicCtx.canvas, 0, 0, 192>>i, 192>>i, 0, 0, 96>>i, 96>>i ).canvas, 0, 0, 96>>i,  96>>i, 0, 0, 192, 192 ) )
+/*    */		{
+/*    */		}
+/*    */
+/*    */		//	here we go again
+/* 17 */		setTimeout( render, 25 );
+/*    */	}
+/*    */
+/*    */
+
+// ]]>
+</script>
+
+</head> 
+<body> 
+    <button id="reload">Go Again</button>
+    
+<canvas id="render"  width="192" height="192">
+    <em> (You can't see this animation, because your browser doesn't support &lt;canvas&gt;.<br />
+        For a better internet experience go <a href="http://www.google.com/chrome">download google chrome</a>)</em>
+      
+    </canvas>
+<div id="hidden">
+		<canvas id="foo" width="192" height="192"></canvas>
+		<canvas id="bar" width="192" height="192"></canvas>
+		<canvas id="logic" width="192"	height="192"></canvas>
+		
+	</div>
+</body>
+</html>

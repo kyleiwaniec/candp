@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link type="text/css" href="http://collectiveintel.info/css/main.css"  rel="stylesheet" />
+    <link type="text/css" href="http://jscrollpane.kelvinluck.com/style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://jscrollpane.kelvinluck.com/script/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="http://jscrollpane.kelvinluck.com/script/jquery.jscrollpane.min.js"></script>
+    
+    <script src="https://www.google.com/jsapi"></script>
+    <style>
+        .scroll-pane{
+            height: 778px;
+            overflow: auto;
+            width:305px;
+        }
+    </style>
+    
+    <script>
+     google.setOnLoadCallback(init);
+//google.load("jquery", "1.7.1");
+google.load("visualization", "1", {packages:["corechart"]});
+
+function init() {
+	//window.onresize = resizeLeftPanel;
+	
+	//resizeLeftPanel();
+	loadTweets();
+        scrolling();
+        
+//	$.getJSON("http://collectiveintel.info/json/TwitterIndex.json", function(json) {
+//		//buildTwitterIndexChart(json);
+//	});
+}
+
+function loadTweets() {
+	var interval;
+	var max_id = 0;
+	var id = [];
+    var tweets = $("#divTweets");
+    var path = "http://collectiveintel.info/Tweets.php";
+	
+	$.getJSON("getfile.php", {u:path}, function(data) {
+		var tweet = data.T;
+		for (var i = 0; i < tweet.length; i++) {
+			var t = tweet[i];
+			if(t.Tweet_ID > max_id) max_id = t.Tweet_ID;
+			id.push(t.Tweet_ID);
+			$("<div class='SingleTweet'><p class='TweetUserName'>"+t.User_Display_Name+"</p><p class='TweetContent'>"+t.Tweet_Text+"</p></div>").appendTo("#divTweets");
+		}
+	});
+	
+	interval = setInterval (function() {
+		$.getJSON("getfile.php", {u:path}, function(data) {
+			var tweet = data.T;
+				for (var i = tweet.length-1; i > 0; i--) {
+					var t = tweet[i];
+					//if(t.Tweet_ID > max_id) max_id = t.Tweet_ID;
+					var tid = t.Tweet_ID;
+					
+					if ($.inArray(tid, id) == -1) {
+						var newTwit = $("<div class='SingleTweet'><p class='TweetUserName'>"+t.User_Display_Name+"</p><p class='TweetContent'>"+t.Tweet_Text+"</p></div>").hide(); 
+						tweets.prepend(newTwit);
+						newTwit.slideDown("slow");
+					}
+					id.push(tid);
+				}
+			});
+        }, 2000
+	);
+}
+
+//function resizeLeftPanel() {
+//	var height = 0;
+//	var body = window.document.body;
+//	if (window.innerHeight) {
+//		height = window.innerHeight;
+//	} else if (body.parentElement.clientHeight) {
+//		height = body.parentElement.clientHeight;
+//	} else if (body && body.clientHeight) {
+//		height = body.clientHeight;
+//	}
+//	
+//	document.getElementById('divLeftPane').style.height = ((height - 45) + "px");
+//	document.getElementById('divTweets').style.height = ((height - 100) + "px");
+//}
+
+function buildTwitterIndexChart(json) {
+	var tblTwitterIndex = new google.visualization.DataTable();
+	tblTwitterIndex.addColumn('string', 'Activity Time');
+	tblTwitterIndex.addColumn('number', 'Twitter Index');
+
+	var rowsTI = [];
+	for(var i=0;i<=json.TI.length-1;i++) {
+		var activityTime = json.TI[i]['AT'];
+		var twitterIndex = parseInt(json.TI[i]['I24']);
+		
+		var r = [];
+		r.push(activityTime);
+		r.push(twitterIndex);
+		
+		rowsTI.push(r);
+	}
+	tblTwitterIndex.addRows(rowsTI);
+	
+	var opt = { 
+		title:'Twitter Index - 2 Hours',
+		hAxis:{textPosition:'none'},
+		legend:{position:'bottom'},
+		chartArea:{left:60,top:60,width:"100%",height:"100%"}
+	};
+
+	var chart = new google.visualization.LineChart(document.getElementById('divTwitterIndex'));
+	chart.draw(tblTwitterIndex, opt);
+}
+        
+// jscroll pane //
+function scrolling(){
+    
+    $('.scroll-pane').jScrollPane();
+        var settings = {
+		showArrows: true,
+                autoReinitialise: true
+	};
+	var pane = $('.scroll-pane');
+	pane.jScrollPane(settings);
+//	var api = pane.data('jsp');
+//	var i = 1;
+
+	// Every second add some new content...
+//	setInterval(
+//		function()
+//		{
+//			api.getContentPane().append(
+//				$('<p />').text('This is paragraph number ' + i++)
+//			);
+//			// we could call "pane.jScrollPane(settings)" again but it is
+//			// more convenient to call via the API as then the original
+//			// settings we passed in are automatically remembered.
+//			api.reinitialise();
+//		},
+//		1000
+//	);
+	
+// end scroll pane
+}
+
+    </script>
+    
+  </head>
+  <body>
+      <div class="scroll-pane">
+    <div id="divTweets"></div>
+      </div>
+  </body>
+</html>

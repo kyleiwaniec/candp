@@ -1,0 +1,228 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+<head> 
+<meta charset='UTF-8'> 
+<style>
+   
+    body{
+/*        background:url(landscape.jpg) right top no-repeat #000;*/
+        margin:0;
+        padding:0;
+    }
+    #canvas{
+        position:absolute;
+        width:800px;
+        height:800px;
+        right:0;
+        
+    }
+    
+    #reload{
+        position:absolute;
+        top:15px;
+        left:15px;
+        cursor:pointer;
+    }
+    #hidden
+{
+	position:absolute;
+	position:fixed;
+	top:0;
+	left:0;
+	overflow:hidden;
+	width:0;
+	height:1px;
+}
+#render
+{
+	display:block;
+	margin:1em auto;
+	background:#000;
+	padding:1px;
+	border:1px solid #333;
+	overflow:hidden;
+	width:384px;
+	height:384px;
+}
+    
+</style>
+<script type="text/javascript">
+    //view-source:http://waldheinz.de/2010/07/animated-fractal-flame/
+
+var fCount = 40;
+var quality = 20;
+var iterations = 0;
+
+var running = false;
+var startTime = null;
+var updateCounter = 0;
+
+var ifsLeft = randomIfs(fCount);
+var ifsRight = randomIfs(fCount);
+var ifs = randomIfs(fCount);
+
+var anim = document.getElementById("animation");
+var left = document.getElementById("leftCanvas");
+var right = document.getElementById("rightCanvas");
+var fpsElem = document.getElementById("fps");
+
+var t = 0;
+var dt = 0.01;
+
+function setQuality(newQuality) {
+   quality = newQuality;
+   iterations = fCount / (quality);
+   draw(ifsLeft, left);
+   draw(ifsRight, right);   
+   draw(ifs, anim);
+}
+
+function doStop() {
+   running = false;
+   fpsElem.innerHTML = "-- fps";
+}
+
+function init() {
+   interpolate(ifs, ifsLeft, ifsRight, t);
+   setQuality(quality);
+}
+
+function interpolate(ifs, left, right, t) {
+   for (var i=0; i < ifs.length; i++) {
+      for (var j=0; j < ifs[i].length; j++) {
+         ifs[i][j] = t * right[i][j] + (1-t) * left[i][j];
+      }
+   }
+}
+
+function doStart() {
+   if (running) return;
+   
+   running = true;
+   startTime = timeStamp();
+   updateCounter = 0;
+   setTimeout(step, 50);
+}
+
+function timeStamp() {
+    return 0.001 * (new Date).getTime();
+}
+
+function step() {
+   if (!running) return;
+   t += dt;
+   if (t > 0.5) dt -= 0.0002;
+   else dt += 0.0002;
+
+   interpolate(ifs, ifsLeft, ifsRight, t);
+   draw(ifs, anim);
+
+   updateCounter++;
+   if (updateCounter % 20 == 0) {
+        var mutsec = (updateCounter)/(timeStamp() - startTime);
+        fpsElem.innerHTML = mutsec.toFixed(1) + " fps";
+        updateCounter = 0;
+        startTime = timeStamp();
+    }
+   
+   setTimeout(step, 1);
+}
+
+function randomIfs(funcs) {
+   var ifs = Array();
+   var s = 0.15 * Math.sqrt(fCount);
+
+   for (var i=0; i < funcs; i++) {
+      var func = Array();
+      for (var j=0; j < 6; j++) {
+         func.push((Math.random() - 0.5) * s);
+      }
+      ifs.push(func);
+   }
+   return ifs;
+}
+
+function draw(ifs, canvas) {
+   var ctx = canvas.getContext("2d");
+   var w = canvas.width;
+   var h = canvas.height;         
+   var dx = w / 2;
+   var dy = h / 2;
+   var cdata = null;
+   if (ctx.createImageData) {
+      cdata = ctx.createImageData(w, h);
+   } else {
+      cdata = ctx.getImageData(0, 0, w, h);
+      for (var i=0; i < 4*w*h; i++) {
+          cdata.data[i] = 0;
+      }
+   }
+   var data = cdata.data;
+   var x = 0;
+   var y = 0;
+   
+   for (var i=0; i < iterations * w * h; i++) {
+      var func = ifs[Math.floor(Math.random() * ifs.length)];
+      var o = 0;
+      var tx = func[o++] * x + func[o++] * y + func[o++];
+      y = func[o++] * x + func[o++] * y + func[o++];
+      x = tx;
+
+      if (i < 100) continue;
+
+      var px = Math.floor(x * w + dx);
+      var py = Math.floor(y * h + dy);
+
+      if (px >= 0 && px < w && py >= 0 && py < h) {
+         var off = (px + py * w) * 4;
+         data[off + 0] += 3 * quality;
+         data[off + 1] += 2 * quality;
+         data[off + 2] += 1 * quality;
+      }
+   }
+
+   for (var i=0; i < w * h; i++) {
+      data[i * 4 + 3] = 255;
+   }
+
+   ctx.putImageData(cdata, 0, 0);
+}
+
+setTimeout(init, 10);
+
+</script> 
+
+</head> 
+<body> 
+    <button id="reload">Go Again</button>
+    
+<table style="width:auto; margin: 0 auto;">
+   <tr><td>
+      <canvas id="leftCanvas" width="150" height="100"
+         onclick="ifsLeft = randomIfs(fCount); init(); return false;"></canvas>
+   </td><td rowspan="2">
+      <canvas id="animation" width="300" height="200" ></canvas>
+   </td></tr><tr><td>
+      <canvas id="rightCanvas" width="150" height="100"
+         onclick="ifsRight = randomIfs(fCount); init(); return false;"></canvas>
+   </td></tr>
+   <tr><td colspan="2">
+<form name="controls" action="" style="text-align: center; vertical-align:middle;">
+<div id="fps" style="float:left">-- fps</div>
+<div style="float:right;">
+<select name="qsel" size="1" 
+   onchange="setQuality(this.form.qsel.options[this.form.qsel.selectedIndex].value)">
+      <option value="5">Woo - Hoo</option>
+      <option value="20" selected>Good</option>
+      <option value="40">Fair</option>
+      <option value="60">So - So</option>
+</select>&nbsp;quality
+</div>
+<input type="button" value=" start " onclick="doStart()" >
+<input type="button" value=" stop " onclick="doStop()" >
+</form>
+   </td></tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+<title>TRANSAVE :: Technology</title>
+	<meta name="description" content="TK">
+	<meta name="copyright" content="Copyright (c) 2006 TRANSAVE">
+	<meta name="author" content="Kyle Hamilton">
+
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body  onload="MM_preloadImages('images/nav_aboutus_over.gif','images/nav_technology_over.gif','images/nav_products_over.gif','images/nav_invRelations_over.gif','images/nav_news_over.gif','images/nav_partnering_over.gif','images/nav_contact_over.gif')">
+<div id="wrap">
+	<div id="header"><h1><img src="images/logo.gif" alt="logo"  /></h1>
+	</div>
+	<div id="nav">
+		<!--#include file="includes/nav.html" -->
+  </div>
+	<div id="main">
+		<table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl">&nbsp;</td>
+	    <td>
+      <h1>Products</h1>
+			<p>Create a pipeline picture/chart with our drugs, what stage they are in, diseases that they are applied to. When they click a certain product, it takes them to a brief about the product.</p>
+			<ol class="none">
+	      <li><a href="#amik">SLIT Amikacin</a></li>
+				<li><a href="#cisp">SLIT Cisplatin</a></li>
+				<li><a href="#lipo">LipOva-Pt™</a></li>
+				<li><a href="#future">Future Products</a></li>
+			</ol>
+      <p>&nbsp;</p>
+      <center>
+      <p>Transave Pipeline</p>
+      <table border="1" cellpadding="0" cellspacing="0" width="70%">
+      	<tr>
+        	<td width="10%" align="center">&nbsp;</td>
+        	<td colspan="6" width="60%" align="center">Status / Phase</td>
+        </tr>
+        <tr>
+        	<td width="10%" align="center">Product</td>
+        	<td width="10%" align="center">Discovery</td>
+        	<td width="10%" align="center">Preclinical</td>
+        	<td width="10%" align="center">I</td>
+        	<td width="10%" align="center">II</td>
+        	<td width="10%" align="center">III</td>
+        	<td width="10%" align="center">NDA</td>
+        </tr>
+      	<tr>
+        	<td width="10%" align="center">SLITTM Amikacin (P. aeruginosa  Infections in CF)</td>
+        	<td colspan="6" width="60%" align="left"><table border="0" width="60%"><tr><td style="background-color: #000080">&nbsp;</td></tr></table></td>
+        </tr>
+      	<tr>
+        	<td width="10%" align="center">SLITTM Cisplatin (Lung Cancer)</td>
+        	<td colspan="6" width="60%"><table border="0" width="60%"><tr><td style="background-color: #000080">&nbsp;</td></tr></table></td>
+        </tr>
+      	<tr>
+        	<td width="10%" align="center">SLIT “Anti-Infective 2”</td>
+        	<td colspan="6" width="60%"><table border="0" width="30%"><tr><td style="background-color: #000080">&nbsp;</td></tr></table></td>
+        </tr>
+      	<tr>
+        	<td width="10%" align="center">SLIT “Gene”</td>
+        	<td colspan="6" width="60%"><table border="0" width="20%"><tr><td style="background-color: #000080">&nbsp;</td></tr></table></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+			<table border="1" cellpadding="0" cellspacing="0" width="70%" style="text-align: center;">
+      	<tr>
+        	<td width="30%" valign="top">Program</td>
+					<td width="30%" valign="top">Development Status</td>
+					<td width="30%" valign="top">Commercialization Rights</td>
+        </tr>
+        <tr>
+        	<td valign="top" style="color: #5566FF; text-decoration: underline;">SLIT™ Amikacin for Pseudomonas  infections in CF</td>
+					<td style="text-align: left; padding-left: 20px;" valign="top">
+           	<li>Phase I clinical trial in CF patients completed.</li>
+						<li>Phase IIa trials in CF patients (Europe) in progress – Interim analysis of data on-going</li>
+						<li>Phase IIb trial to commence March 2007</li>
+						<li>Orphan drug status granted in U.S. and Europe</li>
+					<td valign="top">Transave</td>
+        </tr>
+        <tr>
+        	<td valign="top" style="color: #5566FF; text-decoration: underline;">SLIT™ Cisplatin for lung cancer</td>
+          <td style="text-align: left; padding-left: 20px;" valign="top">
+           	<li>Phase I/IIa trial in end-stage lung cancer patients completed.</li>
+						<li>Phase II trial in recurrent osteosarcoma metastatic to the lung on-going (U.S. IND)</li>
+						<li>Phase II trials in BAC (India) on-going</li>
+          </td>
+					<td valign="top">Transave</td>
+       	</tr>
+       	<tr>
+       		<td valign="top" style="color: #5566FF; text-decoration: underline;">TR-04 for intracellular infections</td>
+          <td style="text-align: left; padding-left: 20px;" valign="top">
+           	<li>Preclinical</li>
+          </td>
+          <td valign="top">Transave</td>
+        </tr>
+        <tr>
+        	<td valign="top" style="color: #5566FF; text-decoration: underline;">TR-05 for gene delivery</td>
+          <td style="text-align: left; padding-left: 20px;" valign="top">
+           	<li>Preclinical</li>
+          </td>
+          <td valign="top">Transave</td>
+        </tr>
+        <tr>
+        	<td valign="top" style="color: #5566FF; text-decoration: underline;">LipOva-Pt™ for ovarian cancer</td>
+          <td style="text-align: left; padding-left: 20px;" valign="top">
+           	<li>Preclinical: evidence that intraperitoneal SLIT™ Cisplatin improves overall survival and reduces systemic toxicities</li>
+	          <li>Orphan drug status granted in U.S.</li>
+          </td>
+					<td valign="top">Transave</td>
+        </tr>
+      </table>
+      </center>
+      <ol class="circle"><li><a name="amik">SLIT™ Amikacin – A Potential New Weapon in the Treatment of Pseudomonas Infections</a></li></ol>
+			<p>There are over 70,000 cystic fibrosis patients in the U.S. and Europe. According to the North America Cystic Fibrosis Foundation (Patient Registry, 2005), 85% of cystic fibrosis patients would have contracted Pseudomonas lung infections by the age 18 years. Although improved inhaled therapies and nutrition have increased the life expectancy of a cystic fibrosis patient to 36.8 years compared to 31 years in the 1990’s, improvements still need to be made in enhancing the efficacy of inhaled antibiotic therapy and, most importantly, the patient’s quality of life.</p>
+			<p>Some cystic fibrosis patients spend almost 3-5 hours per day taking medications including inhaled antibiotics. The current gold standard inhaled antibiotic is administered 2x per day for 28 days “on drug” with a 28 day period “off drug”. Any inhaled treatment that can reduce the weekly treatment burden of a cystic fibrosis patient could represent a significant breakthrough in improving the quality of care.</p>
+			<p>Patients produce and build up sputum and a biofilm which serves as a barrier and a virtual fortress for the Pseudomonas aeruginosa infection. Penetration of this barrier by conventional antibiotics is impaired and, thus, unable to deliver effective dose levels to attack the infection. In addition, drugs delivered to the lung have a very short residence time in the lung and are cleared rapidly into the blood stream.</p>
+			<p>SLIT™ Amikacin is constructed so that the lipid carrier system shields it from non-specific binding to the sputum/biofilm, allowing for penetration of the drug into the biofilm where the infection resides.</p>
+			<p>The sustained release delivery also reduces dosing frequency (one time per day or less frequent), thereby reducing a patient’s treatment burden and potentially improving patient compliance. Sustained release of the antibiotic above the therapeutic level may also decrease the potential for the development of resistant strains of bacteria.</p>
+			<p>The overall product profile of enhanced efficacy through biofilm penetration and facilitated release (virulence factors), reduced frequency, decreased side effects and low incidence of bacterial resistance may lead to broader patient usage in the U.S. and Europe.</p>
+			<p>Transave's SLIT™ Amikacin is locally delivered via inhalation using commercially available nebulizers utilized by cystic fibrosis patients for inhaled therapy. So, there is no need for the additional cost and burden of another nebulizer system. Transave continues to seek various alternatives to the current nebulizer and compressor systems for more rapid delivery time and also to provide greater portability than currently available.</p>
+      <p>Phase II SLIT™ Amikacin clinical trials are underway to assess its safety and efficacy as measured by improvements in pulmonary function and reductions in bacterial load.</p>
+			<p>SLIT™ Amikacin has been granted Orphan Drug status in both the U.S. and Europe.</p>
+			<p>&nbsp;</p>
+			<ol class="circle"><li><a name="cisp">SLIT™ Cisplatin – A Potential New Paradigm in the Treatment of Lung Cancer</a></li></ol>
+			<p>Systemic chemotherapy has achieved limited success in the treatment of lung cancer, with only small incremental improvements in treatment outcomes over the last four decades.  Lung cancer was the leading cause of cancer deaths in the U.S. (167,000 in the U.S.).  The limited success of systemically administered chemotherapeutics is driven by a number of factors including: poor absorption of drugs into the lung (0.1-1%); short pulmonary residence times of drug; and dose-limiting systemic toxicities due to poor lung targeting.</p>
+			<p>Transave’s inhaled SLIT™ Cisplatin is one of the first attempts at localized delivery of a cytotoxin to the lung for the site-specific treatment of lung cancer</p>
+			<p>Cisplatin is a potent and widely utilized cytotoxin as monotherapy or in combination with other chemotherapeutics. However, its clinical use is limited by severe dose limiting toxicities</p>
+			<p>Less than 1% of the dose of a chemotherapeutic administered systemically gets to the lung. SLIT™ Cisplatin is formulated to deliver targeted concentrations of the cytotoxin to the tumor site but minimize systemic exposure and the dose limiting toxicities seen with intravenous administration (neurotoxicity, nephrotoxicity, myelosuppression, nausea/vomiting)</p>
+			<p>SLIT™ Cisplatin is delivered within a 1-2 hour session without the need for hydration prior to treatment. This is in contrast to the standard practice of 2 hours of hydration prior to the slow intravenous infusion of cisplatin (~6 hours)</p>
+			<p>A Phase IIa clinical trial in end stage lung cancer patients demonstrated that SLIT™ Cisplatin was well tolerated for up to 6 dose escalations (1.5 – 64 mg/m2) without the dose limiting toxicities seen with intravenous cisplatin administration.</p>
+			<p>SLIT™ Cisplatin is currently in Phase II clinical trials in patients with recurrent osteosarcoma metastatic to the lung and patients with bronchoalveolar carcinoma.</p>
+			<ol class="circle"><li><a name="lipo">LipOva-Pt™ (Intraperitoneal SLIT™ Cisplatin) for the Treatment of Ovarian Cancer</a></li></ol>
+			<p>&nbsp;</p>
+      <ol class="circle"><li><a name="future">FUTURE PIPELINE OF PRODUCTS</a></li></ol>
+      <p>SLIT™ Technology can be applied to virtually any molecule including small and large molecules (peptides, proteins) and genes. Therefore, Transave is evaluating a number of SLIT™ formulations to be developed in-house and with partners to continue to build a robust pipeline of inhaled products.</p>
+			<ul>
+      	<li>Transave has begun preclinical formulation work on a SLIT™ Antibiotic to combat infectious diseases that utilize host intracellular uptake as means of infection (such as anthrax and tuberculosis).</li>
+				<li>The application of SLIT™ Technology as a carrier for gene vector delivery into the lung is under evaluation.</li>
+				<li>In collaboration with a partner, early feasibility work is planned to develop a SLIT™ formulation of a peptide for treating respiratory viral infections.</li>
+      </ul>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+			</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+	</div>
+  <div id="sidebar">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td align="right"><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia arcu, et luctus mi erat vestibulum sem.&quot;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td colspan="3"><img src="images/girl_with_bubbles.gif" width="350" height="254" /></td>
+      </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&nbsp;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td align="right"><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+		
+  </div>
+	<div id="footer">
+		<p align="center"><!--#include file="includes/footer.html" --></p>
+	</div>
+</div>
+</body>
+</html>

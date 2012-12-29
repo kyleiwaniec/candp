@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+
+<style>
+/* HTML Tag Redefinition */
+/* html, body {height: 100%;  } */
+body { background-color: #ffffff; padding: 0px; margin: 0px; }
+img {border: 0px}
+a { cursor:pointer}
+
+label { font-weight:normal;}
+
+/* Page Structure / Navigation */
+#page { width:960px; margin:auto; padding-left:20px; text-align:left; /* background: url(http://www.wallbrink.com.au/concrete5/themes/wla/images/web_grid.jpg) no-repeat left top; */ }
+	#page #headerSpacer { height:22px }
+	#page #header{ position:relative; padding-bottom:15px; height:39px; width:940px; line-height: 0px; } 
+
+	#page #central { width: 940px; min-height: 600px; clear: both; }
+	#page #central.borders { min-height: 598px; height: auto; border-top: 1px solid #a19e90; border-bottom: 1px solid #a19e90; }
+	#page #central.no-sidebar, #page #central.central-right { min-height: 599px; height: auto; border-bottom: 1px solid #a19e90; }
+ 
+#body .position-statement { float: left; width: 220px; height: 120px; color: #fff; position: absolute; top: 382px; font-size: 24px; z-index: 15; padding: 15px 10px; }
+#body .position-statement .borders { height: 120px; border-top: 1px solid #fff; border-bottom: 1px solid #fff; }
+#body .position-statement .indent { margin: 15px 10px;}
+/* transparent elements, home page position statement */
+#body .position-statement, .powerSlide .largeText, .powerSlide .smallText, .powerSlide .linkText { background: transparent; /* background: rgb(184,181,171) */ transparent; background: rgba(184,181,171,0.8); 
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCB8B5AB,endColorstr=#CCB8B5AB)"; /* IE8 */
+    		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCB8B5AB,endColorstr=#CCB8B5AB);   /* IE6 & 7 */
+    		zoom: 1; }
+
+#page .no-sidebar #body { float: none !important; width: auto !important; }
+#sidebar { float: right; width: 240px; overflow: hidden; }
+
+h1.heading{ font-size:16px; color: #7d776b; padding-bottom: 2px; }
+h1.heading .quals{ font-size:11px; color: #b8b5ab; }
+
+/* controls the look of header AutoNav elements */
+#page #header #headerNav{ float: right; width:470px; margin-top: 26px; /* padding-bottom: 0px; */ position: relative; z-index: 25; overflow:visible; }
+#page #header ul.nav-header{  text-decoration:none; color:#b8b5ab; list-style:none; list-style-type:none; padding:0px; margin: 0px; width:auto; overflow:visible; }
+#page ul { list-style:none; list-style-type:none; }
+ul.nav-header ul { width:200px; margin: 0; }
+
+/* Drop Down Menu styling */
+
+ul.nav-header li{float:left; padding:0px ; width:207px; position:relative; margin-top:0px; line-height: 18px; }
+ul.nav-header ul li{ line-height: 16px; height: 21px; }
+/* style the links for the top level */
+ul.nav-header a, ul.nav-header a:visited { display:block; font-size:13px; padding: 0px 0px 10px 10px; }
+/* style the top level hover */
+ul.nav-header a:hover, ul.nav-header ul a:hover{ /* background:#b7d186; */ }
+ul.nav-header :hover > a, ul.nav-header ul :hover > a {/* color:#000; background:#b7d186; */}
+/* style the second level background */
+/* ul.nav-header ul a.drop, ul.nav-header ul a.drop:visited {} */
+/* style the second level links */
+ul.nav-header ul a, ul.nav-header ul a:visited { display: block; height:auto; line-height:1em; padding:4px 10px; width:187px; color: #fff; }
+
+/* transparent elements, second level links */
+ul.nav-header ul a, ul.nav-header ul a:visited { background: transparent; /* background: rgb(184,181,171) transparent */; background: rgba(184,181,171,0.95); 
+			-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2B8B5AB,endColorstr=#F2B8B5AB)"; /* IE8 */
+    		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#F2B8B5AB,endColorstr=#F2B8B5AB);   /* IE6 & 7 */
+    		zoom: 1; }
+    		
+ul.nav-header li a.nav-selected { text-decoration: underline; color:#ee4036; }
+ul.nav-header li a.nav-path-selected { color:#ee4036 }
+/* style the last link on the top level */
+ul.nav-header li.nav-last { float: left; width: 56px; position: relative; }
+ul.nav-header a.nav-last { float: right; position: relative; }
+/* undo last link styling for the second level */
+ul.nav-header li.nav-dropdown ul li.nav-first { height: 27px; }
+ul.nav-header li.nav-dropdown ul li.nav-last { float: left; padding: 0px; width: 207px; position: relative; height: 28px; }
+ul.nav-header li.nav-dropdown a.nav-last { float: left; position: relative; padding-bottom: 11px ;}
+ul.nav-header ul a.nav-first { float: left; position: relative; padding-top: 10px;}
+
+/* make the second level visible when hover on first level list OR link */
+ul.nav-header li:hover ul, ul.nav-header a:hover ul{ visibility: visible; }
+/* keep the third level hidden when you hover on first level list OR link */
+ul.nav-header :hover ul ul{ visibility: hidden;}
+/* make the third level visible when you hover over second level list OR link */
+ul.nav-header :hover ul :hover ul{ visibility: visible;}
+/* hide the sub levels and give them a positon absolute so that they take up no room */
+ul.nav-header ul { visibility: hidden; position: absolute; height: 0; top: 28px; left: 0; width: 207px; }
+/* end Drop Down Menu */
+
+
+/* controls the look of sidebar AutoNav elements */
+#sidebar ul.nav, #bottom-area ul.nav { list-style: none; margin: 0px; padding: 0px; line-height: 22px; padding-top: 4px; }
+#sidebar ul.nav li { font-size: 12px; margin-top: 5px; padding: 0px; line-height: 15px; }
+
+#page #central #bottom-area ul.nav li { font-size: 11px; margin-top: 6px; margin-bottom: 8px; padding: 0px; padding-left: 10px; background: url(http://www.wallbrink.com.au/concrete5/themes/wla/images/previous-arrow-4.gif) no-repeat left !important; }
+#sidebar li.nav-selected { display: none; }
+#page #central #bottom-area li { display: none; }
+#page #central #bottom-area li.nav-path-selected { display: block; color: #a19e90; padding-left: 10px; line-height: 12px; text-transform: uppercase; }
+#page #central #bottom-area ul.nav a { color: #b8b5ab; }
+
+#page #footer{width:910px; text-align: right; padding-left: 0px; padding-top:1px; padding-bottom:0px; color: #b8b5ab; font-size:11px; clear:both;}
+
+/* two panel page styling */
+#body #title { font-size: 11px; color: #b8b5ab; padding: 14px 0px 12px 0px; text-transform: uppercase; }
+#body #left-area { width: 380px; float: left; }
+#body #left-area .large-text { margin-top: -2px; font-size: 21px; line-height: 30px; }
+#body #left-area .small-area { width: 220px; padding-top: 30px; }
+#body #right-area { width: 380px; padding: 1px 80px 0px 100px; float: right; }
+#body #right-area .section { width: 380px; border-top: 1px solid #a19e90; padding-top: 9px; padding-right: 80px; }
+#body #left-area .section { border-top: 1px solid #a19e90; padding-top: 5px; }
+#body #left-area .small-area .nav-title { padding: 10px 0px; border-top: 1px solid #a19e90; border-bottom: 1px solid #a19e90; text-transform: uppercase; }
+
+/* MISC STYLES & SHORTCUTS */
+div.clear{ clear:both }
+
+/* style for scrollbar on two-panel pages */
+#central.borders .jb_scrollbar { position: relative; float: right; clear: none; }
+
+/* Power Slider Overrides */
+.powerSliderShell {  }
+	.powerSliderContainer {  }
+		.powerSlide { display: block; text-decoration: none; position: relative; }
+		
+			.powerSlide img {  }
+			.powerSlide .largeText, .powerSlide .smallText, .powerSlide .linkText { font-size: 13px; width: 200px; height: 15px; display: block; position: absolute; }
+			.powerSlide .largeText, .powerSlide .smallText { color: #fff; }
+			/* .ie-ccm-image-caption .image-caption { background: transparent;	} */
+			 
+			.powerSlide .largeText { bottom: 119px; padding: 10px 20px; padding-top: 0px; }
+			.powerSlide .smallText { bottom: 90px; padding: 0px 20px; padding-bottom: 14px; }
+			.powerSlide .linkText { bottom: 45px; width: 240px; height: 45px; color: #47443e; }
+			.powerSlide .linkText a { color: #47443e; }
+			.powerSlide .border { width: 220px; margin: 0px 10px; border-top: 1px solid #fff; padding-top: 14px; }
+			.powerSlide .portfolioLink { padding: 0px 0px 0px 10px; }
+			
+	
+/* Custom Project Page */
+#body #top-area { width: 940px; height: 375px; }
+#body #bottom-area { float:left; }
+#sidebar .image { float: left; padding-top: 14px; }
+#sidebar .image-text a { float: left; font-size: 11px; color: #ee4036; padding-top: 12px; padding-left: 5px; }
+#sidebar .nav-title, #sidebar ul.nav { width: 140px; float: right; font-size: 12px;}
+#sidebar .nav-title { padding: 10px 0px; border-top: 1px solid #a19e90; border-bottom: 1px solid #a19e90; }
+	
+/* Siszimis Download Folder styling */
+#SisimizisDownloadFolder tr { padding-top: 2px; }
+td.filename { height: 25px; }
+td.filesize { width: 50px; font-size: 11px; color: #b8b5ab; text-align: right; }
+
+
+body { 
+	/* customize_body */ font-size: 12px; /* customize_body */
+	/* customize_body */ color: #a19e90; /* customize_body */
+	/* line-height:18px; */
+}
+
+img {border: 0px}
+a {
+	/* customize_link */ text-decoration:none; color: #a19e90; /* customize_link */
+} 
+a:hover {
+	/* customize_link_hover */ text-decoration:underline; color: #a19e90; /* customize_link_hover */
+} 
+
+.nav-selected{text-decoration:none; color:#ee4036}
+.nav-path-selected {text-decoration:none; color:#ee4036}
+
+.position { color: #7d776b; padding-bottom: 13px; }
+.smalltext { font-size: 10px; line-height: 15px; }
+.tasks { padding-bottom: 5px; }
+.associates { font-size: 10px; color: #b8b5ab; }
+.contacthead { line-height: 19px; padding-top: 1px; margin: 0px; }
+
+
+ul {margin-left: 0px; margin-top: 0px; padding-left: 0px; margin-bottom: 0px; }
+li {line-height: 16px; padding-top: 2px; }
+
+h1,h2,h3,h4,h5{ margin:0px 0px 0px 0px; padding:0px 0px; margin-top:0px }
+h1{ font-size: 16px; line-height:21px; padding-top: 3px; padding-bottom: 11px; }
+h2{ font-size: 16px; line-height:21px; padding-top: 2px; padding-bottom: 1px; }
+h3{ font-size: 15px; line-height:21px }
+h4{ font-size: 14px; line-height:18px }
+h5{ font-size: 13px; line-height:16px }
+p{ padding: 0px 0px 0px 0px; margin: 0px 0px 10px 0px; line-height: 20px; }
+textarea{ resize:none}
+</style>
+
+<body>
+<div id="page">
+	<div id="headerSpacer"></div>
+	<div id="header">
+		
+				
+			<div class="clear"></div>
+
+					
+		<div id="headerNav">
+			<ul class="nav-header"><li class="nav-first nav-dropdown"><a href="/concrete5/index.php/company-profile/approach/" target="_self" class="nav-first nav-dropdown">profile</a><ul><li class="nav-first"><a href="/concrete5/index.php/company-profile/approach/" target="_self" class="nav-first">approach</a></li><li class=""><a href="/concrete5/index.php/company-profile/expertise/" target="_self" class="">expertise</a></li><li class=""><a href="/concrete5/index.php/company-profile/people/" target="_self" class="">people</a></li><li class="nav-last"><a href="/concrete5/index.php/company-profile/further-information/" target="_self" class="nav-last">further information</a></li></ul></li><li class="nav-dropdown"><a href="/concrete5/index.php/portfolio/public-space/" target="_self" class="nav-dropdown">portfolio</a><ul><li class="nav-first"><a href="/concrete5/index.php/portfolio/public-space/" target="_self" class="nav-first">public space</a></li><li class=""><a href="/concrete5/index.php/portfolio/infrastructure/" target="_self" class="">infrastructure</a></li><li class=""><a href="/concrete5/index.php/portfolio/community/" target="_self" class="">community</a></li><li class=""><a href="/concrete5/index.php/portfolio/private-space/" target="_self" class="">private space</a></li><li class="nav-last"><a href="/concrete5/index.php/portfolio/landscape-planning/" target="_self" class="nav-last">landscape planning</a></li></ul></li><li class="nav-last"><a href="/concrete5/index.php/contact-us/" target="_self" class="nav-last">contact</a></li></ul>		</div>
+		
+		
+		<div id="header-area">
+			<a href="/concrete5/"><img border="0" class="ccm-image-block" alt="WLA home" src="/concrete5/files/8213/2927/6703/WLA_logo2.gif" width="164" height="39"></a>	
+		</div>
+
+	</div>				
+	<div id="central" class="homepage">
+		
+		<div id="body">	
+				<div id="blockStyle895Main22" class="position-statement ccm-block-styles">
+<div class="borders">
+<div class="indent">People. Place.<br>Purpose.</div>
+</div></div>
+
+
+<script type="text/javascript">
+
+$(function(){
+
+	$("#powerSliderContainer1217").cycle({ 
+
+		fx: 'fade',
+
+		next: '#powerSliderNext1217',
+
+		prev: '#powerSliderPrev1217',
+
+		pager: '#powerSliderPagination1217',
+
+		cleartypeNoBg: true,
+
+		timeout: 6000
+
+	});
+
+});
+
+</script>
+
+<style>
+
+#powerSliderBlock1217 { position: relative; width: 940px; height: 600px; }
+
+#powerSliderContainer1217 { position: relative; overflow: hidden; width: 940px; height: 600px; }
+
+#powerSliderContainer1217 .powerSlide { height: 600px; }
+
+</style>
+
+
+
+<div class="powerSliderShell" id="powerSliderBlock1217">
+
+	
+
+    <div class="powerSliderContainer" id="powerSliderContainer1217">
+
+    
+
+            
+            
+
+			<div class="powerSlide" style="position: absolute; z-index: 6; top: 0px; left: 0px; display: block; width: 940px; height: 600px; opacity: 1; ">	
+
+                <img src="/concrete5/files/9213/3116/9631/Meridian_940_3_Home.jpg">
+
+                
+                <span class="largeText">Meridian Community Park</span>
+
+                
+                <span class="smallText">Engaging people</span>
+
+                                
+                <div class="linkText">
+                	<div class="border">
+            		<a class="portfolioLink" href="/concrete5/index.php/portfolio/public-space/">view public space portfolio</a>&nbsp;›
+            		</div>
+            	</div>
+
+			</div>	
+
+
+		
+            
+
+			<div class="powerSlide" style="position: absolute; top: 0px; left: 0px; width: 940px; height: 600px; z-index: 5; opacity: 0; display: none; ">	
+
+                <img src="/concrete5/files/6213/3030/3750/DeerPark_940_6_Home.jpg">
+
+                
+                <span class="largeText">Deer Park Bypass Concept</span>
+
+                
+                <span class="smallText">Journey spaces</span>
+
+                                
+                <div class="linkText">
+                	<div class="border">
+            		<a class="portfolioLink" href="/concrete5/index.php/portfolio/infrastructure/">view infrastructure portfolio</a>&nbsp;›
+            		</div>
+            	</div>
+
+			</div>	
+
+
+		
+            
+
+			<div class="powerSlide" style="position: absolute; top: 0px; left: 0px; width: 940px; height: 600px; z-index: 5; opacity: 0; display: none; ">	
+
+                <img src="/concrete5/files/3813/3116/9751/Evolution_940_8_Home.jpg">
+
+                
+                <span class="largeText">Evolution Garden</span>
+
+                
+                <span class="smallText">A garden for people</span>
+
+                                
+                <div class="linkText">
+                	<div class="border">
+            		<a class="portfolioLink" href="/concrete5/index.php/portfolio/private-space/">view private space portfolio</a>&nbsp;›
+            		</div>
+            	</div>
+
+			</div>	
+
+
+		
+            
+
+			<div class="powerSlide" style="position: absolute; top: 0px; left: 0px; width: 940px; height: 600px; z-index: 5; opacity: 0; display: none; ">	
+
+                <img src="/concrete5/files/8213/3116/9799/MeridianCommunity_940_1_Home.jpg">
+
+                
+                <span class="largeText">Meridian</span>
+
+                
+                <span class="smallText">Connecting people</span>
+
+                                
+                <div class="linkText">
+                	<div class="border">
+            		<a class="portfolioLink" href="/concrete5/index.php/portfolio/community/">view community portfolio</a>&nbsp;›
+            		</div>
+            	</div>
+
+			</div>	
+
+
+		
+            
+
+			<div class="powerSlide" style="position: absolute; top: 0px; left: 0px; width: 940px; height: 600px; z-index: 5; opacity: 0; display: none; ">	
+
+                <img src="/concrete5/files/6713/3116/9951/BassHwy_940_6_Home.jpg">
+
+                
+                <span class="largeText">Bulla Bypass</span>
+
+                
+                <span class="smallText">Visual Impact Assessment</span>
+
+                                
+                <div class="linkText">
+                	<div class="border">
+            		<a class="portfolioLink" href="/concrete5/index.php/portfolio/landscape-planning/">view landscape planning portfolio</a>&nbsp;›
+            		</div>
+            	</div>
+
+			</div>	
+
+
+		
+
+
+	</div><!-- .powerSliderContainer -->
+
+    
+
+    
+    
+
+    
+
+
+</div><!-- #powerSliderShell  -->		</div>
+		
+	</div>
+
+<script type="text/javascript" src="/concrete5/packages/jb_popup/blocks/jb_popup/js/jquery.prettyPhoto.js?"></script>
+
+	<div id="footer">
+			
+	</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .newtwit{
+            height:200px;
+            background-color:greenyellow;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $(function(){
+        var interval;
+        var id = [];
+        // get twitter trends using json
+        // var url = "https://api.twitter.com/1/trends/1.json?callback=?";
+        var path = "http://collectiveintel.info/Tweets.php";
+        
+        
+        $.getJSON("getfile.php", {u:path},  function(data){
+          //  alert(data.T[0].Tweet_ID);
+          var tweet = data.T;
+          for (var i = tweet.length; i > 0; i--){
+            var t = tweet[i];
+            id.push(t.Tweet_ID);
+            $("<div>"+t.User_Display_Name+"<br/>"+t.Tweet_Text+"<\/div>").appendTo(".tweets"); 
+          }
+          
+        });
+       
+        
+        
+        interval = setInterval (function(){
+        $.getJSON("getfile.php", {u:path},  function(data){
+          //  alert(data.T[0].Tweet_ID);
+          var tweet = data.T;
+         // alert(Array.max(id));
+          for (var i = 0; i < tweet.length; i++){
+            var t = tweet[i];
+            var tid = t.Tweet_ID;
+            
+            if ($.inArray(tid, id) == -1){
+                //alert("new twit");
+               var newTwit = $("<div class='newtwit'>"+t.User_Display_Name+"<br/>"+t.Tweet_Text+"<\/div>").hide(); 
+               $(".tweets").prepend(newTwit);
+               newTwit.slideDown("slow");
+            }
+            id.push(tid);
+          }
+        });
+        }, 2000);
+        
+       
+            
+//test:
+//                var newTwit = $("<div class='newtwit'>test<\/div>").hide(); 
+//               $(".testSlide").prepend(newTwit);
+//               newTwit.slideDown("slow");
+      });
+    </script>
+  </head>
+  <body>
+      <div class="testSlide"></div>
+    <div class="tweets"></div>
+  </body>
+</html>

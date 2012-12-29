@@ -1,0 +1,64 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+<head> 
+<meta charset='UTF-8'> 
+<style>
+   
+    body{
+        background:url(landscape.jpg) right top no-repeat #000;
+        margin:0;
+        padding:0;
+    }
+    #canvas{
+        position:absolute;
+        width:800px;
+        height:800px;
+        right:0;
+        
+    }
+    
+    #reload{
+        position:absolute;
+        top:15px;
+        left:15px;
+        cursor:pointer;
+    }
+    
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="fractal-c.js"></script>
+<script>
+    
+    $(function(){
+        
+        var $canvas = $("#canvas");
+        
+                    $("#reload").click(function(){
+                    window.location.reload();
+                    });
+                    $.FractalTree({
+                            color: "rgba(0,0,0,.5)", 
+                            initX: 400, 
+                            initY: 700, 
+                            max_sub_branch: 5,
+                            max_sub_angle: 3*Math.PI/4,
+                            max_size: 5,
+                            branch_length: 65, 
+                            canvas:$canvas
+                            });
+			
+		});
+</script>
+
+</head> 
+<body> 
+    <button id="reload">Go Again</button>
+    
+<canvas id="canvas" width="800" height="800">
+    <em> (You can't see this animation, because your browser doesn't support &lt;canvas&gt;.<br />
+        For a better internet experience go <a href="http://www.google.com/chrome">download google chrome</a>)</em>
+      
+    </canvas>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Splash</title>
+	<link rel="stylesheet"  href="jquery.mobile-1.1.0/demos/css/themes/default/jquery.mobile-1.1.0.css" />
+	<link rel="stylesheet" href="jquery.mobile-1.1.0/demos/docs/_assets/css/jqm-docs.css" />
+        <link rel="stylesheet" href="styles.css"/>
+	<script src="jquery.mobile-1.1.0/demos/js/jquery.js"></script>
+	<script src="jquery.mobile-1.1.0/demos/docs/_assets/js/jqm-docs.js"></script>
+	<script src="jquery.mobile-1.1.0/demos/js/jquery.mobile-1.1.0.js"></script>
+    
+	<style type="text/css">
+	
+	body {
+		background-repeat:no-repeat;
+		background-attachment:fixed;
+		background-position:center;
+		background-size:cover;
+		margin:0;
+		padding:0;
+			-webkit-background-size: 100% auto;
+	}
+	
+	.ui-bar-a.ui-footer { background: #000; background:url(images/blackbar_640.png); width:auto; height:53px;}
+	
+	.ui-content services {
+		background:url(images/640x980_bkg) no-repeat !important;
+	}
+	
+	</style>
+    
+	<script type="text/javascript">
+            
+        
+            
+	$( document ).delegate("#services", "pageinit", function() {
+
+
+            $("body").css({"background":"url(images/red.jpg)"});
+            //alert('A page with an ID of "services" was just created by jQuery Mobile!');
+            var pageId = $(".ui-page").attr("id");    
+        alert(pageId);
+        });
+        
+        $( document ).delegate("#home", "pageinit", function() {
+
+
+            $("body").css({"background-image":"url(images/forrest-bg.jpg)"});
+            //alert('A page with an ID of "home" was just created by jQuery Mobile!');
+            var pageId = $(".ui-page").attr("id");    
+        alert(pageId);
+        });
+	
+	</script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="home" data-theme="none">
+        <div data-role="content" data-theme="none">	     	
+		</div>
+        
+        <div data-role="footer" id="ftrbtn" data-position="fixed"  data-tap-toggle="false" >  
+                   <ul data-role="listview">
+                    <li class="btn_a"><a href="about.html">About</a></li>
+                    <li class="btn_b"><a href="services.html">Services</a></li>
+                   <li class="btn_c"><a href="contact.html">Contact</a></li>
+                   </ul>      
+        </div> 
+              
+    </div>    <!--Page-->
+</body>
+</html>

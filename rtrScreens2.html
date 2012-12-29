@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Robert The Realtor Screenshots</title>
+
+    <script src="js/jquery.tools.min.js"></script>
+    <script src="js/jquery-ui-1.8.13.custom.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- required CSS files -->
+
+<link rel="stylesheet" type="text/css" href="css/scrollable-horizontal.css" />
+<link rel="stylesheet" type="text/css" href="css/scrollable-buttons.css" />
+<link rel="stylesheet" type="text/css" href="css/scrollable-navigator.css" />
+
+
+
+
+<!-- "previous page" action -->
+<a class="prev browse left"></a>
+
+<!-- root element for scrollable -->
+<div class="scrollable" id="chained">   
+   
+   <!-- root element for the items -->
+   <div class="items">
+   
+      <div class="item">
+         <iframe src="http://www.roberttherealtor.com" width="964px" height="620" frameborder="0"></iframe>
+      </div>
+      <div class="item">
+         <iframe src="http://www.roberttherealtor.com/buyers.php" width="964px" height="620" frameborder="0"></iframe>
+      </div>
+      
+      <div class="item">
+         <iframe src="http://www.roberttherealtor.com/sellers.php" width="964px" height="620" frameborder="0"></iframe>     
+      </div>
+      <div class="item">
+         <iframe src="http://www.roberttherealtor.com/communities.php" width="964px" height="620" frameborder="0"></iframe>      
+      </div>
+           
+      
+   </div><!-- items -->
+   
+</div><!-- scrollable -->
+
+<!-- "next page" action -->
+<a class="next browse right"></a>
+
+<!-- wrapper for navigator elements -->
+
+<br clear="all" />
+<div class="linkandnav"><a href="http://www.roberttherealtor.com">RobertTheRealtor.com</a><div class="navi"></div></div>
+
+<script>
+$(function() {
+
+$("#chained").scrollable({easing: 'swing', circular: true}).navigator().autoscroll({
+	interval: 3000		
+});	
+
+$(".items div").live('mouseover', function(){
+
+
+
+    var offset = $(this).offset();
+    var xpos = offset.left;
+    var ypos = offset.top;
+
+
+    var x1 = xpos, x2 = xpos;
+     
+    var y2 = ypos;
+    var y1 = ypos-(($(this).children("img").height())-600);
+ 
+    //alert(y1);
+     
+    $(this).draggable({ cursor: 'move', scroll: false, containment: [x1, y1, x2, y2]});
+    $(this).children("img").disableSelection();
+    
+
+});
+
+
+});
+</script>
+
+
+
+</body>
+
+</html>

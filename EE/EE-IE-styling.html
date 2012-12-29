@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+  <title>Label Website</title>
+  <style>
+      #content{
+          position:absolute;
+          top:300px;
+          left:200px;
+          width:300px;
+          height:200px;
+          background-color:grey;
+      }
+  </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+	$('a.plan_link').hover(function(e){
+		var planNbr = $(this).attr('id');
+		
+//		$.ajax({
+//                    type: 'post',
+//                    url: 'aug_plan.php',
+//                    data: 'plan=' + planNbr + '&type=element',			
+//                    success: function(text) {
+                        var text = planNbr+" is the id";
+                        var sap = $("<div/>",{
+                                        id: "site-aug-plan",
+                                        html: text,
+                                        css:{"position":"absolute", 'width':'200px', 'height':'200px', display:"none", 'top': e.pageY -100, 'left': e.pageX +40, backgroundColor:"red"}
+                                    });
+                                    
+                                    $('#content').append(sap);
+                                    sap.fadeIn(400);
+
+                     //   }
+                //});		
+	},
+			
+	function() {
+		 $('#site-aug-plan').remove();		
+	});	
+			
+	$('a.plan_link').mousemove(function(e) {
+		$('#site-aug-plan').css({'top': e.pageY -100, 'left': e.pageX +40});				
+	});	
+		
+});
+    </script>
+</head>
+
+<body>
+    <div id="content">
+        
+        <a href="#" class="plan_link" id="10">10</a>
+        <a href="#" class="plan_link"  id="20">20</a>
+        <a href="#" class="plan_link"  id="30">30</a>
+    </div>
+</body>
+</html>

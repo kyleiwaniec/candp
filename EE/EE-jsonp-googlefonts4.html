@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        ul, li{
+            list-style:none;
+        }
+        div{
+            float:left;
+            margin-right:30px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    
+    <script>
+      $(function(){
+        
+        var fonts = $(".fonts");
+        var path = "https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&callback=?";
+        
+        var apiUrl = [];
+            apiUrl.push('//fonts.googleapis.com/css?family=');
+        
+        $.getJSON(path,  function(data){
+          var fontfam = data.items;
+          //for (var i = 0; i < fontfam.length; i++){
+          for (var i = 0; i < 50; i++){
+            var t = fontfam[i];
+ 
+           
+            apiUrl.push(t.family.replace(/ /g, '+'));
+            apiUrl.push('|');
+          
+
+
+            $("<option id='"+t.family+"'>"+t.family+"<\/option>").appendTo(".fonts"); 
+            
+            $(".display").css({"font-family":fontfam[0].family});
+            
+          }
+           var url = apiUrl.join('');
+            
+            $("head").append("<link rel='stylesheet' type='text/css' href='"+url+"'>");
+          
+        });
+       
+       
+      
+           
+       $("select").change(function(){
+           var font = $("option:selected").attr("id");
+           $(".display").css({"font-family":font});
+       });
+        
+        
+      });
+    </script>
+  </head>
+  <body>
+      <div>
+    <select class="fonts"></select>
+    </div>
+    <div class="display">The quick brown fox jumps over the lazy dog</div>
+  </body>
+</html>

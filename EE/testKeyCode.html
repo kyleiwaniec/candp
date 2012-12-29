@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript">
+$(function(){
+            
+   var bcp = document.getElementById('cp'); //button ctrl shift +
+    //var ccp = document.createEventObject('KeyboardEvents'); //ctrl shift + event
+    $("#cd").click(function(c){
+    $(this).trigger({ type: 'keypress', which: 9 });
+    });
+
+function fireKeyEvent() 
+{ 
+    var ccp = document.createEventObject('keyEvent');
+    
+    ccp.charCode = 187;
+    ccp.ctrlKey = true;
+    ccp.shiftKey = true;
+    
+    cp.fireEvent(
+           'onkeydown', ccp
+           ); 
+               f.fireEvent('onfocus');
+};
+
+//oButton.fireEvent("onclick");
+
+/*
+bcp.addEventListener('click', function fireKeyEvent(control) 
+{ 
+    var keyEvent = window.document.createEvent("KeyboardEvents"); 
+        keyEvent.initKeyboardEvents(
+           'keydown', 
+           true,     // key down events bubble 
+           true,     // and they can be cancelled 
+           document.defaultView,  // Use the default view 
+           true,        // ctrl 
+           false,       // alt
+           true,        //shift
+           false,       //meta key 
+           61,          // keycode + in IE (61 for Moz, 187 for IE)
+           0); 
+        control.dispatchEvent(keyEvent); 
+    
+});
+*/
+   });     </script>
+    </head>
+    
+
+    <body>
+        <button id="cp" onclick="fireKeyEvent();" > test key code </button>
+        <button id="cd"  > test key code </button>
+        <input type='text'/><br/>
+        <input type='text' id="f"/><br/>
+        <input type='text'/><br/>
+             
+        
+    </body>
+</html>

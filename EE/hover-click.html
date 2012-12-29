@@ -1,0 +1,185 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+    /* safe logging from Paul Irish */
+    window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};
+
+/*
+        Ultimate getElementsByClassName
+        Developed by Robert Nyman, http://www.robertnyman.com
+	Code/licensing: http://code.google.com/p/getelementsbyclassname/
+*/	
+var getElementsByClassName = function (className, tag, elm){
+	if (document.getElementsByClassName) {
+		getElementsByClassName = function (className, tag, elm) {
+			elm = elm || document;
+			var elements = elm.getElementsByClassName(className),
+				nodeName = (tag)? new RegExp("\\b" + tag + "\\b", "i") : null,
+				returnElements = [],
+				current;
+			for(var i=0, il=elements.length; i<il; i+=1){
+				current = elements[i];
+				if(!nodeName || nodeName.test(current.nodeName)) {
+					returnElements.push(current);
+				}
+			}
+			return returnElements;
+		};
+	}
+	else if (document.evaluate) {
+		getElementsByClassName = function (className, tag, elm) {
+			tag = tag || "*";
+			elm = elm || document;
+			var classes = className.split(" "),
+				classesToCheck = "",
+				xhtmlNamespace = "http://www.w3.org/1999/xhtml",
+				namespaceResolver = (document.documentElement.namespaceURI === xhtmlNamespace)? xhtmlNamespace : null,
+				returnElements = [],
+				elements,
+				node;
+			for(var j=0, jl=classes.length; j<jl; j+=1){
+				classesToCheck += "[contains(concat(' ', @class, ' '), ' " + classes[j] + " ')]";
+			}
+			try	{
+				elements = document.evaluate(".//" + tag + classesToCheck, elm, namespaceResolver, 0, null);
+			}
+			catch (e) {
+				elements = document.evaluate(".//" + tag + classesToCheck, elm, null, 0, null);
+			}
+			while ((node = elements.iterateNext())) {
+				returnElements.push(node);
+			}
+			return returnElements;
+		};
+	}
+	else {
+		getElementsByClassName = function (className, tag, elm) {
+			tag = tag || "*";
+			elm = elm || document;
+			var classes = className.split(" "),
+				classesToCheck = [],
+				elements = (tag === "*" && elm.all)? elm.all : elm.getElementsByTagName(tag),
+				current,
+				returnElements = [],
+				match;
+			for(var k=0, kl=classes.length; k<kl; k+=1){
+				classesToCheck.push(new RegExp("(^|\\s)" + classes[k] + "(\\s|$)"));
+			}
+			for(var l=0, ll=elements.length; l<ll; l+=1){
+				current = elements[l];
+				match = false;
+				for(var m=0, ml=classesToCheck.length; m<ml; m+=1){
+					match = classesToCheck[m].test(current.className);
+					if (!match) {
+						break;
+					}
+				}
+				if (match) {
+					returnElements.push(current);
+				}
+			}
+			return returnElements;
+		};
+	}
+	return getElementsByClassName(className, tag, elm);
+};
+
+// end getelementsbyclassname
+
+// event listeners:
+// Event.add(element, event, handler)
+ var Event = {
+	add: function(obj,type,fn) {
+		if (obj.attachEvent) {
+			obj['e'+type+fn] = fn;
+			obj[type+fn] = function() { obj['e'+type+fn](window.event); }
+			obj.attachEvent('on'+type,obj[type+fn]);
+		} else
+		obj.addEventListener(type,fn,false);
+	},
+	remove: function(obj,type,fn) {
+		if (obj.detachEvent) {
+			obj.detachEvent('on'+type,obj[type+fn]);
+			obj[type+fn] = null;
+		} else
+		obj.removeEventListener(type,fn,false);
+	}
+}
+
+
+var GoToLink = {
+	bgcolor: '',
+	classname: '',
+	go: function(el) {
+            
+		if (!$(el)) return;
+		var rows = getElementsByClassName("module-hilite4");
+                var len = rows.length;
+		for (var i = 0;  i < len; i++) {
+			
+                        Event.add(rows[i],'mouseover',function() { alert("moused!"); GoToLink.mouseover(this); });
+			Event.add(rows[i],'mouseout',function() { GoToLink.mouseout(this); });
+                        Event.add(rows[i],'click',function() { GoToLink.click(this); });
+                }
+	},
+	mouseover: function(row) {
+        
+                var sibs = row.parentNode.childNodes;
+                var len = sibs.length;
+                for(var i = 0; i < len; i++){
+                if(sibs[i].className == "adv-sli active" || sibs[i].className == "adv-sli active adv-open"){
+                    var kidslen = sibs[i].childNodes.length;
+                    
+                    for(var j = 0; j < kidslen; j++){
+                    if(sibs[i].childNodes[j].className == "adv-main"){
+                        sibs[i].childNodes[j].className = "adv-main adv-tsi";
+                        }
+                    }
+                }
+                }
+	},
+	mouseout: function(row) {
+                var elm = getElementsByClassName("adv-tsi");
+		elm[0].className = "adv-main";
+	},
+        click: function(row){
+                location.href = "";
+        }
+}
+
+
+    
+    
+window.onload = function() {
+        alert("loaded");
+	GoToLink.go();
+}  
+    
+</script>
+    </head>
+    <body>
+        <div class="module-hilite4"><div><div><div>
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+        <tr>
+
+        <td align="center">
+
+        <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+
+        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a class="link" href="http://site1.com/component/acctexp/act.html"><img src="http://img.com/a/missing_all_m.gif" /></a><br></td><td align="left"><strong><a href="http://site1.com/component/acctexp/act.html">Great opportunity for ….. </a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://site1.com/component/acctexp/act.html"><img src="#" alt=""/></a></td></tr></table>
+        </td>
+
+        </tr>
+
+        </table>
+        </div></div></div></div>
+    </body>
+</html>

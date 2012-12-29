@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8"/>
+    <style>
+#container {
+   min-height:100%;
+   position:relative;
+   background-image:url(Images/bg.gif);
+}
+#header {
+   	height: 103px;
+	width: 100%;
+	background-image:url(Images/Link-logo.gif);
+	background-repeat:no-repeat;
+}
+
+#container #NavBar {
+    height: 81px;
+    width: 100%;
+    background-image:url(Images/Nav%20Bar/Nav-bar.png);
+    background-repeat:no-repeat;
+	float:left;
+    }
+
+#Home {
+	height: 47px;
+	width: 121px;
+	margin-top:20px;
+	margin-left:40px;
+	background-image:url(Images/Nav%20Bar/home.gif);
+	display:block;
+/*	text-indent: -9999em;*/
+	margin-top:10px;
+
+}
+#container #Home:hover {
+      background-image:url(Images/Nav%20Bar/home-rollover.png);
+}
+
+#container #Products{
+	height: 47px;
+	width: 130px;
+	margin-top:10px;
+	margin-left:40px;
+	background-image:url(Images/Nav%20Bar/products.gif);
+	display:block;
+/*	text-indent: -9999em;*/
+	margin-left:100px;
+
+	
+	
+}
+
+#container #Products:hover {
+background-image:url(Images/Nav%20Bar/products-rollover.png);
+}
+.Home{
+    float:left;
+}
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        $(function(){
+           
+      
+     
+        });
+    </script>
+   
+
+<body>
+
+<div id="container">
+   
+   <div id="body"><div id="header"></div>
+   <div id="NavBar">
+<a class="Home" id="Home" href="index.html">My Link</a>
+<a class="Home" id="Products" href="index.html">My Link</a></div>
+</div>
+<div id="footer"></div>
+
+</div>
+
+
+    </body>
+</html>

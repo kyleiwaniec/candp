@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Local Storage</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+      $(function(){
+    
+          var supported = 'Make your notes here. They will be saved automatically in your browser.',
+              unsupported = 'Oh no! Your browser does not support localStorage. Your notes will not be saved. To use this feature, download a modern browser like Chrome or Firefox.';
+          if (window.localStorage) {
+              var p = document.querySelector('#content');
+              if (localStorage.text == null) {
+                  localStorage.text = p.value = supported;
+              } else {
+                  p.value = localStorage.text;
+              }
+              p.addEventListener('keyup', function(){ localStorage.text = p.value; }, false);
+          } else {
+              document.getElementById('content').value = unsupported;
+          }
+
+        
+        $("#save").click(function(){
+           
+        });
+        $(".elementBtn").click(function(){
+          
+          $('#content').append($(this).html());
+        });
+      });
+    </script>
+    <style>
+      #content{
+        width : 500px;
+        height : 500px; 
+        border : 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="elementBtn"><h1>Header 1</h1></button>
+    <button class="elementBtn"><h2>Header 2</h2></button>
+    <!-- <button id="save">save</button> -->
+    <textarea id="content" contentEditable="true"></textarea>
+      
+    
+  </body>
+</html>

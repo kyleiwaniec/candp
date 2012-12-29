@@ -1,0 +1,202 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <title>DD - Menus</title>
+        <meta charset="UTF-8">
+        <script>
+            function addArrow (){
+                var $el = document.getElementsByTagName("li");
+                
+                if(typeof $el != "undefined"){
+                    for(var i = 0, l = $el.length; i < l; i++){
+                        
+                        var uls = $el[i].getElementsByTagName("ul");
+                        
+                        
+                        for(var j = 0, h = uls.length; j < h; j++){
+                            get_prevSibling(uls[j]).className = "arr";
+                        }
+                        
+                    }
+                }
+            };
+            function get_prevSibling(n) {
+                var y = n.previousSibling;
+                while (y.nodeType!=1){ // loop until Node.ELEMENT_NODE == 1 is found
+                    y = y.previousSibling;
+                }
+                return y;
+            }
+       
+        
+            window.onload = function(){
+                addArrow();
+            }
+        </script>
+        <style type="text/css">
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                color: #333;
+                margin:0;
+                padding:0;
+            }
+            .dropdownMenu-Container{
+                position:absolute;
+                top:20px;
+                left:20px;
+                max-width:160px;
+            }
+            .dropdownMenu-Container a{
+                text-decoration: none;
+                font-family:helvetica;
+                font-weight: normal;
+                line-height: 20px;
+                color: #333;
+/*                white-space: nowrap;*/
+                
+            }
+
+            .dropdownMenu-Container ul, .dropdownMenu-Container li{
+                margin:0;
+                padding:0;
+            }
+
+            .dropdownMenu li{
+                position:relative;
+                width:100%;                
+                display:block;
+                list-style: none;
+            }
+            ul.dropdownMenu, .dropdownMenu ul{
+                position:absolute;
+                width: 160px;
+                padding: 5px 0;
+                margin: 2px 0 0;
+                list-style: none;
+                background-color: white;
+                border: 1px solid  rgba(0, 0, 0, .1);
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                -webkit-background-clip: padding-box;
+                -moz-background-clip: padding;
+                background-clip: padding-box;
+            }
+            .lt-ie9 ul.dropdownMenu, .lt-ie9 .dropdownMenu ul{border: 1px solid #ccc}
+            .dropdownMenu ul{
+                display:none;
+                left:99%;
+                top:-8px;
+            }
+
+
+            .dropdownMenu li a{
+                display:block;
+                padding: 3px 20px;
+                
+                
+/* if you want to animate the basckground to fade in, uncomment the following transitions                */
+/*                -webkit-transition: background 0.5s ease;
+                -moz-transition: background 0.5s ease;
+                -o-transition: background 0.5s ease;
+                -ms-transition: background 0.5s ease;
+                transition: background 0.5s ease;*/
+
+
+            }
+            
+            .lt-ie8 .dropdownMenu li a{
+                padding: 3px 20px;
+            }
+
+            .dropdownMenu li:hover > a{
+                color: #ffffff;
+                text-decoration: none;
+                background-color: #0088cc;
+                background-color: #0081c2;
+                background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+                background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+                background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+                background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+                background-repeat: repeat-x;
+                filter: progid:dximagetransform.microsoft.gradient(startColorstr='#0088cc', endColorstr='#0077b3', GradientType=0);
+                
+            }
+
+            .dropdownMenu li:hover > ul{
+                display:block;
+            }
+
+            .dropdownMenu  .divider {
+                height: 1px;
+                margin: 6px 0;
+                overflow: hidden;
+                border-bottom: 1px solid #E5E5E5;
+                line-height: 1px;
+                }
+            .lt-ie8 .dropdownMenu  .divider{margin:-2px 0;}
+            .lt-ie8 .dropdownMenu li{margin:0 0 -3px 0;}
+            .dropdownMenu a.arr::after {
+                display: block;
+                float: right;
+                width: 0;
+                height: 0;
+                margin-top: 5px;
+                margin-right: -10px;
+                border-color: transparent;
+                border-left-color: #CCC;
+                border-style: solid;
+                border-width: 5px 0 5px 5px;
+                content: " ";
+            }
+            .dropdownMenu a.arr:hover::after{
+                border-left-color: #fff;
+            }
+            
+            .lt-ie9 .dropdownMenu a.arr{
+                background-image:url(images/arrow.png);
+                background-position: right 8px;
+                background-repeat:no-repeat;
+                filter:none;
+            }
+            .lt-ie9 .dropdownMenu a.arr:hover{background-position:right -12px;}
+        </style>
+    </head>
+    <body>
+        <div class="dropdownMenu-Container">
+            <ul class="dropdownMenu">
+                <li><a href="#">Another Item</a></li>
+                <li><a href="#">Another Item</a></li>
+                <li><a href="#">Another Item</a></li>
+                <li class="divider"></li>
+                <li><a href="#">More Options</a>
+                    <ul>
+                        <li><a tabindex="-1" href="#">A really long Second level link</a></li>
+                        <li><a tabindex="-1" href="#">Second level link</a></li>
+                        <li><a tabindex="-1" href="#">Second level link</a></li>
+                        <li><a tabindex="-1" href="#">Sub with sub</a>
+                            <ul>
+                                <li><a tabindex="-1" href="#">SubSub1</a></li>
+                                <li><a tabindex="-1" href="#">SubSub2</a></li>
+                            </ul>
+                        </li>
+                        <li><a tabindex="-1" href="#">Second level link</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </body>
+</html>

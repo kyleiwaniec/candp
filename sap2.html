@@ -1,0 +1,392 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            body{font-size:100%;width:100%;margin:0;padding:0;border:none;}div.outer_page{position:relative;display:block;font-size:16px;margin:10px;margin-bottom:20px;}div.outer_page.book_view{display:inline-block;}div#page_wrapper{width:100%;}div.page{left:0;position:relative;overflow:hidden;font-family:Helvetica,Times;top:0;line-height:1;color:#000;}div.layer{position:absolute;left:0;top:0;width:0;height:0;}div.inner_layer{position:relative;}div.abstext{position:absolute;}.absimg{position:absolute;border:none;}span.ib{overflow:hidden;white-space:nowrap;display:inline-block;vertical-align:bottom;letter-spacing:0;}div.page div{white-space:nowrap;}div.scale_hack div.middle_layer{font-size:15.0em;}div.scale_hack div.inner_layer{-moz-transform:scale(0.06666666);-moz-transform-origin:top left;-webkit-transform:scale(0.06666666);-webkit-transform-origin:top left;-o-transform:scale(0.06666666);-o-transform-origin:top left;}span.nw{white-space:nowrap;position:static;}span.jbr{width:100%;display:inline-block;}.inner_layer div{position:absolute;}.inner_layer p{position:absolute;margin:0;padding:0;}.inner_layer p.pj span span{line-height:0;}.inner_layer p.pl span,.inner_layer p.pc span,.inner_layer p.pr span{line-height:0;}.inner_layer p.pj{white-space:normal;text-align:justify;}.inner_layer p.pl{text-align:left;}.inner_layer p.pr{text-align:right;}.inner_layer p.pc{text-align:center;}.inner_layer div span,.inner_layer p span{position:relative;}.inner_layer div,.inner_layer span{white-space:nowrap;}div.outer_page_container{position:relative;}div.newpage{white-space:nowrap;position:relative;top:0;left:0;text-rendering:auto;color:#000;}div.image_layer{width:0;height:0;position:absolute;top:0;left:0;}div.image_layer .absimg{position:absolute;border:none;left:0;}div.link_layer{width:0;height:0;position:absolute;top:0;left:0;}div.text_layer div{white-space:nowrap;padding:0;margin:0;border:none;line-height:1;}div.text_layer span{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;}span.g{position:absolute;border:none;left:0;}.text_layer span.w{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline-block;}.text_layer a.ll{position:static;display:inline;color:inherit;text-decoration:none;}.text_layer span.l{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;}.text_layer span.l1{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-1px;}.text_layer span.l2{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-2px;}.text_layer span.l3{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-3px;}.text_layer span.l4{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-4px;}.text_layer span.l5{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-5px;}.text_layer span.l6{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-6px;}.text_layer span.l7{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-7px;}.text_layer span.l8{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-8px;}.text_layer span.l9{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-9px;}.text_layer span.l10{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-10px;}.text_layer span.l11{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-11px;}.text_layer span.l12{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;display:inline;margin-left:-12px;}.text_layer span.w1{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:1px;display:inline-block;}.text_layer span.w2{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:2px;display:inline-block;}.text_layer span.w3{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:3px;display:inline-block;}.text_layer span.w4{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:4px;display:inline-block;}.text_layer span.w5{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:5px;display:inline-block;}.text_layer span.w6{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:6px;display:inline-block;}.text_layer span.w7{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:7px;display:inline-block;}.text_layer span.w8{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:8px;display:inline-block;}.text_layer span.w9{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:9px;display:inline-block;}.text_layer span.w10{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:10px;display:inline-block;}.text_layer span.w11{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:11px;display:inline-block;}.text_layer span.w12{white-space:nowrap;padding:0;margin:0;border:none;height:1px;line-height:1;width:12px;display:inline-block;}
+        </style>
+          
+    </head>
+    <body>
+        <div class="outer_page_container">
+  
+
+    
+  
+  <div class="outer_page only_ie6_border" id="outer_page_1" style="width: 679px; height: 879px; ">
+      <div class="newpage" id="page1" style="width: 902px; height: 1167px; -webkit-transform: scale(0.7527716186252772); -webkit-transform-origin: 0% 0%; ">
+<div class="text_layer" style="z-index:2"><div class="ie_fix">
+&nbsp;
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:1822px;top:285px;word-spacing:2px;letter-spacing:-1px">Instruction Set of SAP 2</span><span class="a" style="left:706px;top:607px;letter-spacing:-1px">Instruction</span><span class="a" style="left:1228px;top:556px">Op-</span><span class="a" style="left:1213px;top:658px;letter-spacing:-1px">code</span><span class="a" style="left:1515px;top:556px">T</span><span class="a" style="left:1461px;top:658px">state</span><span class="a" style="left:1703px;top:607px">Flags</span><span class="a" style="left:1975px;top:651px;letter-spacing:-1px">Addressing</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:656px;word-spacing:359px">Byte Description</span><span class="a" style="left:3804px;top:614px">Type of&nbsp;</span><span class="a" style="left:3760px;top:699px">Instruction</span></div>
+<div class="ff0" style="font-size:74px">
+<span class="a" style="left:663px;top:852px;word-spacing:141px">ADD <span class="l" style="margin-left:-143px">B <span class="w" style="width:139px"></span>80 <span class="w6"></span>4</span></span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:1703px;top:854px;word-spacing:65px">S, <span class="l" style="margin-left:-64px">Z <span class="w" style="width:66px"></span>Register</span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:844px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:854px">1</span><span class="a" style="left:2676px;top:850px;word-spacing:764px">A=A+B Arithmetic</span><span class="a" style="left:663px;top:1041px;word-spacing:152px">ADD <span class="l" style="margin-left:-151px">C <span class="w" style="width:152px"></span>81</span></span></div>
+<div class="ff0" style="font-size:74px">
+<span class="a" style="left:1461px;top:1039px">4</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:1703px;top:1041px;word-spacing:65px">S. <span class="l" style="margin-left:-64px">Z <span class="w" style="width:66px"></span>Register</span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:1031px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1041px">1</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2494px;top:1031px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2676px;top:1037px;word-spacing:764px">A=A+C Arithmetic</span><span class="a" style="left:663px;top:1224px;word-spacing:127px">ANA <span class="l" style="margin-left:-126px">B <span class="w" style="width:177px"></span>A0 <span class="w" style="width:14px"></span>4 <span class="w" style="width:60px"></span>S, <span class="l" style="margin-left:-126px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:1214px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1224px;word-spacing:477px">1 <span class="l" style="margin-left:-313px">A=A.B <span class="w" style="width:315px"></span>Logical</span></span><span class="a" style="left:663px;top:1403px;word-spacing:159px">ANA <span class="l" style="margin-left:-158px">C <span class="w" style="width:145px"></span>Al 4 <span class="w" style="width:26px"></span>S,Z <span class="l9">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:1393px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1403px;word-spacing:477px">1 <span class="l" style="margin-left:-313px">A=A.C <span class="w" style="width:315px"></span>Logical</span></span><span class="a" style="left:663px;top:1582px;word-spacing:119px">ANI <span class="l" style="margin-left:-119px">byte <span class="w" style="width:135px"></span>E6 <span class="w" style="width:30px"></span>7 <span class="w" style="width:68px"></span>S, <span class="l" style="margin-left:-118px">Z <span class="w12"></span>Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:1572px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1582px;word-spacing:59px">2 <span class="w" style="width:105px"></span>A=A.(1 <span class="l" style="margin-left:-59px">byte <span class="l" style="margin-left:-59px">immediate <span class="l" style="margin-left:-63px">data) <span class="w" style="width:78px"></span>Logical</span></span></span></span><span class="a" style="left:663px;top:1761px;word-spacing:93px">CALL <span class="l" style="margin-left:-92px">address CD <span class="w" style="width:40px"></span>18 <span class="w" style="width:57px"></span>None Immediate</span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:1751px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1761px;word-spacing:250px">3 <span class="l" style="margin-left:-86px">Call <span class="l" style="margin-left:-251px">subrotine <span class="w" style="width:339px"></span>Branching</span></span></span><span class="a" style="left:663px;top:1939px;word-spacing:198px">CMA <span class="w" style="width:165px"></span>2F <span class="l" style="margin-left:-45px">4 <span class="l11">None <span class="l" style="margin-left:-104px">Implied</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2204px;top:1929px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1939px;word-spacing:498px">1 <span class="l" style="margin-left:-334px">A=A’ <span class="w" style="width:336px"></span>Logical</span></span><span class="a" style="left:663px;top:2118px;word-spacing:127px">DCR <span class="l" style="margin-left:-126px">A <span class="w" style="width:181px"></span>3D <span class="w" style="width:14px"></span>4 <span class="w" style="width:60px"></span>S, <span class="l" style="margin-left:-126px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:2108px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2118px;word-spacing:478px">1 <span class="l" style="margin-left:-314px">A=A-1 <span class="w" style="width:319px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:2297px;word-spacing:161px">DCR <span class="l" style="margin-left:-160px">B <span class="w" style="width:151px"></span>05 4 <span class="w" style="width:22px"></span>S,Z <span class="l11">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:2287px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2297px;word-spacing:482px">1 <span class="l" style="margin-left:-318px">B=B-1 <span class="w" style="width:323px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:2475px;word-spacing:125px">DCR <span class="l" style="margin-left:-124px">C <span class="w" style="width:187px"></span>OD 4 <span class="w" style="width:62px"></span>S, <span class="l" style="margin-left:-124px">Z <span class="w6"></span>Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:2465px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2475px;word-spacing:482px">1 <span class="l" style="margin-left:-318px">C=C-1 <span class="w" style="width:323px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:2662px;word-spacing:244px">HLT <span class="w" style="width:144px"></span>76 <span class="l" style="margin-left:-87px">5 <span class="l" style="margin-left:-57px">None</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:1975px;top:2657px">-</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2662px">1</span><span class="a" style="left:2676px;top:2654px;word-spacing:-4px">Terminate program</span><span class="a" style="left:663px;top:2850px;word-spacing:135px">IN <span class="l" style="margin-left:-135px">byte <span class="w" style="width:172px"></span>DB <span class="l6">10 <span class="w" style="width:15px"></span>None <span class="l" style="margin-left:-41px">Direct</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2159px;top:2840px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2850px;word-spacing:31px">2 <span class="w" style="width:133px"></span>Transfer <span class="l" style="margin-left:-33px">the <span class="l" style="margin-left:-31px">Data <span class="l" style="margin-left:-32px">from <span class="l" style="margin-left:-32px">Input</span></span></span></span></span><span class="a" style="left:2676px;top:2934px;word-spacing:-2px">port to Accumulator</span><span class="a" style="left:3701px;top:2850px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:3028px;word-spacing:132px">INR <span class="l" style="margin-left:-132px">A <span class="w" style="width:201px"></span>3C <span class="w" style="width:13px"></span>4 <span class="w" style="width:55px"></span>S, <span class="l" style="margin-left:-131px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3018px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3028px;word-spacing:470px">1 <span class="l" style="margin-left:-306px">A=A+1 <span class="w" style="width:310px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:3207px;word-spacing:165px">INR <span class="l" style="margin-left:-165px">B <span class="w" style="width:172px"></span>04 <span class="l8">4 <span class="w" style="width:22px"></span>S,Z <span class="l" style="margin-left:-15px">Register</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3197px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3207px;word-spacing:474px">1 <span class="l" style="margin-left:-310px">B=B+1 <span class="w" style="width:314px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:3386px;word-spacing:130px">INR <span class="l" style="margin-left:-130px">C <span class="w" style="width:207px"></span>OC 4 <span class="w" style="width:56px"></span>S, <span class="l" style="margin-left:-129px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3376px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3386px;word-spacing:474px">1 <span class="l" style="margin-left:-310px">C=C+1 <span class="w" style="width:314px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:3564px;word-spacing:102px">JM <span class="l" style="margin-left:-102px">address <span class="w" style="width:93px"></span>FA <span class="w" style="width:35px"></span>10/7 <span class="l10">None <span class="l8">Immediate</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:3554px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3564px;word-spacing:35px">3 <span class="w" style="width:129px"></span>Jump <span class="l" style="margin-left:-17px">on <span class="l" style="margin-left:-35px">minus <span class="l" style="margin-left:-37px">to <span class="l" style="margin-left:-35px">specified</span></span></span></span></span><span class="a" style="left:2676px;top:3649px">Address</span><span class="a" style="left:3701px;top:3564px">Branching</span><span class="a" style="left:663px;top:3743px;word-spacing:107px">JMP <span class="l" style="margin-left:-107px">address <span class="w" style="width:47px"></span>C3 <span class="w" style="width:38px"></span>10 <span class="w" style="width:43px"></span>None <span class="l" style="margin-left:-13px">Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:3733px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3743px;word-spacing:77px">3 <span class="w" style="width:87px"></span>Jump <span class="l" style="margin-left:-60px">to <span class="l" style="margin-left:-77px">specified <span class="l" style="margin-left:-79px">Address <span class="w" style="width:131px"></span>Branching</span></span></span></span><span class="a" style="left:663px;top:3922px;word-spacing:98px">JNZ <span class="l" style="margin-left:-97px">address <span class="w" style="width:64px"></span>C2 <span class="w" style="width:47px"></span>10/7 <span class="l6">None Imm<span class="l6">ediate</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:3912px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3922px;word-spacing:32px">3 <span class="w" style="width:132px"></span>Jump <span class="l" style="margin-left:-15px">on <span class="l" style="margin-left:-13px">Not <span class="l" style="margin-left:-32px">Zero <span class="l" style="margin-left:-32px">to <span class="l" style="margin-left:-33px">specified</span></span></span></span></span></span><span class="a" style="left:2676px;top:4006px">Address</span><span class="a" style="left:3701px;top:3922px">Branching</span><span class="a" style="left:663px;top:4101px;word-spacing:105px">JZ <span class="l" style="margin-left:-105px">address <span class="w" style="width:111px"></span>CA <span class="w" style="width:24px"></span>10/7 <span class="l" style="margin-left:-13px">None <span class="l11">Immediate</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:4091px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4101px;word-spacing:35px">3 <span class="w" style="width:129px"></span>Jump <span class="l" style="margin-left:-18px">on <span class="l" style="margin-left:-34px">zero <span class="l" style="margin-left:-36px">to <span class="l" style="margin-left:-35px">specified</span></span></span></span></span><span class="a" style="left:2676px;top:4185px">Address</span><span class="a" style="left:3701px;top:4101px">Branching</span><span class="a" style="left:663px;top:4279px;word-spacing:104px">LDA <span class="l" style="margin-left:-103px">address <span class="w" style="width:34px"></span>3A <span class="w" style="width:37px"></span>13 <span class="w" style="width:46px"></span>None <span class="l10">Direct</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2159px;top:4269px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4279px;word-spacing:593px">3 <span class="w" style="width:596px"></span>Data <span class="l" style="margin-left:-593px">Transfer</span></span><span class="a" style="left:663px;top:4458px;word-spacing:131px">MOV <span class="l" style="margin-left:-131px">A,B <span class="w" style="width:90px"></span>78 <span class="w" style="width:26px"></span>4 <span class="w" style="width:56px"></span>None <span class="l" style="margin-left:-37px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:4448px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4458px;word-spacing:41px">1 <span class="w" style="width:123px"></span>Copy <span class="l" style="margin-left:-41px">the <span class="l" style="margin-left:-41px">content <span class="l" style="margin-left:-43px">of <span class="l" style="margin-left:-41px">B <span class="l" style="margin-left:-40px">to <span class="l" style="margin-left:-42px">A <span class="w" style="width:168px"></span>Data <span class="l" style="margin-left:-41px">Transfer</span></span></span></span></span></span></span></span><span class="a" style="left:663px;top:4636px;word-spacing:131px">MOV <span class="l" style="margin-left:-131px">A,C <span class="w" style="width:90px"></span>79 <span class="w" style="width:26px"></span>4 <span class="w" style="width:56px"></span>None <span class="l" style="margin-left:-37px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:4626px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4636px;word-spacing:41px">1 <span class="w" style="width:123px"></span>Copy <span class="l" style="margin-left:-41px">the <span class="l" style="margin-left:-41px">content <span class="l" style="margin-left:-43px">of <span class="l" style="margin-left:-41px">C <span class="l" style="margin-left:-40px">to <span class="l" style="margin-left:-42px">A <span class="w" style="width:168px"></span>Data <span class="l" style="margin-left:-41px">Transfer</span></span></span></span></span></span></span></span><span class="a" style="left:663px;top:4815px;word-spacing:131px">MOV <span class="l" style="margin-left:-130px">B,A <span class="w" style="width:89px"></span>47 <span class="w" style="width:26px"></span>4 <span class="w" style="width:56px"></span>None <span class="l" style="margin-left:-37px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:4805px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4815px;word-spacing:41px">1 <span class="w" style="width:123px"></span>Copy <span class="l" style="margin-left:-41px">the <span class="l" style="margin-left:-41px">content <span class="l" style="margin-left:-43px">of <span class="l" style="margin-left:-41px">A <span class="l" style="margin-left:-40px">to <span class="l" style="margin-left:-42px">B <span class="w" style="width:168px"></span>Data <span class="l" style="margin-left:-41px">Transfer</span></span></span></span></span></span></span></span><span class="a" style="left:663px;top:4994px;word-spacing:132px">MOV <span class="l" style="margin-left:-132px">B,C <span class="w" style="width:93px"></span>41 <span class="w" style="width:25px"></span>4 <span class="w" style="width:55px"></span>None <span class="l" style="margin-left:-38px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:4984px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:4994px;word-spacing:41px">1 <span class="w" style="width:123px"></span>Copy <span class="l" style="margin-left:-41px">the <span class="l" style="margin-left:-41px">content <span class="l" style="margin-left:-43px">of <span class="l" style="margin-left:-41px">C <span class="l" style="margin-left:-40px">to <span class="l" style="margin-left:-42px">B <span class="w" style="width:172px"></span>Data <span class="l" style="margin-left:-41px">Transfer</span></span></span></span></span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:663px;top:5489px;word-spacing:3px;letter-spacing:-1px">© Er. Achyuta Nand Mishra</span><span class="a" style="left:3802px;top:5490px">1</span></div>
+</div>
+</div>
+<div class="image_layer" style="z-index: 1">
+<div class="ie_fix">
+<img class="absimg" style="left: 122px; top: 104px; width: 715px; height: 928px; clip: rect(1px 714px 927px 1px); display: block; " src="http://htmlimg4.scribdassets.com/7j3offyt8g1cgwlt/images/1-c42a8c8a7f.jpg">
+</div>
+</div>
+</div>
+
+
+    
+  <div class="b_tl"></div> 
+  <div class="b_tr"></div> 
+  <div class="b_br"></div> 
+  <div class="b_bl"></div> 
+  <div class="b_t"></div> 
+  <div class="b_r"></div> 
+  <div class="b_b"></div> 
+  <div class="b_l"></div> 
+
+  </div>
+  
+  <script type="text/javascript">
+    (function() {
+        var pageParams = {"origHeight": 1167, "origWidth": 902, "fonts": [0], "pageNum": 1};
+
+        pageParams.containerElem = document.getElementById("outer_page_1");
+          pageParams.innerPageElem = document.getElementById("page1");
+        var page = docManager.addPage(pageParams);
+      })();
+  </script>
+
+  
+    <div id="between_page_ads_1" class="between_page_ads" style="display: block;">
+      <script type="text/javascript">
+        Scribd.Ads.addBetweenPageUnit(1);
+      </script>
+    </div>
+
+
+
+    
+        
+
+    
+  
+  <div class="outer_page only_ie6_border" id="outer_page_2" style="width: 679px; height: 879px; "><div class="newpage" id="page2" style="width: 902px; height: 1167px; -webkit-transform: scale(0.7527716186252772); -webkit-transform-origin: 0% 0%; display: block; ">
+<div class="text_layer" style="z-index:2"><div class="ie_fix">
+&nbsp;
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:1822px;top:285px;word-spacing:2px;letter-spacing:-1px">Instruction Set of SAP 2</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:663px;top:553px;word-spacing:130px">MOV <span class="l" style="margin-left:-129px">C,A <span class="w" style="width:90px"></span>4F <span class="w" style="width:23px"></span>4 <span class="w" style="width:57px"></span>None <span class="l" style="margin-left:-36px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:543px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:553px;word-spacing:39px">1 <span class="w" style="width:125px"></span>Copy <span class="l" style="margin-left:-39px">the <span class="l" style="margin-left:-39px">content <span class="l" style="margin-left:-41px">of <span class="l" style="margin-left:-39px">A <span class="l" style="margin-left:-38px">to <span class="l" style="margin-left:-40px">C <span class="w" style="width:156px"></span>Data <span class="l" style="margin-left:-39px">Transfer</span></span></span></span></span></span></span></span><span class="a" style="left:663px;top:731px;word-spacing:132px">MOV <span class="l" style="margin-left:-132px">C,B <span class="w" style="width:93px"></span>48 <span class="w" style="width:25px"></span>4 <span class="w" style="width:55px"></span>None <span class="l" style="margin-left:-38px">Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:721px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:731px;word-spacing:39px">1 <span class="w" style="width:125px"></span>Copy <span class="l" style="margin-left:-39px">the <span class="l" style="margin-left:-39px">content <span class="l" style="margin-left:-41px">of <span class="l" style="margin-left:-39px">B <span class="l" style="margin-left:-38px">to <span class="l" style="margin-left:-40px">C <span class="w" style="width:160px"></span>Data <span class="l" style="margin-left:-39px">Transfer</span></span></span></span></span></span></span></span><span class="a" style="left:663px;top:910px;word-spacing:119px">MVI <span class="l" style="margin-left:-119px">A,byte <span class="w" style="width:51px"></span>3E <span class="w" style="width:30px"></span>7 <span class="w" style="width:68px"></span>None <span class="l" style="margin-left:-25px">Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:900px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:910px;word-spacing:26px">2 <span class="w" style="width:138px"></span>Load <span class="l" style="margin-left:-26px">1 <span class="l" style="margin-left:-26px">byte <span class="l" style="margin-left:-27px">immediate <span class="l" style="margin-left:-29px">data <span class="l" style="margin-left:-27px">to</span></span></span></span></span></span><span class="a" style="left:2676px;top:995px">accumulator</span><span class="a" style="left:3687px;top:910px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:1089px;word-spacing:121px">MVI <span class="l" style="margin-left:-121px">B,byte <span class="w" style="width:53px"></span>06 <span class="w" style="width:36px"></span>7 <span class="w" style="width:66px"></span>None <span class="l" style="margin-left:-27px">Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:1079px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1089px;word-spacing:26px">2 <span class="w" style="width:138px"></span>Load <span class="l" style="margin-left:-26px">1 <span class="l" style="margin-left:-26px">byte <span class="l" style="margin-left:-27px">immediate <span class="l" style="margin-left:-29px">data <span class="l" style="margin-left:-27px">to</span></span></span></span></span></span><span class="a" style="left:2676px;top:1173px">B Regster</span><span class="a" style="left:3687px;top:1089px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:1268px;word-spacing:116px">MVI <span class="l" style="margin-left:-116px">C,byte <span class="w" style="width:58px"></span>OE <span class="w" style="width:17px"></span>7 <span class="w" style="width:71px"></span>None <span class="l" style="margin-left:-22px">Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:1258px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1268px;word-spacing:26px">2 <span class="w" style="width:138px"></span>Load <span class="l" style="margin-left:-26px">1 <span class="l" style="margin-left:-26px">byte <span class="l" style="margin-left:-27px">immediate <span class="l" style="margin-left:-29px">data <span class="l" style="margin-left:-27px">to</span></span></span></span></span></span><span class="a" style="left:2676px;top:1352px;word-spacing:-2px">C register</span><span class="a" style="left:3687px;top:1268px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:1446px;word-spacing:242px">NOP <span class="w" style="width:142px"></span>00 <span class="l" style="margin-left:-85px">4 <span class="l" style="margin-left:-55px">None</span></span></span></div>
+<div class="ff0" style="font-size:27px">
+<span class="a" style="left:1975px;top:1461px">—</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2004px;top:1420px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1446px;word-spacing:81px">1 <span class="w" style="width:83px"></span>No <span class="l" style="margin-left:-80px">Operation</span></span><span class="a" style="left:663px;top:1625px;word-spacing:125px">ORA <span class="l" style="margin-left:-124px">B <span class="w" style="width:183px"></span>BO 4 <span class="w" style="width:66px"></span>S, <span class="l" style="margin-left:-124px">Z <span class="w6"></span>Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:1615px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1625px">1</span></div>
+<div class="ff1" style="font-size:79px">
+<span class="a" style="left:2834px;top:1630px">&nbsp;AORB</span><span class="a" style="left:2680px;top:1630px">&nbsp;A</span></div>
+<div class="ff2" style="font-size:63px">
+<span class="a" style="left:2771px;top:1630px">=</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:3090px;top:1640px">&nbsp;</span><span class="a" style="left:3687px;top:1625px">Logical</span><span class="a" style="left:663px;top:1804px;word-spacing:130px">ORA <span class="l" style="margin-left:-129px">C <span class="w" style="width:178px"></span>81 <span class="w" style="width:27px"></span>4 <span class="w" style="width:57px"></span>S, <span class="l" style="margin-left:-129px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:1794px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1804px">1</span></div>
+<div class="ff1" style="font-size:79px">
+<span class="a" style="left:2833px;top:1809px">&nbsp;AORC&nbsp;</span><span class="a" style="left:2681px;top:1809px">&nbsp;A</span></div>
+<div class="ff2" style="font-size:63px">
+<span class="a" style="left:2771px;top:1808px">=</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:3102px;top:1819px">&nbsp;</span><span class="a" style="left:3687px;top:1804px">Logical</span><span class="a" style="left:663px;top:1982px;word-spacing:148px">ORI <span class="l" style="margin-left:-148px">byte <span class="w" style="width:110px"></span>F6 7 <span class="w" style="width:44px"></span>S,Z Immediate</span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:1972px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:1982px;word-spacing:39px">2 <span class="w" style="width:125px"></span>A= <span class="l" style="margin-left:-39px">A(OR)(1 <span class="l" style="margin-left:-39px">byte <span class="l" style="margin-left:-40px">immediate</span></span></span></span><span class="a" style="left:2676px;top:2067px">data)</span><span class="a" style="left:3687px;top:1982px">Logical</span><span class="a" style="left:663px;top:2161px;word-spacing:123px">OUT <span class="l" style="margin-left:-122px">byte <span class="w" style="width:110px"></span>D3 <span class="w" style="width:18px"></span>10 <span class="w" style="width:27px"></span>None <span class="l" style="margin-left:-29px">Direct</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2159px;top:2151px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2161px;word-spacing:53px">2 <span class="w" style="width:111px"></span>Transfer <span class="l" style="margin-left:-55px">content <span class="l" style="margin-left:-54px">of&nbsp;</span></span></span><span class="a" style="left:2676px;top:2246px;word-spacing:-2px">Accumulator to output port</span><span class="a" style="left:3687px;top:2161px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:2340px;word-spacing:204px">RAL <span class="w" style="width:180px"></span>17 <span class="l" style="margin-left:-47px">4 <span class="l" style="margin-left:-17px">None <span class="l" style="margin-left:-110px">Implied</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2204px;top:2330px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2340px;word-spacing:53px">1 <span class="w" style="width:111px"></span>Rotate <span class="l" style="margin-left:-54px">left <span class="l" style="margin-left:-54px">Accumulator</span></span></span><span class="a" style="left:2676px;top:2424px">content</span><span class="a" style="left:3687px;top:2340px">Logical</span><span class="a" style="left:663px;top:2519px;word-spacing:205px">RAR <span class="w" style="width:175px"></span>IF <span class="l" style="margin-left:-40px">4 <span class="l" style="margin-left:-18px">None <span class="l" style="margin-left:-111px">Implied</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2204px;top:2508px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2519px;word-spacing:53px">1 <span class="w" style="width:111px"></span>Rotate <span class="l" style="margin-left:-54px">Right <span class="l" style="margin-left:-54px">Accumulator</span></span></span><span class="a" style="left:2676px;top:2603px">content</span><span class="a" style="left:3687px;top:2519px">Logical</span><span class="a" style="left:663px;top:2697px;word-spacing:194px">RET <span class="w" style="width:198px"></span>C9 <span class="l" style="margin-left:-49px">10 <span class="l" style="margin-left:-44px">None <span class="l" style="margin-left:-100px">Implied</span></span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2204px;top:2687px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2697px;word-spacing:476px">1 <span class="l" style="margin-left:-312px">Return <span class="w" style="width:315px"></span>Branching</span></span><span class="a" style="left:663px;top:2876px;word-spacing:110px">STA <span class="l" style="margin-left:-109px">address <span class="w" style="width:40px"></span>32 <span class="w" style="width:47px"></span>13 <span class="w" style="width:40px"></span>None <span class="l" style="margin-left:-16px">Direct</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2159px;top:2866px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:2876px;word-spacing:39px">3 <span class="w" style="width:125px"></span>Store <span class="l" style="margin-left:-40px">Accumulator <span class="l" style="margin-left:-42px">content <span class="l" style="margin-left:-41px">to</span></span></span></span><span class="a" style="left:2676px;top:2961px">memory</span><span class="a" style="left:3687px;top:2876px;word-spacing:-2px">Data Transfer</span><span class="a" style="left:663px;top:3054px;word-spacing:132px">SUB <span class="l" style="margin-left:-131px">B <span class="w" style="width:188px"></span>90 <span class="w" style="width:25px"></span>4 <span class="w" style="width:55px"></span>S, <span class="l" style="margin-left:-131px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3044px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3054px;word-spacing:465px">1 <span class="l" style="margin-left:-301px">A=A-B <span class="w" style="width:306px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:3233px;word-spacing:132px">SUB <span class="l" style="margin-left:-131px">C <span class="w" style="width:188px"></span>91 <span class="w" style="width:25px"></span>4 <span class="w" style="width:55px"></span>S, <span class="l" style="margin-left:-131px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3223px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3233px;word-spacing:465px">1 <span class="l" style="margin-left:-301px">A=A-C <span class="w" style="width:306px"></span>Arithmetic</span></span><span class="a" style="left:663px;top:3412px;word-spacing:127px">XRA <span class="l" style="margin-left:-126px">B <span class="w" style="width:181px"></span>A8 <span class="w" style="width:14px"></span>4 <span class="w" style="width:60px"></span>S, <span class="l" style="margin-left:-126px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3402px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3412px">1</span></div>
+<div class="ff1" style="font-size:79px">
+<span class="a" style="left:2990px;top:3417px">&nbsp;B</span><span class="a" style="left:2834px;top:3417px">&nbsp;A</span><span class="a" style="left:2680px;top:3417px">&nbsp;A</span></div>
+<div class="ff2" style="font-size:63px">
+<span class="a" style="left:2917px;top:3416px">⊕</span><span class="a" style="left:2771px;top:3416px">=</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:3074px;top:3427px">&nbsp;</span><span class="a" style="left:3687px;top:3412px">Logical</span><span class="a" style="left:663px;top:3591px;word-spacing:127px">XRA <span class="l" style="margin-left:-126px">C <span class="w" style="width:181px"></span>A9 <span class="w" style="width:14px"></span>4 <span class="w" style="width:60px"></span>S, <span class="l" style="margin-left:-126px">Z Register</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2220px;top:3581px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3591px">1</span></div>
+<div class="ff1" style="font-size:79px">
+<span class="a" style="left:2999px;top:3596px">C&nbsp;</span><span class="a" style="left:2833px;top:3596px">&nbsp;A</span><span class="a" style="left:2680px;top:3596px">&nbsp;A</span></div>
+<div class="ff2" style="font-size:63px">
+<span class="a" style="left:2916px;top:3595px">⊕</span><span class="a" style="left:2770px;top:3595px">=</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:3079px;top:3606px">&nbsp;</span><span class="a" style="left:3687px;top:3591px">Logical</span><span class="a" style="left:663px;top:3769px;word-spacing:119px">XRI <span class="l" style="margin-left:-119px">byte <span class="w" style="width:139px"></span>EE <span class="w" style="width:22px"></span>7 <span class="w" style="width:68px"></span>S, <span class="l" style="margin-left:-118px">Z <span class="w12"></span>Immediate</span></span></span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:2289px;top:3759px">&nbsp;</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:2457px;top:3769px">2</span></div>
+<div class="ff0" style="font-size:79px">
+<span class="a" style="left:3403px;top:3772px">)</span><span class="a" style="left:3025px;top:3772px">1</span><span class="a" style="left:3002px;top:3772px">(</span></div>
+<div class="ff1" style="font-size:76px">
+<span class="a" style="left:3066px;top:3774px">ByteData</span><span class="a" style="left:2835px;top:3774px">&nbsp;A</span><span class="a" style="left:2681px;top:3774px">&nbsp;A</span></div>
+<div class="ff2" style="font-size:61px">
+<span class="a" style="left:2918px;top:3773px">⊕</span><span class="a" style="left:2771px;top:3773px">=</span></div>
+<div class="ff0" style="font-size:67px">
+<span class="a" style="left:3444px;top:3781px">&nbsp;</span><span class="a" style="left:3687px;top:3769px">Logical</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:663px;top:4053px;letter-spacing:-1px">Program</span><span class="a" style="left:795px;top:4155px">1.</span></div>
+<div class="ff3" style="font-size:89px">
+<span class="a" style="left:862px;top:4127px">&nbsp;</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:928px;top:4155px;word-spacing:8px;letter-spacing:-1px">Write a program to Add the contents of memory Address 3034H and 3035H and</span><span class="a" style="left:928px;top:4256px;word-spacing:3px;letter-spacing:-1px">store result at memory 3036H,</span><span class="a" style="left:795px;top:4358px">2.</span></div>
+<div class="ff3" style="font-size:89px">
+<span class="a" style="left:862px;top:4330px">&nbsp;</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:928px;top:4358px;word-spacing:9px;letter-spacing:-1px">Write a program to Sub the contents of memory Address 3064H and 3065H and</span><span class="a" style="left:928px;top:4460px;word-spacing:3px;letter-spacing:-1px">store result at memory 3066H,</span><span class="a" style="left:795px;top:4561px">3.</span></div>
+<div class="ff3" style="font-size:89px">
+<span class="a" style="left:862px;top:4534px">&nbsp;</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:928px;top:4561px;word-spacing:6px;letter-spacing:-1px">Write a program to set D4 bit of the contents of memory Address 4034H without</span><span class="a" style="left:928px;top:4663px;word-spacing:4px;letter-spacing:-1px">affecting other bit.</span><span class="a" style="left:795px;top:4765px">4.</span></div>
+<div class="ff3" style="font-size:89px">
+<span class="a" style="left:862px;top:4737px">&nbsp;</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:928px;top:4765px;word-spacing:23px;letter-spacing:-1px">Write a program to clear D3 bit of the contents of memory Address 4004H</span><span class="a" style="left:928px;top:4866px;word-spacing:4px;letter-spacing:-1px">without affecting other bit.</span><span class="a" style="left:795px;top:4968px">5.</span></div>
+<div class="ff3" style="font-size:89px">
+<span class="a" style="left:862px;top:4941px">&nbsp;</span></div>
+<div class="ff0" style="font-size:81px">
+<span class="a" style="left:928px;top:4968px;word-spacing:3px;letter-spacing:-1px">Write a program to complement D2 bit of the contents of memory Address 4000H</span><span class="a" style="left:928px;top:5070px;word-spacing:4px;letter-spacing:-1px">without affecting other bit.</span><span class="a" style="left:663px;top:5489px;word-spacing:3px;letter-spacing:-1px">© Er. Achyuta Nand Mishra</span><span class="a" style="left:3802px;top:5490px">2</span></div>
+</div>
+</div>
+<div class="image_layer" style="z-index: 1">
+<div class="ie_fix">
+<img class="absimg" style="left: 122px; top: 104px; width: 715px; height: 683px; clip: rect(1px 714px 682px 1px); display: block; " src="http://htmlimg1.scribdassets.com/7j3offyt8g1cgwlt/images/2-dab4f13c74.jpg">
+</div>
+</div>
+</div>
+
+
+    
+  <div class="b_tl"></div> 
+  <div class="b_tr"></div> 
+  <div class="b_br"></div> 
+  <div class="b_bl"></div> 
+  <div class="b_t"></div> 
+  <div class="b_r"></div> 
+  <div class="b_b"></div> 
+  <div class="b_l"></div> 
+
+  </div>
+  
+  <script type="text/javascript">
+    (function() {
+        var pageParams = {"origHeight": 1167, "origWidth": 902, "fonts": [0, 1, 2, 3], "pageNum": 2};
+
+        pageParams.containerElem = document.getElementById("outer_page_2");
+          pageParams.contentUrl = "http://html1.scribdassets.com/7j3offyt8g1cgwlt/pages/2-dab4f13c74.jsonp";
+        var page = docManager.addPage(pageParams);
+      })();
+  </script>
+
+  
+    <div id="between_page_ads_2" class="between_page_ads" style="display: block;">
+      <script type="text/javascript">
+        Scribd.Ads.addBetweenPageUnit(2);
+      </script>
+    </div>
+
+
+
+    
+        
+
+
+  <!--[if IE]>
+  <script type='text/javascript'>
+    window.docManagerIEAdded = true;
+    if (document.observe) {
+      document.observe('dom:loaded', function () {
+          docManager.allPagesAdded();
+        });
+    } else {
+      window.attachEvent('onload', function () {
+          docManager.allPagesAdded();
+        });
+    }
+  </script>
+  <![endif]-->
+
+  <script type="text/javascript">
+    if (window.docManagerIEAdded != true) {
+      docManager.allPagesAdded();
+    }
+  </script>
+
+</div>
+    </body>
+</html>

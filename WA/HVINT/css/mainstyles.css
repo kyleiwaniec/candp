@@ -1,0 +1,334 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	text-align: center; /* for IE */
+	padding: 0px;
+	margin: 0px;
+}
+reqitem1 {
+	font-size:10px;
+	font-family: Tahoma, Arial, Verdana, Calibri;
+}
+h1, h2, h3, h4, p, ul, li {
+	text-align: left; /* for IE */
+	font-family: Tahoma, Arial, Verdana, Calibri;
+	padding: 0px;
+	margin: 0px;
+}
+
+h1 {
+	font-size: 18px;
+	font-weight:bold;
+	color: #006600;
+	padding: 6px 0 6px 0;
+	margin: 0px;
+}
+h2 {
+	font-size: 18px;
+	font-weight:normal;
+	color: #006600;
+	padding: 0px;
+	margin: 0px;
+}
+h3 {
+	font-size: 12px;
+	font-weight:bold;
+	color: #006600;
+	padding: 10px 0px 4px 0px;
+	margin: 0px;
+}
+h4 {
+	font-size: 13px;
+	font-weight:bold;
+	color: #000000;
+	padding: 8px 0px 8px 0px;
+	margin: 0px;
+}
+p {
+	font-size: 12px;
+	line-height:1.5em;
+	font-weight:normal;
+	padding: 0px 0px 10px 0px;
+}
+
+ul.bullets li {
+	width:450px;
+	font-size: 12px;
+	margin:0 0 0 10px;
+	padding:0px;
+	line-height:1.3em;
+	font-weight:normal;
+	padding: 0px 0px 6px 0px;
+	list-style:outside disc;
+	margin-left: 24px;
+}
+a {
+text-decoration:underline;
+color:#006600;
+}
+a:hover {
+color:#000000;
+}
+
+
+
+
+#container {
+	margin: 0 auto;   /* align for good browsers */
+	text-align: left; /* counter the body center */
+	width: 800px;
+}
+#header {
+	background-image: url(http://www.wirelessadvocates.com/_images/Header.gif);
+	height: 65px;
+	width: 800px;
+}
+#navbar {
+	width: 800px;
+}
+#footer {
+	background-image: url(http://www.wirelessadvocates.com/_images/footer.gif);
+	margin-top:20px;
+	height: 33px;
+	width: 800px;
+}
+#homepage-graphic {
+	height: 400px;
+	width: 800px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-image: url(http://www.wirelessadvocates.com/_images/MainImageFaded.gif);
+}
+#homepage-content {
+	height: 160px;
+	width: 774px;
+	background-image: url(http://www.wirelessadvocates.com/_images/HomePage-Content-BG.gif);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 13px;
+	padding-left: 13px;
+}
+.MainContentInfo {
+	font-size: 1.5em;
+	text-align: center;
+}
+#homepage-content2 {
+	height: 200px;
+	width: 800px;
+	background-image: url(http://www.wirelessadvocates.com/_images/HomePage-Content-BG.gif);
+	vertical-align: top;
+	color: #333333;
+}
+.ColHeader {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.MainContentCol {
+	height: 170px;
+	width: 230px;
+	float: left;
+	padding-top: 15px;
+	padding-right: 18px;
+	padding-bottom: 15px;
+	padding-left: 18px;
+	background-image: url(http://www.wirelessadvocates.com/_images/MainContent-BG2.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: top;
+}
+#container #legal {
+	padding: 5px;
+	width: 790px;
+	font-size:10px;
+	font-family: Tahoma, Arial, Verdana, Calibri;
+}
+#page-graphic {
+	height: 200px;
+	width: 800px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+#page-content {
+	width: 800px;
+	background-image: url(../images/pageBg.png);
+	background-repeat: repeat-y;
+	padding-bottom: 10px;
+}
+#NavCol {
+	width: 255px;
+	float: left;
+	padding-right: 5px;
+}
+
+#Content {
+	clear: both;
+        padding:0 20px;
+}
+#Content2 {
+	width: 787px;
+	float: left;
+	padding-right: 3px;
+	padding-left: 10px;
+	padding-top: 0px;
+}
+#NavCol2 {
+	width: 255px;
+	float: left;
+	padding-right: 5px;
+	height: auto;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: #333333;
+}
+
+#wirelessTag p {
+font-size: 13px;
+text-align:center;
+color:#656565;
+line-height:1.5em;
+font-weight:normal;
+font-style:italic;
+padding: 8px 30px;
+clear:both;
+background:url(http://www.wirelessadvocates.com/_images/grad.gif) repeat-x;
+margin:6px 0px 10px 0px; 
+border:1px solid #cccccc;
+}
+
+
+
+.clear {
+	clear: both;
+	float: none;
+}
+.ContentHdr {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.ExecProf {
+	width: 500px;
+	padding: 10px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	overflow: hidden;
+}
+.ExecPic {
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+.ExecBio {
+	float: left;
+	width: 390px;
+	padding-left: 10px;
+	vertical-align: top;
+}
+.ContentHeader {
+	font-size: 1.2em;
+	vertical-align: text-top;
+	font-weight: bold;
+}
+.EmpsPicCopy {
+	height: 150px;
+	width: 150px;
+	float: left;
+}
+.EmpsBioCopy {
+	float: left;
+	width: 335px;
+	padding-left: 15px;
+	vertical-align: top;
+}
+
+/* --------------- THUMBNAILS ------------------ */
+.thumbnail{
+position: relative;
+float:left;
+padding:10px 24px 8px 0px;
+border:none;
+z-index: 0;
+text-decoration:none;
+}
+
+.thumbnail:hover{
+	background-color: transparent;
+	z-index: 50;
+	color: #000000;
+}
+
+.thumbnail span{ /*CSS for enlarged image*/
+	position: absolute;
+	background-color: #999999;
+	padding: 0px;
+	margin: 0px;
+	visibility: hidden;
+	text-decoration: none;
+}
+
+.thumbnail span img{ /*CSS for enlarged image*/
+padding: 0px;
+margin:0px;
+border:none;
+}
+
+.thumbnail:hover span{ /*CSS for enlarged image on hover*/
+	visibility: visible;
+	position:absolute;
+	text-align:center;
+	vertical-align:middle;
+	background:url(http://www.wirelessadvocates.com/_images/thumbgradient.gif) repeat-x;
+	border: 1px solid #999999;
+/* position where enlarged image should offset horizontally */
+ 	top: 30px;
+	left: -100px;
+	padding:3px;
+	width:453px; height:340px;
+}
+
+
+
+.green {color: #006600}
+.orange {color: #FF7200}
+.style2 {color: #003300} /*  dark green      */
+.style3 {color: #006600} /*  green old code  */
+.greenitalic {
+	font-weight: bold;
+	font-style:italic;
+	padding-bottom: 12px;
+	color: #006600;
+}
+.caption {
+	font-weight: bold;
+	padding-bottom: 12px;
+	color: #000000;
+}
+
+.Costco {
+	width: 500px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	overflow: hidden;
+	padding-top: 0px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+}
+
+/* Staples */
+
+.cat {
+    border: 1px solid lightGrey;
+    font-family: Tahoma, Verdana, sans-serif;
+    margin: 10px 20px 15px 0;
+    width: 355px;
+    float: left;
+}
+.cat-title{padding:4px 10px; text-transform:uppercase; font-size:16px; font-weight:bold; color:#006700; border-bottom:1px solid lightgrey; background:url(../images/gr-arr-rt.png) right 0px no-repeat #96cd61;}
+.cat-title:hover{background-position:right -28px;}
+.cat-title:hover a{color:white !important;}
+.cat-title a{display:block; text-decoration: none !important;}
+.cat-desc{padding:10px 10px 0 10px; background-color: #F3F3F3;}

@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+    <head>
+        <title>CSS menu</title>
+        
+        <style type="text/css">
+            .nav a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color:#333;
+                font-family: geneva, sans-serif;
+                font-size:14px;
+            }
+            .parent{
+                /* for IE < 8, use actual image */
+                background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAYAAABWMrcvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDI3NkI3QTlENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDI3NkI3QUFENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0Mjc2QjdBN0Q2QkYxMUUxQkZFODkzMENENjA2RjZBQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0Mjc2QjdBOEQ2QkYxMUUxQkZFODkzMENENjA2RjZBQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj1JbwwAAACNSURBVHjalNPfCkAwFMfxM8/ChRvcuVA8g2cmuZIX4E00v8lqtD/nrL4Z9alZG2mtCVXvk5WdaAl0ERv+EQv6UBKGUBTGUBCmkBdykBm1i9QjYSk9lJ1kxBuH+8JBMxo/XyL/dKEN9ZKNOFEp2fIVFUhx0YIGyTEyS2okB3ZHueRqTKiTXsJWct1vAQYAvmjcHUntj7AAAAAASUVORK5CYII=') !important;
+                background-position: right center !important;
+                background-repeat:no-repeat !important;
+            }
+            .nav ul, .nav li{
+                margin:0;
+                padding:0;
+            }
+            .menu li{
+                position:relative;
+                width:220px;
+                display:block;
+                background:#eee;
+                border-top:1px solid white;
+                border-bottom:1px solid white;
+                list-style: none;
+                
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+
+            }
+            .menu ul{
+                display:none;
+                position:absolute;
+                left:220px;
+                top:-1px; /* accommodate the border */
+               
+            }
+            
+            .menu li a{
+                display:block;
+                padding:7px 7px 2px;
+                margin:3px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .menu li:hover{
+                background-color: #ccc;
+            
+            }
+            .menu li:hover > a{
+                background-color: yellowgreen;
+                color:darkslategray;
+            }
+            
+            .menu li:hover > ul{
+                display:block;
+            }
+            
+        </style>
+    <body>
+        <div class="nav">
+        <ul class="menu">
+            <li>
+                <a href="/cssadapters/GenericPage.aspx?goto=Products"title="Products">
+                    Products</a>
+                <ul>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsWindows" title="Windows">
+                            Windows</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsOffice" title="Office">
+                            Office</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsBusinessSolutions" title="Business Solutions">
+                            Business Solutions</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsServers" title="Servers">
+                            Servers</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsDeveloperTools" title="Developer Tools">
+                            Developer Tools</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductSubscriptions" title="Subscriptions">
+                            Subscriptions</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsSubscriptionsSoftware" title="Software">
+                                    Software</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsSubscriptionsManageYourProfile" title="Manage Your Profile">
+                                    Manage Your Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=ProductsMore" title="More">
+                            More</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsMobileDevices" title="Mobile Devices">
+                                    Mobile Devices</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsGamesXbox" title="Games and Xbox">
+                                    Games and Xbox</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsHardware" title="Hardware">
+                                    Hardware</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=ProductsMSN" title="MSN">
+                                    MSN</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/cssadapters/GenericPage.aspx?goto=Legal" title="Legal">
+                    Legal</a>
+                <ul>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=LegalLicense" title="License">
+                            License</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=LegalTerms" title="Terms of Use">
+                            Terms of Use</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=LegalPrivacy" title="Privacy">
+                            Privacy</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/cssadapters/GenericPage.aspx?goto=Support" title="Support">
+                    Support</a>
+                <ul>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=SupportLifecyclePolicies" title="Support Lifecycle and Policies">
+                            Lifecycle and Policies</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=SupportContact" title="Contact Support">
+                            Contact Support</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=SupportThirdPartyProviders" title="Third-Party Services">
+                            Third-Party Services</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=Research" title="Research">
+                            Research</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportProductCenters" title="Product Support Centers">
+                                    Product Info</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportKnowledgeBase" title="Knowledge Base">
+                                    Knowledge Base</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportCommunitiesNewsgroups" title="Communities and Newsgroups">
+                                    Communities</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportITProfessionals" title="Support for IT Professionals">
+                                    IT Pros</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportDevelopers" title="Support for Developers">
+                                    Developers</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=Downloads" title="Downloads">
+                            Downloads</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=DownloadsWindowsUpdate" title="Windows Update">
+                                    Windows Update</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=DownloadsOfficeUpdate" title="Office Update">
+                                    Office Update</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=Learning" title="Learning">
+                            Learning</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningBooks" title="Books">
+                                    Books</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningTraining" title="Training">
+                                    Training</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningCertification" title="Certification">
+                                    Certification</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningEvents" title="Events">
+                                    Events</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningWebcasts" title="Webcasts">
+                                    Webcasts</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=LearningPatternsPractices" title="Patterns and Practices">
+                                    Patterns and Practices</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=SupportSubscriptions" title="Subscriptions">
+                            Subscriptions</a>
+                        <ul>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportSubscriptionsNewsletters" title="Newsletters">
+                                    Newsletters</a>
+                            </li>
+                            <li>
+                                <a href="/cssadapters/GenericPage.aspx?goto=SupportSubscriptionsManageYourProfile" title="Manage Your Profile">
+                                    Manage Your Profile</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/cssadapters/GenericPage.aspx?goto=Just for You" title="Just for You">
+                    Just for You</a>
+                <ul>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouHomeUsers" title="Home Users">
+                            Home Users</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouMacintoshUsers" title="Macintosh Users">
+                            Macintosh Users</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouITProfessionals" title="IT Professionals (TechNet)">
+                            IT Professionals</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouDevelopersMSDN" title="Developers (MSDN)">
+                            Developers (MSDN)</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouPartners" title="Partners">
+                            Partners</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouSmallBusinesses" title="Small Businesses">
+                            Small Businesses</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouLargeBusinesses" title="Large Businesses">
+                            Large Businesses</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouGovernment" title="Government">
+                            Government</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouEducators" title="Educators">
+                            Educators</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=JustForYouJournalists" title="Journalists">
+                            Journalists</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/cssadapters/GenericPage.aspx?goto=About" title="About">
+                    About</a>
+                <ul>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutAccessibility" title="Accessibility">
+                            Accessibility</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutCareers" title="Careers">
+                            Careers</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutCommunityAffairs" title="Community Affairs">
+                            Community Affairs</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutDiversity" title="Diversity">
+                            Diversity</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutInvestorRelations" title="Investor Relations">
+                            Investor Relations</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutResearch" title="Research">
+                            Research</a>
+                    </li>
+                    <li>
+                        <a href="/cssadapters/GenericPage.aspx?goto=AboutSecurityPrivacy" title="Security and Privacy">
+                            Security and Privacy</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        </div>
+        <script>
+            function addArrow (){
+                function $(n) {return document.getElementsByTagName(n)};
+               
+                
+                if(typeof $("li") != "undefined"){
+                    for(var i = 0, l = $("li").length; i < l; i++){
+                        
+                        var uls = $("li")[i].getElementsByTagName("ul");
+                        
+                        for(var j = 0, h = uls.length; j < h; j++){
+                            get_prevSibling(uls[j]).className = "parent";
+                        }
+                        
+                    }
+                }
+            };
+            function get_prevSibling(n) {
+                var y = n.previousSibling;
+                while (y.nodeType!=1){ // loop until Node.ELEMENT_NODE == 1 is found
+                    y = y.previousSibling;
+                    }
+                return y;
+            }
+       
+        
+            window.onload = function(){
+                addArrow();
+            }
+        </script>
+    </body>
+</html>

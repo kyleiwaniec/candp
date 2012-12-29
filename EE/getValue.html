@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style>
+            
+        </style>
+        <script>
+            window.onload = function(){
+                teamname = document.forms[0].elements['Teamname'];
+                document.forms[0].elements['TeamOption'].focus();
+            };
+            function getIdofSelected(list){
+                return list.options[list.selectedIndex].getAttribute('value');
+            };
+            function setValue(field, list){
+                field.value = getIdofSelected(list);
+            };
+        </script>
+
+    </head>
+    <body>
+        
+        <form>
+            <select name="TeamOption" id="me" onchange="setValue(teamname, this);" tabindex="6" multiple="multiple">
+                <option value="4">Bears</option>
+                 <option value="6">Browns</option>
+                <option value="7">Bulldogs</option>
+                <option value="9">Champs</option>
+                <option value="11">Cubs</option>
+                <option value="34">Whiz Kids</option>
+                <option value="42">Zebras</option>
+            </select>
+            <input type="text" name="Teamname" />
+        </form>
+        
+     
+    </body>
+</html>

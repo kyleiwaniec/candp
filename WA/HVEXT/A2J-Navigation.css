@@ -1,0 +1,29 @@
+/*Main Navigation Styles in HV and Pro*/
+A:link.MainNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:visited.MainNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none;border-bottom: none;}
+A:Active.MainNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none;border-bottom: none;}
+A:Hover.MainNavigationLink		{color: #669933; font-size:12px; font-weight: bold; text-decoration: none;border-bottom: none;}
+.MainNavigation				{color: #494949; font-size:12px; background: url(VEimages/btn_Graphic_bg.gif) repeat-x 0 0; font-weight: bold; vertical-align: middle;}
+
+/*Job Detail Navigation Styles in Pro*/
+A:link.JobDetailNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:visited.JobDetailNavigationLink 	{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Active.JobDetailNavigationLink   	{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Hover.JobDetailNavigationLink   	{color: #669933; font-size:12px; font-weight: bold; text-decoration: none;border-bottom: none;}
+.JobDetailNavigation 			{color: #494949; font-size:12px; background: url(VEimages/btn_Graphic_bg.gif) repeat-x 0 0; font-weight: bold; vertical-align: middle; border-bottom: none;}
+.JobDetailNavigationApplied		{color: #494949; font-size:12px; text-decoration: none;font-weight: bold;}
+
+/*Button Navigation Styles in HV and Pro*/
+A:link.ButtonNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:visited.ButtonNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Active.ButtonNavigationLink		{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Hover.ButtonNavigationLink		{color: #669933; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+.ButtonNavigation			{color: #494949; font-size:12px; background: url(VEimages/btn_Graphic_bg.gif) repeat-x 0 0; font-weight: bold; vertical-align: middle; border-bottom: none;}
+
+/*Position Detail Navigation Styles in HV*/
+A:link.PositionDetailNavigationLink	{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:visited.PositionDetailNavigationLink	{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Active.PositionDetailNavigationLink	{color: #494949; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+A:Hover.PositionDetailNavigationLink	{color: #669933; font-size:12px; font-weight: bold; text-decoration: none; border-bottom: none;}
+.PositionDetailNavigation		{color: #494949; font-size:12px; background: url(VEimages/btn_Graphic_bg.gif) repeat-x 0 0; font-weight: bold; vertical-align: middle; border-bottom: none;}
+

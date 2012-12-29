@@ -1,0 +1,58 @@
+/* 
+    Document   : main-styles
+    Created on : Jun 10, 2012, 2:54:01 PM
+    Author     : kylehamilton
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@import '../css/AR-Techni/stylesheet.css';
+
+html, body{
+        color:#444444;
+        margin:0;
+        padding:0;
+    }
+    *:focus{
+        outline:none;
+    }
+    .wrapper{
+        margin:0 auto;
+        max-width:600px;
+    }
+    .code{
+        border-top:1px dotted grey;
+        border-bottom:1px dotted grey;
+        padding-top:15px;
+        color:#ff0066;
+    }
+    .footer-nav{
+        background-color: #888;
+	text-shadow:-1px -1px 0px rgba(0, 0, 0, 0.7), 0px 1px 1px rgba(255, 255, 255, 0.5); 
+        color:#666;
+        height:35px;
+        position:fixed;
+        bottom:0;
+        border-top:1px dashed #eee;
+        width:100%;
+        padding:5px 20px;
+        font-family:helvetica, sans-serif;
+        
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 15%);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.3)), color-stop(15%,rgba(0,0,0,0)));
+background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 15%);
+background-image: -o-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 15%);
+background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 15%);
+background-image: linear-gradient(top, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 15%);
+        
+        
+    }
+    .footer-nav a{
+        text-decoration:none;
+        color:inherit;
+        font-size: 25px;
+    }
+    .logo-type{
+        float:right;
+        padding:2px 30px;
+        font-family:'ARTechniRegular', Helvetica, Arial, sans-serif;
+    }

@@ -1,0 +1,1122 @@
+//@import "/sandbox_kyle/static/fonts/nothing-fonts.css";
+
+@dark: #2c2c2c;
+@medium: #666666;
+@mediumLight: #888888;
+@light: #f4f2df;
+@lightest: (@light + #ffffff)/2;
+
+@theme-color: @medium;
+@theme-background-color: @light;
+@theme-link-color: #4599e7;
+@theme-input-color: @medium;
+@theme-hover-color: #2a75ba;
+@theme-shadow-color: #bdb9aa;
+@theme-link-color: #4599e7;
+@theme-accent-color: #4599e7;
+
+@theme-body-color: @light;
+@theme-body-background-color: black;
+
+@theme-font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+@theme-font-size: 13px;
+@theme-font-size-small: 11px;
+@theme-font-size-big: 130%;
+
+@theme-footer-color: @medium;
+@theme-footer-background-color: black;
+@theme-footer-font-size: @theme-font-size + 2;
+@theme-footer-link-color: @theme-link-color;
+
+@theme-button-color: @dark;
+@theme-button-background-color: white;
+
+@theme-menu-hover-color: white;
+
+@theme-radius: 10px;
+@theme-input-width: 300px;
+@theme-textarea-height: 200px;
+
+@theme-title-font-family: 'NothingYouCouldSayRegular', HelveticaNeue, Helvetica, arial, sans-serif; 
+//@theme-title-font-family: 'Permanent Marker', HelveticaNeue, Helvetica, arial, sans-serif; 
+//@theme-title-font-family: 'Unkempt', HelveticaNeue, Helvetica, arial, sans-serif; 
+//@theme-title-font-family: 'Waiting for the Sunrise', HelveticaNeue, Helvetica, arial, sans-serif; 
+@theme-title-font-size: 24px;
+@theme-title-color: black;
+
+@theme-chrome-from-color: #ccc;
+@theme-chrome-to-color: #999;
+@theme-gradient-from-color: #ccc;
+@theme-gradient-to-color: #666;
+
+
+.border-radius (@r: @theme-radius) {
+    border-radius: @r;
+    -webkit-border-radius: @r;
+    -moz-border-radius: @r;
+}
+
+.top-radius (@r: @theme-radius) {
+    border-top-left-radius: @r;
+    -webkit-border-top-left-radius: @r;
+    -moz-border-top-left-radius: @r;
+    border-top-right-radius: @r;
+    -webkit-border-top-right-radius: @r;
+    -moz-border-top-right-radius: @r;
+}
+
+.bottom-radius (@r: @theme-radius) {
+    border-bottom-left-radius: @r;
+    -webkit-border-bottom-left-radius: @r;
+    -moz-border-bottom-left-radius: @r;
+    border-bottom-right-radius: @r;
+    -webkit-border-bottom-right-radius: @r;
+    -moz-border-bottom-right-radius: @r;
+}
+
+.text-emboss () {
+    text-shadow: 0px 1px 0px #fff;
+}
+
+.background-gradient (@from: @theme-gradient-from-color, @to: @theme-gradient-to-color) {
+    // fallback/image non-cover color 
+    background-color: (@from + @to) / 2; 
+
+    // fallback image 
+    background-image: url(img/cef/fallback-gradient.png); 
+    background-repeat: repeat-x;
+
+    // Firefox 3.6+ 
+    background-image: -moz-linear-gradient(@from, @to);
+
+    // Safari 4+, Chrome 1+ 
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@from), to(@to));
+
+    // Safari 5.1+, Chrome 10+ 
+    background-image: -webkit-linear-gradient(@from, @to); 
+
+    // Opera 11.10+ 
+    background-image: -o-linear-gradient(@to, @from);
+}
+
+.background-chrome (@from: @theme-chrome-from-color, @to: @theme-chrome-to-color) {
+    // webkit only so for
+    background-color: @to;
+    background-image: -webkit-gradient(linear, left top, left center, from(@from), to((2*@to + @from)/3));
+    background-repeat: no-repeat;
+    -webkit-background-size: 100% 50%;
+}
+
+.box-shadow (@x: 0, @y: 1px, @blur: 1px, @color: @theme-shadow-color) {
+    box-shadow: @x @y @blur @color;
+    -webkit-box-shadow: @x @y @blur @color;
+    -moz-box-shadow: @x @y @blur @color;
+}
+
+.inset-shadow (@x: 0, @y: 1px, @blur: 1px, @color: @theme-shadow-color) {
+    box-shadow: inset @x @y @blur @color;
+    -webkit-box-shadow: inset @x @y @blur @color;
+    -moz-box-shadow: inset @x @y @blur @color;
+}
+
+
+*:focus {
+    outline:none; 
+    // gets rid of the blue outline on input fields and outlines 
+    // on all/any active elements (like when you click an image) 
+}
+
+html, body { 
+color: @theme-body-color;
+    background-color: @theme-body-background-color;
+    font-family: @theme-font-family;
+    font-size:100%;
+    margin: 0;
+        line-height: 170%;
+}
+
+.small{
+    font-size:@theme-font-size-small;
+}
+.big{
+    font-size:@theme-font-size-big;
+}
+strong{font-weight:bold;}
+
+form{
+margin:0;
+padding:0;
+}
+input, textarea, .searchbg {
+    .border-radius(@theme-radius);
+    .inset-shadow(1px, 1px, 2px, @theme-shadow-color); 
+color: @theme-input-color;
+height: @theme-radius*2;
+border: solid 0px @medium;
+margin: (@theme-radius/2) 0;
+padding: 3px @theme-radius 0px @theme-radius;  // 2px top and bottom, 5px left and right 
+         font-family: HelveticaNeue, Helvetica, arial, sans-serif;
+         font-size:13px;
+}
+
+.reply{float:none !important;}
+
+input {
+width: @theme-input-width;
+}
+#login {
+    input[type="text"], input[type="password"], input[type="tel"] {
+    width: 140px;
+    padding-left:10px;
+    }
+}
+// override radius and shadow on non-input fields //
+
+input[type="file"], input[type="checkbox"]{
+    .border-radius(0);
+    .inset-shadow(0, 0, 0, @theme-shadow-color);
+}
+
+input[type="checkbox"] {
+border:0;
+height: auto;
+margin: 0 !important;
+padding: 0 0 0 10px !important;
+         vertical-align: middle !important;
+}
+
+input[type="submit"] {
+    .box-shadow;
+    background-color: #4599e7 !important;
+border: 0;
+color: #ffffff;
+cursor: pointer;
+        font-size: @theme-font-size-small;
+height: auto;
+        line-height: @theme-font-size-small;
+padding: 5px 10px;
+width: auto;
+float:right;
+}
+
+textarea {
+height: @theme-textarea-height;
+width: @theme-input-width;
+}
+
+h1,h2,h3,h4,h5,h6 { margin-top: 0;}
+
+h1 { 
+    font-family: @theme-title-font-family;
+    font-size: @theme-title-font-size;
+    color: @theme-title-color;
+    font-weight:normal;
+    margin-bottom:30px; 
+}
+h2 { 
+    font-size: 1.4em; 
+    font-weight:normal; 
+    //text-transform: uppercase;
+color: @theme-title-color;
+       line-height: 1.6em;
+       margin-bottom:0;
+}
+h3 { font-size: 1.2em; }
+h4,h5 { font-size: 1.0em; }
+h6 { font-size: 0.8em; }
+
+
+hr {
+    border: 0;
+        border-style: hidden;
+        background-image: url(img/cef/horzRule.png); 
+        background-repeat: no-repeat;
+       
+    height: 30px;
+    margin: 0;
+}
+hr:nth-child(5n+1){
+     background-position:0 0;
+}
+hr:nth-child(5n+2){
+    background-position:0 -55px;
+}
+hr:nth-child(5n+3){
+    background-position:0 -110px;
+}
+hr:nth-child(5n+4){
+    background-position:0 -165px;
+}
+hr:nth-child(5n+5){
+    background-position:0 -220px;
+}
+.ie7 hr{
+    height: 1px;
+    margin: 0;
+    padding: 0;
+}
+.hr{
+    background-image: url(img/cef/horzLine.png); 
+    background-repeat: no-repeat;
+    height: 12px;
+    margin: 5px 0;
+}
+
+a {
+    color: @theme-link-color;
+       text-decoration: none;
+}
+
+a:hover { 
+    color: @theme-hover-color;
+       text-decoration: underline; 
+  }
+
+a:active {}
+a:visited {}
+
+ul {
+    list-style : none;
+    margin: 0;
+    padding: 0; // gets rid of any inherited margins and padding 
+}
+
+
+#wrapper, #container {
+width: 950px;
+margin: 0 auto;
+}
+
+#content {}
+
+#page { 
+    color: @theme-color;
+    background-color: @theme-background-color;
+    min-height: 450px;
+    background-image: url(img/cef/bg.jpg);
+    background-repeat: no-repeat;
+    padding: 20px; 
+    font-size:.85em;
+}
+
+
+#statusbar {
+    position: relative;
+    height: 67px;
+    color: @theme-color;
+    .background-gradient(#fdfcf8, #f7f4e2); 
+    .box-shadow(0, 3px, 6px, @theme-shadow-color);
+}
+
+#searchWidget { 
+    display: block;
+    position: relative;
+    float: left;
+    width: 270px;
+    height: 67px;
+    overflow: hidden;
+}  
+
+.navButton{
+    color: #777777;
+    cursor: pointer;
+    font-family: @theme-title-font-family;
+    height: 67px;
+    margin: 10px 0 0;
+    z-index: 10;
+}
+
+
+/* the main menu */
+
+
+#menus {
+    display: block;
+    float: left;
+}
+
+#menus a{ color: #666666;}
+#menus a:hover{text-decoration: none !important; color: #ffffff;} /* override the underline */
+#menus ul{
+    list-style : none;
+    margin: 0;
+    padding: 0; /* gets rid of any inherited margins and padding */
+    font-family: @theme-title-font-family;
+    font-weight: normal;
+}
+
+/*
+   .ie6, .ie7, .ie8{
+#menus ul{
+font-family: 'Bradley HandITC Regular', 'Comic Sans MS', Helvetica, Arial, sans-serif;
+}
+}
+ */
+
+ul.mainNav{
+    z-index: 100;
+}
+
+ul.mainNav > li { 
+    float : left;
+    /* margin-right : 20px; */
+    cursor:  pointer;
+    font-size: @theme-title-font-size; /* this is here and not above, so that the subs can be made smaller using a % */
+    line-height: 40px;
+    width: 150px;
+}
+
+/*
+   .ie6, .ie7, .ie8{ ul.mainNav > li { 
+   font-size: 24px;
+   line-height: 34px;
+   }
+   }
+ */
+
+ul.mainNav > li > a {
+    /* position: absolute; */
+    display: block;
+    padding:  14px;
+    height: 39px;
+    text-decoration: none;
+    color: #777777;
+    z-index: 10;
+}
+
+/* will need to remove */ 
+
+ul.mainNav > li:first-child > a{   
+    background-image: url(img/cef/tribes-icon2.png);
+    background-repeat: no-repeat;
+    background-position: 0 8px;
+    padding-left: 50px;
+}
+
+
+ul.mainNav > li:first-child + li > a{  /* IE doesn't do nth-child, that's why this is done this way */
+    background-image: url(img/cef/envelope-icon.png);
+    background-repeat: no-repeat;
+    background-position: 8px 12px;
+    padding-left: 53px;
+}
+/* end need to remove */ 
+
+
+ul.mainNav > li > a:hover {
+    background-color: #ddd4b4;
+    color: #666666 !important; 
+}
+
+ul.mainNav > li:hover ul, .mainNav > ul > li > a:hover ul {
+    display: block;
+}
+
+/* the drop-down box */
+
+
+
+ul.mainNav li ul{
+position: absolute;
+display: none;
+         background-color: #ddd4b4;
+//opacity: .9;
+         z-index: 100;
+width: 150px; /* must deal with this later */
+       font-size: 78%; /* this is just a sylistic decision. I think the sub items should be smaller than the main items */
+}
+
+
+/* the drop-down items */
+
+.ie7 ul.mainNav ul li{
+}
+
+
+ul.mainNav ul li{
+    text-align: center;
+    line-height: auto;
+}
+ul.mainNav ul li:hover {
+    /* background-color: #666666; */
+}
+
+ul.mainNav ul li a {
+display: block;
+         text-decoration: none;
+margin: 0 12px;
+padding: 5px 0;
+color: #4c4c4c;
+       background-image: url(img/cef/menuItemSep.png);
+       background-repeat: no-repeat;
+       background-position: bottom;
+}
+
+ul.mainNav ul li a:hover {
+color: #ffffff !important;
+}
+
+ul.mainNav ul li:last-child a{
+    background-image: none;
+}
+
+
+.ie7 ul.mainNav li ul {
+position: relative;
+width:  149px;
+        margin-top:  67px;
+        /* left: 270px; */
+}
+.ie7 ul.mainNav li:first-child{
+width: 149px;
+}
+
+/* end main menu */
+
+
+/* this is for the sliding background on the main menu which is not implemented yet */
+/*
+#hoverBox {
+position: absolute;
+background-color: #DCD4B6;
+height: 67px;
+left: 0;
+top: 0;
+z-index: 1;
+}
+ */
+
+#authentication {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 14px;
+padding: 22px 15px 0 0;
+float: right;
+}
+
+
+#user-form {
+    padding-left: 500px;
+background:  url(img/cef/welcome_bkg.png) no-repeat @theme-background-color;
+             //width: 949px;
+height: 646px;
+}
+
+#header {
+    .company {
+       font-size: 10px;
+    }
+    .company-name {
+       font-size: 36px;
+    }
+    .tagline {
+       font-size: 20px;
+       text-align: right;
+    }
+}
+
+footer { 
+    color: @theme-footer-color;
+    background-color: @theme-footer-background-color;
+    width: 100%;
+
+    div.copyright {
+        float: left;
+    }
+
+    .legal {
+        float: right;
+        a {
+           font-size: @theme-footer-font-size;
+           color: @theme-footer-link-color;
+        }
+    }
+}
+
+.headshot {
+    margin: 0 30px 0 0;
+    float: left;
+    width: 205px;
+    min-height:208px;
+    padding-top:6px;
+}
+
+.headshot img {
+    width: 200px;
+    margin:0 8px 8px 0;
+    .box-shadow(0, 0, 8px, @theme-shadow-color);
+}
+
+.profile-box {
+padding: 0 0 30px 30px;
+margin: 0 0 20px 0;
+        /* position: relative; */
+overflow: hidden;
+float: none;
+       background-image: url(img/cef/horzRule1.png);
+       background-repeat: no-repeat;
+       background-position: 0 100%;
+       //font-size: .85em;
+       
+       &:nth-child(5n+1){background-image: url(img/cef/horzRule1.png);}
+       &:nth-child(5n+2){background-image: url(img/cef/horzRule2.png);}
+       &:nth-child(5n+3){background-image: url(img/cef/horzRule3.png);}
+       &:nth-child(5n+4){background-image: url(img/cef/horzRule4.png);}
+       &:nth-child(5n+5){background-image: url(img/cef/horzRule5.png);}
+       &:last-child{background-image: none;}
+}
+
+.profile-info {
+float: left;
+width: 365px;
+}
+
+.profile-text ul{
+    list-style-type: none;
+margin: 15px 0 0 0; 
+padding: 0;
+    li label{font-weight:bold;}
+}
+.profile-text h2{text-transform:capitalize;}
+
+.profile-nav {
+    margin-top:30px;
+}
+
+.profile-box:last-child {
+    background-image: none;
+}
+
+.tribe-add, .tribe-delete, .send-message, .edit-profile {
+    background-repeat: no-repeat;
+float: left;
+margin: 0 20px 0 0;
+        min-height:18px;
+        line-height:18px;
+}
+
+.tribe-add, .tribe-delete {
+    background-image: url(img/cef/addDeleteSprite.png);
+padding: 2px 0px 0px 20px;
+}
+
+.tribe-delete{
+    background-position: 0 -21px;
+} 
+
+.send-message {
+    background-image: url(img/cef/envelopeSmall.png);
+padding: 2px 0px 0px 30px;
+}
+
+.edit-profile{
+    background-image: url(img/cef/pencil-icon.png);
+padding: 5px 0px 0px 50px;
+height:19px;
+}
+
+    
+// the mainbutton 
+
+.mainbutton {
+position: relative;
+display: inline-block;  
+height: 31px;
+width: 150px;
+       background-image: url(img/cef/buttonSprite.png);
+       background-repeat: no-repeat;
+       text-align: center;
+padding: 12px 8px 12px 0; // need the 8px here to make up for the white space in the image to center properly 
+cursor:pointer;
+
+       a, a:visited {
+position:relative;
+display:block;
+color: #f6f2dd !important; 
+       font-weight: normal  !important;
+       font-size:18px;
+       text-shadow: rgba(0,0,0,1) 0 -1px 1px; 
+margin:0 !important;
+padding:0 !important;
+        text-decoration:none;
+       } 
+}
+
+.mainbutton:hover { 
+    background-position: 0 -60px;
+    a {  
+top: 1px;
+    }    
+}
+
+.mainbutton:active {
+    background-position: 0 -120px;
+    a { 
+top: 2px;
+left: 1px;
+    }
+} 
+
+
+/* splash screen only */
+
+
+.popUpBox {
+display:none;
+position:absolute;
+         -moz-box-shadow: 0 3px 6px #bdb9aa; 
+         -webkit-box-shadow: 0 3px 6px #bdb9aa;
+         box-shadow: 0 3px 6px #bdb9aa;
+
+         .border-radius(10px); 
+
+         background-color:#000000;
+color:#f4f2df;
+padding:8px 12px;
+
+        font-family: @theme-font-family;
+        font-size:14px;
+        line-height:16px;
+width:200px;
+}
+
+#seeWho, #connect, #connections, #fingertips {
+position:relative;
+}
+
+#during {
+position:relative;
+display:block;
+height:230px;
+overflow:visible;
+}
+.ie8 #during {height:210px;}
+
+#before {
+margin:0 0 20px 0;
+       background-image: url(img/cef/horzLine.png);
+       background-repeat: no-repeat;
+       background-position: 0 100%;
+position: relative;
+display: block;
+height: 215px;
+overflow: visible;
+
+          img {
+              margin-left:185px;
+          }
+}
+.ie8 #before{height: 235px;}
+
+#beforeText, #duringText {
+color:#888888;
+      font-family: @theme-title-font-family;
+      font-size: @theme-title-font-size;
+      line-height:32px;
+float:left;
+      margin-right:20px;
+}
+
+#seeWho, #connections {
+    padding-left:40px;
+    cursor:pointer;
+}
+
+#connect, #fingertips{
+    padding-left:70px;
+    cursor:pointer;
+}
+
+.asterix{
+    color: @theme-link-color;
+    vertical-align:super;
+    font-weight: bold;
+    font-size:70% !important;
+}
+.social{
+    background-image:url(img/cef/social-icons.png);
+    background-position:13px 20px;
+    background-repeat:no-repeat;
+    font-size:12px;
+height:50px;
+width:100px;
+      padding-left:15px;
+}
+#loginForm{
+display:block;
+float:left;
+}
+
+#loginFields {
+float:left;
+width: 160px;
+       margin-right: 15px;
+}
+
+#loginFields  h2 {
+    font-size: @theme-font-size;
+margin: 0;
+        padding-left:11px;
+}
+.ie7 #loginFields  form{
+    margin-top:0;
+}
+.or {
+float: left;
+width: 40px;
+       margin-top: 40px;
+}
+
+#registerFields {
+float:left;
+width:170px;
+padding: 30px 0 0 10px;
+}
+
+#moreInfo {
+    margin-top: 10px;
+    padding-top: 20px;
+    line-height: 30px;
+    font-size: 18px;
+
+    a.how {
+        background-image: url(img/cef/info-icon.png);
+        background-repeat: no-repeat;
+        padding-top:3px;
+        padding-left:40px;
+        display:block;
+        height: 37px;
+        color: @theme-color;
+    }
+
+    a.how:hover {
+        background-position:0 -40px;
+        cursor:pointer;
+        color: @theme-link-color;
+    }
+}
+
+#phone{
+position:absolute;
+left:390px;
+bottom:0;
+width:210px;
+height:230px;
+cursor:pointer;
+overflow:hidden;
+}
+
+#download {
+position:absolute;
+left:680px;
+width:200px;
+      padding-top:30px;
+}
+
+
+/* top search bar */
+
+
+.searchbg {
+position:absolute;
+top:10px;
+left:20px;
+display:block;
+width:200px;
+
+      background-color:#ffffff;
+      z-index: 10;
+}
+
+.headersearch {
+position:absolute;
+top:3px;
+right:25px;
+width:170px;
+text-align:left;
+border: none;
+color: #666666 !important;
+background-color: #ffffff;
+z-index:20;
+
+// need to override theme styles
+.border-radius(none);
+//.box-shadow(none); //this doesnt work yet
+box-shadow:none;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+
+height:15px;
+border:none;
+margin:0;
+}
+
+
+/*
+   .headersearch:focus {
+outline: none;
+}
+ */
+
+.searchsub {
+position:absolute;
+top:5px;
+right:2px;
+border:0;
+margin:0 !important;
+width:15px;
+height:15px !important;
+cursor:pointer;
+       background-color:#ffffff !important;
+       background-image:url(img/cef/search-icon2.png);
+       background-repeat:no-repeat;
+       z-index:30;
+
+       // need to override theme styles
+       border-radius:0 !important;
+       -webkit-border-radius:0 !important;
+       -moz-border-radius:0 !important;
+
+       box-shadow:none !important;
+       -webkit-box-shadow:none !important;
+       -moz-box-shadow:none !important;
+}
+.ie8 .searchsub{
+height:18px;
+border:0;
+}
+.ie7 .searchsub {
+left:190px;
+height:18px;
+border:0;
+}
+#exampleText {
+position:absolute;
+top:40px;
+left:33px;
+}
+
+/* posts */
+
+.post {
+    padding: 30px 100px;
+    blockquote {
+        font-size: 1.4em;
+    }
+    img { // XXX total hack for how it works!!
+    }
+}
+.post h2 {
+color: @theme-accent-color !important; 
+}
+
+p.signoff { 
+    padding-left: 300px 
+}
+
+p.signature { 
+    font-family: @theme-title-font-family;
+    font-size: @theme-title-font-size;
+    padding-left: 310px;
+}
+
+
+/* IE */
+
+.ie8, .ie7, .ie6 {
+    input, textarea, .searchbg {
+border:1px solid #cccccc;
+    }
+    input[type="checkbox"] {
+border:0;
+    }
+#statusbar {
+    background-image: url(img/cef/fallback-gradient.png); 
+    background-repeat:repeat-x;
+}
+#page {
+    background-image: url(img/cef/ieBg.jpg);
+}
+.headersearch{
+border:0;
+width:175px;
+}
+}
+
+
+/*********** messages ***************/
+#mailSidebar{
+    float:left;
+    width:180px;
+    margin:0 20px 0 0;
+    //font-size:.85em;
+    
+    .writeNewMess{
+            display:block;
+            background-image: url(img/cef/newMessage.png);
+            background-repeat: no-repeat;
+            padding: 0 0 0 45px;
+            margin: 0;
+            height:33px; 
+            line-height:40px;
+            //font-family:@theme-title-font-family;
+            cursor:pointer;
+    }
+    nav li{
+        height:17px;
+        padding:5px 0;
+    }
+    .inbox, .sent, .notifications{
+        padding: 0 0 0 45px;
+        //font-family:@theme-title-font-family;
+        background-image: url(img/cef/inboxSprite.png);
+        background-repeat:no-repeat;
+        text-transform:uppercase;
+        cursor:pointer;
+        display:block;
+        line-height:20px;
+        height:17px;
+    }
+    .inbox{background-position:15px -2px;}
+    .sent{background-position:15px -32px;}
+    .notifications{background-position:15px -62px;}
+}
+#single-message {
+    width:600px;
+}
+.single-message-subject{
+    width:500px;
+    h2{line-height:27px;
+    
+    }
+}
+.messageTo {
+    input[type="text"], textarea {
+    width:450px;
+    }
+}
+
+
+
+#messages {
+    float:left;
+    //margin-left:210px;
+    width:650px;
+    padding: 0px 30px 30px 30px;
+    //font-size:.85em;
+    h1 a, h2 a { 
+        color: @theme-title-color;
+        text-decoration:underline;
+        &:hover{
+            color: @theme-hover-color;
+            text-decoration: none;
+        }
+   }
+}
+
+#messages  ul  li {
+    padding:0 0 15px 0;
+    margin:0;
+    overflow: hidden;
+    background-image: url(img/cef/horzRule1.png); // needs to be a n-th child so we can have the unique hand draw look
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    
+    &:nth-child(5n+1){
+    background-image: url(img/cef/horzRule1.png);
+    }
+    &:nth-child(5n+2){
+    background-image: url(img/cef/horzRule2.png);
+    }
+    &:nth-child(5n+3){
+    background-image: url(img/cef/horzRule3.png);
+    }
+    &:nth-child(5n+4){
+    background-image: url(img/cef/horzRule4.png);
+    }
+    &:nth-child(5n+5){
+    background-image: url(img/cef/horzRule5.png);
+    }
+    &:last-child{
+    background-image: none;
+    }
+    
+    
+    .headshot {
+        margin: 0 30px 0 0;
+        float: left;
+        width: 55px;
+        min-height: 58px;
+        padding-top: 6px;
+        
+       
+    }
+    .headshot img {
+        width: 50px;
+        margin: 0 0px 8px 0;
+        .box-shadow(0, 0, 8px, @theme-shadow-color);
+    }
+
+    .from, .to {
+        font-weight: normal;
+        padding-bottom:10px;
+        margin-top:0;
+        line-height:1em;
+        
+    }
+
+    .subject {
+       overflow: hidden;
+       text-overflow: ellipsis;
+       white-space: nowrap;
+       width: 380px;
+       
+    }   
+
+    .date {
+        float: right;
+    }
+          
+    .reply, .delete{
+        background-image: url(img/cef/replyDelete.png);
+        background-repeat: no-repeat;
+        padding: 2px 0px 0px 20px;
+        margin: 0 20px 0 0;
+        min-height:18px;
+        line-height:18px;
+    }
+
+    .delete{
+        background-position:0 -21px;
+    }
+}
+
+    
+    
+
+/*********** web2py specific ***********/
+.flash {
+    font-weight: bold;
+    display: none;
+    position: fixed;    
+    padding: 10px;
+    top: 40px;
+    right: 10px;
+    min-width: 250px;
+    opacity: 0.75;
+    margin: 0px 0px 10px 10px;    
+    color: #fff;    
+    vertical-align: middle;
+    cursor: pointer;
+    background: #000;
+    border: 3px solid white;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    z-index: 2;
+   .box-shadow(0, 0, 16px, black);
+}
+.error {
+    //background-color: red;
+    color: #ff6701;
+    padding: 3px;
+}

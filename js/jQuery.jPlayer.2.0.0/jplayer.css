@@ -1,0 +1,57 @@
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.happyworm.com/jquery/jplayer
+ *
+ * Skin Name: c and p
+ *
+ *
+ * Author: Kyle Hamilton
+ * Skin Version: 1.0 (jPlayer 2.0.0)
+ * Date: 5th July 2011
+ */
+
+
+div.jp-audio {
+	width:130px;
+    float:left; 
+    position:relative;
+}
+
+div.jp-interface ul.jp-controls {
+	list-style-type:none;
+	padding:0;
+	margin: 0;
+}
+div.jp-interface ul.jp-controls li {
+	float:left;
+}
+div.jp-interface ul.jp-controls a {
+	position: absolute;
+	overflow:hidden;
+}
+a.jp-play,
+a.jp-pause {
+	width:130px;
+	height:196px;
+    top:128px; 
+	z-index:1;
+}
+
+a.jp-play {
+	background: url("../../images/laughboy1.png") 0 0 no-repeat;
+}
+a.jp-play:hover {
+	background: url("../../images/laughboy1.png") 0 0 no-repeat;
+}
+a.jp-pause {
+	background: url("../../images/laughboy2.png") 0 0 no-repeat;
+	display: none;
+}
+a.jp-pause:hover {
+	background: url("../../images/laughboy2.png") 0 0 no-repeat;
+}
+
+div.jp-jplayer {
+	width:0;
+	height:0;
+}

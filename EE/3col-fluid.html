@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS Layout</title>
+        <style>
+            #wrapper{
+                width:90%;
+                margin:0 auto;
+            }
+            #left, #right{
+                float:left;
+                width: 200px; 
+                background-color: #ccc;
+                color: white;
+            }
+            #right{
+                float:right;
+            }
+            #center{
+                margin-left: 200px; 
+                margin-right: 200px; 
+                background: #eee;
+            }
+
+            .inner{
+                margin: 15px; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="left">
+                <div class="inner">
+                    <h3>left</h3>
+                    <p>Hurricane Sandy puts a new burden social services agencies
+                        <a href="#">Janelle Griffith/The Star-Ledger | 3:49pm</a>
+                        Trenton police make three arrests, issue arrest warrant in separate slayings
+                        Alex Zdan/The Times | 3:13pm
+                        Business brings Moonachie together with Thanksgiving dinner giveaway
+                        Myles Ma/NJ.com | 2:30pm
+                        More News »</p>
+                </div>
+            </div>
+            <div id="right">
+                <div class="inner">
+                    <h3>right</h3>
+                    <p>eventIn       MFInt32 set_colorIndex
+                        <a href="#">eventIn       MFInt32 set_coordIndex</a>
+                        eventIn       MFInt32 set_normalIndex
+                        eventIn       MFInt32 set_texCoordIndex
+                        exposedField  SFNode  color             NULL
+                        exposedField  SFNode  coord             NULL
+                        exposedField  SFNode  normal            NULL
+                        exposedField  SFNode  texCoord          NULL
+                        field         SFBool  ccw               TRUE
+                        field MFInt32 colorIndex [] # [-1,)
+                        field SFBool </p>
+                </div>
+            </div>
+            <div id="center">
+                <div class="inner">
+                    <h1>Content</h1>
+                    The IndexedFaceSet node represents a 3D shape formed by constructing faces (polygons) from vertices listed in the coord field. The coord field contains a Coordinate node that defines the 3D vertices referenced by the coordIndex field. IndexedFaceSet uses the indices in its coordIndex field to specify the polygonal faces by indexing into the coordinates in the Coordinate node. An index of "-1" indicates that the current face has ended and the next one begins. The last face may be (but does not have to be) followed by a "-1" index. If the greatest index in the coordIndex field is N, the Coordinate node shall contain N+1 coordinates (indexed as 0 to N). Each face of the 
+                </div>
+            </div>
+            <div>
+    </body>
+</html>

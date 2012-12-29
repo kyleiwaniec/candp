@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+        <style>
+            </style>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+           
+			$("#Show").on("click",function(){
+                            
+                        
+		    	var month = $("#choosemonth").val();
+		    	var year = $("#chooseyear").val();
+                        
+                        //alert(month+" : "+year);
+		    		if($.trim(month) == 'none' && $.trim(year) == 'year'){
+						$('.result').load("../products.php");
+                                                
+                                                
+					}
+					else{
+						$('.result').load('../index.php?hi=there&heelo=there');
+                                               
+					}
+		    });
+		
+        });
+        </script>
+        
+</head>
+<body>
+<div id="content">
+   
+
+
+<select name="choosemonth" id="choosemonth">
+            <option value="none">---Select---</option>
+            <option value="1">Jan</option>
+            <option value="2">feb</option>
+            <option value="3">mar</option>
+            <option value="4">apr</option>
+            <option value="5">may</option>
+            
+          </select>
+          &nbsp;&nbsp;
+          <select name="chooseyear" id="chooseyear">
+            <option value="year">---Select---</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+          </select>
+          &nbsp;&nbsp;
+          <input type="button" name="Show" id="Show" value="Go" />
+
+then i have 
+
+<div class="result"></div>
+<div class="url"></div>
+</div>
+</body>
+</html>

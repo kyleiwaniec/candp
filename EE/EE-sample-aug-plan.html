@@ -1,0 +1,268 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>XTLM - Augment - New England</title>
+<link href="/plugins/PHF/Modules/css/phf.css?r=03.03.04" rel="stylesheet" type="text/css" media="all" />
+<link href="/plugins/noty/css/jquery.noty.css?r=03.03.04" rel="stylesheet" type="text/css" />
+<link href="/capacity.css?r=03.03.04" rel="stylesheet" type="text/css" media="all" />
+<!--[if IE]>
+    <link href="/css/ie.css?r=03.03.04" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+<link href="/css/jquery-ui-1.8.18.custom.css?r=03.03.04" rel="stylesheet" type="text/css" media="all" />
+<script src="/plugins/jquery-1.7.1.min.js?r=03.03.04"></script>
+<script src="/plugins/PHF/Modules/Add-Ins/jquery-ui-1.8.18.custom.min.js?r=03.03.04"></script>
+<script src="/plugins/PHF/Modules/js/effects.js?r=03.03.04"></script>
+<script src="/plugins/noty/js/jquery.noty.js?r=03.03.04"></script>
+<script src="/plugins/jquery.hoverIntent.minified.js?r=03.03.04"></script>
+<script src="/plugins/jquery.cluetip.min.js?r=03.03.04"></script>
+
+<!--[if lte IE 8]>
+    <script src="/plugins/FlashCanvas/flashcanvas.js?r=03.03.04"></script>
+<![endif]-->
+<script src="/plugins/flot/jquery.flot.js?r=03.03.04"></script>
+<script src="/plugins/flot/jquery.flot.navigate.js?r=03.03.04"></script>
+<script src="/plugins/flot/jquery.flot.resize.js?r=03.03.04"></script>
+<script src="/plugins/flot/jquery.flot.legendoncanvas.js?r=03.03.04"></script> 
+
+<script src="/plugins/PHF/Modules/Add-Ins/jquery.tablesorter.js?r=03.03.04"></script>
+<script src="/layout.js?r=03.03.04"></script>
+
+</head>
+
+<body>
+
+
+
+<div id="notify"></div>
+<div id="favorites"></div>
+<div id="popup_dialog"></div>
+
+<div id="page-loading-indicator" class="loader-overlay">
+    <img width="32" height="32" src="/images/loader-overlay-spinner-large.gif"/>
+</div>
+
+<div id="container">
+
+    <div id="header">
+        <div id="top_nav">
+            <div id="logo_div">
+                <a href="/"><img src="/images/Company.jpg" alt="Company Reporting" width="180" height="67" /></a>
+            </div>
+            <div id="banner">
+                                    <a id="division_button">Wanda Division</a>
+                    <div id="division_selector">
+                      <ul>
+                        <li><a href="/index.php?Division_ID=22" />Wanda Division</a></li>
+                        <li><a href="/index.php?Division_ID=42" />Cindy Division</a></li>
+                        <li><a href="/index.php?Division_ID=32" />Mary Division</a></li>
+                      </ul>
+                    </div>
+                                <div id="cd_text">
+                    Reporting System
+                </div>
+            </div>
+            <div id="user_area">
+                <div id="username">David Newey</div>
+                <div id="user_nav">
+                                            <a id="open_favorites">Favorites</a>
+                        &nbsp;|&nbsp;
+                        <a href="/logout.php" id="logout_button">Logout</a>
+                                    </div>
+            </div>
+        </div>
+
+        <div id="nav_area">
+            <div id="breadcrumbs">
+                <a  href="/">Home</a> <a  href="/product_page.php?p=XTLM">XTLM</a> <a  href="/XTLM/site_augment_select_reg.php?Division_ID=22&level=region">Site Augment</a> <a class="active" >New England</a>             </div>
+            <ul id="report_links">
+                                    <li>
+                        <a id="favorite_button" class="" data-favorite="{&quot;url&quot;:&quot;\/XTLM\/site_augment_form.php?Division_ID=22&amp;area_id=29&amp;region_id=112&amp;site_id=6151&quot;,&quot;page_title&quot;:&quot;XTLM - Site Augment Form - New England&quot;,&quot;category&quot;:&quot;XTLM&quot;,&quot;name&quot;:&quot;Site Augment Form&quot;,&quot;sub_title&quot;:&quot;Wanda&quot;,&quot;division_id&quot;:&quot;22&quot;,&quot;report_id&quot;:86,&quot;favorite&quot;:0}"></a>                    </li>
+                    <li>
+                        <a href="/mail_form.php?Division_ID=22&url=%2FXTLM%2Fsite_augment_form.php%3FDivision_ID%3D22%26area_id%3D29%26region_id%3D112%26site_id%3D6151&name=XTLM%5CnSite+Augment+Form%5CnWanda" class="popup-dialog" id="mail_button" data-dialog-width="600" data-dialog-height="400" data-dialog-title="Email Report" data-dialog-modal="1"></a>                    </li>
+                            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+Array
+(
+)
+Array
+(
+)
+Array
+(
+)
+<link rel="stylesheet" href="/plugins/Augment/augment.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/plugins/Augment/tigra_cal/calendar.css" type="text/css" media="all">
+<script src="/plugins/Augment/site_augment.js"></script>
+<script src="/plugins/Augment/tigra_cal/calendar_us.js"></script>
+<div id="site-aug-head">
+<div id="site-aug-title">
+<h3>SITE: Town-State</h3>
+</div>
+
+<!-- Drop Down for selecting the base utilization cut-off point. Default is 60% utilization -->
+<div id="site-aug-limit">
+			    <form name="utilLimit" method="post" id="utilLimit">
+				<input type="hidden" name="site_id"  value="6151" />
+				<input type="hidden" name="site"   value="Town-State" />
+				<p>Utilization Base Limit 
+				<select name="blimit" id="blimit"><option value='90'>90%</option><option value='80'>80%</option><option value='70'>70%</option><option value='60' selected>60%</option><option value='50'>50%</option><option value='40'>40%</option><option value='0'>0%</option></select>
+			  </p>
+			  </form>
+			  </div></div>
+
+<div id="site-aug-sg_div">
+
+<table class="site-aug-sg">
+  <tr class="site-aug-XTLM_row">
+  	<td class="site-aug-ap_nbr2">&nbsp;</td>
+    <td class="site-aug-ap_nbr2">&nbsp;</td>
+    <td class="site-aug-XTLM"><input type="checkbox" name="XTLM[]" id="XTLM-A" value="A-1710" /><input type="hidden" name="all_XTLM[]" value="A-1710" />XTLM</td>
+    <td class="site-aug-sg_nbr">&nbsp;</td>
+    <td class="site-aug-pse_blank">&nbsp;</td>
+    <td class="site-aug-pse_tot">
+    	<table class="site-aug-XTLM_table">
+        	<tr>
+            	<td>Device01</td>
+                <td class="site-aug-in_alert">Ports in alert - 2</td>
+            </tr>
+        </table>
+     </td>
+  </tr>
+    <tr class="site-aug-sg_row" id="topA-6_0_2">
+  	<td class="site-aug-ap_nbr2">&nbsp;</td>
+    <td class="site-aug-ap_nbr2">&nbsp;</td>
+    <td class="site-aug-elem_tot"><input type="checkbox" name="mac_id[]" class="parent-A" id="A-6_0_2" value="A-6_0_2" />
+    Downstream Elements: 5</td>
+    <td class="site-aug-mac_nbrC"><a href="#" class="mac" id="A-6_0_2">MD6/0/2</a></td>
+    <td class="site-aug-pse_blank">Links</td>
+    <td class="site-aug-pse_tot">Upper PGs: 3</td>
+  </tr>	
+          <tr id="mdA-6_0_2" style="display:none;">
+            <td class="site-aug-elem_row" colspan="3">
+                <table class="site-aug-elem_block">
+        	<tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='' class='plan_link' id='326943'>326943</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426261" value="A-6_0_2-426261" /></td>
+				  <td class="site-aug-element">Device02</td>
+				  <td class="site-aug-pct">58.64</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='' class='plan_link' id='320897'>320897</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426406" value="A-6_0_2-426406" /></td>
+				  <td class="site-aug-element">Device03</td>
+				  <td class="site-aug-pct">73</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='' class='plan_link' id='326112'>326112</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426407" value="A-6_0_2-426407" /></td>
+				  <td class="site-aug-element">Device04</td>
+				  <td class="site-aug-pct">80</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='' class='plan_link' id='353993'>353993</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426408" value="A-6_0_2-426408" /></td>
+				  <td class="site-aug-element">Device05</td>
+				  <td class="site-aug-pct">82</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='' class='plan_link' id='326457'>326457</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426409" value="A-6_0_2-426409" /></td>
+				  <td class="site-aug-element">Device06</td>
+				  <td class="site-aug-pct">62</td>
+				  <td class="site-aug-priorityC">E</td>
+				</tr>                </table>
+            </td>
+            <td class="site-aug-util"><br />DS Ottal<br /><div class="site-aug-us-insert">71.13</div></td>
+            <td class="Links">
+                <table class="site-aug_pse">    
+        	<tr><td class='site-aug_pse_td'><a href='#' class='pseList' id='CT001503'>View<br />Links</a></td></tr><tr><td class='site-aug_pse_td'><a href='#' class='pseList' id='CT001503,CT001564'>View<br />Links</a></td></tr><tr><td class='site-aug_pse_td'><a href='#' class='pseList' id='CT001564'>View<br />Links</a></td></tr>                </table>
+            </td>
+                        
+            <td class="us_elems">
+                <table class="site-aug-us_elem">
+       		<tr><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426262" value="A-6_0_2-426262" /></td>
+							<td>Device07</td>
+							<td class="site-aug-pct">25.46</td>
+							<td class="site-aug-priorityC">F</td>
+						</tr>
+					</table>
+				 </td><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426263" value="A-6_0_2-426263" /></td>
+							<td>Device08</td>
+							<td class="site-aug-pct">30.14</td>
+							<td class="site-aug-priorityC">F</td>
+						</tr>
+					</table>
+				 </td><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td colspan='4'>&nbsp;</td>
+						</tr>
+					</table>
+					</td><td class="site-aug-us-ave">Ovil<br />27.8</td></tr><tr><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-894431" value="A-6_0_2-894431" /></td>
+							<td>Device09</td>
+							<td class="site-aug-pct">2.44</td>
+							<td class="site-aug-priorityC">F</td>
+						</tr>
+					</table>
+				 </td><td class="site-aug-us-ave">Ovil<br />2.44</td></tr><tr><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426264" value="A-6_0_2-426264" /></td>
+							<td>Device10</td>
+							<td class="site-aug-pct">11.75</td>
+							<td class="site-aug-priorityC">F</td>
+						</tr>
+					</table>
+				 </td><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td class="site-aug-el_id"><input type="checkbox" name="frigate_id[]" class="parent-A-6_0_2" id="A-6_0_2-426265" value="A-6_0_2-426265" /></td>
+							<td>Device11</td>
+							<td class="site-aug-pct">19.41</td>
+							<td class="site-aug-priorityC">F</td>
+						</tr>
+					</table>
+				 </td><td>
+					<table class="site-aug-us-one">
+						<tr>            	
+							<td colspan='4'>&nbsp;</td>
+						</tr>
+					</table>
+					</td><td class="site-aug-us-ave">Ovil<br />15.58</td></tr>                </table>
+            </td>
+          </tr>
+         
+         
+</table>
+</div>
+
+ 
+
+    </div>
+</div>
+
+<form class="skip-page-load-indicator" id="download-data-uri" action="/download-data-uri.php" method="post">
+    <input type="hidden" name="filename" />
+    <input type="hidden" name="data" />
+</form>
+</body>
+</html>

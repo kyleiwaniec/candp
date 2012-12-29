@@ -1,0 +1,62 @@
+{ 
+    "colors": [{ 
+            "Red": [
+                    {
+                        "city" : "Brooklyn",
+                        "votes" : "100,000"
+                    },
+                    {
+                        "city" : "Detroit",
+                        "votes" : "160,000"
+                    }
+                ]
+            },
+            { 
+             "Orange": [
+                
+                ]
+            },
+            { 
+             "Yellow": [
+                    {
+                        "city" : "Anchorage",
+                        "votes" : "15,000"
+                    },
+                    {
+                        "city" : "Selma",
+                        "votes" : "15,000"
+                    }
+                ]
+            },
+            {
+             "Green": [
+                ]
+            },
+           
+            { 
+             "Blue": [
+                    {
+                        "city" : "Anchorage",
+                        "votes" : "10,000"
+                    },
+                    {
+                        "city" : "Brooklyn",
+                        "votes" : "250,000"
+                    }
+                ]
+            },
+            { 
+             "Indigo": [
+             
+                ]   
+            },
+            { 
+             "Violet": [
+                    {
+                        "city" : "Selma",
+                        "votes" : "5,000"
+                    }
+                ] 
+         }
+    ]
+    }

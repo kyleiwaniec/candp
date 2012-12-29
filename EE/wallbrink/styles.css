@@ -1,0 +1,125 @@
+/* 
+    Document   : styles
+    Created on : Mar 13, 2012, 2:28:16 PM
+    Author     : kylehamilton
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* the main menu */
+.navigation {
+   display:block;
+   position:absolute;
+   width:500px;
+   z-index:1000;
+   right:0;
+   
+}
+.navigation ul{
+	list-style :none;
+	margin:0; 
+	padding:0; /* gets rid of any inherited margins and padding */
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+    position:relative;
+	z-index:1000;
+}
+.navigation > ul > li { 
+	position : relative;
+	float : left;
+	margin-right : 20px;
+	font-size: 15px; /* this is here and not above, so that the subs can be made smaller using a % */
+
+}
+.navigation > ul > li > a {
+	background-color: #FFC90A; /* yellow */
+	display:block;
+	padding:8px 14px;
+	text-decoration:none;
+	color:#2C2C2C;
+}
+
+
+.navigation > ul > li > a:hover{
+	background-color:#2c2c2c;
+	color:#aaaaaa;
+}
+.navigation > ul > li:hover ul, .navigation > ul > li > a:hover ul{
+	display:block;
+}
+/* the drop-down box */
+
+.navigation ul li ul{
+	position:absolute;
+	display:none; 
+	background-color:#eaeaea;
+	z-index:100;
+	font-size:85%; /* this is just a sylistic decision. I think the sub items should be smaller than the main items */
+	}
+
+/* the drop-down items */
+
+.navigation ul ul {
+	width:170px; /* you need a width to avoid weird line breaks */
+}
+.navigation ul ul li:hover {
+	background-color:#666666;
+}
+.navigation ul ul li a {
+	display:block;
+	text-decoration:none;
+	margin:0 12px;
+	padding:5px 0;
+	color:#4c4c4c;
+	border-bottom:1px solid #dcdcdc;
+	}
+.navigation ul ul li a:hover {
+	color:#ffffff;
+	border-bottom:1px solid #666666;
+}
+
+.navigation ul ul li:last-child a{
+	border:0;
+		
+}
+/* relative and absolute content test  for IE7 which has a different way of generating the stacking order */
+.wrapper{
+    width:940px;
+    margin:0 auto;
+    position:relative;
+}
+.header{
+    width:940px;
+    margin:0 auto;
+    height:50px;
+}
+.logo{
+    position:absolute;
+    
+}
+.content{
+    position:relative; 
+    border-top:1px solid lightgrey;
+    border-bottom:1px solid lightgrey;
+    min-height:500px;
+    overflow:hidden;
+}
+.title{
+    width:100%;
+    height:50px;
+    border:1px dotted grey;
+}
+.left, .right{
+    float:left;
+    width:468px; /* remeber to take borders and padding into account when setting this width */
+    border:1px dotted grey;
+}
+.position-statement{
+    position:absolute;
+    z-index:10;
+    top:300px; 
+    width: 200px; 
+    height:200px; 
+    background-color: lightgrey;
+}
+

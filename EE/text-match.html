@@ -1,0 +1,199 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <style>
+            #loader{
+                position:fixed;
+                width:100px;
+                height:100px;
+                    z-index:100;
+                bottom:50%;
+                left:50%;
+                background-color:white;
+                padding:10px;
+            }   
+        </style>
+<script>
+    $(function(){
+        function  wcMatrixInfinite() {
+            clearTimeout(wcMatrixInfinite.timer);
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+                
+                wcMatrixInfinite.timer = setTimeout(function(){
+                    
+                    $("#loader").text("Loading...");// this is where you would put a loader
+                    console.log("executed"); // chech how many times this executes
+                    $.get('fullgridload.php', function(data) {
+                        
+                        $(".wcGridCont").append(data);
+                        
+                    }).complete(function(){
+                        $("#loader").text(""); // remove the loader here
+                    });
+                    
+                }, 2000); // delay for 1 sec
+                
+
+            }
+        };
+           $(window).scroll(function(){
+                console.log($(window).scrollTop() + $(window).height());
+                console.log($(document).height());
+            wcMatrixInfinite(); 
+           });
+ });
+</script>
+<style>
+    .active{
+        color:red;
+    }
+</style>
+    </head>
+    <body>
+        <div id="loader">huh
+</div>
+        <p>Thank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page EditorThank you for your submission here at Experts Exchange. I have set it to Author Review while I look it over. I will get back to you soon with any specific comments, suggestions, or recommended changes needed prior to publication. 
+
+One thing that I will need to see is the file included as an attachment in the article. 
+
+Should you need to make any other changes, please leave me a private note letting me know you are doing so, so I will be aware and don't make any comments based on an earlier version.
+
+LHerrou
+Experts Exchange Page Editor</p>
+        
+    </body>
+</html>

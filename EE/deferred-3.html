@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>
+        <title></title>
+
+        <style>
+            body{
+                background:black;
+                overflow:auto;
+            }
+
+            #divVideos
+            {
+                display:none;
+                z-index: 9999;
+
+            }
+            #iVideos
+            {
+                display: block;
+                width: 600px;
+                height: 400px;
+                margin: 0 auto;
+                border: 0;
+
+            }
+            #tsc_player {
+                z-index: 9998;	
+            }
+
+            .tscplayer_inline {
+                position:static;
+                margin: 30px;
+                width: 640px;
+                height: 480px;
+                z-index:auto;
+            }
+
+            .tscplayer_fullframe {
+                position:absolute;
+                top: 0px;
+                left: 0px;
+                margin: 0px;
+                padding: 0px;
+                z-index: 9999;	
+            }
+            .drawingpix { 
+                position:absolute; 
+                top:-50px; 
+                left:-50px;
+            }
+
+            #typetext
+            {
+                font-size:280%;
+                color:white;
+                font-weight:bold;
+                text-align:center;
+                width:100%;
+                vertical-align:top;
+            }
+            .generictext
+            {
+                font-size:200%;
+                width:100%;
+                color:white;
+                font-weight:bold;
+                text-align:center;
+                margin-left:auto;
+                margin-right:auto;
+
+
+
+            }
+            .listtext
+            {
+                font-size:200%;
+                width:70%;
+                color:white;
+                font-weight:bold;
+                text-align:left;
+                float:right;
+
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div id="Div1" style="padding:5px; float:right; color:black; width:150px; height:40px">
+            <input id="Button2" onclick="isMobile();" type="button" style="width:100px; height:30px; font-size:1em" value="Skip" />
+        </div>
+        <div style="clear:both"></div>
+        <div id="typetext">
+            Welcome to Stylist Studio!
+        </div>
+        <div style="clear:both"></div>
+        <div id="ticker">
+            <div id="divFade">
+                <div class="generictext">
+                    <i style="color:#fc03b2">The only application designed by stylists for stylists and their clients!</i>
+                </div>
+                <div style="clear:both"></div>
+                <div id="ticker-area" class="generictext">
+                    <ul>
+                        <li style="color:#4cff00">Client Management w/No Show and Scheduling</li>
+                        <li style="color:#0906fe">One-Click Service Creation and Completion</li>
+                        <li style="color:#fc03f7">Scheduling w/ Quick Search for Availability</li>
+                        <li style="color:#ff0000">Multi-Level Formula Creation and Import!</li>
+                        <li>Automatic Inventory Adjustments</li>
+                        <li style="color:#00ffef">Complete Inventory Control</li>
+                        <li style="color:#d503fe">Import Product Lines</li>
+                        <li style="color:#aeff00">Your own Biography</li>
+                        <li style="color:#00e8ff">Your own Portfolio</li>
+                        <li style="color:#ffac00">Retail Sales</li>
+                        <li id="liLast" style="color:#fef901">and a lot more...</li>
+                    </ul>
+                    <a id="stop_timer" href="#" onclick="showVideo();">View Video</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="divVideos">
+            <iframe id="iVideos" class="tscplayer_inline" name="tsc_player" scrolling="no" frameborder="2" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <script src="http://styliststudioinc.com/Scripts/jquery.jticker.js"></script>
+        <script type="text/javascript">
+            var animation_stopped = false;
+            $(function(){
+                dream();
+                setTimeout(function(){
+                    runTicker();
+                }, 5000);
+            });  
+            function showVideo() {
+                $("#ticker").remove();
+                animation_stopped = true;
+            
+                $("body").css({backgroundColor: "white"});  // cant animate color. only opacity.
+                $('#divVideos').fadeIn('slow');
+                // Animation complete.
+           
+                $("#iVideos").prop('src', 'http://styliststudioinc.com/Videos/Quick%20Start%20Intro_player.html');
+                return false;
+            };
+
+       
+            //the function that creates dream
+            function dream() {
+                //calculating random color of dream
+                if (animation_stopped) return;
+                var color = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+
+                //calculating random X position
+                var x = Math.floor(Math.random() * $(window).width());
+
+                //calculating random Y position
+                var y = Math.floor(Math.random() * $(window).height());
+
+                //creating the dream and hide
+                drawingpix = $('<span>').attr({ class: 'drawingpix' }).hide();
+
+                //appending it to body
+                $(document.body).append(drawingpix);
+
+                //styling dream.. filling colors.. positioning.. showing.. growing..fading
+                drawingpix.css({
+                    'background-color': color,
+                    'border-radius': '100px',
+                    '-moz-border-radius': '100px',
+                    '-webkit-border-radius': '100px',
+                    top: y - 14,    //offsets
+                    left: x - 14 //offsets
+                }).show().animate({
+                    height: '500px',
+                    width: '500px',
+                    'border-radius': '500px',
+                    '-moz-border-radius': '500px',
+                    '-webkit-border-radius': '500px',
+                    opacity: 0.1,
+                    top: y - 250,    //offsets
+                    left: x - 250
+                }, 3000).fadeOut(2000);
+
+                //Every dream's end starts a new dream
+                window.setTimeout('dream()', 200);
+            }
+       
+       
+ 
+       
+            function stopRunul() {
+                $(".stop").click(function () {
+                    $("#ticker").trigger("stop");
+                    return false;
+                });
+            }
+
+            function runTicker() {
+                $("#ticker").ticker({
+                    cursorList: " ",
+                    rate: 50,
+                    delay: 18000
+                }).trigger("play").trigger("stop");
+                    
+                // Trigger events
+                $(".stop").click(function () {
+                    $("#ticker").trigger("stop");
+                    return false;
+                });
+
+                $(".play").click(function () {
+                    $("#ticker").trigger("play");
+                    return false;
+                });
+                    
+                    
+                    
+                setTimeout(function(){
+                    showVideo();
+                }, 18000);
+                    
+            }
+
+        
+
+            function isMobile() {
+                var targetPage = "http://styliststudioinc.com/Default.aspx";
+               
+               
+                if (screen.width <= 699) {
+                    targetPage = "http://styliststudioinc.com/Mobile/Mobile_Default.aspx";
+                }
+                redirectTo(targetPage);
+            }
+
+
+            function redirectTo(targetPage) {
+           
+                if (0 < targetPage.length) {
+                    location.replace(targetPage);
+                } else {
+                    location.replace("http://styliststudioinc.com/Default.aspx");
+                }
+
+            }
+
+        </script>
+    </body>
+
+</html>

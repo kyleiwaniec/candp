@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>HTML5</title>
+	<link rel="stylesheet" href="main4.css">
+        <style>
+            #header{
+   background-color:blue;
+   height:45px;
+}
+li, ul {list-style: none; padding:0; margin:0;}     
+a{text-decoration:none;}    
+#header .navigationTabs li{float:left;padding-left:3px;font-family:"Droid Sans","Lucida Grande","Trebuchet MS","Gill Sans",Arial,sans-serif;position:relative}
+#header .mainNavigation a{float:left;font-size:16px;line-height:34px;height:34px;padding:0 4px 0 0;margin-top:5px;color:#fff;text-transform:uppercase;text-shadow:#444 1px 1px 0}
+#header .mainNavigation li a span{float:right;height:34px;padding:0 4px 0 8px}
+#header .mainNavigation li a:hover,#header .mainNavigation li a:focus{text-decoration:none;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/sprite-nav-hover.png') no-repeat right top}
+#header .mainNavigation li a:hover span,#header .mainNavigation li a:focus span{background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/sprite-nav-hover.png') no-repeat left top}
+#header .mainNavigation li.selected a{height:32px;text-decoration:none;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/sprite-nav-hover.png') no-repeat right -35px}
+#header .mainNavigation li.selected a:hover,#header .mainNavigation li.selected a:focus{background-position:right -35px}
+#header .mainNavigation li.selected a span{height:32px;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/sprite-nav-hover.png') no-repeat left -35px}
+#header .mainNavigation li.selected{position:relative;top:3px}
+#header .mainNavigation li.selected a{position:relative;top:-1px;line-height:32px}
+#header .mainNavigation li ul{position:absolute;left:-9999px;z-index:9996}
+#header .mainNavigation li.topics ul{width:150px;height:395px;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/nav-topics-drop.png') no-repeat left top}
+#header .mainNavigation li.community ul{width:150px;height:211px;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/nav-comm-drop.png') no-repeat left top}
+#header .mainNavigation li li:first-child a,#header .mainNavigation li li:first-child a:hover{font-size:16px;line-height:34px;display:inline;padding-top:0;padding-bottom:0}
+#header .mainNavigation li li:first-child a:hover{font-weight:normal;background:0;background-color:transparent}
+#header .mainNavigation li.topics{z-index:9997}
+#header .mainNavigation li{z-index:9998}
+#header .mainNavigation li:hover ul{left:0;top:5px;z-index:9999}
+#header .mainNavigation li li a,#header .mainNavigation li li a span,#header .mainNavigation li li a:hover,#header .mainNavigation li li a:hover span,#header .mainNavigation li li.selected a,#header .mainNavigation li li.selected a span{float:none;background:0}
+#header .mainNavigation li li{float:none;padding-left:3px;font-family:"Droid Sans","Lucida Grande","Trebuchet MS","Gill Sans",Arial,sans-serif}
+#header .mainNavigation li li a,#header .mainNavigation li li.selected a{font-size:12px;height:11px;line-height:11px;display:block;width:97%;padding:3px 0;overflow:hidden}
+#header .mainNavigation li li a:hover,#header .mainNavigation li li.selected a,#header .mainNavigation li li.selected a:hover{font-weight:bold;background-color:#0e658d}
+#header .mainNavigation li li.last{margin-top:20px}
+#header .mainNavigation li li.last a span{padding-right:20px;background:transparent url('http://cms.l3.redsrci.com/images/experts-exchange/sprite-ico.png') no-repeat 100% -2605px}
+#header .mainNavigation li li.selected a{top:0;margin:0}
+#header .mainNavigation li li.selected a span{padding:0 4px 0 8px}
+#header .mainNavigation li.topics li.selected.first,#header .mainNavigation li.topics li.selected.first:hover{display:block;position:relative;top:0;margin:0;height:32px;line-height:32px;background-color:transparent;background-image:none}
+#header .mainNavigation li.topics li.selected.first a,#header .mainNavigation li.topics li.selected.first a:hover{display:block;position:relative;top:0;margin:0;height:32px;line-height:32px;font-weight:normal;background-color:transparent;background-image:none}
+#header .mainNavigation li.topics li.selected.first a{top:-3px}
+#header .mainNavigation li.topics li.selected.first a:hover{*top:-3px}
+#header .mainNavigation .community-support .tab span{font-size:11px}
+        </style>
+            
+</head>
+<body>
+<div id="content">
+    <div id="header"><div class="mainNavigation navigationTabs">
+	<ul class="">
+                        <li class="uiTab-00 first"><a class="tab uiTabTarget-00" href="/askQuestion.jsp?taid=100" target="_self" title="Ask The Experts A Question"><span>Ask</span></a></li>
+                        <li class="uiTab-01"><a class="tab uiTabTarget-01" href="/questionList.jsp?ts=open-questions" target="_self" title="Are You An Expert? Answer Questions for Free Access!"><span>Answer</span></a></li>
+                        <li class="uiTab-02 topics"><a class="tab uiTabTarget-02" href="#" target="_self" title="Browse All Topics"><span>Topics</span></a>
+                          <ul class="">
+                            <li class="uiTab-02-00 first first"><a class="tab uiTabTarget-02-00" href="/allTopics.jsp" target="_self" title="Topics"><span>Topics</span></a></li>
+                            <li class="uiTab-02-01"><a class="tab uiTabTarget-02-01" href="/Microsoft/" target="_self" title="Microsoft"><span>Microsoft</span></a></li>
+                            <li class="uiTab-02-02"><a class="tab uiTabTarget-02-02" href="/Apple/" target="_self" title="Apple"><span>Apple</span></a></li>
+                            <li class="uiTab-02-03"><a class="tab uiTabTarget-02-03" href="/Digital_Living/" target="_self" title="Digital Living"><span>Digital Living</span></a></li>
+                            <li class="uiTab-02-04"><a class="tab uiTabTarget-02-04" href="/Hardware/" target="_self" title="Hardware"><span>Hardware</span></a></li>
+                            <li class="uiTab-02-05"><a class="tab uiTabTarget-02-05" href="/Software/" target="_self" title="Software"><span>Software</span></a></li>
+                            <li class="uiTab-02-06"><a class="tab uiTabTarget-02-06" href="/OS/" target="_self" title="Operating Systems"><span>Operating Systems</span></a></li>
+                            <li class="uiTab-02-07"><a class="tab uiTabTarget-02-07" href="/Storage/" target="_self" title="Storage"><span>Storage</span></a></li>
+                            <li class="uiTab-02-08"><a class="tab uiTabTarget-02-08" href="/Database/" target="_self" title="Database"><span>Database</span></a></li>
+                            <li class="uiTab-02-09"><a class="tab uiTabTarget-02-09" href="/Security/" target="_self" title="Security"><span>Security</span></a></li>
+                            <li class="uiTab-02-10"><a class="tab uiTabTarget-02-10" href="/Programming/" target="_self" title="Programming"><span>Programming</span></a></li>
+                            <li class="uiTab-02-11 selected"><a class="tab uiTabTarget-02-11" href="/Web_Development/" target="_self" title="Web Development"><span>Web Development</span></a></li>
+                            <li class="uiTab-02-12"><a class="tab uiTabTarget-02-12" href="/Networking/" target="_self" title="Networking"><span>Networking</span></a></li>
+                            <li class="uiTab-02-13"><a class="tab uiTabTarget-02-13" href="/Virus_and_Spyware/" target="_self" title="Virus &amp; Spyware"><span>Virus &amp; Spyware</span></a></li>
+                            <li class="uiTab-02-14 community-support"><a class="tab uiTabTarget-02-14" href="/Community_Support/" target="_self" title="Community Support"><span>Community Support</span></a></li>
+                            <li class="uiTab-02-15 last"><a class="tab uiTabTarget-02-15" href="/allTopics.jsp" target="_self" title="Browse All"><span>Browse All</span></a></li>
+                          </ul>
+                        </li>
+                        <li class="uiTab-03"><a class="tab uiTabTarget-03" href="/articles/" target="_self" title="View All Articles"><span>Articles</span></a></li>
+                        <li class="uiTab-04"><a class="tab uiTabTarget-04" href="/webinars/" target="_self" title="Experts Exchange Webinars"><span>Webinars</span></a></li>
+                        <li class="uiTab-05"><a class="tab uiTabTarget-05" href="/tutorials/" target="_self" title="Experts Exchange Tutorials"><span>Tutorials</span></a></li>
+                        <li class="uiTab-06 last"><a class="tab uiTabTarget-06" href="/blog/" target="_self" title="Experts Exchange Blogs"><span>Blogs</span></a></li>
+                      </ul>
+        </div></div>
+</div>
+</body>
+</html>

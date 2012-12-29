@@ -1,0 +1,166 @@
+/*layout.css lays out the page*/
+
+/*reset the page */
+/*@import url('reset.css');*/
+
+/*main stuff*/
+
+
+
+
+body{
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 12px;
+    margin:0;
+}
+
+#outerwrapper{
+    /*    background-color: #000;*/
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    /*    top:10px;*/
+    width:994px; /*ie 960 minus 2px for border*/
+}
+#logo{
+    background-repeat: no-repeat;
+    width:289px;
+    float:left;
+    height:49px;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-top: 10px;;
+}
+#topnavigation{
+    position:relative;
+    top:40px;
+    margin-top: 5px;
+}
+#topnavigation ul{
+    list-style-type: none;
+    height: 11px;
+    width: auto;
+    margin: auto;
+}
+#topnavigation li {
+    float: left;
+}
+
+#topnavigation ul a{
+    padding-left: 40px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 800;
+    display:block;
+
+}
+#topnavigation li.last{
+    margin-top: -3px;
+}
+
+#topnavigation li.last a{
+    padding-left: 40px;
+
+}
+#topnavigation ul a:link,#topnavigation ul a:visited {color:#000;}
+#topnavigation ul li a:hover { 
+filter: alpha(opacity=50);
+-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+
+ -moz-opacity:0.5;
+-khtml-opacity: 0.5;
+ opacity: 0.5;
+}
+
+#theg
+{   
+    font-family: 'Merriweather', serif;
+    font-size: 18px !important;
+}
+
+#theg span
+{
+    color:#6696c7;
+}
+
+
+#navwrapper{
+    float:right;
+}
+#header,#content{
+    float:left;
+    width:994px;
+}
+
+#content>hr{
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+#header hr, #footerwrapper hr{
+    border: none;
+    clear:both;
+    width:100%;
+    -webkit-margin-before:0;
+    -webkit-margin-after:0;
+}
+#header hr {
+    border: 0;
+    height: 0;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#footerwrapper hr {
+    background-color: #333333;
+    color: #333333;
+    margin-bottom: 7px;
+
+}
+div#flavor_1.slideshow{
+    margin-left: 80px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    width:994px;
+}
+#footerwrapper{
+    height:15px;
+    margin-bottom: 10px;
+    clear:both;
+    width:994px;
+    margin-left:auto;
+    margin-right: auto;
+
+
+}
+#footercontent{
+    font-size: 12px;
+    float:left;
+    width:450px;
+}
+.titlebold{
+    font-size: 10px;
+    font-weight: 800;
+}
+.titlelight{
+    margin-top: 10px;
+    font-size: 10px;
+    color:#7e7575;
+}
+#footercopy{
+    margin-top: 3px;
+    float:right;
+    width:auto;
+}
+.addthis_toolbox.addthis_default_style {
+    width: 140px;
+}
+
+#conback{
+    display: block;
+    width: 994px;
+    height: 540px;
+
+}
+
+

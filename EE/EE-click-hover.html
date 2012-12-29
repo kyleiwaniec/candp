@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+
+<style>
+.listingNavWrapper{
+    width:185px;
+    float:left;
+}
+
+.listingSideNav{
+    position:relative;
+    
+    display:block;
+    width:175px;
+    margin:0 auto;
+    padding:0 0 5px 0;
+    list-style: none;
+    border:1px solid #959494;
+    text-align: center;
+
+    background-color:#454445;
+}
+.listingSideNav li img{
+    border:1px solid #959494;
+    margin:5px 5px 0 5px;
+}
+.listingSideNav li a{
+    font-size: 16px;
+    font-family: Georgia, serif;
+    color:#c9c5b2; 
+    display:block;
+}
+.listingSideNav li a:hover{
+    color:white;
+    text-decoration: none;
+}
+
+.listingSideNav li{
+    z-index:500;
+    border-top:1px solid #959494;
+    border-bottom:1px solid #959494;
+    margin-bottom:1px;
+}
+.listingSideNav li+li{
+    line-height:30px;
+    height:28px;
+}
+.listingSideNav li:first-child{border:0;}
+.listingSideNav li.noTop{border-top:0 !important; height:29px;}
+.listingSideNav li.noBot{border-bottom:0 !important;}
+
+.listingSideNav li.active{
+   
+    background:url(../images/activeBar.png);
+}
+.listingSideNav li.active a{
+    color:white;
+    text-decoration: none;
+}
+#hoverBox{
+    position: absolute;
+    background-color:#252626;
+    background:url(../images/activeBar.png);
+    width:175px;
+    height: 29px;
+    left:0;
+    top:130px;
+    display:none;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div class="listingNavWrapper">
+
+<ul class="listingSideNav">
+    <li><a href="EE-modal.php?what=2&who=3">DETAILS</a></li>
+    <li><a href="#">PHOTO GALLERY</a></li>
+    <li><a href="#">360° REALTOUR</a></li>
+    <li><a href="#">GUIDED TOUR</a></li>
+    <li><a href="#">FLOOR PLANS</a></li>
+    <li><a href="#">MAP & DIRECTIONS</a></li>
+    <li><a href="#">CONTACT</a></li>
+    <div id="hoverBox"></div>
+</ul>
+
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(function(){
+
+	function sidebarHover(){
+            
+            
+            
+            var hoverBox = $("#hoverBox");
+            var button = $(".listingSideNav li");
+            
+            
+            var buttons = button.length;
+            
+            var hgt = 0;
+            for (var i = 0; i < buttons; i++){
+                hgt+= button.eq(i).outerHeight(true);
+            }
+            //alert(hgt);
+            $(".listingSideNav").css({height:hgt});
+            var numOfbutts = button.length;
+            //alert(numOfbutts);
+            var top, j;
+            for (j = 1, top = 126; j<numOfbutts; j++, top+=31){
+                
+                button.eq(j).css({"position":"absolute", "top":top, "left": "0", "width":"175px"}).addClass("hoverable");
+                
+                }
+            
+            $(".hoverable").live({
+            
+                    
+                 mouseenter: function() {
+
+                             hoverBox.css({"display":"block"}).stop().animate({
+                                           //top: $(this).position().top,
+                                           top: $(this).position().top,
+                                           //width: $(this).innerWidth(),
+                                           opacity: 1
+                                           }, 200, 'easeOutBack');
+                             
+                             $(".active").removeClass("active").addClass("temp");            
+                             },
+                mouseleave:  function(){
+                             hoverBox.stop(true, true).animate({
+                                            opacity: 0
+                                            });
+                             $(".temp").removeClass("temp").addClass("active");
+                             },   
+                     click:  function(){
+                             $(this).addClass("active").siblings().removeClass("active, temp");
+
+                             }          
+              });
+              
+            } // end sidebarHover
+
+});
+
+</script>
+
+
+
+</body>
+</html>

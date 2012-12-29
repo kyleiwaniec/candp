@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+        <link type="text/css" href="http://jscrollpane.kelvinluck.com/style/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+
+    <style>
+        .testSlide{
+            height: 778px;
+            overflow: auto;
+            width:285px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="http://jscrollpane.kelvinluck.com/script/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="http://jscrollpane.kelvinluck.com/script/jquery.jscrollpane.min.js"></script>
+    
+    <script>
+      $(function(){
+        var settings = {
+		showArrows: true,
+                autoReinitialise: true
+	};
+	var pane = $('.testSlide');
+	pane.jScrollPane(settings);
+          
+        var interval;
+        var id = [];
+        var tweets = $(".tweets");
+        
+        
+        // get twitter trends using json
+        // var url = "https://api.twitter.com/1/trends/1.json?callback=?";
+        var path = "http://collectiveintel.info/Tweets.php";
+        
+        
+        $.getJSON("getfile.php", {u:path},  function(data){
+          //  alert(data.T[0].Tweet_ID);
+          var tweet = data.T;
+          for (var i = 0; i < tweet.length; i++){
+            var t = tweet[i];
+            id.push(t.Tweet_ID);
+            $("<div>"+t.User_Display_Name+"<br/>"+t.Tweet_Text+"<\/div>").appendTo(".tweets"); 
+          }
+          
+        });
+       
+        
+        
+        interval = setInterval (function(){
+        $.getJSON("getfile.php", {u:path},  function(data){
+          //  alert(data.T[0].Tweet_ID);
+          var tweet = data.T;
+          
+          //for (var i = 0; i < tweet.length; i++){
+          for (var i = tweet.length-1; i >= 0; i--){
+            var t = tweet[i];
+            var tid = t.Tweet_ID;
+            
+            if ($.inArray(tid, id) == -1){
+               
+               var newTwit = $("<div class='newtwit'>"+t.User_Display_Name+"<br/>"+t.Tweet_Text+"<\/div>").hide(); 
+               
+               tweets.prepend(newTwit);
+               
+               newTwit.slideDown("slow");
+            }
+            id.push(tid);
+          }
+        });
+        }, 2000);
+        
+
+        
+//	var api = pane.data('jsp');
+//	var i = 1;
+
+	// Every second add some new content...
+//	setInterval(
+//		function()
+//		{
+//			api.getContentPane().append(
+//				$('<p />').text('This is paragraph number ' + i++)
+//			);
+//			// we could call "pane.jScrollPane(settings)" again but it is
+//			// more convenient to call via the API as then the original
+//			// settings we passed in are automatically remembered.
+//			api.reinitialise();
+//		},
+//		1000
+//	);
+	
+// end scroll pane
+
+
+
+      });
+    </script>
+  </head>
+  <body>
+      <div class="testSlide">
+    <div class="tweets"></div>
+    </div>
+  </body>
+</html>

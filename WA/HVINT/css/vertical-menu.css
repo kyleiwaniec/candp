@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+#blueblock{
+    border-right: 11px solid #306700;
+    border-left: 10px solid #306700;
+
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+    background-color: #90bade;
+}
+#blueblock ul li {
+    font-size: 11px;
+    color: #333;
+    width:194px;
+    text-align:center;
+    margin: 0;
+    display:block;
+    float:left;
+}
+
+
+
+#blueblock ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #693;
+    height: 24px;
+}
+
+#blueblock li + li {
+    border-left: 1px solid #99cc66;
+}
+
+#blueblock li a{
+    display: block;
+    background-color: #669933;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 25px;
+}
+
+html>body #blueblock li a{ /*Non IE6 width*/
+    width: auto;
+}
+
+#blueblock li a:hover{
+    background-color: #336600;
+    color: #fff;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <link href="http://prwf.googlecode.com/svn-history/r7/trunk/Fuentes/WorkflowProyectos/deploy/workflowproyectos.war/estilo/css/theme1/jquery-ui-1.8.8.custom.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  <meta charset="utf-8">
+    <style>
+    #geral {position: relative; margin-left: 200px; margin-top: 200px; width: 500px; height: 500px; /*background-color: yellow;*/ z-index: 1;}
+    #draggable { position: absolute; width: 200px; height: 200px; /*border: solid 2px blue;*/ color: green; z-index: 3; background-image: url('images/forrest-bg.jpg');}
+    #droppable { position: absolute; width: 200px; height: 200px; margin-left: 250px; margin-top: 250px; z-index: 2; color: white; font-weight: bold; /*background-color: black;*/ border: solid 2px blue;}
+    
+    .semi{
+        width:200px;
+        height:200px;
+        background:rgba(0,0,0,.2);
+    }
+    </style>
+    <script>
+    $(function() {
+        $( "#draggable" ).draggable();
+        $( "#droppable" ).droppable({
+            drop: function( event, ui ) {
+                $( this )
+                    .find( "p" )
+                        .html( "Dropped!" );
+                        var mede = $("#draggable");
+                        var posicaol = mede.position().left;
+                        var posicaot = mede.position().top;
+                        var distancial = 250 - posicaol; 
+                        var distanciat = 250 - posicaot;
+                        $("#result").html(distancial); 
+                        $("#draggable").css("margin-left", distancial);
+                        $("#draggable").css("margin-top", distanciat);
+                        $("#draggable").draggable({ disabled: true });
+
+            }
+        });
+        
+        var checkbox = $("#myCheckBox");  // your checkbox id
+        var openable = $("#myDiv"); // div id you want to open
+
+        openable.css({"display": "none"});
+
+        checkbox.change(function(){
+            if(checkbox.attr("checked")){
+            openable.slideDown();
+        }else{
+            openable.slideUp();
+        }
+        });
+    });
+    </script>
+</head>
+<body>
+    <input type="checkbox" id="myCheckBox"></input>
+<div id="myDiv"><h3>My car is at a different address</h3>
+   <label for="CAddress">Address</label>
+	<input type="text" name="CAddress" id="CAddress" value="" placeholder="Address*"/>
+
+<label for="CCity">City</label>
+	<input type="text" name="CCity" id="CCity" value="" placeholder="City*"/>
+
+<label for="CZip">Zip</label>
+	<input type="tel" name="CZip" id="CZip" value="" placeholder="Zip"/>
+</div>
+    <div class="semi">something</div>
+<div id="result">...</div>
+<div id="geral">
+    
+<div id="draggable">
+    <p>.</p>
+</div>
+
+<div id="droppable">
+    <p>Drop here</p>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <style>
+            ul.tabs {
+                margin: 0;
+                padding: 0 0 0 10px;
+                float: left;
+                list-style: none;
+                height: 32px;
+
+                border-bottom: 1px solid #e5e5e5;
+                width: 942px;
+            }
+            ul.tabs li {
+                float: left;
+                margin: 0 0 0 10px;
+                padding: 0;
+                height: 31px;
+
+                line-height: 31px;
+
+                border: 1px solid #e5e5e5;
+                margin-bottom: -1px;
+
+                overflow: hidden;
+                position: relative;
+                background: #ffffff;
+            }
+            ul.tabs li a {
+                text-decoration: none;
+                color: #000000;
+                display: block;
+                font-size: 1.2em;
+                padding: 0 20px;
+                outline: none;
+            }
+            ul.tabs li a:hover {
+                background: #f5f8fa;
+            }
+            html ul.tabs li.active,
+            html ul.tabs li.active a:hover {
+
+                background: #f5f8fa;
+                border-bottom: 1px solid #f5f8fa;
+
+            }
+            .tab_container {
+                border: 1px solid #e5e5e5;
+                border-top: none;
+                overflow: hidden;
+                clear: both;
+                float: left;
+                width: 100%;
+                background: #f5f8fa;
+                font-size: 12px;
+                color: #4c4c4c;
+            }
+            .tab_content {
+                padding: 40px;
+                display:none;
+            }
+        </style>
+                <script>
+                    $(function(){
+                        var hash = location.href.match(/#(.*)/)[0];
+                        
+                        var current = "";
+                        
+                        $(".tabs").on("click", "a", function(){
+                            var id = $(this).attr("href");
+                            $(id).show().siblings().hide();
+                            current = id;
+                        });
+        
+                        function changeToCurrentTab(){
+                            console.log(current);
+                            //$(current).show().siblings().hide();
+                        }
+                        
+                        function getHash(){
+                            console.log(hash);
+                            //$(hash).show().siblings().hide();
+                        }
+                        
+                        
+                        $("#showCurrent").on("click", changeToCurrentTab);
+                        $("#showCurrent2").on("click", getHash);
+                        
+                    });
+        
+                    if ("onhashchange" in window) {
+                        alert("The browser supports the hashchange event!");
+                    }
+        
+                    function locationHashChanged() {
+                        //    if (location.hash === "#somecoolfeature") {
+                        //        somecoolfeature();
+                        //    }
+                        var current = location.hash;
+                        $(current).show().siblings().hide();
+                    }
+        
+                    window.onhashchange = locationHashChanged;
+                </script>
+
+        <script>
+            $(function(){
+            var $_GET = {
+                "get" : location.href.match(/#(.*)/)[0]
+            };
+            
+//            $_GET.get = document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+//                function decode(s) {
+//                    return decodeURIComponent(s.split("+").join(" "));
+//                }
+//
+//                $_GET[decode(arguments[1])] = decode(arguments[2]);
+//            });
+            //$_GET.get = document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g);
+            
+            //console.log($_GET.get);
+
+//            setTabName($_GET["tab"]);
+//
+//            var currentTab;
+//            
+//            function setTabName(tabName){
+//                alert('in setName' + tabName);
+//                currentTab = tabName;
+//            }
+//
+//            function changeToCurrentTab(){
+//                setTabName($_GET["tab"]);
+//                alert('in change ' + currentTab);
+//                //$('#myTab a[href="#' + currentTab + '"]').tabs('active')
+//            }  
+//            $("#showCurrent").on("click", function(){
+//                setTabName($_GET["tab"]);
+//                alert('in change ' + currentTab);
+//            });
+            
+            });
+        </script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <ul class="tabs" id="myTab">
+            <li>
+                <a href="#Address">Address</a>
+            </li>
+            <li>
+                <a href="#BillingDetails">BillingDetails</a>
+            </li>
+            <li>
+                <a href="#OrderHistory">OrderHistory</a>
+            </li>
+        </ul>
+        <div class="tab_container">      
+            <div class="tab_content"  id="Address">            
+                In Address Tab                  
+            </div>
+            <div class="tab_content" id="BillingDetails">                                                      
+                In BillingDetails Tab                  
+            </div>
+
+            <div class="tab_content"id="OrderHistory">      
+                In OrderHistory Tab                  
+            </div>                  
+        </div> 
+
+        <button id="showCurrent">Show Current Using Var</button>
+        <button id="showCurrent2">Show Current Using Hash</button>
+    </body>
+</html>

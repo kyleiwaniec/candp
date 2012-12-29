@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>copy &amp; paste generation</title>
+
+<!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+    		<![endif]--> 
+
+<meta name="viewport" content="width=device-width; initial-scale=1; maximum-scale=1; user-scalable=0;" /> 
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="/startup.png">
+    <link rel="stylesheet" type="text/css" href="css/overlay-apple.css"/>
+    <link rel="stylesheet" href="css/styles2.css"/>
+    <!--[if !IE]>-->
+    <link media="only screen and (max-width: 480px)" href="css/mobile.css" type="text/css" rel="stylesheet">
+    <link media="only screen and (max-width: 320px)" href="css/mobilevert.css" type="text/css" rel="stylesheet">
+    <!--<![endif]-->
+
+	<!-- include the Tools -->
+<script src="js/jquery.tools.min.js"></script> 
+
+	
+	<script src="js/jquery-ui-1.8.13.custom.min.js"></script> 
+
+	<style>
+	
+	/* use a semi-transparent image for the overlay */
+	#overlay {
+		
+	}
+	
+	/* container for external content. uses vertical scrollbar, if needed */
+	div.contentWrap {
+		height:650px;
+        width:1047px;
+		overflow:hidden;
+	}
+	</style>
+	
+</head>
+
+<body>
+
+<!-- overlayed element -->
+<div class="apple_overlay" id="overlay">
+
+	<!-- the external content is loaded inside this tag -->
+	<div class="contentWrap"></div>
+
+</div>
+<div id="wrapper">
+<div class="apple_overlay" id="overlay">
+
+	<!-- the external content is loaded inside this tag -->
+	<div class="contentWrap"></div>
+
+</div>
+<div id="sidebar">
+<div id="logo"><img src="images/logo_sm.png" alt="c $amp; p gen" /></div>
+<nav>
+<div class="button"><a href="">About Us</a>
+</div>
+<div class="button"><a href="">Services</a>
+</div>
+<div class="button"><a href="">Portfolio</a>
+</div>
+<div class="button"><a href="">Contact</a>
+</div>
+<div id="hoverBox"></div>
+</nav>
+
+</div><!-- #sidebar -->
+<div id="innerContent">
+
+<div id="portfolioMenu"><span class="portMenuItem currPortMenuItem">» websites «</span><span class="portMenuItem">Print</span><span class="portMenuItem">Corp Id</span><span class="portMenuItem">Other</span></div>
+
+<div id="portfolioBg" class="box-shadow">
+
+<div class="click panel">
+<div class="front"><img src="images/portfolio/rtr1.jpg" alt="Robert The Realtor"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.roberttherealtor.com" class="panelLink">RobertTheRealtor.com</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Real Estate</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/PHP, WordPress blog</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website, Brochures, Promos, Ads </td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="rtrScreens.html" rel="#overlay" class="panelLink large" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+
+</div></div>
+
+<div class="click panel">
+<div class="front"><img src="images/portfolio/ft1.jpg" alt="FlashTribe" /></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.flashtribe.net" class="panelLink">FlashTribe.net</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Social Network</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website, Mobile App</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="flashtribe.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+
+</div></div>
+<div class="click panel"><div class="front"><img src="images/portfolio/pk1.jpg" alt="Plevy &amp; Keene"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><!--<a href="http://www.plevyandkeene.com/" class="panelLink">PlevyAndKeene.com</a>-->Plevy &amp; Keene</td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Law</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/PHP</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="pandk.html" class="panelLink large" rel="#overlay"  >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+<div class="click panel"><div class="front"><img src="images/portfolio/rwt1.jpg" alt="RealWalkthru"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.realwalkthru.com" class="panelLink">RealWalkthru.com</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Real Estate, Photography</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/PHP</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="rwt.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+<div class="click panel">
+<div class="front"><img src="images/portfolio/cr1.jpg" alt="Cindy Ridolfino" /></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.splendidlyimperfect.com" class="panelLink">SplendidlyImperfect.com</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Art</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/PHP</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="cindy.html" class="panelLink large" rel="#overlay"  >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+
+</div></div>
+
+<div class="click panel"><div class="front"><img src="images/portfolio/ql1.jpg" alt="Quiet Lane"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.6quietlane.com" class="panelLink">6QuietLane.com</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Real Estate</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/PHP/Flash</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="quietLane.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+<div class="click panel"><div class="front"><img src="images/portfolio/pg1.jpg" alt="Peter Garfield"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.petergarfield.net" class="panelLink">PeterGarfield.net</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Art</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Website, Catalogues</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="garfield.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+<div class="click panel"><div class="front"><img src="images/portfolio/tfls1.jpg" alt="The Fat Lady Sings"/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><a href="http://www.thefatladysings.net" class="panelLink">TheFatLadySings.net</a></td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Music</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="tfls.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+<div class="click panel"><div class="front"><img src="images/portfolio/ul1.jpg" alt="United Light, Inc."/></div>
+<div class="back">
+        <table>
+        <tr><td colspan="2"><!--<a href="http://www.unitedlightinc.org" class="panelLink">UnitedLightInc.org</a>-->UnitedLightInc.org</td>
+        </tr>
+        <tr>
+        <td>Category:</td>
+        <td>Non-Profit</td>
+        </tr>
+        <tr>
+        <td>Technology:</td>
+        <td>HTML/CSS/JS/WordPress</td>
+        </tr>
+        <tr>
+        <td>Design:</td>
+        <td>Logo, Website</td>
+        </tr>
+        <tr>
+        <td colspan="2">&raquo; <a href="unitedLight.html" class="panelLink large" rel="#overlay" >screenshots</a> &laquo;</td>
+        </tr>
+        </table>
+</div></div>
+</div><!-- #portfolioBg -->
+</div><!-- #content -->
+</div><!-- #wrapper -->
+<!-- make all links with the 'rel' attribute open overlays -->
+
+<script>
+$(function(){
+
+        
+         // hide top bar on safari mobile
+            setTimeout(function(){
+              window.scrollTo(0, 1);
+            }, 100); 
+
+        //function detectMobile(){
+        //(typeof Touch !== "undefined") ? 'touchstart' : 'click';
+        // alert("mobile");
+         //       };
+        
+        //detectMobile();
+        
+        
+         // set up hover panels
+         // although this can be done without JavaScript, we've attached these events
+         // because it causes the hover to be triggered when the element is tapped on a touch device
+         $('.hover').hover(function(){
+         	$(this).addClass('flip');
+         },function(){
+         	$(this).removeClass('flip');
+         });
+         
+         /*
+         // set up click/tap panels
+         $('.click').toggle(function(){
+         	$(this).addClass('flip');
+         },function(){
+         	$(this).removeClass('flip');
+         });
+         */
+         
+        
+         $('.panel').bind('click', function(){
+         	$(this).addClass('flip');
+            $('.panel').not(this).removeClass('flip');
+         });
+         
+         
+         $('.back').bind('mouseleave click', function(e){
+            e.stopPropagation();
+            $(this).parent('.panel').removeClass('flip');
+         }); 
+        
+         $('.panelLink').click(function(e){
+            e.stopPropagation();
+         });
+        
+                   
+                           
+          $("#more").bind("click", function(){
+          // alert("hi");
+          
+          $("#portfolioBg img").each(function(i){
+              
+                     var path1 = $(this).attr("src").match(/\D+/);
+                     var path2 = $(this).attr("src").match(/\.\D+/);
+                     
+                     $(this).attr("src", path1 + "2" + path2);
+                     //alert(path1 + (i+1) + path2);
+                                
+                });
+            });
+            
+          $("#sidebar").draggable({ containment: "body", scroll: false});
+           $("#sidebar").disableSelection();
+                                
+            // prevent scrolling (in any direction)
+            /*  
+            $(document).bind("touchmove", function(e){
+                     e.preventDefault();   
+            });
+            */
+            
+            // Nav hover animation
+            var hoverBox = $("#hoverBox");
+            var button = $(".button");
+            button.mouseover(function() {
+            
+            hoverBox.css({"display":"block"}).stop().animate({
+                                   top: $(this).position().top,
+                                   //width: $(this).innerWidth(),
+                                   opacity: 1
+                                   }, 200, 'easeOutBack');
+                       }).mouseleave(function(){
+                       hoverBox.stop(true, true).animate({
+                                    opacity: 0
+                                    });
+                       });
+
+
+
+        
+
+        // if the function argument is given to overlay,
+	// it is assumed to be the onBeforeLoad event listener
+	$("a[rel]").overlay({
+
+		mask: 'black',
+		effect: 'apple',
+
+		onBeforeLoad: function() {
+
+			// grab wrapper element inside content
+			var wrap = this.getOverlay().find(".contentWrap");
+
+			// load the page specified in the trigger
+			wrap.load(this.getTrigger().attr("href"));
+		}
+
+	});        
+        //$("#overlay").draggable({ cursor: 'move', scroll: false, containment: 'body'});
+        
+            
+});
+</script>
+
+</body>
+
+</html>

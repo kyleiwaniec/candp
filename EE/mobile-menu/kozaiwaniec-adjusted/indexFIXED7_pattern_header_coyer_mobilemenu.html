@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<!-- *********************************************************************************************
+
+How to Create CSS3 + jQuery Accordion Menu [Tutorial]
+"How to Create CSS3 + jQuery Accordion Menu" that was specially made for DesignModo by our friend Valeriu Timbuc. 
+
+Links:
+http://vtimbuc.net/
+https://twitter.com/vtimbuc
+http://designmodo.com/futurico
+http://vladimirkudinov.com
+http://rockablethemes.com
+
+********************************************************************************************* -->
+
+<html lang="en">
+
+<head>
+	<title>jQuery Accordion Menu</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" /><!-- // Removing the device width and height from the meta tag will give us the fluid layout. http://css3wizardry.com/category/iphone/ -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="robots" content="noindex,follow" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-startup-image" href="images/splash.png" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script><!-- Change it to jquery1.7.2 from 1.7.1. It still works. Source: webdesignerwall.com/demo/mobile-nav/-->
+
+	<script src="js/jquery.mobile.js"></script>
+
+
+	
+	<!-- // Performance improve with accordion function improves with Phonegap scripts were added. Smooth ease in and ease out effect. It degrade gracefully with rollover effect of the content heading bars.-->
+	<!-- If your application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+	<script type="text/javascript" charset="utf-8" src="js/phonegap-1.4.1.js"></script>
+        <script type="text/javascript">
+
+
+	// If you want to prevent dragging, uncomment this section
+	/*
+	function preventBehavior(e) 
+	{ 
+      e.preventDefault(); 
+    };
+	document.addEventListener("touchmove", preventBehavior, false);
+	*/
+	
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	/*
+	function handleOpenURL(url)
+	{
+		// TODO: do something with the url passed in.
+	}
+	*/
+	
+	function onBodyLoad()
+	{		
+		document.addEventListener("deviceready", onDeviceReady, false);
+	}
+	
+	/* When this function is called, PhoneGap has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+		// do your thing!
+		navigator.notification.alert("PhoneGap is working")
+                alert("ready");
+	}
+    
+    </script>
+    
+    <!-- Header and footer style start -->
+    <link rel="stylesheet" href="css/generic.css" type="text/css" media="screen" />
+    <!-- Header and footer style end -->
+    
+    <!-- Accordian Start. http://designmodo.com/jquery-accordion-menu/ -->
+	<link rel="stylesheet" href="css/accordionmenu.css" type="text/css" media="screen" />
+	<!-- <style type="text/css">body{background:url(images/bg.png) repeat;}.footer{margin-top:50px;text-align:center;color:#666;font:bold 14px Arial}.footer a{color:#999;text-decoration:none}#wrapper-250, .accordion{width:94%; margin:0 auto; max-width:500px;}</style> -->
+
+<!-- Accordian script start -->
+<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			// Store variables
+			
+			var accordion_head = $('.accordion > li > a'),
+				accordion_body = $('.accordion li > .sub-menu');
+
+			// Open the first tab on load
+
+			// accordion_head.first().addClass('active').next().slideDown('normal');
+
+			// Click function
+
+			accordion_head.on('click', function(event) {
+
+				// Disable header links
+				
+				event.preventDefault();
+
+				// Show and hide the tabs on click
+
+				if ($(this).attr('class') != 'active'){
+					accordion_body.slideUp('normal');
+					$(this).next().stop(true,true).slideDown('normal');
+					accordion_head.removeClass('active');
+					$(this).addClass('active');
+				}else{
+                                        $(this).next('.sub-menu').slideUp('normal');
+                                        $(this).removeClass('active');
+                                        }
+			});
+
+
+		});
+
+	</script>             
+<!-- Accordian script end -->
+
+
+
+
+<!-- Coyer start -->
+<link rel='stylesheet' href='css/style.css'>
+<!-- Coyer end -->
+
+<!-- Mobile navigation start -->
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+	/* prepend menu icon */
+	$('#nav-wrap').prepend('<div id="menu-icon">Menu</div>');
+	
+	/* toggle nav */
+	$("#menu-icon").on("click", function(){
+		$("#nav").slideToggle();
+		$(this).toggleClass("active");
+	});
+
+});
+</script>
+<!-- Mobile navigation start -->
+
+<!-- Mobile navigation start -->
+<link href="css/mobile_navigation.css" rel="stylesheet" type="text/css">
+<!-- Mobile navigation end -->
+
+
+
+</head>
+
+<body>
+<!-- Header start -->
+
+	<div id="header">
+            <div class="inner-wrapper">
+            <h3 class="headerTitle">Heading</h3>
+	
+	
+	
+		<!-- Mobile navigation start -->
+                <nav id="nav-wrap">
+                <!--<div id="menu-icon">Menu</div>-->
+
+                <ul id="nav">
+
+                <table width="100%" border="0" cellspacing="5">
+                    <tr>
+                        <td><li><a href="#">1</a></li></td>
+                        <td><li><a href="#">2</a></li></td>
+                        <td><li><a href="#">3</a></li></td>
+                        <td><li><a href="#">4</a></li></td>
+                        <td><li><a href="#">5</a></li></td>
+                    </tr>
+                    <tr>
+                        <td><li><a href="#">6</a></li></td>
+                        <td><li><a href="#">7</a></li></td>
+                        <td><li><a href="#">8</a></li></td>
+                        <td><li><a href="#">9</a></li></td>
+                        <td><li><a href="#">10</a></li></td>
+                    </tr>
+                </table>
+
+                </ul>
+                </nav>
+                <!-- / Mobile navigation end -->
+	
+	</div>
+	
+	</div>
+<!-- Header End -->
+
+<!-- Body start -->
+<!-- Accordion start -->
+	<div id="wrapper-250">
+
+		<ul class="accordion">
+			
+			<li id="one" class="files">
+
+				<a href="#one">My Files<span>495</span></a>
+
+				<ul class="sub-menu">
+					
+					<li><a href="#"><em>01</em>Dropbox<span>42</span></a></li>
+					
+					<li><a href="#"><em>02</em>Skydrive<span>87</span></a></li>
+
+					<li><a href="#"><em>03</em>FTP Server<span>366</span></a></li>
+
+					<li><a href="#"><em>04</em>Dropbox<span>1</span></a></li>
+					
+					<li><a href="#"><em>05</em>Skydrive<span>10</span></a></li>
+
+				</ul>
+
+			</li>
+			
+			<li id="two" class="mail">
+
+				<a href="#two">Mail<span>26</span></a>
+
+				<ul class="sub-menu">
+					
+					<li><a href="#"><em>01</em>Hotmail<span>9</span></a></li>
+					
+					<li><a href="#"><em>02</em>Yahoo<span>14</span></a></li>
+
+				</ul>
+
+			</li>
+			
+			<li id="three" class="cloud">
+
+				<a href="#three">Cloud<span>58</span></a>
+
+				<ul class="sub-menu">
+					
+					<li><a href="#"><em>01</em>Connect<span>12</span></a></li>
+					
+					<li><a href="#"><em>02</em>Profiles<span>19</span></a></li>
+					
+					
+					
+					
+					
+					
+					
+					<!-- coyer start -->
+	<div id="page-wrap">
+				
+			<div class="module blue">
+				<h2><em>03</em>Deaf person's attention <a href="#">1</a></h2>
+				<ul>
+				   <li>Take a step-by-step process.</li>
+				   <li>Approaching a Deaf person may be enough and your approach may suggest your intention to communicate.</li>
+				   <li>You can also wave to get eye contact or tap the person gently on the shoulder.</li>
+				</ul>
+
+				<h2><em>04</em>When is it my turn? <a href="#">2</a></h2>
+				<ul>
+				   <li>Set up a system in the surgery to that a visual indicator will allow a Deaf person to know when he or she is being called.</li>
+				   <li>A monitor in the waiting room is a good idea.</li>
+				   <li>If an interpreter is present, make sure you call the patient's name and not the interpreter's name.</li>
+				</ul>
+
+				<h2><em>05</em>Scheduling appointments <a href="#">3</a></h2>
+				<ul>
+				   <li>Ensure that email or text messages can be used to make an appointment.</li>
+				   <li>Why not try an online booking system?</li>
+				   <li>It is important that Deaf people manage their health and can book their own appointments.</li>
+				</ul>
+			</div>
+	</div>
+<!-- coyer end -->
+
+					
+					
+					
+					
+					
+					
+					
+					
+
+					<li><a href="#"><em>03</em>Options<span>27</span></a></li>
+
+					<li><a href="#"><em>04</em>Connect<span>12</span></a></li>
+					
+					<li><a href="#"><em>05</em>Profiles<span>19</span></a></li>
+
+					<li><a href="#"><em>06</em>Options<span>27</span></a></li>
+
+				</ul>
+
+			</li>
+			
+			<li id="four" class="sign">
+
+				<a href="#four">Sign Out</a>
+
+				<ul class="sub-menu">
+					
+					<li><a href="#"><em>01</em>Log Out</a></li>
+					
+					<li><a href="#"><em>02</em>Delete Account</a></li>
+
+					<li><a href="#"><em>03</em>Freeze Account</a></li>
+
+				</ul>
+
+			</li>
+		
+		</ul>
+		
+	</div>
+<!-- Accordion end -->
+<!-- Body end -->
+
+
+
+
+
+
+<!-- Footer Start -->	
+<div id="footer"></div>
+<!-- Footer End -->	
+	
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+  <title>Label Website</title>
+  <style>
+      #content{
+          position:absolute;
+          top:100px;
+          left:200px;
+          width:300px;
+          height:100px;
+          
+      }
+  </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+	$('a.plan_link').mouseenter(function(e){
+		var planNbr = $(this).attr('id');
+		
+//		$.ajax({
+//                    type: 'post',
+//                    url: 'aug_plan.php',
+//                    data: 'plan=' + planNbr + '&type=element',			
+//                    success: function(text) {
+                        var text = planNbr+" is the id";
+                        var sap = $("<div/>",{
+                                        id: "site-aug-plan",
+                                        html: text,
+                                        css:{"position":"absolute", 'width':'200px', 'height':'200px', display:"none", 'top': e.pageY -100, 'left': e.pageX +40, backgroundColor:"red"}
+                                    });
+                                    
+                                    $('#content').append(sap);
+                                    sap.fadeIn(400);
+
+                     //   }
+                //});		
+	
+			
+			
+	}).mouseleave(function() {
+		 $('#site-aug-plan').remove();
+        });	
+			
+	$('a.plan_link').mousemove(function(e) {
+		$('#site-aug-plan').css({'top': e.pageY -100, 'left': e.pageX +40});				
+	});	
+		
+});
+    </script>
+</head>
+
+<body>
+   
+    <div id="content">
+<div id="site-aug-sg_div">
+	<table class="site-aug-sg">	
+		<tr id="mdA-13" >
+            <td class="site-aug-elem_row" colspan="3">
+                <table class="site-aug-elem_block">
+				<tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='#' class='plan_link' id='22519'>22519</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="elementNameId[]" class="parent-A-13" id="A-13-264816" value="264816" /></td>
+				  <td class="site-aug-element">cdn06.00-Down</td>
+				  <td class="site-aug-pct">75.57</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='#' class='plan_link' id='22520'>22520</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="elementNameId[]" class="parent-A-13" id="A-13-264817" value="264817" /></td>
+				  <td class="site-aug-element">cdn06.01-Down</td>
+				  <td class="site-aug-pct">74.73</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr><tr>
+				  <td class="site-aug-ap_nbr">&nbsp;</td>
+				  <td class="site-aug-ap_nbr"><a href='#' class='plan_link' id='22521'>22521</a></td>
+				  <td class="site-aug-el_id"><input type="checkbox" name="elementNameId[]" class="parent-A-13" id="A-13-264818" value="264818" /></td>
+				  <td class="site-aug-element">cdn06.02-Down</td>
+				  <td class="site-aug-pct">77.43</td>
+				  <td class="site-aug-priorityC">D</td>
+				</tr>               
+				</table>
+			</td>
+		</tr>
+	</table>
+</div>
+</div>
+    <div class="col_field">
+  <div class="checker" id="uniform-field_8_0"><span>
+    <input type="checkbox" class="form_checkbox" value="Technology" id="field_8_0" name="Checkbox01_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_0" class="form_choice_text">Technology</label>
+  <br>
+  <div class="checker" id="uniform-field_8_1"><span>
+    <input type="checkbox" class="form_checkbox" value="Training and Education" id="field_8_1" name="Checkbox02_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_1" class="form_choice_text">Training and Education</label>
+  <br>
+  <div class="checker" id="uniform-field_8_2"><span>
+    <input type="checkbox" class="form_checkbox" value="Head office support" id="field_8_2" name="Checkbox03_field_8" style="opacity: 0;">
+    </span></div>
+  <label for="field_8_2" class="form_choice_text">Head office support</label>
+  <br>
+ </div>
+</body>
+</html>

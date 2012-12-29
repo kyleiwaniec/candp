@@ -1,0 +1,48 @@
+colors(
+{
+    
+    "colors": 
+        { 
+        
+         "Red": [
+                    {
+                        "city" : "Brooklyn",
+                        "votes" : "100000"
+                    },
+                    {
+                        "city" : "Detroit",
+                        "votes" : "160000"
+                    }
+                ],
+         "Orange": [],
+         "Yellow": [
+                    {
+                        "city" : "Anchorage",
+                        "votes" : "15000"
+                    },
+                    {
+                        "city" : "Selma",
+                        "votes" : "15000"
+                    }
+                ],
+         "Green": [],
+           
+         "Blue": [
+                    {
+                        "city" : "Anchorage",
+                        "votes" : "10000"
+                    },
+                    {
+                        "city" : "Brooklyn",
+                        "votes" : "250000"
+                    }
+                ],
+         "Indigo": [],
+         "Violet": [
+                    {
+                        "city" : "Selma",
+                        "votes" : "5000"
+                    }
+                   ] 
+        }
+    });

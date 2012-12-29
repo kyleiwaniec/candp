@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery cursor menu</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+
+
+
+<style type="text/css">
+ .midpart { padding: 7px 15px; margin: 0; vertical-align: top; }
+.midpart a { color: #3d2a14; text-decoration: none; }
+.midpart a:hover { color: #000; text-decoration: none; }
+.test {
+	color:#e2561b;
+	font-weight:bold; 
+	text-decoration:underline !important;
+ 
+}
+ </style>
+    </head>
+    <body>
+        	     <div class="midpart">
+                  Email: 
+                             <a href="google.com" class="test">  Contact </a><br />  
+                    	   </div> 
+                          
+    </body>
+</body>
+</html>

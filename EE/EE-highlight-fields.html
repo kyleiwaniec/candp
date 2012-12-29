@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slideshow Array</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="jquery.simplemodal-1.4.2.js"></script>
+        <script>
+          $(function(){
+              
+           $("form").change(function(){
+               
+               if($("input[type='radio']").attr("checked") == true){
+                   $(this).parent("div").css({"background-color": "blue"});
+                   
+               }else{
+                   $(this).parent("div").css({"background-color": "white"});
+               }
+           
+       
+               
+               
+           });
+           
+           // new way (jQuery 1.7+) - on(events, selector, handler);
+$('#container').on('click', 'a', function(event) {
+    event.preventDefault();
+    console.log('item anchor clicked');
+});
+              
+          });
+        </script>
+<style>
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}
+
+</style>
+</head>
+
+<body>
+  <div id='container'>
+      <a href="#">link</a>
+      <form>
+      <div><input type="radio" name="rb"> radio one </div>
+      <div><input type="radio" name="rb"> radio two </div>
+      <div><input type="radio" name="rb"> radio three </div>
+      <div><input type="radio" name="rb"> radio four </div>
+      <div><input type="radio" name="rb"> radio five </div>
+      </form>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+/*General style for the pages*/
+body, html {}
+body, td    {color: #000000; font-size: 12px; font-family: Tahoma, Verdana, arial, helvetica; text-decoration: none;font-weight:normal;}
+		
+a           {color: #006600;}
+a:visited	{}
+a:active	{}
+a:hover     {color: #003300;}
+
+
+/*Form element styles*/
+input, select, textarea		{font-size: 11px; font-family: Tahoma, Verdana, arial, helvetica;}
+                            
+form                        {margin-top: 0px; margin-bottom: 0px;}
+
+/*Field label styles*/
+.Label                      {font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; font-weight : bold;color:#1F1F1F}
+.RequiredLabel				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica;	font-weight : bold; color:#1F1F1F;}
+.ShortHelpLabel				{font-family: tahoma, verdana, arial, helvetica; font-size: 9pt; color:#646464;}
+.RequiredSymbol				{font-size: 9pt; font-family: tahoma, verdana, helvetica; font-weight: bold; color: #DC143C;}
+.SymbolLongHelp				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; color:#646464;}
+.MultipleSelectSymbol		{font-size: 10pt;	font-family: tahoma, verdana, arial, helvetica; font-weight: bold;color: #DC143C;}
+
+/*Other text styles */
+/*Instructional text in Login page*/
+.InformationText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#1F1F1F;}
+/*Search and Referral comments pages help text*/
+.InformationSubText			{font-size: 8pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal;color:#1A1A1A;}
+/*Help text given for individual fields in pages*/
+.InformationSubTextMain			{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#1F1F1F;}
+/*Verbiage text in the header/footer for all pages*/
+.VEVerbiageText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#1F1F1F;}
+.VEVerbiageText a:link			{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#1F1F1F;}
+/*Job Agent pages and Search page information text*/
+.VEContentText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#000;}
+/*Help text inside tables like forgot password, import resume*/
+.VETableHelpText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; vertical-align: middle; font-weight:normal; color:#1F1F1F;}
+/*Table element styles*/
+TD.CenterAlign				{text-align: center; } /*Used to align "Close this Window" link on pop-up windows*/
+TD.RightAlign				{text-align: Right;} /*This class is deprecated, but should be kept in the stylesheet for now*/
+
+/*Table head styles in Pro and HV for all tables that do not have a specific class in this stylesheet */
+.TableHead					{color:#FFFFFF !important;font-family: tahoma, verdana, arial, helvetica; font-size : 9pt;font-weight:bold;background-color:#669933;}
+.TableSubHead				{color:#FFFFFF !important;font-family: tahoma, verdana, arial, helvetica; font-size : 9pt;font-weight:bold;background-color:#669933;}
+
+/*Alert and Confirm styles for both HV and Pro*/
+.AlertText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; font-weight : bold; vertical-align: middle;color: #000000;}
+.AlertTable				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; font-weight : bold; border-style: solid; border-width: 1; border-color: #FF0000; background-color: #FFFFFF;}
+.ConfirmText				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; font-weight : bold; vertical-align: middle; color: #000000;}
+.ConfirmTable				{font-size: 9pt; font-family: tahoma, verdana, arial, helvetica; font-weight : bold; border: 1px solid #99cc66; background-color: #FFFFFF;}
+
+/*Job Detail in Pro*/
+.JobDetailTable				{border: 0px solid #ccc;}/*Job detail table*/
+.JobDetailTable TD			{padding:3px 3px 3px 5px;font-size: 9pt;color:#000;} /*Text/Description in Job Detail*/
+.JobDetailTableHead			{font-size:10pt; background-color:#7D7D7D; color: #FFF !important;}/*The header if any for the Job*/
+.JobDetailLabel				{font-size:9pt; font-weight: bold;color:#000;} /*Labels in Job Detail*/
+
+/*Add/Create a job agent link in Job Agent pages*/
+A:active.VEJobAgentLink			{color : #054166; font-size:12px; font-weight: bold;text-decoration: none;}
+A:link.VEJobAgentLink			{color : #054166; font-size:12px; font-weight: bold;text-decoration: none;}
+A:visited.VEJobAgentLink		{color : #054166; font-size:12px; font-weight: bold;text-decoration: none;}
+A:Hover.VEJobAgentLink			{color : #054166; font-size:12px; font-weight: bold;text-decoration: none;}
+
+/*Search Interface page in Pro*/
+TABLE.VESearchInterfaceTable            {border-collapse: collapse !important; border: 0px !important;padding: 2px 4px 2px 4px;margin: 5px 5px 5px 5px;}
+TABLE.VESearchInterfaceTable TD         {padding: 3px;}
+
+/*Search Results, MyJobs, MyReferrers in Pro and Positions, Position Locations  in HV*/
+TABLE.SearchResultsTable		{width: 100% !important; border-collapse: collapse;border: 1px solid #cccccc; margin-top:5px;}
+TABLE.SearchResultsTable TD		{border: 1px solid #cccccc;padding:3px 3px 3px 5px;}
+.SearchResultsTableHead			{background-color: #669933;	color: #ffffff !important;	font-size: 9pt; font-weight: 900; text-align: left;}
+
+/*A:link.SearchResults			{color:#0F486C;font-size:11px;text-decoration:underline}
+A:visited.SearchResults			{color:#0F486C;font-size:11px;text-decoration:underline}
+A:hover.SearchResults			{color:#0F486C;font-size:11px;text-decoration:underline}	
+A:Active.SearchResults			{color:#0F486C;font-size:11px;text-decoration:underline}*/
+/*Text in the Search Results, Position Locations table*/
+.SearchResultsList			{color:#000;font-size:11px;text-decoration:none;}	
+
+/*Title links in search results table when sorting is enabled - for consistency maintain the font-style of SearchResultsTabelHead*/
+A:link.SearchResultsSort		{color: #000000; font-size: 10pt; font-weight: 900; text-align: left;text-decoration:none;}
+A:visited.SearchResultsSort		{color: #000000; font-size: 10pt; font-weight: 900; text-align: left;text-decoration:none;}
+A:hover.SearchResultsSort		{color: #000000; font-size: 10pt; font-weight: 900; text-align: left;text-decoration:none;}	
+A:Active.SearchResultsSort		{color: #000000; font-size: 10pt; font-weight: 900; text-align: left;text-decoration:none;}
+
+/*Paging on Search Results page*/
+A:active.PagingNumberLink		{font-size: 9pt;color:#054182;}
+A:link.PagingNumberLink			{font-size: 9pt;color:#054182;}
+A:visited.PagingNumberLink		{font-size: 9pt;color:#054182;}
+A:Hover.PagingNumberLink		{font-size: 9pt;color:#054182;}
+.PagingNumberLink			{font-size: 9pt;color:#054182;}/*Page links in results page*/
+.PagingNumberSelected			{font-size: 9pt;font-weight:bold;color:#054182;} /*Selected page link in the results page*/
+.PagingNumber				{font-size: 9pt;color:#054182;}/*'Page' text in results page*/
+
+/*Featured/Hot jobs styles appearing in the Search page*/
+TABLE.VEFeaturedJobsTable		{border-collapse: collapse;border: 1px solid #999999;margin-top: 5px;width:220px;}
+TABLE.VEFeaturedJobsTable TD		{border: 1px solid #999999; padding:3px 3px 3px 5px;font-size: 9pt; color: #000;}
+.VEFeaturedJobsTableHead		{background-color: #999999; color: #ffffff !important; font-size: 10pt; font-weight: 900; text-align: center;} 
+
+
+A:link.VEFeaturedJobs			{color:#0F486C;font-size:9pt;text-decoration:underline;}
+A:visited.VEFeaturedJobs		{color:#0F486C;font-size:9pt;text-decoration:underline;}
+A:hover.VEFeaturedJobs			{color:#0F486C;font-size:9pt;text-decoration:underline;}
+A:Active.VEFeaturedJobs			{color:#0F486C;font-size:9pt;text-decoration:underline;}
+
+/*Table Styles for both HV and Pro*/
+/*Login and Change Password*/
+TABLE.LoginTable, 
+TABLE.LoginPasswordTable		{/* width:485px !important; */ border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px;}
+TABLE.LoginTable TD, 
+TABLE.LoginPasswordTable td		{border: 0px; padding:3px 3px 3px 5px; width:50%;}
+TABLE.LoginTable input, 
+TABLE.LoginPasswordTable input          {width:200px;}
+
+
+/*Referrals pages in Internal Career center*/
+TABLE.ReferralsTable			{border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px;}
+TABLE.ReferralsTable TD			{border: 1px solid #CCC;padding:3px 3px 3px 5px;font-size: 9pt;color:#000;}
+
+/*Profile page - import resume table*/
+TABLE.VEImportResumeTable		{border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px;}
+TABLE.VEImportResumeTable TD		{padding:3px 3px 3px 5px;border:0;}
+
+/*Add,Edit,Re-edit profile pages*/
+TABLE.VEProfileTable			{border-collapse: collapse !important; border: 0px !important;}
+TABLE.VEProfileTable TD			{padding:3px 3px 3px 5px;font-size: 9pt;color:#000;}
+
+/*Confirm profile pages*/
+TABLE.VEConfirmProfileTable		{border-collapse: collapse !important; border: 0px !important;}
+TABLE.VEConfirmProfileTable TD	{padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+
+/*Confirm pages text*/
+TABLE.VEConfirmStepTable		{border-collapse: collapse !important; border: 0px !important;}
+TABLE.VEConfirmStepTable TD		{padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+
+/*Email a friend table*/
+TABLE.VEEmailAFriendTable		{border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px;}
+TABLE.VEEmailAFriendTable TD		{padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+.VETitle					{font-size: 16pt;color: #000;}/*Title in the Email a friend page (new window)*/
+
+/*Keyword search help, long help text pages (open in new window)*/
+TABLE.VEHelpTable				{border-collapse: collapse;border: 1px solid #cccccc;}
+TABLE.VEHelpTable TD			{border: 1px solid #CCC; padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+
+/*Assessment tables for both HV and Pro - (TableHead and TableSubHead classes are used for this table)*/
+TABLE.VEAssessmentTable			{border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px; width: 500px;}
+TABLE.VEAssessmentTable TD		{padding:3px 3px 3px 5px;border: 1px solid #cccccc;font-size: 9pt;color: #000;}
+
+/*Position Detail in HV Styles*/
+.PositionDetailTable			{border-collapse: collapse !important; border: 0px !important; }/*Position detail table*/
+.PositionDetailTable TD			{padding:3px 3px 3px 5px;color:#000;font-size: 9pt;} /*Text/Description in Position Detail*/
+.PositionDetailTableHead		{font-size:10pt; background-color : #CCCCCC;color: #0F0F0F !important;}/*The header if any for the Position*/
+.PositionDetailLabel			{font-size:9pt; font-weight: bold;color:#0F0F0F;} /*Labels in Position Detail*/
+
+/*Position Locations page - (SearchResultsTableHead,SearchResultsList classes are also used)*/
+TABLE.VEPositionLocationTable		{width: 100% !important; border-collapse: collapse;border: 1px solid #cccccc;margin-top: 5px; margin-bottom: 5px;}
+TABLE.VEPositionLocationTable TD	{border: 1px solid #cccccc;padding:3px 3px 3px 5px;font-size: 9pt;color:#000;}
+.SearchResultsTableSubHead		{background-color: #D3D3D3;color: #000; font-size: 10pt; font-weight:bold; text-align: left;}/*sub head - 'Now Hiring', 'Accepting Applications'*/
+
+/*HV Pick Locations page*/
+TABLE.VEPickLocationTable		{border-collapse:collapse;border: 1px solid #cccccc; margin:5px 0 0 0;}
+TABLE.VEPickLocationTable TD		{padding:3px 3px 3px 5px;font-size: 9pt;color: #000; width:25%;}
+TABLE.VEPickLocationTable TD + TD       {width:75%;}   
+.SearchTableHead			{background-color: #669933;color: #FFFFFF !important;font-size: 10pt;font-weight: 900; text-align: left;}
+
+/*If there is additional content in the search page like an image on the right side.*/
+TD.AdditionalContent			{vertical-align:top;}
+
+/* A2J generic table classes*/
+TABLE.VETable {border-collapse:collapse;border: 1px solid #cccccc;width:400px;}
+TABLE.VETable TD	{border: 1px solid #cccccc;padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+.VETableHead {color:#FFFFFF !important;font-family: tahoma, verdana, arial, helvetica; font-size : 9pt;font-weight:bold;background-color:#669933;}
+.VETableSubHead {background-color: #C0C0C0;	color: #000000 !important;	font-size: 10pt; font-weight: 900; text-align: left;}
+
+/*A2J generic result list links*/
+A:link.VEResultsList		{color:#0F486C;font-size:11px;text-decoration:underline}
+A:visited.VEResultsList	{color:#0F486C;font-size:11px;text-decoration:underline}
+A:hover.VEResultsList	{color:#0F486C;font-size:11px;text-decoration:underline}	
+A:Active.VEResultsList	{color:#0F486C;font-size:11px;text-decoration:underline}
+
+/*A2J generic result list table*/
+.VEResultsList	{color:#000;font-size:11px;text-decoration:none;}
+
+/* Schedule Table Classes */
+.ScheduleBorder {background-color:#A0A0A0;width:250;}
+TH.AvailableSlotHeader {background-color:#858585; color:#ffffff; font-weight:bold; text-align: center; vertiSchedule-align: top; font-size:11px;}
+TH.ScheduleDayHeader {background-color:#D3D3D3; color:#333333; font-weight: normal; text-align: center; vertiSchedule-align: top; font-size:11px;}
+td.AvailableSlot {background-color:#eaeaea; text-align: center; vertiSchedule-align: top; border: 0px solid #E0E0E0; font-size:11px;}
+td.AvailableSlotOn {background-color:#ffffff; text-align: center; vertiSchedule-align: top;  border: 0px solid #E0E0E0; font-size:11px;}
+td.NotAvailableSlot {background-color:#E0E0E0; text-align: center; vertiSchedule-align: top; border: 0px solid #E0E0E0; font-size:11px;}
+td.ScheduleTimeColumn {background-color:#eaeaea; text-align: right; vertiSchedule-align: top; border: 0px solid #E0E0E0; font-size:11px;}
+a.ScheduleArrow:link,a.ScheduleArrow:visited,a.ScheduleArrow:active {color:#ffffff; font-weight:bold; text-decoration:none}
+a.AvailableSlot:link,a.AvailableSlot:visited,a.AvailableSlot:active {color:#000000; text-decoration:none}
+
+/* A2J generic table classes*/
+TABLE.VEChallengeTable {border-collapse:collapse;border: 1px solid #cccccc;width:400px;}
+TABLE.VEChallengeTable TD	{border: 1px solid #cccccc;padding:3px 3px 3px 5px;font-size: 9pt;color: #000;}
+.VEChallengeTableHead {color:#FFFFFF !important;font-family: tahoma, verdana, arial, helvetica; font-size : 9pt;font-weight:bold;background-color:#669933;}
+.VEChallengeTableSubHead {background-color: #C0C0C0;	color: #000000 !important;	font-size: 10pt; font-weight: 900; text-align: left;}
+
+
+/*HV Sort Links Classes - done per VETableHead to maintain uniformity*/
+A:link.HVSortLinks		{color:#FFFFFF;font-size:9pt;text-decoration:none}
+A:visited.HVSortLinks	{color:#FFFFFF;font-size:9pt;text-decoration:none}
+A:hover.HVSortLinks		{color:#FFFFFF;font-size:9pt;text-decoration:none}	
+A:Active.HVSortLinks	{color:#FFFFFF;font-size:9pt;text-decoration:none}
+
+/* new styles */
+
+.SearchResultsTable tr:nth-child(even) td{background-color:#cccccc !important;}
+
+/* corelayout */
+
+table.VEHVDashboardTable td, th{border: 1px solid #cccccc !important;}
+table.VEHVEditTable td, th{border: 1px solid #cccccc !important;}
+.VELayoutCenterAlign{}
+.VELayoutCenterAlign > table{
+    /* width:485px !important; */
+    float: left !important;
+}
+.VELayoutCenterAlign {
+    text-align: left !important;
+}
+
+.VELayoutLoginPageLegend{margin-top:15px;}
+
+table.VELayoutDefault {
+
+clear: both;
+}
+
+
+/*
+.VEProfileTableHead {
+color: white !important;
+font-family: Tahoma, Verdana, sans-serif;
+font-size: 10px;
+font-weight: bold;
+background-color: #639a2c;
+}
+
+.VEHVEditTableHeader {
+background-color: #639a2c;
+color:white !important;
+}
+.VEHVEditTableHead {
+background-color: lightGrey !important;
+
+}*/

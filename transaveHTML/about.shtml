@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+<title>TRANSAVE :: About Us</title>
+	<meta name="description" content="TK">
+	<meta name="copyright" content="Copyright (c) 2006 TRANSAVE">
+	<meta name="author" content="Kyle Hamilton">
+
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body  onload="MM_preloadImages('images/nav_aboutus_over.gif','images/nav_technology_over.gif','images/nav_products_over.gif','images/nav_invRelations_over.gif','images/nav_news_over.gif','images/nav_partnering_over.gif','images/nav_contact_over.gif')">
+<div id="wrap">
+	<div id="header"><h1><img src="images/logo.gif" alt="logo"  /></h1>
+	</div>
+	<div id="nav">
+		<!--#include file="includes/nav.html" -->
+  </div>
+	<div id="main">
+		<table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl">&nbsp;</td>
+	    <td><h1>Company Overview 
+	      </h1>
+	      <p>Transave Inc. is an early stage biopharmaceutical company focused on the development of innovative, inhaled product lines for the site-specific treatment of lung diseases. We are committed to significantly improving the quality of life and healthcare of patients suffering from life threatening lung diseases. Our business principles are centered on teamwork, trust, mutual respect and innovative science for all of our employees and partners.</p>
+		<h2>Sample Secondary Heading </h2>
+		<p>The product pipeline is based on Transave&rsquo;s proprietary <strong>Sustained-release Lipid Inhaled Targeting (&ldquo;SLIT&trade;&rdquo;) </strong>technology. The initial focus is the reformulation off-patent pharmaceuticals transformed into unique SLIT&trade;-based inhaled pharmaceuticals for the localized, site specific treatment of lung disease.</p>
+		<h3>Sample Tertiary Heading </h3>
+		<p><strong>SLIT</strong>&trade; technology allows sustained release of the drug in the lung&rsquo;s microenvironment resulting in enhanced therapeutic benefits and improved dosing regimens.</p>
+		<p>Transave&rsquo;s approach significantly reduces risk and enhances success in drug development by:</p>
+	    <ol>
+	      <li> avoiding the inherent uncertainties of new chemical entities (&ldquo;NCEs&rdquo;);</li>
+	      <li> building upon the demonstrated efficacy of approved agents in the target diseases;</li>
+	      <li> via localized administration and controlled release focuses on reducing or eliminating the systemic known toxicities or dosing problems associated with systemically administered drug, and;</li>
+	      <li> creates a new, improved product profile of a known, well characterized drug.</li>
+      </ol>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p></td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+	</div>
+  <div id="sidebar">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td align="right"><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia arcu, et luctus mi erat vestibulum sem.&quot;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td colspan="3"><img src="images/girl_with_bubbles.gif" width="350" height="254" /></td>
+      </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&nbsp;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td align="right"><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+		
+  </div>
+	<div id="footer">
+		<p align="center"><!--#include file="includes/footer.html" --></p>
+	</div>
+</div>
+</body>
+</html>

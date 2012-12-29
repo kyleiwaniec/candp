@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+<title>TRANSAVE :: Technology</title>
+	<meta name="description" content="TK">
+	<meta name="copyright" content="Copyright (c) 2006 TRANSAVE">
+	<meta name="author" content="Kyle Hamilton">
+
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body  onload="MM_preloadImages('images/nav_aboutus_over.gif','images/nav_technology_over.gif','images/nav_products_over.gif','images/nav_invRelations_over.gif','images/nav_news_over.gif','images/nav_partnering_over.gif','images/nav_contact_over.gif')">
+<div id="wrap">
+	<div id="header"><h1><img src="images/logo.gif" alt="logo"  /></h1>
+	</div>
+	<div id="nav">
+		<!--#include file="includes/nav.html" -->
+  </div>
+	<div id="main">
+		<table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl">&nbsp;</td>
+	    <td>
+      <h1>SLIT<sup><small>TM</small></sup> Technology</h1>
+			<p>Transave's SLIT™ technology is designed to overcome the current disadvantages in lung disease inhalation therapy and offer new advantages that can enhance the therapeutic index of a currently used inhalation or injectable drug to treat lung disease</p>
+			<p>The many advantages of using lipids to achieve pulmonary targeting include:</p>
+			<ol>
+      	<li>The lipid excipients used in the manufacture of SLIT™ products are endogenous to the lungs pulmonary surfactant (not introducing new substances that are not already present in the lung)</li>
+				<li>SLIT™ excipients have an established safety profile in the lung in both chronic and acute conditions</li>
+				<li>The lipids used in SLIT™ formulations provide the desired sustained release and lung targeting; the PK is governed by natural lipid metabolism and clearance</li>
+				<li>Unlike polymeric drug delivery systems, clearance of lipids occurs by a natural pathway with no toxic residuals</li>
+			</ol>
+      <p>SLIT™ technology can be used for the successful entrapment and delivery of both low molecular weight (classic pharmaceuticals) and high molecular weight compounds (e.g., peptides, proteins and genes).  Transave's unique lipid/liposome based delivery systems are not dependent on the inhalation device and have the ability to be administered for inhalation either as a nebulized, aerosol spray or as a dry powder.</p>
+			<p>Localized targeting of drugs using these unique delivery systems result in reduced toxicity since delivery to other non-disease sites will be minimized or eliminated.  Enhanced efficacy may result because more of the drug will be delivered locally to the site of disease.</p>
+			<p>Liposomes may be unilamellar vesicles (possessing a single membrane bilayer) or multilamellar vesicles (onion-like structures characterized by multiple membrane bilayers, each separated from the next by an aqueous layer).  The bilayer is composed of two lipid monolayers having a hydrophobic “tail” region and a hydrophilic “head” region.  The structure of the membrane bilayer is such that the hydrophobic (nonpolar) “tails” of the lipid monolayers orient toward the center of the bilayer while the hydrophilic “heads” orient towards the aqueous phase.  In a liposome drug delivery system, a bioactive agent such as a drug is entrapped in the liposome and then administered to the patient to be treated.</p>
+       <p>&nbsp;</p>
+       <p><center><img src="images/tech_01.jpg"></center></p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+			</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+	</div>
+  <div id="sidebar">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td align="right"><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia arcu, et luctus mi erat vestibulum sem.&quot;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td colspan="3"><img src="images/girl_with_bubbles.gif" width="350" height="254" /></td>
+      </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&nbsp;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td align="right"><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+		
+  </div>
+	<div id="footer">
+		<p align="center"><!--#include file="includes/footer.html" --></p>
+	</div>
+</div>
+</body>
+</html>

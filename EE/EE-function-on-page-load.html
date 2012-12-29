@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8"/>
+<style>
+    .bodyResult{
+   overflow:hidden;
+   width:900px;
+   background-color: orange;
+}
+
+.leftResult{
+  float:left;
+  width:185px;
+  background-color: red;
+}
+.rightResult{
+  float:left;
+  width:715px;
+  background-color: blue;
+}
+</style>
+<script>
+    	function getParameterByName(name) {
+		//alert(name);
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(window.location.search);
+  if(results == null)
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function loadPage(){
+   var f = getParameterByName("page");
+
+   if(f == "prog"){
+       alert("hi");
+    //programming();
+   }
+}
+
+window.onload = loadPage; 
+//window.onload = alert("hi");
+    
+    </script>
+<body>
+<div class="bodyResult">
+    <div class="leftResult">
+        some stuff
+    </div>
+    <div class="rightResult">
+        some other stuff
+    </div>
+</div>
+
+</body>
+</html>

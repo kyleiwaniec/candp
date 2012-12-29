@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Page 02</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" rel="stylesheet"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js" type="text/javascript"></script>  
+  <script>
+		$(document).bind("pagebeforeload pageload pageloadfailed pagebeforechange pagechange", function(e) {
+			alert("here 1");
+		});
+		$(document).live("pageinit pagebeforechange pagecreate pagechange pagechangefailed pagebeforeload", function(e) {
+			alert("here 2");
+		});
+		$(document).delegate("#page_02", "pageinit pagebeforechange pagecreate pagechange pagechangefailed pagebeforeload", function(e) {
+			alert("here 3");
+		});
+	</script>
+</head> 
+<body> 
+<div data-role="page" id="page_02">
+	<div data-role="header">
+		<h1>Page 02</h1>
+	</div>
+	<div data-role="content">	
+		<p>Hello world Page 02</p>
+    <a href="/index.php">Go Back</a>		
+	</div>
+</div>
+</body>
+</html>

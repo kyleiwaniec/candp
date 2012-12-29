@@ -1,0 +1,366 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+<head> 
+<meta charset='UTF-8'> 
+</head> 
+<body> 
+<pre> 
+
+
+1: import java.io.*;
+2: import java.util.*;
+3: <span style='color:grey;'>/**
+4:  * This class creates an instance, of a persistent phone book. Every record added
+5:  * to the phone book gets written out to a file so /* "some"  that it is available for the
+6:  * next invocation.
+7:  * 
+8:  * @author James Slocum
+9:  * 
+10:  */</span>
+11: public class PhoneBook {
+12: 	<span style='color:green;'>// Number of bytes in a UTF Header</span>
+13: 	public static final int UTF_HEADER = 2;
+14: 	private RandomAccessFile inout = null;
+15: 	<span style='color:green;'>// internal data structure "of" the 34 records.</span>
+16: 	private ArrayList&lt;Record&gt; records = new ArrayList&lt;Record&gt;(<span style='color:grey;'>/* comment 34 */</span>);
+17: 	private int numberOfRecords = 0;
+18: 	private double mynum = 0.89e4;
+19: 	private double mynusm = 0.894l;
+20: 	
+21: 	private double mynusm = 0x894a;
+22: 	private double mynusm2 = \u894a;
+23: 	
+24: 	private char mychar = <span style='color:purple;'>'a'</span>;
+25: 	
+26: 	characters(<span style='color:purple;'>'a'</span><span style='color:purple;'></span><span style='color:purple;'></span>, 'b', 'c');
+27: 	
+28: 	String reg = <span style='color:blue;'>"regex this! //this is a string not a comment"</span>;
+29: 	<span style='color:grey;'>/**
+30: 	 * Default constructor. 34 This constructor will attempt to open the phone book
+31: 	 * file and load any records if it already exists.
+32: 	 * 
+33: 	 * @throws IOException
+34: 	 *             If the file cannot be created, read from, or if it encounters
+35: 	 *             a block of malformed data.
+36: 	 */</span>
+37: 	public PhoneBook() throws IOException {
+38: 		try {
+39: 			inout = new RandomAccessFile(<span style='color:blue;'>"PhoneBook.dat"</span><span style='color:blue;'></span>, "rw");
+40: 			if(inout.length() != 0) {
+41: 				loadRecords();
+42: 			}
+43: 		} catch (IOException ioe) {
+44: 			throw new IOException(<span style='color:blue;'>"Unable to open AddressBook.dat for writing"</span>,
+45: 					ioe);
+46: 		}
+47: 	}
+48: 	<span style='color:grey;'>/**
+49: 	 * Load the records from the PhoneBook.dat file if there are any inside This
+50: 	 * will maintain the phone book between program runs.
+51: 	 * 
+52: 	 * @throws IOException
+53: 	 *             if the file can not be read, or there is a malformed data
+54: 	 *             block
+55: 	 */</span>
+56: 	private void loadRecords() throws IOException {
+57: 		inout.seek(0);
+58: 		String name;
+59: 		long phoneNumber;
+60: 		int age;
+61: 		try {
+62: 			while (true) {
+63: 				name = inout.readUTF();
+64: 				phoneNumber = inout.readLong();
+65: 				age = inout.readInt();
+66: 				records.add(new Record(name, phoneNumber, age));
+67: 				numberOfRecords++;
+68: 			}
+69: 		} catch (EOFException eof) {
+70: 			return;
+71: 		}
+72: 	}
+73: 	<span style='color:grey;'>/**
+74: 	 * Adds a new record to the phone book. It will add the record to the
+75: 	 * internal data structure as well as append it to the end of the file.
+76: 	 * 
+77: 	 * @param name
+78: 	 *            The persons name
+79: 	 * @param phone
+80: 	 *            The persons phone number
+81: 	 * @param age
+82: 	 *            The persons age
+83: 	 * @return true if the person is new and the record was added, false if the
+84: 	 *         person already exists in the system.
+85: 	 * @throws IOException
+86: 	 *             if the file cannot be written to.
+87: 	 */</span>
+88: 	public boolean addRecord(String name, long phone, int age)
+89: 			throws IOException {
+90: 		for (Record r : records) {
+91: 			if (r.getName().equals(name)) {
+92: 				return false;
+93: 			}
+94: 		}
+95: 		Record newRecord = new Record(name, phone, age);
+96: 		records.add(newRecord);
+97: 		inout.seek(inout.length());
+98: 		inout.writeUTF(name);
+99: 		inout.writeLong(phone);
+100: 		inout.writeInt(age);
+101: 		numberOfRecords++;
+102: 		return true;
+103: 	}
+104: 	<span style='color:grey;'>/**
+105: 	 * Updates the existing records name entry. This method will take the
+106: 	 * persons current name, and change it to the new name specified.
+107: 	 * 
+108: 	 * @param name
+109: 	 *            The persons original name
+110: 	 * @param newName
+111: 	 *            The persons new name
+112: 	 * @return true if the name was updated, false if the record doesn't exist.
+113: 	 * @throws IOException
+114: 	 *             if the file cannot be written to or read from.
+115: 	 */</span>
+116: 	public boolean updateRecordName(String name, String newName)
+117: 			throws IOException {
+118: 		boolean foundRecord = false;
+119: 		long phoneNumber = 0;
+120: 		int age = 0;
+121: 		<span style='color:green;'>// search the internal structure for the name, quick way to find the</span>
+122: 		<span style='color:green;'>// record</span>
+123: 		for (int i = 0; i < records.size(); i++) {
+124: 			Record r = records.get(i);
+125: 			if (r.getName().equals(name)) {
+126: 				foundRecord = true;
+127: 				r.setName(newName);
+128: 				break;
+129: 			}
+130: 		}
+131: 		if (foundRecord) {
+132: 			long recordStart = 0;
+133: 			foundRecord = false;
+134: 			inout.seek(0);
+135: 			<span style='color:green;'>// We found the record internally, now we need to locate it in the</span>
+136: 			<span style='color:green;'>// file</span>
+137: 			try {
+138: 				while (!foundRecord) {
+139: 					recordStart = inout.getFilePointer();
+140: 					if (inout.readUTF().equals(name)) {
+141: 						foundRecord = true;
+142: 						break;
+143: 					}
+144: 					inout.skipBytes(8 + 4); <span style='color:green;'>// skip the phone number and age</span>
+145: 				}
+146: 			} catch (EOFException eof) {
+147: 				throw new IOException(
+148: 						<span style='color:blue;'>"Record not found in file, but found internally... "</span>);
+149: 			}
+150: 			int lengthOfRecord = 0;
+151: 			byte[] restOfFile = null;
+152: 			inout.seek(recordStart); <span style='color:green;'>// go back to beginning of matching record</span>
+153: 			int numberOfBytesInName = (inout.read() << 8); <span style='color:green;'>// read UTF Header</span>
+154: 			numberOfBytesInName |= inout.read();
+155: 			lengthOfRecord = UTF_HEADER + numberOfBytesInName + 8 + 4; <span style='color:green;'>// find</span>
+156: 										   <span style='color:green;'>// length</span>
+157: 										   <span style='color:green;'>// of</span>
+158: 										   <span style='color:green;'>// record</span>
+159: 			<span style='color:green;'>// create a byte array to hold every record after the current</span>
+160: 			<span style='color:green;'>// record.</span>
+161: 			restOfFile = new byte[(int) (inout.length() - (recordStart + lengthOfRecord))];
+162: 			inout.seek(recordStart + lengthOfRecord);
+163: 			inout.read(restOfFile); <span style='color:green;'>// store the rest of the records temporally.</span>
+164: 			inout.seek(recordStart + UTF_HEADER + numberOfBytesInName);
+165: 			phoneNumber = inout.readLong(); <span style='color:green;'>// read in current records phone</span>
+166: 											<span style='color:green;'>// number</span>
+167: 			age = inout.readInt(); <span style='color:green;'>// read in current records age</span>
+168: 			inout.seek(recordStart); <span style='color:green;'>// go back to start of record</span>
+169: 			inout.setLength(recordStart); <span style='color:green;'>// delete record (and everything else</span>
+170: 											<span style='color:green;'>// after it)</span>
+171: 			inout.writeUTF(newName); <span style='color:green;'>// write the new name for the record</span>
+172: 			inout.writeLong(phoneNumber); <span style='color:green;'>// write the old phone number</span>
+173: 			inout.writeInt(age); <span style='color:green;'>// write the old age</span>
+174: 			inout.write(restOfFile); <span style='color:green;'>// write the rest of the records to the</span>
+175: 										<span style='color:green;'>// file.</span>
+176: 			return true;
+177: 		} else {
+178: 			return false;
+179: 		}
+180: 	}
+181: 	<span style='color:grey;'>/**
+182: 	 * Updates the existing records phone number entry. This method will take
+183: 	 * the persons current name, find the record and updates its phone number
+184: 	 * that is associated with it.
+185: 	 * 
+186: 	 * @param name
+187: 	 *            The name for the existing record
+188: 	 * @param newPhone
+189: 	 *            The new phone number for the person
+190: 	 * @return true if the record was updated, false if it can not be found
+191: 	 * @throws IOException
+192: 	 *             if the file cannot be read from or written to.
+193: 	 */</span>
+194: 	public boolean updateRecordPhone(String name, long newPhone)
+195: 			throws IOException {
+196: 		boolean foundRecord = false;
+197: 		for (int i = 0; i < records.size(); i++) {
+198: 			Record r = records.get(i);
+199: 			if (r.getName().equals(name)) {
+200: 				foundRecord = true;
+201: 				r.setPhoneNumber(newPhone);
+202: 				break;
+203: 			}
+204: 		}
+205: 		if (foundRecord) {
+206: 			long recordStart = 0;
+207: 			foundRecord = false;
+208: 			inout.seek(0);
+209: 			try {
+210: 				while (!foundRecord) {
+211: 					recordStart = inout.getFilePointer();
+212: 					if (inout.readUTF().equals(name)) {
+213: 						foundRecord = true;
+214: 						break;
+215: 					}
+216: 					inout.skipBytes(8 + 4);
+217: 				}
+218: 			} catch (EOFException eof) {
+219: 				throw new IOException(
+220: 						<span style='color:blue;'>"Record not found in file, but found internally... "</span>);
+221: 			}
+222: 			int lengthOfRecord = 0;
+223: 			inout.seek(recordStart);
+224: 			int numberOfBytesInName = (inout.read() << 8);
+225: 			numberOfBytesInName |= inout.read();
+226: 			inout.skipBytes(numberOfBytesInName); <span style='color:green;'>// we skip over the name</span>
+227: 			inout.writeLong(newPhone); <span style='color:green;'>// write a new phone number</span>
+228: 			return true;
+229: 		} else {
+230: 			return false;
+231: 		}
+232: 	}
+233: 	<span style='color:grey;'>/**
+234: 	 * Updates the existing records age entry. This method will take the persons
+235: 	 * current name, find the record and updates its age that is associated with
+236: 	 * it.
+237: 	 * 
+238: 	 * @param name
+239: 	 *            The name for the existing record
+240: 	 * @param newAge
+241: 	 *            The new age for the person
+242: 	 * @return true if the record was updated, false if the record could not be
+243: 	 *         found
+244: 	 * @throws IOException
+245: 	 *             If the file cannot be written to or read from
+246: 	 */</span>
+247: 	public boolean updateRecordAge(String name, int newAge) throws IOException {
+248: 		boolean foundRecord = false;
+249: 		for (int i = 0; i < records.size(); i++) {
+250: 			Record r = records.get(i);
+251: 			if (r.getName().equals(name)) {
+252: 				foundRecord = true;
+253: 				r.setAge(newAge);
+254: 				break;
+255: 			}
+256: 		}
+257: 		if (foundRecord) {
+258: 			long recordStart = 0;
+259: 			foundRecord = false;
+260: 			inout.seek(0);
+261: 			try {
+262: 				while (!foundRecord) {
+263: 					recordStart = inout.getFilePointer();
+264: 					if (inout.readUTF().equals(name)) {
+265: 						foundRecord = true;
+266: 						break;
+267: 					}
+268: 					inout.skipBytes(8 + 4);
+269: 				}
+270: 			} catch (EOFException eof) {
+271: 				throw new IOException(
+272: 						<span style='color:blue;'>"Record not found in file, but found internally... "</span>);
+273: 			}
+274: 			int lengthOfRecord = 0;
+275: 			inout.seek(recordStart);
+276: 			int numberOfBytesInName = (inout.read() << 8);
+277: 			numberOfBytesInName |= inout.read();
+278: 			inout.skipBytes(numberOfBytesInName + 8);
+279: 			inout.writeInt(newAge);
+280: 			return true;
+281: 		} else {
+282: 			return false;
+283: 		}
+284: 	}
+285: 	<span style='color:grey;'>/**
+286: 	 * Returns a string representation of the current records.
+287: 	 */</span>
+288: 	public String toString() {
+289: 		StringBuilder sb = new StringBuilder();
+290: 		for (Record r : records) {
+291: 			sb.append(r.toString() + <span style='color:blue;'>"\n"</span>);
+292: 		}
+293: 		return sb.toString();
+294: 	}
+295: 	public static void main(String[] args) throws Exception {
+296: 		PhoneBook book = new PhoneBook();
+297: 		<span style='color:grey;'>/*
+298: 		book.addRecord("James", 2016935778L, 25);
+299: 		book.addRecord("John", 9733930889L, 25);
+300: 		book.addRecord("Adam", 2018892323L, 26);
+301: 		System.out.println(book.toString());
+302: 		book.updateRecordPhone("Adam", 2016761111L);
+303: 		System.out.println(book.toString());
+304: 		book.updateRecordName("James", "James Slocum");
+305: 		System.out.println(book.toString());
+306: 		book.addRecord("Michele", 1234567893, 25);
+307: 		book.updateRecordAge("James Slocum", 24);
+308: 		book.updateRecordName("Adam", "Adam Reid");
+309: 		book.updateRecordName("Michele", "M");
+310: 		*/</span>
+311: 		System.out.println(book.toString());
+312: 	}
+313: 	<span style='color:grey;'>/**
+314: 	 * This class encapsulates a single record. These records are written out to
+315: 	 * a file as well as kept internally for quick searching and sorting.
+316: 	 * 
+317: 	 * @author James Slocum
+318: 	 * 
+319: 	 */</span>
+320: 	private class Record {
+321: 		String name;
+322: 		long phoneNumber;
+323: 		int age;
+324: 		public Record(String name, long phoneNumber, int age) {
+325: 			this.name = name;
+326: 			this.phoneNumber = phoneNumber;
+327: 			this.age = age;
+328: 		}
+329: 		public String getName() {
+330: 			return this.name;
+331: 		}
+332: 		public long getPhoneNumber() {
+333: 			return this.phoneNumber;
+334: 		}
+335: 		public int getAge() {
+336: 			return this.age;
+337: 		}
+338: 		public void setName(String name) {
+339: 			this.name = name;
+340: 		}
+341: 		public void setPhoneNumber(long phoneNumber) {
+342: 			this.phoneNumber = phoneNumber;
+343: 		}
+344: 		public void setAge(int age) {
+345: 			this.age = age;
+346: 		}
+347: 		public String toString() {
+348: 			return name + <span style='color:blue;'>", "</span><span style='color:blue;'></span> + phoneNumber + ", " + age;
+349: 		}
+350: 		public static void characters(char a, char b, char c){
+351: 			
+352: 		}
+353: 	}
+354: }
+</pre> 
+</body> 
+</html>

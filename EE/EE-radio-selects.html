@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+
+</title><link href="Veripark.css" rel="stylesheet" type="text/css" />
+<style>
+    
+    .active{
+        background-color:blue;
+    }
+    
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script> 
+
+<script type="text/javascript">
+ 
+ $(function(){
+     $("#form1").change(function(){
+          
+         
+        $("input[type='radio']").each(function(){
+            
+            if($(this).attr("checked")){
+
+            $(this).parent("td").parent("tr").addClass("active");
+        }else{
+            $(this).parent("td").parent("tr").removeClass("active");
+        }
+            
+        })
+         
+     });
+ });
+    </script>
+</head>
+<body>
+    <form method="post" action="Odemegir.aspx" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTEwMjM0Njk2MQ9kFgICAw9kFggCBQ8QZA8WCWYCAQICAgMCBAIFAgYCBwIIFgkQBQZoYXN0YTEFBmhhc3RhMWcQBQZoYXN0YTIFBmhhc3RhMmcQBQ1CaXJndW4gWWlsbWF6BQ1CaXJndW4gWWlsbWF6ZxAFDVJlbXppIFR1cmttZW4FDVJlbXppIFR1cmttZW5nEAUHaGFzdGFtbQUHaGFzdGFtbWcQBQZIYXN0YTUFBkhhc3RhNWcQBQZoYXN0YTMFBmhhc3RhM2cQBQhoYXN0YWxhcgUIaGFzdGFsYXJnEAURc29ubWV6IGRlbWlya2F6YW4FEXNvbm1leiBkZW1pcmthemFuZxYBAghkAgkPPCsAEQMADxYEHgtfIURhdGFCb3VuZGceC18hSXRlbUNvdW50AgNkARAWABYAFgAMFCsABxYIHgROYW1lBQlIYXN0YV9BZGkeCklzUmVhZE9ubHloHgRUeXBlGSsCHglEYXRhRmllbGQFCUhhc3RhX0FkaRYIHwIFB1RlbGVmb24fA2gfBBkrAh8FBQdUZWxlZm9uFggfAgUFQWRyZXMfA2gfBBkrAh8FBQVBZHJlcxYIHwIFBUlzbGVtHwNoHwQZKwIfBQUFSXNsZW0WCB8CBQbDnGNyZXQfA2gfBBkrAh8FBQbDnGNyZXQWCB8CBQlBw6dpa2xhbWEfA2gfBBkrAh8FBQlBw6dpa2xhbWEWCB8CBQtLYWxhbl9UdXRhch8DaB8EGSsCHwUFC0thbGFuX1R1dGFyFgJmD2QWCAIBD2QWDgIBDw8WAh4EVGV4dAURc29ubWV6IGRlbWlya2F6YW5kZAICDw8WAh8GBQsrOTA1MzcxMjMxMmRkAgMPDxYCHwYFCGFkcmVzc3NzZGQCBA8PFgIfBgUKRGlzIENla2ltaWRkAgUPDxYCHwYFAzI5MGRkAgYPDxYCHwYFC2FjaWtsYW1hMTExZGQCBw8PFgIfBgUDMTYxZGQCAg9kFg4CAQ8PFgIfBgURc29ubWV6IGRlbWlya2F6YW5kZAICDw8WAh8GBQsrOTA1MzcxMjMxMmRkAgMPDxYCHwYFCGFkcmVzc3NzZGQCBA8PFgIfBgUSRGlzIHRhc2kgdGVtaXpsaWdpZGQCBQ8PFgIfBgUDNTAwZGQCBg8PFgIfBgUNdGdlcmlzaSBzb25yYWRkAgcPDxYCHwYFATBkZAIDD2QWDgIBDw8WAh8GBRFzb25tZXogZGVtaXJrYXphbmRkAgIPDxYCHwYFCys5MDUzNzEyMzEyZGQCAw8PFgIfBgUIYWRyZXNzc3NkZAIEDw8WAh8GBQ5LYW5hbCB0ZWRhdmlzaWRkAgUPDxYCHwYFBDIwMDBkZAIGDw8WAh8GBTdpbGsga2FuYWwgdGVkYXZpc2kgZ2VyJiMyMzE7ZWtsZXN0aXJpbGVjZWdpIHRhcmloIHN1IHRhZGQCBw8PFgIfBgUEMTQwMGRkAgQPDxYCHgdWaXNpYmxlaGRkAh0PDxYCHwZlZGQCIw8PFgIfBmVkZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBgUcR3JpZFZpZXcxJGN0bDAyJFJhZGlvQnV0dG9uMgUcR3JpZFZpZXcxJGN0bDAyJFJhZGlvQnV0dG9uMgUcR3JpZFZpZXcxJGN0bDAzJFJhZGlvQnV0dG9uMgUcR3JpZFZpZXcxJGN0bDAzJFJhZGlvQnV0dG9uMgUcR3JpZFZpZXcxJGN0bDA0JFJhZGlvQnV0dG9uMgUcR3JpZFZpZXcxJGN0bDA0JFJhZGlvQnV0dG9uMgUJR3JpZFZpZXcxDzwrAAwBCAIBZJ5ypY1WCkv2SY2Vvm19pMib0BM4xT/o/YHUHeLmb29J" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/HastaTakip/WebResource.axd?d=rYUXUGz-PHDTFZCiyvYEsYHmSRUCEtpQ-DLKa0n5XARI7yfmUVqe7W64hF1yjQdsOmuhAs10sLrPwMsTZ_X5W_ljUHT1HdBTp0IWVKg2OQA1&amp;t=634686575104727099" type="text/javascript"></script>
+
+
+<script src="/HastaTakip/WebResource.axd?d=biOGRCTGxUA_SnDjgUVvRnePCtrVgFkZ42a09tlZiJaGFZ4MRjwpU0pb5ougO2js606l7_ljo4SQE8o9VjlbbG4O6OqG75y8bi_I4nInfeo1&amp;t=634686575104727099" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWEwLmmOPwBwKe5I/lCgL29Lp7Avb0znsCkKegsAICxouD5AgCudzgmQcC1vyqewL29LJ7AqX3m9oCAoTgteIHAs6W07sOAt/G2/UNAuz24pcJAuzRsusGAuzR9tkMAoznisYGArursYYIAoCfiKMOAsySM1yWiyXQ0NfA+vyCpVsK5/hwR1tiIMie5mVtCgU=" />
+</div>
+    <div>
+    
+    <table>
+    <tr><td colspan="3">
+        <span id="Label12" class="baslik">Hasta Bilgi Güncelleme</span>
+        </td></tr>
+    <tr>
+    <td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr><td></td></tr>
+    <tr>
+    <td colspan="2"><span id="Label1" class="etiket">Hasta Adi:</span></td>
+    <td> 
+        &nbsp;</td>
+    
+    </tr>
+    <tr><td colspan="2"/>
+        <select name="DropDownList2" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;DropDownList2\&#39;,\&#39;\&#39;)&#39;, 0)" id="DropDownList2">
+	<option value="hasta1">hasta1</option>
+	<option value="hasta2">hasta2</option>
+	<option value="Birgun Yilmaz">Birgun Yilmaz</option>
+	<option value="Remzi Turkmen">Remzi Turkmen</option>
+	<option value="hastamm">hastamm</option>
+	<option value="Hasta5">Hasta5</option>
+	<option value="hasta3">hasta3</option>
+	<option value="hastalar">hastalar</option>
+	<option selected="selected" value="sonmez demirkazan">sonmez demirkazan</option>
+
+</select>
+        <td>
+            &nbsp;</td></tr>
+    <tr><td colspan="2"/>
+        &nbsp;<td>
+            &nbsp;</td></tr>
+    <tr><td colspan="3">
+        <span id="Label13" class="etiket">Bilgiler:</span></td></tr>
+    <tr><td colspan="3"/>
+        <div>
+	<table cellspacing="0" rules="all" border="1" id="GridView1" style="height:104px;width:146px;border-collapse:collapse;">
+		<tr>
+			<th scope="col">Secim</th><th scope="col">Hasta_Adi</th><th scope="col">Telefon</th><th scope="col">Adres</th><th scope="col">Islem</th><th scope="col">&#220;cret</th><th scope="col">A&#231;iklama</th><th scope="col">Kalan_Tutar</th>
+		</tr><tr>
+			<td>
+                        <input id="GridView1_RadioButton2_0" type="radio" name="GridView" value="RadioButton2"/>
+                    </td><td>sonmez demirkazan</td><td>+9053712312</td><td>adressss</td><td>Dis Cekimi</td><td>290</td><td>aciklama111</td><td>161</td>
+		</tr><tr>
+			<td>
+                        <input id="GridView1_RadioButton2_1" type="radio" name="GridView" value="RadioButton2"/>
+                    </td><td>sonmez demirkazan</td><td>+9053712312</td><td>adressss</td><td>Dis tasi temizligi</td><td>500</td><td>tgerisi sonra</td><td>0</td>
+		</tr><tr>
+			<td>
+                        <input id="GridView1_RadioButton2_2" type="radio" name="GridView" value="RadioButton2"/>
+                    </td><td>sonmez demirkazan</td><td>+9053712312</td><td>adressss</td><td>Kanal tedavisi</td><td>2000</td><td>ilk kanal tedavisi ger&#231;eklestirilecegi tarih su ta</td><td>1400</td>
+		</tr>
+	</table>
+</div>
+       
+        <span id="CustomValidator1" style="color:Red;display:none;"></span>
+        <span id="CustomValidator2" style="color:Red;display:none;"></span>
+            
+        </tr>
+         
+    <tr><td>&nbsp;</td><td></td><td>
+        &nbsp;</td></tr>
+  <tr>
+  
+  <td>
+      <span id="Label15" class="etiket">Odeme Miktari:</span>
+      </td>
+  <td></td>
+  <td>
+        &nbsp;</td>
+  
+  </tr>
+  
+      <tr>
+    <td colspan="3"/>
+        <input name="TextBox1" type="text" id="TextBox1" style="width:80px;" />
+        <span id="RequiredFieldValidator1" style="color:Red;display:none;"></span>
+          </tr>
+          <tr>
+          <td>
+              <span id="Label16" class="etiket">Aciklama:</span>
+              </td><td></td><td>
+              &nbsp;</td>
+          </tr>
+          <tr>
+          <td>
+              <input name="TextBox2" type="text" id="TextBox2" style="height:79px;width:192px;" />
+              </td><td>
+                  <span id="RequiredFieldValidator2" style="color:Red;display:none;"></span>
+              </td><td>
+                  &nbsp;</td>
+          </tr>
+          <tr>
+          <td>
+              <div id="ValidationSummary1" style="color:Red;display:none;">
+
+</div>
+              </td><td>&nbsp;</td><td>
+              &nbsp;</td>
+          </tr>
+          <tr>
+          <td>
+        <span id="Label11" style="color:Red;font-weight:bold;"></span>
+              </td><td>&nbsp;</td><td>
+              &nbsp;</td>
+          </tr>
+          <tr>
+          <td>
+              <input type="submit" name="Button1" value="Kaydet" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;Button1&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="Button1" class="etiket" />
+        <input type="submit" name="Button2" value="Ana Menu" id="Button2" class="etiket" />
+              </td><td>&nbsp;</td><td>
+              &nbsp;</td>
+          </tr>
+          <tr>
+          <td>&nbsp;</td><td>&nbsp;</td><td>
+              &nbsp;</td>
+          </tr>
+          <tr>
+          <td>
+       <span id="Label10" style="color:Lime;font-weight:bold;"></span>
+              </td><td>&nbsp;</td><td>
+              &nbsp;</td>
+          </tr>
+    </table>
+    <input name="hidAcrobat" type="hidden" id="hidAcrobat" />
+    </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ValidationSummary1"));
+var Page_Validators =  new Array(document.getElementById("CustomValidator1"), document.getElementById("CustomValidator2"), document.getElementById("RequiredFieldValidator1"), document.getElementById("RequiredFieldValidator2"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var CustomValidator1 = document.all ? document.all["CustomValidator1"] : document.getElementById("CustomValidator1");
+CustomValidator1.errormessage = "Lutfen bir kayit seciniz !!";
+CustomValidator1.display = "None";
+CustomValidator1.evaluationfunction = "CustomValidatorEvaluateIsValid";
+CustomValidator1.clientvalidationfunction = " ValidateRadioButton";
+var CustomValidator2 = document.all ? document.all["CustomValidator2"] : document.getElementById("CustomValidator2");
+CustomValidator2.errormessage = "Bir tane kayit seciniz !!";
+CustomValidator2.display = "None";
+CustomValidator2.evaluationfunction = "CustomValidatorEvaluateIsValid";
+CustomValidator2.clientvalidationfunction = "makesureoneitemselected1";
+var RequiredFieldValidator1 = document.all ? document.all["RequiredFieldValidator1"] : document.getElementById("RequiredFieldValidator1");
+RequiredFieldValidator1.controltovalidate = "TextBox1";
+RequiredFieldValidator1.errormessage = "Odeme Miktarini Giriniz !!";
+RequiredFieldValidator1.display = "None";
+RequiredFieldValidator1.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator1.initialvalue = "";
+var RequiredFieldValidator2 = document.all ? document.all["RequiredFieldValidator2"] : document.getElementById("RequiredFieldValidator2");
+RequiredFieldValidator2.controltovalidate = "TextBox2";
+RequiredFieldValidator2.errormessage = "Aciklama Giriniz !!";
+RequiredFieldValidator2.display = "None";
+RequiredFieldValidator2.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+RequiredFieldValidator2.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+</body>
+</html>

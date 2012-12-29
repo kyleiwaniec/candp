@@ -1,0 +1,34 @@
+.panel {
+   float: none;
+   margin-bottom:10px;
+   width: 456px;
+   height:304px;
+   
+}
+		
+#portfolioBg{
+    width:100%;
+    height:100%;
+    margin:0;
+    
+}
+
+.panel img{
+   width:100%;
+   height:auto;
+
+	
+}
+#innerContent{
+    padding:10px;
+    margin:0;
+    -webkit-box-sizing: border-box;
+    width:100%;
+}
+#sidebar{display:none;}
+
+input[type="text"], textarea{
+    width:100%;
+    -webkit-box-sizing: border-box;
+ 
+}

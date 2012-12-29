@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ASP - Menus</title>
+    <meta charset="UTF-8">
+<!--    <script>
+            function addArrow (){
+                var $el = document.getElementsByTagName("li");
+                
+                if(typeof $el != "undefined"){
+                    for(var i = 0, l = $el.length; i < l; i++){
+                        
+                        var uls = $el[i].getElementsByTagName("ul");
+                        console.log(uls);
+                        
+                        for(var j = 0, h = uls.length; j < h; j++){
+                            get_prevSibling(uls[j]).className = "parent";
+                        }
+                        
+                    }
+                }
+            };
+            function get_prevSibling(n) {
+                var y = n.previousSibling;
+                while (y.nodeType!=1){ // loop until Node.ELEMENT_NODE == 1 is found
+                    y = y.previousSibling;
+                    }
+                return y;
+            }
+       
+        
+            window.onload = function(){
+                addArrow();
+            }
+        </script>-->
+        <style type="text/css">
+            .Menu-Horizontal a{
+                text-decoration: none;
+/*                text-transform: uppercase;*/
+                color:#fff;
+                font-family: geneva, sans-serif;
+                font-size:14px;
+            }
+            
+            .Menu-Horizontal ul, .Menu-Horizontal li{
+                margin:0;
+                padding:0;
+            }
+            .Menu > li{
+                float:left;
+            }
+            .Menu li{
+                position:relative;
+                min-width:150px;
+                display:block;
+                background:#444;
+                list-style: none;
+                
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+
+            }
+            .Menu ul{
+                display:none;
+                position:absolute;
+            }
+            .Menu ul ul{
+                left:100%;
+                top:0;
+            }
+            
+            .Menu li a{
+                display:block;
+                padding:7px 25px 2px 7px;
+                
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .Menu > li > a {padding:10px;}
+            .Menu li:hover{
+            
+            }
+            
+            .Menu li:hover > a{
+                background-color: #C80000;
+                color:white;
+            }
+            
+            .Menu li:hover > ul{
+                display:block;
+            }
+            .parent{
+                background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAYAAABWMrcvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDI3NkI3QTlENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDI3NkI3QUFENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0Mjc2QjdBN0Q2QkYxMUUxQkZFODkzMENENjA2RjZBQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0Mjc2QjdBOEQ2QkYxMUUxQkZFODkzMENENjA2RjZBQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj1JbwwAAACNSURBVHjalNPfCkAwFMfxM8/ChRvcuVA8g2cmuZIX4E00v8lqtD/nrL4Z9alZG2mtCVXvk5WdaAl0ERv+EQv6UBKGUBTGUBCmkBdykBm1i9QjYSk9lJ1kxBuH+8JBMxo/XyL/dKEN9ZKNOFEp2fIVFUhx0YIGyTEyS2okB3ZHueRqTKiTXsJWct1vAQYAvmjcHUntj7AAAAAASUVORK5CYII=');
+                background-position: right center;
+                background-repeat:no-repeat;
+            }
+        </style>
+  </head>
+  <body>
+	<div class="Menu-Horizontal">
+	<ul class="Menu">
+            <li><a href="#">Official info</a>
+                <ul>
+                    <li><a tabindex="-1" href="fmjd.html">FMJD</a></li>
+                    <li><a tabindex="-1" href="stat.html">Statutes</a></li>
+                    <li><a tabindex="-1" href="reg.html">Bye-Laws</a></li>
+                    <li><a tabindex="-1" href="annex.html">Annexes</a></li>
+                    <li><a tabindex="-1" href="anthem.html">Anthem</a></li>
+                    <li><a tabindex="-1" href="org.html">Officials</a></li>
+                    <li><a tabindex="-1" href="forms.html">Forms</a></li>
+                    <li><a tabindex="-1" href="calend.html">Calendar</a></li>
+                    <li><a tabindex="-1" href="rat.html">Rating</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Draughts</a>
+                <ul>
+                    <li><a tabindex="-1" href="genhist.html">General history</a></li>
+                    <li><a tabindex="-1" href="titles.html">History of World titles</a></li>
+                    <li><a tabindex="-1" href="records">World records</a></li>
+                    <li><a tabindex="-1" href="#">Variants</a>
+                        <ul>
+                            <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">100 squares</a></li>
+                            <li><a tabindex="-1" href="#">64 squares</a>
+                                <ul>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Brazilian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Checkers</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Czech</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Italian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Pool</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Russian</a></li>
+                                    <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">Spanish</a></li>
+                                </ul>
+                            </li>
+                            <li><a tabindex="-1" href="http://en.wikipedia.org/wiki/Draughts">144 squares</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Federations</a>
+                <ul>
+                    <li><a tabindex="-1" href="?p=all&cont=afr">Africa</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=amer">America</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=asia">Asia</a></li>
+                    <li><a tabindex="-1" href="?p=all&cont=aus">Australia & Oceania</a></li>
+                    <li><a tabindex="-1" href="?p=eur">Europe</a></li>
+                    <li><a tabindex="-1" href="?p=all">All</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Commitees</a>
+                <ul>
+                    <li><a tabindex="-1" href="ethics.html">Ethical</a></li>
+                    <li><a tabindex="-1" href="med.html">Medical</a></li>
+                    <li><a tabindex="-1" href="comp.html">Problemism</a></li>
+                    <li><a tabindex="-1" href="tech.html">Technical</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Computer</a>
+                <ul>
+                    <li><a tabindex="-1" href="progs.html">Software</a></li>
+                    <li><a tabindex="-1" href="online.html">Play online</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Feedback</a>
+                <ul>
+                    <li><a tabindex="-1" href="contact.html">Contact FMJD</a></li>
+                    <li><a tabindex="-1" href="http://laatste.info">Forums</a></li>
+                </ul>
+            </li>
+            <li><a href="#">This site</a>
+                <ul>
+                    <li><a tabindex="-1" href="sitemap.html">Sitemap</a></li>
+                    <li><a tabindex="-1" href="credits.html">Credits</a></li>
+                    <li><a tabindex="-1" href="changeslog.html">Changes log</a></li>
+                </ul>
+            </li>
+        </ul>
+
+	</div>
+  </body>
+</html>

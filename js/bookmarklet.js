@@ -1,0 +1,1 @@
+location.href='mailto:?SUBJECT='+document.title+'&BODY='+escape(location.href)

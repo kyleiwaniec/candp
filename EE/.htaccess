@@ -1,0 +1,4 @@
+# rewrite urls
+RewriteEngine on
+RewriteRule ^([^/\.]+)/?$ index.php?page=$1 [L]
+

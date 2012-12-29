@@ -1,0 +1,74 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+    <head> 
+        <meta charset='UTF-8'> 
+        <style>
+
+            body{
+                background:url(landscape.jpg) right top no-repeat #000;
+                margin:0;
+                padding:0;
+            }
+            .controls{
+                position:absolute;
+                top:15px;
+                left:15px;
+                cursor:pointer;
+            }
+            #fr{
+                width:100%;height:800px;
+            }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script>
+            
+            // this is still here, but not being used
+            var wipe = function (obj) {
+                
+                            for (var p in obj)
+                            {
+                                if (obj.hasOwnProperty(p))
+                                    delete obj[p];
+                                console.log("obj[p]");
+                            }
+                            
+                        };
+                    
+            $(function(){
+                
+                var angleSelect = $("#angle");
+                var len = 10;
+                for (var i = len; i > 0; --i){
+                    $("<option/>", {
+                        text : i,
+                        value : i
+                    }).prependTo(angleSelect);
+                }
+                var container = $("#fr");
+                    container.load("fractal-frame.html"); 
+                    
+                $.FractalTree = null; // this does didly squat
+                
+                $("#reload").click(function(){
+                    
+                    //wipe($.FractalTree);
+                    container.load("fractal-frame.html"); 
+                    
+                      
+                      
+                }); 
+                        
+            });
+        </script>
+    </head> 
+    <body> 
+        <div class="controls">
+
+            <select id="angle">
+
+            </select>
+            <button id="reload">re-draw</button>
+        </div>
+        <div id="fr"></div>
+    </body>
+</html>

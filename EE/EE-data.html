@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery cursor menu</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<script>
+$(function(){
+     var data = {
+      "ProDataSet":{
+          "ttCashbackTypeList":[
+                    {
+                        "cbcat":"P01",
+                        "order_class":"WAT",
+                        "vendor_name":"vendor_name",
+                        "vendor_num":"9999",
+                        "cbrowid":"0x00000000002e8f23",
+                        "type_name":"",
+                        "is_selected":""
+                    }
+                ]
+            }
+        }
+                
+var temp_table = data.ProDataSet.ttCashbackTypeList[0];
+
+var numOfKeys = Object.keys(temp_table).length;
+
+
+function makeTable(){
+//for(var i = 0; i < numOfKeys; i++){
+    var entry = Object.keys(temp_table)[i];
+    console.log( entry + ':' + temp_table[entry] );
+//}
+}           
+            
+//function chunk(array, process, context){
+//    var items = array.concat();   //clone the array
+//    setTimeout(function(){
+//        var item = items.shift();
+//        process.call(context, item);
+//
+//        if (items.length > 0){
+//            setTimeout(arguments.callee, 100);
+//        }
+//    }, 100);
+//} 
+function chunk(array, process, context){
+    setTimeout(function(){
+        var item = array.shift();
+        process.call(context, item);
+
+        if (array.length > 0){
+            setTimeout(arguments.callee, 100);
+        }
+    }, 100);
+}
+
+chunk(Object.keys(temp_table), makeTable());
+            
+            
+});
+</script>
+
+<style>
+
+</style>
+</head>
+<body>
+
+</body>
+</html>

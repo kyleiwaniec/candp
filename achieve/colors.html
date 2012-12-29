@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Colors and Votes</title>
+        <meta charset="UTF-8">
+        <style></style>
+        <script>
+            window.onload = function(){
+                
+                var container = document.getElementById('container');
+                //init.sendRequest('lors.json', container);
+                init.sendRequest('lors.json', container);
+                
+            }
+            
+            
+            var init = {
+            
+              isEmpty : function(obj) {return Object.keys(obj).length === 0;},
+             
+  
+            
+          sendRequest : function(url, el) {
+                        var req = this.createXMLHTTPObject();
+                        if (!req) return;
+                        var method = "GET";
+                        req.open(method,url,true);
+                        
+                        req.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+                        req.onreadystatechange = function () {
+                                if (req.readyState != 4) return;
+                                if (req.status != 200 && req.status != 304) {
+                //			console.log('HTTP error ' + req.status);
+                                        return;
+                                }
+                                //callback(req);
+                                
+                                // do the business
+                                var data = JSON.parse(req.responseText);
+                                //el.innerHTML = req.responseText;
+                                console.log(data.colors[0].Red[0].city);
+                                console.log(data.colors.length);
+                                
+                                var markup = '';
+                                var colors_arr = [];   
+                                    
+
+                                    for(var i = 0, l = data.colors.length; i < l; i++){
+                                        for(color in data.colors[i]){
+                                            markup += '<li>'+color+'</li>';
+                                            colors_arr.push(color);
+                                            }
+                                        }
+                                    
+                                    el.innerHTML = markup;
+                                }
+                        
+                        req.send(null);
+                        if (req.readyState == 4) return;
+                },
+
+                
+
+               createXMLHTTPObject :  function () {
+                        var xmlhttp = false;
+                        
+                        var XMLHttpFactories = [
+                                function () {return new XMLHttpRequest()},
+                                function () {return new ActiveXObject("Msxml2.XMLHTTP")},
+                                function () {return new ActiveXObject("Msxml3.XMLHTTP")},
+                                function () {return new ActiveXObject("Microsoft.XMLHTTP")}
+                        ];
+                        var len = XMLHttpFactories.length;
+                        
+                        for (var i=0;i<len;i++) {
+                                try {xmlhttp = XMLHttpFactories[i]();}
+                                catch (e) {continue;}
+                                break;
+                        }
+                        return xmlhttp;
+                }
+            // adder
+            // event handlers
+            };
+        </script>
+    </head>
+    <body>
+        <ul id="container"></ul>
+    </body>
+</html>

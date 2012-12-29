@@ -1,0 +1,145 @@
+mobileMenu(
+{
+    
+    "section": 
+        { 
+        
+        "News": {
+            "title" : "News",
+            "link" : "/news/",
+            "subsection": [
+                    {
+                        "title" : "Politics",
+                        "link" : "/politics/",
+                        "objectID" : "news"
+                    },
+                    {
+                        "title" : "Crime",
+                        "link" : "/crime/",
+                        "objectID" : "news"
+                    },
+                    {
+                        "title" : "Education",
+                        "link" : "/education/",
+                        "objectID" : "news"
+                    },
+                    {
+                        "title" : "Opinion",
+                        "link" : "/opinion/",
+                        "objectID" : "news"
+                    }
+                ]
+            },
+        "Sports": {
+            "title" : "Sports",
+            "link" : "/sports/",
+            "subsection": [
+                    {
+                        "title" : "Baseball",
+                        "link" : "/baseball/"
+                    },
+                    {
+                        "title" : "Football",
+                        "link" : "/crime/"
+                    },
+                    {
+                        "title" : "Basketball",
+                        "link" : "/basketball/"
+                    },
+                    {
+                        "title" : "Hockey",
+                        "link" : "/hockey/"
+                    }
+                ]
+            },
+        "Entertainment": {
+            "title" : "Entertainment",
+            "link" : "/entertainment/",
+            "subsection": [
+                    {
+                        "title" : "Movies",
+                        "link" : "/movies/"
+                    },
+                    {
+                        "title" : "Music",
+                        "link" : "/music/"
+                    },
+                    {
+                        "title" : "Events",
+                        "link" : "/m/events/"
+                    },
+                    {
+                        "title" : "Dining",
+                        "link" : "/dining/"
+                    }
+                ]
+            },
+        "hssports": {
+            "title" : "Jobs",
+            "link" : "/jobs/",
+            "subsection": [
+                {
+                    "title" : "hhsports",
+                    "link" : "/movies/"
+                },
+                {
+                    "title" : "Music",
+                    "link" : "/music/"
+                },
+                {
+                    "title" : "Events",
+                    "link" : "/m/events/"
+                },
+                {
+                    "title" : "Dining",
+                    "link" : "/dining/"
+                }
+            ]
+        },
+           
+            "business": {
+                        "title" : "Autos",
+                        "link" : "/autos/",
+                        "subsection": [
+                            {
+                                "title" : "business",
+                                "link" : "/movies/"
+                            },
+                            {
+                                "title" : "Music",
+                                "link" : "/music/"
+                            },
+                            {
+                                "title" : "Events",
+                                "link" : "/m/events/"
+                            },
+                            {
+                                "title" : "Dining",
+                                "link" : "/dining/"
+                            }
+                            ]
+                        },
+        "LocalNews": {
+                            "title" : "Real Estate",
+                            "link" : "/realestate/",
+                            "subsection": [
+                                    {
+                                        "title" : "Local",
+                                        "link" : "/movies/"
+                                    },
+                                    {
+                                        "title" : "Music",
+                                        "link" : "/music/"
+                                    },
+                                    {
+                                        "title" : "Events",
+                                        "link" : "/m/events/"
+                                    },
+                                    {
+                                        "title" : "Dining",
+                                        "link" : "/dining/"
+                                    }
+                                ]   
+                            }
+        }
+    });

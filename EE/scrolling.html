@@ -1,0 +1,255 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script>
+    
+            function loginattempt()
+            {
+                $('#LoginErrorMsg').html('');
+                var String_Email = $('input[name=login_email]').val();
+                var String_Password = $('input[name=login_password]').val();
+
+                if(String_Email == "") { $('#LoginErrorMsg').html('ERROR: Login Failed<br/>Username Required'); }
+                else if(String_Password == "") { $('#LoginErrorMsg').html('ERROR: Login Failed<br/>Password Required'); }
+                else
+                {
+                    $.post("login_process.php", { email: String_Email, password: String_Password }, function(ResponseData)
+                    {
+                        if(ResponseData == "LoginSucess")
+                        {
+                            window.location = "saved-properties.php";
+                        }
+                        else
+                        {
+                            $('#LoginErrorMsg').html('ERROR: Login Failed<br/>Please check your details');
+                        }
+                    });
+                }
+            }
+	
+            function signupattempt()
+            {
+		
+                $('#SignupErrorMsg').html('');
+                if($('input[name=signup_firstname]').val() == "") { $('#SignupErrorMsg').html('ERROR: Signup Failed<br/>Firstname required'); }
+                else if($('input[name=signup_surname]').val() == "") { $('#SignupErrorMsg').html('ERROR: Signup Failed<br/>Surname required'); }
+                else if($('input[name=signup_email]').val() == "") { $('#SignupErrorMsg').html('ERROR: Signup Failed<br/>Email address required'); }
+                else if($('input[name=signup_password]').val() == "") { $('#SignupErrorMsg').html('ERROR: Signup Failed<br/>Create a password'); }
+                else if($('input[name=signup_password]').val() != $('input[name=signup_confirmpassword]').val()) { $('#SignupErrorMsg').html('ERROR: Signup Failed<br/>Passwords don\'t match'); }
+                else
+                {
+                    $('form[name=signupform]').submit();
+                }
+            }
+	
+            function CheckUserLoggedIn_PropertyNotes()
+            {
+                var ContactID = $('input[name=contact_id]').val();
+                if(ContactID != "")
+                {
+                    $('.notespopup').show();
+                }
+                else
+                {
+                    $('.popupsgroup').hide();
+                    $('.signuppopup').show();
+                }
+            }
+	
+            function savepropertynotes()
+            {
+                var PropertyID = $('input[name=location_id]').val();
+                var ContactID = $('input[name=contact_id]').val();
+                var Notes = $('textarea[name=propertynotes]').val();
+		
+                if(ContactID != "")
+                {
+                    $.post("property_process.php", { 'Action': 'SavePropertyNotes', 'property_id': PropertyID, 'contact_id': ContactID, 'Notes': Notes }, function(ResponseData)
+                    {
+                        if(ResponseData == "NotesSaved")
+                        {
+                            $('.popupsgroup').hide();
+                        }
+                        else
+                        {
+                            alert("An error occurred, we could not save your notes");
+                        }
+                    });
+                }
+                else
+                {
+                    $('.popupsgroup').hide();
+                    $('.signuppopup').show();
+                }
+            }
+	
+            function forgot_password()
+            {
+
+                $("form#sign_in_form").hide();
+                $("form#reset_password_form").show();
+
+            }
+	
+            function generate_password()
+            {
+
+                $('#LoginErrorMsg').html('');
+                var UserEmail = $('input[name=password_reset_email]').val();
+                if(UserEmail == "")
+                {
+                    $('#LoginErrorMsg').html('ERROR: Enter Email<br/>Email address required');
+                }
+                else
+                {
+                    $.post("login_passwordreset.php", { Email: UserEmail }, function(DataResponse)
+                    {
+                        if(DataResponse == "Complete")
+                        {
+                            $("p#password_message").html('A new password has been generated and emailed to you. <a href="#" onclick="location.reload(); return false;">Click here</a> to login with your new password.');
+                        }
+                        else
+                        {
+                            $("p#password_message").html('There was an error, we could not find your account, please ensure you have an account with us, if not, you can sign up by clicking on the "Create Account" link above.');
+                        }
+                    });
+                }
+		
+
+            }
+	
+            function sendtofriend()
+            {
+                $('#SendFriendErrorMsg').html('');
+                if($('input[name=sendtofriend_name]').val() == "") { $('#SignupErrorMsg').html('ERROR: Missing Info<br/>Your name required'); }
+                else if($('input[name=sendtofriend_email]').val() == "") { $('#SignupErrorMsg').html('ERROR: Missing Info<br/>Your email required'); }
+                else if($('input[name=sendtofriend_friendname]').val() == "") { $('#SignupErrorMsg').html('ERROR: Missing Info<br/>Friends name required'); }
+                else if($('input[name=sendtofriend_friendemail]').val() == "") { $('#SignupErrorMsg').html('ERROR: Missing Info<br/>Friends email required'); }
+                else
+                {
+                    $.post("property_process.php", { 'Action': 'EmailToFriend', "Data": $("form[name=sendtofriendform]").serialize() }, function(ResponseData)
+                    {
+                        if(ResponseData == "EmailSent")
+                        {
+                            $('.popupsgroup').hide();
+                        }
+                        else
+                        {
+                            alert("An error occurred, we could not email this property to your friend");
+                        }
+                    });
+                }
+            }
+	
+        </script>
+        <style>
+            .container {
+                position: relative;
+                margin-bottom: 50px;
+                overflow: hidden;
+                float: left;
+            }
+
+            .container img{
+                border:5px solid #fff;
+            }
+            .container a{color: #29587A}
+            .content{
+                overflow:auto;
+                width:540px;
+                height: 750px;
+                padding-right:10px;
+                text-align: justify;
+            }
+            .title h1{
+                color: #900;
+            }
+            .title p{
+                color: #069; 
+                font-weight: 400;
+            }
+            .content p {
+                margin-bottom: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="title">
+                <h1>Lazy Bones</h1>
+
+                <p>M Adam Roberts</p>
+            </div>
+
+
+            <div class="content">
+
+                <p>I've heard it said several times lately, almost as if it's a message being sent to me, "If you aren't sweating, you aren't working!"</p>
+                <p>The first time I heard that statement I laughed! On further consideration, I realized it's really not a joke. It's&nbsp;actually&nbsp;true!</p>
+                <p>Some would say, "Hold on a minute! Just because someone is not dripping&nbsp;with sweat doesn't mean they're not working hard at what they're doing."</p>
+                <p>I'll agree,&nbsp;not everyone works in such a physical manner that bodily perspiration is always produced upon maximum work output.&nbsp; I can see where it&nbsp;might be&nbsp;unfair to judge someone who is really busting chops at&nbsp;what they're doing,&nbsp;and just because they're not showing any signs of personal overheating, we label them a slacker!</p>
+                <p>Lately, I've been evaluating my own performances in life and work. I noticed there are times when I'm really pushing myself to give my best and there are other times when I'm hardly making any effort at all.</p>
+                <p>The point I'm making is that if we're not pushing ourselves to&nbsp;give our very best in everything we do in life, we're robbing ourselves and others of the full benefits of our personal potential.&nbsp;By just coasting along at a comfortable pace in life, we're choosing to take the easy way out. We're not even breaking a sweat! We're not working! We're living lazy.</p>
+                <p>I say we all&nbsp;need to push ourselves a little harder.&nbsp;Some of us need to push ourselves a lot harder!</p>
+                <p>I'm not only&nbsp;speaking of our efforts at work.&nbsp; I'm referring to our efforts in every area of our lives. We need to break out of our comfort zones and force ourselves to sweat a little! We need to work hard at bettering our relationships with others.&nbsp;We need to go that extra mile for someone else who needs our help right now.&nbsp;We need to&nbsp;push ourselves to be better fathers, better mothers, better sisters&nbsp;and&nbsp;better brothers. We&nbsp;need to make greater efforts&nbsp;to be kind, and generous, and helpful to our neighbors. We&nbsp;need to start&nbsp;doing those things for others that we keep&nbsp;putting off doing. We need to&nbsp;start saying those words of healing, encouragement and forgiveness we've been meaning to say to someone for so long.&nbsp;</p>
+                <p>These things are not always easy to do.&nbsp; That's the whole point!&nbsp; We need to start sweating a little more in the ways we live our lives.&nbsp;We need to start pushing ourselves to be better people.</p>
+                <p>You might notice most&nbsp;of the areas of improvement I believe we all need to be working on involve giving more of ourselves towards other people. In my opinion, that's what life is all about!&nbsp; True living comes through giving!&nbsp; It is by giving that we receive life itself!&nbsp; The more we give, the more we live!&nbsp; The less we give, the closer we come to dying.</p>
+                <p>Of course, the list goes on and on.&nbsp; We need to sweat at being a better student of life.&nbsp;We need to perspire more over controlling our diets and over making healthier food choices.&nbsp;It's not easy denying ourselves all the delicious junk foods that destroy the health of our bodies, but we need to do it!</p>
+                <p>We need to discipline ourselves to be wise with our finances and to plan for our futures.&nbsp; Again, it&rsquo;s not always fun working at this,&nbsp; but it's something we need to force ourselves to do.&nbsp; It's hard work!&nbsp; It causes us to break a sweat and to feel a little uncomfortable, but don't we all know that in the end we will be glad we made the extra effort?&nbsp; Don't we all know we will be better off for doing it?&nbsp; So let's just do it!</p>
+                <p>The question remains.&nbsp; Are you and I going to be workers of life, or are we going to be a bunch of lazy bones?&nbsp; Are we going to push ourselves to be the very best we can be or are we just going to&nbsp;coast through life and never really make any difference?</p>
+                <p>Aren't our lives important?&nbsp; Shouldn't we be working hard at really giving our best so that we can receive the best?&nbsp; By holding&nbsp;out, we're only robbing ourselves of the abundant life we were intended for!</p>
+                <p>Let's not be lazy in our living and our giving!&nbsp; Let's&nbsp;work hard at everything we do so&nbsp;that our lives may be full of goodness and prosperity!</p>
+
+            </div>
+        </div>
+        <div class="signuppopup popupsgroup" style="display:none">
+            <div class="signuppopup-close"><img onclick="$('.popupsgroup').hide();" src="{site_url}themes/site_themes/agile_records/images/close_button.png" alt="X" /></div>
+            <div id="signin_navigation">
+                <ul>
+                    <li><a href="#" onclick="$('.signuppopup').hide(); $('.registerpopup').show(); return false;">Create Account</a></li>
+                    <li style="margin-left:20px;"><a href="#" onclick="$('.registerpopup').hide(); $('.signuppopup').show(); return false;" class="active">Sign In</a></li>
+                </ul>
+            </div>
+
+            {exp:freemember:login return="{segment_1}/{segment_2}" error_handling="inline" error_delimiters='<span class="error">|</span>' form_id="sign_in_form" form_class="formholder"}
+            <div class="form-tab">
+                <div class="tab">
+                    <label for="email">Email Address</label>{field:email}<br />
+                    {error:email}
+                </div>
+                <div class="tab">
+                    <label for="password">Password</label>{field:password}<br />
+                    {error:password}
+                </div>
+                <div class="tab">
+                    <input type="submit" class="sendbtn" value="Sign In" />
+                </div>
+                <div class="tab">
+                    <a class="orange" onclick="forgot_password();" href="#">Forgot your password?</a>
+                </div>
+            </div>
+            {/exp:freemember:login}
+
+            {exp:freemember:forgot_password form_id="reset_password_form" form_class="formholder"}
+            <div class="form-tab">
+                <div class="tab">
+                    <label for="email">Email address</label>{field:email}<br />
+                    {error:email}
+                </div>
+                <p id="password_message">Please enter your email address and <input type="submit" value="click here" class="orange"> to receive an email with your new password.</p>
+            </div>
+            {/exp:freemember:forgot_password}
+
+            <div id="password_confirmation" style="display:none;">A new password has been sent to you</div>
+
+        </div> <!-- End signuppopup -->
+    </body>
+</html>

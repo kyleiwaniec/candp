@@ -1,0 +1,49 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+<title>fireEvent Method Sample</title>
+<script type="text/javascript">
+function fnFireEvents()
+{
+oDiv.innerText = "The cursor has moved over me!";
+oButton.fireEvent( 'onkeypress', 
+           true,     // key down events bubble 
+           true,     // and they can be cancelled 
+           document.defaultView,  // Use the default view 
+           true,        // ctrl 
+           false,       // alt
+           true,        //shift
+           false,       //meta key 
+           187,          // keycode + in IE (61 for Moz, 187 for IE)
+           0);
+}
+</script>
+<link rel="stylesheet" href="samplesSDKIE4.css" type="text/css">
+</head>
+
+<!--TOOLBAR_START-->
+<!--TOOLBAR_EXEMPT-->
+<!--TOOLBAR_END-->
+<body>
+
+<div class="body">
+	<h1>fireEvent Method Sample</h1>
+	<p>By moving the cursor over the <strong>div</strong> below, the button is clicked.</p>
+	<div id="oDiv" onmouseover="fnFireEvents();" style="font-family: Comic Sans MS; font-size: 14pt; color: #0033FF; background-color: yellow; width: 300px; height: 40px; border-width: 5px; border-style: groove; border-color: burlywood;">
+		Mouse over this! </div>
+	<p><button id="oButton" onclick="this.innerText='I have been clicked!'">Button
+	</button></p>
+	<!-- START_PAGE_FOOTER --><br>
+	<br>
+	<br>
+	<p class="viewsource">[Right-click and choose View Source from the shortcut 
+	menu.] </p>
+	<a class="copyright" href="http://www.microsoft.com/isapi/gomscom.asp?TARGET=/info/cpyright.htm">
+	© 2007 Microsoft Corporation. All rights reserved. Terms of use.</a>
+	<!-- END_PAGE_FOOTER --></div>
+
+</body>
+
+</html>

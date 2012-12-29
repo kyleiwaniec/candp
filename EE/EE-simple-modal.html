@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Slideshow Array</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script src="jquery.simplemodal-1.4.2.js"></script>
+        <script>
+          $(function(){
+              
+              $(".basic").click(function(e){
+                   e.preventDefault();
+                   var link = $(this).attr("href");
+                   
+                   
+                  $.modal("<div class='box'></div>",
+                            {
+                            onShow: function (dialog) {
+                                    //alert("hi");
+                                    $(".box").load(link);   
+                                    }
+                            })
+                        
+                        });
+              
+          });
+        </script>
+<style>
+#simplemodal-overlay {background-color:#000;}
+#simplemodal-container {background-color:#333; border:8px solid #444; padding:12px;}
+
+</style>
+</head>
+
+<body>
+  <div id='container'>
+      <div id='content'>
+            <div id='basic-modal'>
+            <input type='button' name='basic' value='Demo' class='basic'/> 
+                                   or <a href='EE-red-blue.php' class='basic'>Dog</a>
+                                   or <a href='EE-radio.php' class='basic'>Cat</a>
+            </div>
+            
+            <!-- modal content -->
+            <div id="basic-modal-content">
+            </div>
+
+            <!-- preload the images -->
+            <div style='display:none'>
+                  <img src='modal/basic/img/basic/x.png' alt='' />
+            </div>
+      </div>
+</div>
+</body>
+
+</html>

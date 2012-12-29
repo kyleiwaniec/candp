@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yesterday</title>
+<script>
+
+
+
+var yesterday = new Date();
+yesterday.setDate(yesterday.getDate()-1);
+
+var dayofWeek = yesterday.getDay(); // day o fthe week
+var month = yesterday.getMonth(); // the month 0-11
+var dayofmonth = yesterday.getDate(); // day of the month
+var year = yesterday.getFullYear(); // the year
+
+var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+//var shortyear = year.toString().substring(2, 4);
+
+var y = dayofmonth +"-"+ months[month] +"-"+ year;
+
+function setyesterday() {
+    var formObject = document.forms["form1"];
+    formObject.elements["datefilter"].value = y;
+};
+
+ 
+</script>
+
+
+</head>
+<body>
+
+    <form name="form1">
+    <a href="#" onclick="setyesterday();">Get yesterday't date</a><br/>
+    <textarea name="datefilter"></textarea>
+    </form>
+</body>
+</html>

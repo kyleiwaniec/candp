@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+<title>TRANSAVE :: Mission and Operating Principles</title>
+	<meta name="description" content="TK">
+	<meta name="copyright" content="Copyright (c) 2006 TRANSAVE">
+	<meta name="author" content="Kyle Hamilton">
+
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body  onload="MM_preloadImages('images/nav_aboutus_over.gif','images/nav_technology_over.gif','images/nav_products_over.gif','images/nav_invRelations_over.gif','images/nav_news_over.gif','images/nav_partnering_over.gif','images/nav_contact_over.gif')">
+<div id="wrap">
+	<div id="header"><h1><img src="images/logo.gif" alt="logo"  /></h1>
+	</div>
+	<div id="nav">
+		<!--#include file="includes/nav.html" -->
+  </div>
+	<div id="main">
+		<table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl">&nbsp;</td>
+	    <td>
+				<h1>OUR MISSION</h1>
+				<p>To create a company that achieves successful development and commercialization of inhaled therapeutics and further develops underlying technology platform focused primarily on innovative, inhaled (liposomal – SLIT™) therapies for lung diseases.</p>
+				<p>We are dedicated to improving the treatment of serious lung diseases through the development of novel, site-specific liposomal drug products, thus improving the quality of life for our patients and their families.</p>
+				<h1>OUR OPERATING PRINCIPLES</h1>
+        <p>The Transave Team operates under a core set of values, ethical standards and principles:</p>
+				<ul>
+					<li>Patients serve as our compass when making difficult decisions and serve as our inspiration</li>
+					<li>We operate in an environment of mutual respect and team work</li>
+					<li>We value diversity and different opinions</li>
+					<li>We do the right thing and operate with integrity</li>
+					<li>We are focused on issues and tasks critical to the Company’s success</li>
+					<li>We are accountable for our actions and the performance of the Company</li>
+					<li>We have fun at work</li>
+        </ul>
+			</td>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+	</div>
+  <div id="sidebar">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td align="right"><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia arcu, et luctus mi erat vestibulum sem.&quot;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td colspan="3"><img src="images/girl_with_bubbles.gif" width="350" height="254" /></td>
+      </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&nbsp;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td align="right"><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+		
+  </div>
+	<div id="footer">
+		<p align="center"><!--#include file="includes/footer.html" --></p>
+	</div>
+</div>
+</body>
+</html>

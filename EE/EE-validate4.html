@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  
+  <script>
+  $(document).ready(function(){
+    $("#myform").validate({
+//        rules: {
+//                                email: {
+//				required: true,
+//				email: true
+//                                }
+//				
+//			},
+//                        messages: {
+//                            email: {
+//				required: "Please enter your email address."
+//                            }
+//                           
+//                        },
+			errorPlacement: function(label, element) {
+				// position error label after generated textarea
+				if (element.is("textarea, input")) {
+					label.insertAfter(element.next());
+				}else{
+                                    label.insertAfter(element);
+                                }
+                                
+			},
+			meta: "validate",
+                         submitHandler: function() { alert("Submitted!") }
+                            });
+		 });
+              
+  
+  </script>
+  
+</head>
+<body>
+  <script type="text/javascript" src="http://dev.jquery.com/view/trunk/plugins/validate/lib/jquery.metadata.js"></script>
+<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+<form id="myform">
+  <input type="text" name="email" class="{validate:{ required: true, email:true }}" />
+  <br/>
+  <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

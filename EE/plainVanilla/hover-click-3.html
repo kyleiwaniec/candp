@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .module-hilite4{
+                background-color:#eee;
+            }
+            .module-hilite4:hover, .active{
+                outline:2px solid blue;
+            }
+        </style>
+        <script type="text/javascript">
+            /* safe logging from Paul Irish */
+            window.log=function(){log.history=log.history||[];log.history.push(arguments);if(this.console){console.log(Array.prototype.slice.call(arguments))}};
+
+            
+            document.getElementsByClassName = function(searchClass,node,tag) {
+                var classElements = new Array();
+                if ( node == null )
+                    node = document;
+                if ( tag == null )
+                    tag = '*';
+                var els = node.getElementsByTagName(tag);
+                var elsLen = els.length;
+                var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+                for (i = 0, j = 0; i < elsLen; i++) {
+                    if ( pattern.test(els[i].className) ) {
+                        classElements[j] = els[i];
+                        j++;
+                    }
+                }
+                return classElements;
+            }
+            // end getelementsbyclassname
+
+            // event listeners:
+            var addEvent = (function () { 
+                var setListener = function (el, ev, fn) { 
+                    if (el.addEventListener) { 
+                        setListener = function (el, ev, fn) { 
+                            el.addEventListener(ev, fn, false); 
+                        }; 
+                    } else if (el.attachEvent) { 
+                        setListener = function (el, ev, fn) { 
+                            el.attachEvent('on' + ev, fn);
+                        }; 
+                    } else { 
+                        setListener = function (el, ev, fn) { 
+                            el['on' + ev] = fn; 
+                        }; 
+                    } 
+                    setListener(el, ev, fn); 
+                }; 
+                return function (el, ev, fn) { 
+                    setListener(el, ev, fn); 
+                }; 
+            }()); 
+
+            
+            var goToLink = function (el, link){
+                el = this.childNodes;
+                
+                var link = this.getElementsByClassName("link");
+                alert(link[0].getAttribute("href"));
+                window.location = link[0].getAttribute("href");
+
+                
+            };
+            
+            window.onload = function() {
+                var one = document.getElementsByClassName("module-hilite4");
+                for(var i = 0, l = one.length; i < l; i++){
+                    addEvent(one[i], "click", goToLink); 
+                    
+                    // TODO: addClass to hovered element
+                    // addEvent(one[i], "mouseover", function(){this.className += " active"});
+                }
+                
+                
+            }  
+    
+        </script>
+    </head>
+    <body>
+        <div class="module-hilite4"><div><div><div>
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    
+                            <tr>
+    
+                                <td align="center">
+    
+                                    <table width="98%" border="0" cellpadding="4" cellspacing="0" >
+    
+                                        <tr><td width="135px" align="left" valign="top" style=" padding: 10px;"><a href="http://cnpgen.com"><img src="" /></a><br></td><td align="left"><strong><a class="link" href="http://cnpgen.com">Great opportunity for ….. </a></strong><br>run. Sold as is with no disclosures. Possible non-recourse .<br/> posted: 08/27/2012</td><td width="100px" align="right" valign="top"style="padding: 5px;"><a href="http://site1.com/component/acctexp/act.html"><img src="" alt=""/></a></td></tr></table>
+                                </td>
+    
+                            </tr>
+    
+                        </table>
+                    </div></div></div></div>
+    </body>
+</html>

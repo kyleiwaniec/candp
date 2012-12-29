@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        
+.DropZone
+{ background-color:#CC00AA;
+  position:absolute;
+}
+
+
+.DropZoneBlue
+{ background-color:Blue;
+}
+
+.DropZoneGreen
+{ background-color:Green;
+}
+
+.DropZoneGray
+{ background-color:Gray;
+}
+
+
+
+.DragZone {
+  width:50px;
+  height: 50px;
+  left: 10px;
+  top: 10px;
+  background-color: #00ff00;
+  position:absolute
+}
+
+.DragClone {
+width:20px;
+height:20px;
+left: 10px;
+top: 10px;
+background-color: #ff0000;
+position:absolute;
+z-index:500;
+}
+
+
+</style>
+
+<script type="text/javascript">
+    var startX;             
+    var startY;
+    var offsetX;           
+    var offsetY;
+    var orig_zindex = 0;         
+      
+    //----------------------------------------------------------
+
+    var dragPart;
+    var dropPart;
+    var dragClone;
+    var dragID;
+
+    var imgSrcA = "http://www.w3schools.com/images/compatible_safari.gif";
+    var imgSrcB = "http://www.w3schools.com/images/colormap_80.gif";
+
+    //-----------initialization-------------
+    function InitDragDrop() {
+        document.onmousedown = dragDown;
+        document.onmouseup = dragUp;
+        document.getElementById("dragCloneA").style.visibility = "hidden";
+        document.getElementById("dragCloneB").style.visibility = "hidden";
+    }
+
+//==========DRAG DOWN======================
+function dragDown(e) {
+
+    //return;
+    // IE is retarded and doesn't pass the event object
+    if (e == null){e = window.event;}
+    var target;
+    var wrkTargTest;
+    if (e.target != null) {
+        target = e.target;
+    }
+    else {
+        target = e.srcElement;
+    }
+
+    //--------get mouse coordinates
+    if ((e.button == 1 && window.event != null) || (e.button == 0)) {
+        startX = e.clientX;
+        startY = e.clientY;
+    }
+
+    //-----  test for draggable
+    var bExit = true;
+    for (var iNode = target; iNode; iNode = iNode.parentNode) {
+        dragPartVars = GetDragPart(iNode.id);
+        if (dragPartVars != null) {
+            bExit = false;
+            dragPart = iNode;
+            break; }
+    }
+    if (bExit) { return }  //--- not draggable so exit
+
+    //----- identify drag part type and make clone visible
+    dragClone = document.getElementById("dragCloneA");
+    dragClone.style.visibility = "visible";
+    orig_zindex = dragPart.style.zIndex;
+    dragClone.style.zIndex = 900;
+
+    //----- position the dragClone
+
+    dragID = dragPart.id;  
+    offsetX = dragPart.offsetLeft;
+    offsetY = dragPart.offsetTop;
+   
+    dragClone.style.left = (startX - (.5 * parseInt(dragClone.style.width, 10))) + 'px';
+    dragClone.style.top = (startY - (.5 * parseInt(dragClone.style.height, 10))) + 'px';
+
+    // prep for move
+    document.onmousemove = dragMove;
+    document.body.focus();
+
+    document.onselectstart = function () { return false; };
+    target.ondragstart = function () { return false; };
+    return false;
+    }
+
+
+//==========DRAG MOVE======================
+    function dragMove(e) {
+        if (dragPart == null) { return }
+        if (e == null) { var e = window.event; }
+
+        CheckSwapDragClone(e.clientX, e.clientY);
+
+        // drag code
+        dragClone.style.left = (e.clientX - (.5 * parseInt(dragClone.style.width, 10))) + 'px';
+        dragClone.style.top = (e.clientY - (.5 * parseInt(dragClone.style.height, 10))) + 'px';
+
+        }
+
+  //==========SWAP CLONE======================
+         function CheckSwapDragClone(X,Y) {
+             if (X > 400) {    
+                 getChild(dragClone).src = imgSrcB;
+             }else{
+                 
+                 getChild(dragClone).src = imgSrcA;
+             }
+
+        dragClone.style.left = (X - (.5 * parseInt(dragClone.style.width, 10))) + 'px';
+        dragClone.style.top = (Y - (.5 * parseInt(dragClone.style.height, 10))) + 'px';
+        document.onmousemove = dragMove;
+   }
+
+//------------------------------------------
+//==========DRAG UP======================
+function dragUp(e) {
+    if (dragClone != null) {
+        dragClone.style.zIndex = orig_zindex;
+        dragClone.style.visibility = "hidden";
+
+        document.onmousemove = null;
+        document.onselectstart = null;
+        dragClone.ondragstart = null;
+
+        dragClone = null;
+
+    }
+}
+//================================================
+//================================================
+
+function GetDragPart(varID) {
+    if (varID == "dragPart") {
+        return true
+    }
+        else {
+        return false
+    }
+}
+       
+//================================================
+//================================================
+var getChild = (function(elem){
+    for(var i = 0; i < elem.childNodes.length; i++)
+        if (elem.childNodes[i].nodeType == 1){
+            return elem.childNodes[i];
+        }
+})
+    
+
+</script>
+
+</head>
+<body>
+ 
+<div class="DropZone" id="dropPart" 
+style="border-width:2px;border-color:Black;border-style:solid;position:absolute;
+  width: 300px;
+  height: 200px;
+  left: 600px;
+  top: 100px;">
+<p>DROP HERE</p>
+</div>
+
+<div class="DragClone" id="dragCloneA" style="height:20px;width:20px"><img src="http://www.w3schools.com/images/compatible_safari.gif">
+</div>
+
+<div class="DragClone" id="dragCloneB" style="height:20px;width:20px">
+  <img src="http://www.w3schools.com/images/colormap_80.gif">
+</div>
+
+
+
+
+<div class="DragZone" id="dragPart" style="background-color:#aaaaaa;">DRAG FROM HERE</div>
+
+<div style="position:absolute;top:0px;left:200px;height:40px;width:800px">
+<br /><span> The desired function is for drag clone to change images when it crosses 400px left</span>
+<br /><span>------------------------------------------------------------------------------------</span>
+
+</div>
+
+<script type="text/javascript">
+    InitDragDrop()
+</script>
+</body>
+
+
+</html>

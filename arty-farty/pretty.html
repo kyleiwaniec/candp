@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<title>Pretty in Pink</title> 
+<style type="text/css"> 
+	html { 
+		overflow: hidden; 
+	} 
+	body { 
+		position: absolute; 
+		margin: 0px; 
+		padding: 0px; 
+		
+		width: 100%; 
+		height: 100%; 
+                background:url(landscape.jpg) right top no-repeat #000;
+	} 
+	#screen { 
+		position: absolute; 
+		left: 10%; 
+		top: 10%; 
+		width: 80%; 
+		height: 80%; 
+		
+	} 
+ 
+</style> 
+<script type="text/javascript"> 
+  document.ontouchmove = function(e) {
+        // prevent scaling and sliding
+        e.preventDefault();
+        }
+</script>
+<script type="text/javascript"> 
+    
+    
+
+    
+// ============================================================= 
+// based on script written by Gerard Ferrandez - September, 2009 
+// http://www.dhteumeuleu.com - CC-BY-NC license 
+// ============================================================= 
+var tm = function () { 
+	/* ---- private vars ---- */ 
+	var scr, nw, nh, nx, ny; 
+	var xm = 0; 
+	var ym = 0; 
+	var particles = 100; 
+	var pos = new Array(particles); 
+	//////////////////////////////////////////////////////////////////////////// 
+	/* --- events --- */ 
+	var addEvent = function  (o, e, f) { 
+		if (window.addEventListener) o.addEventListener(e, f, false); 
+		else if (window.attachEvent) r = o.attachEvent('on' + e, f); 
+	} 
+	/* --- resize --- */ 
+	var resize = function () { 
+		nw = scr.offsetWidth; 
+		nh = scr.offsetHeight; 
+		var o = scr; 
+		for (nx = 0, ny = 0; o != null; o = o.offsetParent) { 
+			nx += o.offsetLeft; 
+			ny += o.offsetTop; 
+		} 
+	} 
+	//////////////////////////////////////////////////////////////////////////// 
+	/* --- init script --- */ 
+	var init = function () { 
+		for (var i = 0; i < particles; i++ ) { 
+			var o = pos[i] = new Object(); 
+			o.x = o.px = i * nw / particles; 
+			o.y = o.py = nh * .5 + Math.sin(i/10) * nh * .25; 
+			o.dx = 0; 
+			o.dy = 0; 
+			var d = document.createElement('img'); 
+			d.style.position = "absolute"; 
+			d.style.left = "-1000px"; 
+			d.src = document.getElementById("img").src; 
+			scr.appendChild(d); 
+			o.plo = d.style; 
+		} 
+	} 
+	//////////////////////////////////////////////////////////////////////////// 
+	/* --- main loop --- */ 
+	var run = function () { 
+		for(var i = 0; i < particles; i++) { 
+			var p = pos[i]; 
+			p.x += p.dx; 
+			p.y += p.dy; 
+			p.plo.left = Math.round(p.x - 20) + 'px'; 
+			p.plo.top  = Math.round(p.y - 20) + 'px'; 
+			var vx = p.x - p.px; 
+			var vy = p.y - p.py; 
+			p.px = p.x; 
+			p.py = p.y; 
+			p.x += vx; 
+			p.y += vy; 
+			p.dx = 0; 
+			p.dy = 0; 
+			if (p.x < 0) p.dx = Math.abs(vx) * .1; else if(p.x > nw) p.dx = -Math.abs(vx) * .1; 
+			if (p.y < 0) p.dy = Math.abs(vy) * .1; else if(p.y > nh) p.dy = -Math.abs(vy) * .1; 
+		} 
+		for(var i = 1; i < particles; i++) { 
+			var p = pos[i]; 
+			var vx = p.x - xm + nx; 
+			var vy = p.y - ym + ny; 
+			var d = Math.sqrt(vx * vx + vy * vy); 
+			if (d < 100) { 
+				d = (100 - d) / d; 
+				p.dx += vx * d * .2; 
+				p.dy += vy * d * .2; 
+			} 
+			var j = (i - 1); 
+			var p2 = pos[j]; 
+			var vx = p2.x - p.x; 
+			var vy = p2.y - p.y; 
+			var d = Math.sqrt(vx * vx + vy * vy); 
+			if(d > 0){ 
+				d = ((5 - d) / d) / 30; 
+				var dx = vx * d; 
+				var dy = vy * d; 
+				p.dx -= dx; 
+				p.dy -= dy; 
+				p2.dx += dx; 
+				p2.dy += dy; 
+			} 
+		} 
+		setTimeout(run, 16); 
+	} 
+	return { 
+		//////////////////////////////////////////////////////////////////////////// 
+		/* ==== public functions ==== */ 
+		init : function () { 
+			/* ---- init script ---- */ 
+			scr = document.getElementById('screen'); 
+			addEvent(document, 'mousemove', function (e) { 
+				if (window.event) e = window.event; 
+				xm = e.clientX; 
+				ym = e.clientY; 
+			}); 
+			addEvent(window, 'resize', resize); 
+			setTimeout(function() { 
+				resize(); 
+				init(); 
+				run(); 
+			}, 500); 
+		} 
+	} 
+}(); 
+var song = new Audio("Sorrow.mp3");
+    
+/* ==== start script ==== */ 
+onload = function() { 
+song.play();
+	tm.init(); 
+       
+        
+} 
+</script> 
+</head> 
+<body> 
+<img id="img" src="sphere2.png" style="visibility:hidden" alt=""/> 
+<div id="screen"> 
+</div> 
+</body> 
+</html> 

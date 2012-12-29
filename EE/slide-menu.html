@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>SEARCH PAGE</title>
+ 
+<link href="style/layout.css" rel="stylesheet" type="text/css" />
+<style>
+    #header1 {
+                width: 100%;
+                height: 100%; 
+                font-size : 8px;
+                text-align: right;
+                border: 0.3px #FCFCFE;
+                background-color: #FFFFFF;
+                background-image:url(images/loginheader.jpeg);
+                font-size: 12px;
+}
+ 
+#header2 {
+                width: 100%;
+                height: 100%;
+                font-size: 18px;
+				border: 0.3px #FCFCFE;
+}
+ 
+#footer {
+                clear: both;
+                font-size: 11px;
+                height:100%;
+				vertical-align:bottom;
+                border:1px solid black;
+}
+ 
+#leftpane {
+                width: 20%;
+                height: 80%;
+                float: left;
+}
+ 
+#menu {
+                
+}
+ 
+#information {
+                border-radius:3px;
+                border: none;
+                padding-right: 10px;
+                padding-left: 10px;
+                padding-bottom:10px;
+                
+}
+ 
+#rightpane {
+                width: 80%;
+                height: 65%;
+                float: left;
+}
+ 
+#menubottom {
+                vertical-align: bottom;
+                width: 50%;
+		background-color: #C0C0C0;
+                border-radius: 3px;
+                font-size:14px;
+}
+ 
+#innercontainer {
+                background-color:#F6F6F6;
+                border:3px #F6F6F6;
+                 height:100%;
+}
+ 
+#container {
+                width: 100%;
+                height:100%;
+                margin-left: auto;
+                margin-right: auto;
+                border: 1px #E8E6F1;
+}
+ 
+#MainMenu {
+                list-style: none;
+                padding: 0 0 0 0;
+                width: 170px;
+}
+ 
+#MainMenu div {
+                display: block;
+                
+                font-weight: bold;
+                margin: 1px;
+                cursor: pointer;
+                padding: 5 5 5 7px;
+                list-style: circle;
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+}
+ 
+#MainMenu ul {
+                list-style: none;
+                padding: 0 0 0 0;
+}
+ 
+#MainMenu ul {
+                display: none;
+}
+ 
+#MainMenu ul li {
+                font-weight: normal;
+                cursor: auto;
+                background-color: #fff;
+                padding: 0 0 0 7px;
+}
+ 
+#MainMenu a {
+                text-decoration: none;
+}
+ 
+#MainMenu a:hover {
+                text-decoration: underline;
+}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<script>
+    $(function(){
+        $("#MainMenu > li > div").click(function(){       
+             $(this).next().slideToggle(300);
+             
+             $("#MainMenu > li > div").not($(this)).next().slideUp(300);
+             
+        });  
+                        
+        $('#MainMenu ul:eq(0)').show();
+                            
+ });
+</script>
+
+
+ 
+</head>
+ 
+<body>
+ 
+<div id="container">
+ 
+<div id="header1">Sam &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+ 
+<HR WIDTH="100%" style="border: 1px solid #E8E6F1;">
+ 
+<div id="innercontainer">
+ 
+<div class="header2">
+ 
+<div id="header2menu" align="right"><b>Sample Data</b> &nbsp; <b>Information Bars</b>
+&nbsp;  &nbsp; <b></b></div>
+</div>
+ 
+<HR SIZE="1" WIDTH="100%" style="border: 1px solid #E8E6F1;">
+ 
+<div id="information">
+ 
+<div id="leftpane">
+ 
+
+ 
+<ul id="MainMenu" >
+                <li>
+                
+                    <div>Customers &#9660; </div>
+                    <ul>
+                                    <li><a href="#">New</a></li>
+                                    <li><a href="#">Existing</a></li>
+                                    <li><a href="#">Delete</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Payments &#9660; </div>
+                    <ul>
+                                    <li><a href="#">Credit Card</a></li>
+                                    <li><a href="#">Direct Debit</a></li>
+                                    <li><a href="#">Cheque</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Support &#9660; </div>
+                    <ul>
+                                    <li><a href="#">Contact Info
+                                                    </a></li>
+
+                    </ul>
+                </li>
+                <li>
+                        <div>Ledger &#9660; </div>
+                        <ul>
+                                <li><a href="#">Ledger Info
+                                                </a></li>
+                                
+                        </ul>
+                </li>
+</ul>
+ 
+ 
+<!-- <HR SIZE="1" WIDTH="100%" style="border: 1px solid #FCFCFE;">
+ 
+-->
+ 
+<div id="menubottom" style="border-right: 5px double #0ff" >
+Welcome to my page . 
+</div>
+ 
+
+
+</div>
+ 
+ 
+<div id="rightpane">More Information</div>
+ 
+ 
+</div>
+ 
+ 
+<div id="footer"> Footer information</div>
+</div>
+ 
+</div>
+</body>
+</html>

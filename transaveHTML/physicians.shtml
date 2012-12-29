@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+<title>TRANSAVE :: Physicians</title>
+	<meta name="description" content="TK">
+	<meta name="copyright" content="Copyright (c) 2006 TRANSAVE">
+	<meta name="author" content="Kyle Hamilton">
+
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+<body  onload="MM_preloadImages('images/nav_aboutus_over.gif','images/nav_technology_over.gif','images/nav_products_over.gif','images/nav_invRelations_over.gif','images/nav_news_over.gif','images/nav_partnering_over.gif','images/nav_contact_over.gif')">
+<div id="wrap">
+	<div id="header"><h1><img src="images/logo.gif" alt="logo"  /></h1>
+	</div>
+	<div id="nav">
+		<!--#include file="includes/nav.html" -->
+  </div>
+	<div id="main">
+		<table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl">&nbsp;</td>
+	    <td>
+			<ol class="circle"><li>PRECLINICAL OVERVIEW</li></ol>
+			<p><b>Inhaled SLIT™ Amikacin for Pseudomonas aeruginosa infections in cystic fibrosis Prolonged Lung Residence Time:</b> Transave has demonstrated that free, unencapsulated aminoglycosides (amikacin and tobramycin) administered intratracheally have a short residence time and are rapidly cleared from the lung. However, SLIT™ Amikacin administered intratracheally achieves high peak concentrations (peak to MIC-50) in the lung and remains above the therapeutic level for days (prolonged AUC above the MIC-50).</p>
+			<p><center><image src="images/physicians_01.jpg"></center></p>
+      <p><b>Enhanced Efficacy against Pseudomonas aeruginosa infections:</b> The efficacy of SLIT™ Amikacin formulations has been assessed in an agar bead model which simulated a chronic mucoid Pa infection similar to that observed in CF patients.  Rat lungs were infected with over 2x106 CFUs of a mucoid Pa strain taken from a CF patient isolate.  The bacteria were embedded in an agarose bead matrix and instilled into the lungs of Sprague Dawley rats.  Three days later, separate groups of rats were treated with either the lipid vehicle alone, free amikacin (2 groups: 1 and 10 mg doses), free tobramycin (2 groups: 1 and 10 mg doses) and SLIT™ Amikacin (1 mg dose).  Treatment was for a period of 14 days, dosing every other day.  A significant reduction in CFU counts (~2 log units) was observed only for the SLIT™ Amikacin formulation, which was 100 times more effective than tobramycin.  The magnitude of the reduction in CFU counts noted was at the limit achievable with this chronic mucoid model.</p>
+			<p><center><image src="images/physicians_02.jpg"></center></p>
+			<p><center>Inhaled SLIT™ Cisplatin for the treatment of lung cancer</center></p>
+      <p>Improved Lung Targeting: Rats given cisplatin either by injection (6 mg/kg), or SLIT™ Cisplatin by intratracheal instillation at 1/8th the IV dose (0.75 mg/kg) had peak lung levels that were approximately two orders of magnitude greater when the drug was administered via the pulmonary route.  Lung targeting (defined as the ratio of the peak levels in lung vs. kidney) was 80x better for the liposomal formulation over a 24 hour period. The LD50 for the SLIT™ Cisplatin formulation in mice was 16 mg/kg, more than 20 times higher than the IV administered dose.</p>  
+			<p>The IC50 for free and encapsulated cisplatin against human NSCLC cell lines was 1-1.5 µg/ml depending on the formulation.  Achieving these levels in the lung was not possible with free cisplatin administered via IV at lethal concentrations.  In contrast, lung levels well above the IC50 for cisplatin were achieved and maintained for more than 24 hr with the SLIT™ formulation of cisplatin.</p>
+			<p>This preclinical study demonstrated for the first time that therapeutic levels of a chemotherapeutic could be achieved and maintained in the lung with a liposomal formulation of cisplatin without the corresponding concern of nephrotoxicity.</p>
+			<p><center><image src="images/physicians_03.jpg"></center></p>
+      <p><b>Enhanced Efficacy against Lung Tumors:</b> SLIT™ Cisplatin has demonstrated efficacy in a Lewis Lung tumor mouse model.  Mice received nebulized SLIT™ Cisplatin (1 mg/ml) via a PARI LC Star nebulizer for 60 min on days 5, 8, and 11 after intravenous inoculation of 2x106 Lewis lung cells. The SLIT™ Cisplatin treatment significantly inhibited tumor growth when compared to mice that were nebulized with saline as determined by tumor weight and gross observation (p=0.0043).  Although IV cisplatin showed some effect on tumor growth (not statistically significant compared to control), the dose was 15x higher than the SLIT™ Cisplatin dose and approached a toxic level.</p>
+			<p>This preclinical study demonstrated that inhaled SLIT™ Cisplatin, with effective lung targeting, can inhibit the growth of lung tumors of blood-borne origin (metastatic model).</p>
+			<p><center><image src="images/physicians_04.jpg"></center></p>
+			<ol class="circle"><li>Clinical Experiences</li></ol>
+      <p><b>Inhaled SLIT™ Amikacin for treatment Pa infections in cystic fibrosis</b></p>
+			<ul>
+      	<li>Transave has completed a Phase I/IIa trial in cystic fibrosis patients showing that the drug was well tolerated at all doses (90, 270, 500 mg) and demonstrating linear pharmacokinetics</li>
+				<li>A scintigraphy study was conducted in healthy volunteers showing optimal distribution of SLIT™ Amikacin in central and peripheral airways with a half-life of 45 hours.</li>
+			</ul>
+			<p><center><image src="images/physicians_05.jpg"></center></p>
+      <ul>
+      	<li>Transave is currently conducting a European Phase IIa SLIT™ Amikacin clinical trial to investigate its effect on Pseudomonas aeruginosa infections and pulmonary function (FEV-1) in cystic fibrosis patients. A Phase IIb trial in the U.S. and Europe are planned for 2007.</li>
+			</ul>
+      <p><b>Inhaled SLIT™ Cisplatin for the treatment of lung cancer</b></p>
+			<ul>
+      	<li>A Phase I/IIa dose escalation study has been completed in eighteen patients treated with doses ranging from 1.5 - 80 mg/m2 doses given up to six weeks.  Several key observations have been made which support SLIT™ Cisplatin given by inhalation as a viable treatment alternative in patients with pulmonary tumors.  Significant systemic toxicity typical of cisplatin, such as nephrotoxicity, neurotoxicity and sustained emesis, has not been seen.</li>
+				<li>A Phase II SLIT™ Cisplatin clinical trial in patients with recurrent osteosarcoma metastatic to the lung is ongoing.</li>
+        <li>A Phase II SLIT™ Cisplatin clinical trial is being conducted in patients with bronchoalveolar carcinoma.</li>
+			</ul>
+  		<ol class="circle"><li><a href="products.shtml">Products</a></li></ol>
+	 		<ol class="circle"><li><a href="technology.shtml">Technology</a></li></ol>
+			<ol class="circle"><li><a href="contact.shtml">Contact</a></li></ol>
+			<p>For more information about our drugs, studies, or etc. Please contact <a href="mailto:clinicalaffairs@transaveinc.com">clinicalaffairs@transaveinc.com</a></p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+       <p>&nbsp;</p>
+			</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+	</div>
+  <div id="sidebar">
+  
+  <table width="100%" cellpadding="0" cellspacing="0" >
+	  <tr>
+	    <td align="left" valign="top"><img src="images/tlc.gif" width="8" height="8" /></td>
+	    <td align="left" valign="top" class="grayBgxt" ></td>
+	    <td align="right"><img src="images/trc.gif" width="8" height="8" /></td>
+	  </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce pulvinar lobortis purus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec semper ipsum et urna. Ut consequat neque vitae felis. Suspendisse dapibus, magna quis pulvinar laoreet, dolor neque lacinia arcu, et luctus mi erat vestibulum sem.&quot;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  <tr>
+	    <td colspan="3"><img src="images/girl_with_bubbles.gif" width="350" height="254" /></td>
+      </tr>
+	  <tr>
+	    <td class="grayBgyl"></td>
+	    <td>
+  
+		<p>&nbsp;</p>
+		</td>
+	    <td class="grayBgyr"></td>
+	  </tr>
+	  
+	  <tr>
+	    <td><img src="images/blc.gif" width="8" height="8" /></td>
+	    <td class="grayBgxb"></td>
+	    <td align="right"><img src="images/brc.gif" width="8" height="8" /></td>
+	    </tr>
+	  </table>
+		
+  </div>
+	<div id="footer">
+		<p align="center"><!--#include file="includes/footer.html" --></p>
+	</div>
+</div>
+</body>
+</html>

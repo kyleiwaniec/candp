@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"
+class="">
+<head>
+<pre style="font-size: 0;display: none;visibility: hidden;">
+
+
+</pre>
+<script type="text/javascript">serverResponseTimeDelta=window.external&&window.external.pageT?window.external.pageT:-1;pageStartTime=new Date().getTime();</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>About Sitemaps - Webmaster Tools Help</title>
+<meta name="description" content="Sitemaps are a way to tell Google about pages on your site we might not otherwise discover. In its simplest terms, a XML Sitemap—usually called Sitemap, with a capital S—is a list of the pages on your" />
+<link rel="canonical" href="http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156184" />
+<link rel="icon" href="//www.google.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="http://www.google.com/support/webmasters/bin/resource/all.css?v=299_" />
+<script type="text/javascript">
+var internal = 0;
+var hc_protocol = "http://";
+var hc_page_info = "answer=156184";
+var country = 'US';
+var countryGroup = 'Americas';
+var autoExpand = '';
+var global_error_general = "Sorry, we weren't able to submit your information. Please try again.";
+var search_form_id = "search-form";
+var hc_urchin = "UA-1973099-1";
+var global_hc_bookmark = new Array("add","remove","toggle");
+global_hc_bookmark.add = new Array();
+global_hc_bookmark.remove = new Array();
+global_hc_bookmark.toggle = new Array();
+global_hc_bookmark["add"].url = "";
+global_hc_bookmark["add"].token = "";
+global_hc_bookmark["remove"].url = "";
+global_hc_bookmark["remove"].token = "";
+global_hc_bookmark["toggle"].url = "";
+global_hc_bookmark["toggle"].token = "";
+</script>
+<script
+src="//www.google.com/support/webmasters/bin/resource/js_variables.js?v=3&hl=en"
+type="text/javascript"></script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script
+src="//www.google.com/support/webmasters/bin/resource/search_util.js?v=2"
+type="text/javascript"></script>
+<script type="text/javascript">
+enableSearchSuggest("015368602994203044801:xisdokt5zne");
+</script>
+<script
+src="//www.google.com/support/webmasters/bin/resource/js_minified.js?v=90"
+type="text/javascript"></script>
+</head>
+<body onload="
+makeRequest('/support/webmasters/bin/stats?r='+serverResponseTimeDelta+'&l='+(new Date().getTime()-pageStartTime)); 
+"
+dir="ltr"
+class=" answer_page  streamlined-header-1 ltr lang_en show_modules show_leftnav other  other  modules_widescreen new-ui ">
+<a href="#content" class="skiplink">Skip to content</a>
+<div class="wrapper" id="baseDiv">
+<div class="one_google">
+<a href="https://www.google.com/accounts/Login?continue=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fanswer%3D156184&/">Sign in</a>
+</div>
+<div id="hc_error"></div>
+<div class="header-wrapper ">
+<div class="logo-container">
+<img src="//www.google.com/images/logos/google_logo_41.png"
+alt="Google"
+class="logo" />
+</div>
+<div class="searchbox">
+<? # Set hidden input fields. # ?>
+<form name="search-form"
+id="search-form"
+title="Search Help"
+method="get"
+action="/support/webmasters/bin/search.py"
+onsubmit="track('Search Help',
+document.getElementById('query').value);">
+<input autocomplete="off"
+class="search-box"
+type="text"
+name="query"
+id="query"
+maxlength="2048"
+placeholder="Search Webmaster Tools help"
+title="Search"
+spellcheck="false" />
+<button type="submit"
+name="btnG"
+class="search-button"
+alt="Search Help">
+<img src="//www.google.com/help/hc/images/hc_magnifying_glass.png">
+</button>
+<input type="hidden" name="ctx" value="en:searchbox" />
+</form>
+</div>
+</div>
+<div class="header-bar ">
+<h1>
+<a href="http://www.google.com/support/webmasters"
+onclick="track('Header', 'Logo')">
+Webmaster Tools Help
+</a>
+</h1>
+<div id="yarnball">&nbsp;</div>
+<div class="clear"></div>
+</div>
+<table class="layout" border="0"><tr>
+<td class="left_column">
+<ul class="leftnav">
+<li class="">
+<a href="http://www.google.com/support/webmasters/"
+onclick='track("Left Nav", "Help topics");'>Help articles</a>
+</li>
+<li class="leftnav_topics ">
+<a href="/support/webmasters/bin/topic.py?topic=19494"
+onclick='track("Left Nav", "topic=19494");'>Webmaster essentials</a>
+</li>
+<li class="leftnav_topics ">
+<a href="/support/webmasters/bin/topic.py?topic=8456"
+onclick='track("Left Nav", "topic=8456");'>My site and Google</a>
+</li>
+<li class="leftnav_topics ">
+<a href="/support/webmasters/bin/topic.py?topic=8464"
+onclick='track("Left Nav", "topic=8464");'>Using Webmaster Tools</a>
+</li>
+<li class="leftnav_topics ">
+<a href="/support/webmasters/bin/topic.py?topic=8476"
+onclick='track("Left Nav", "topic=8476");'>Sitemaps</a>
+</li>
+<li class="forum">
+<a href="http://www.google.com/support/forum/p/webmasters?hl=en&utm_source=HC&utm_medium=leftnav&utm_campaign=webmaster"
+onclick='track("Left Nav", "u2u");'>Help forum</a>
+</li>
+<li>
+<a onclick="track('Checklist 1095579', 'Leftnav');setCookies_default('p13n_box_54_Checklist', 1, '','30');" href="/support/webmasters/bin/static.py?page=checklist.cs">Checklist</a>
+</li>
+<li class="LeftNav_GetStarted first">
+Get started
+</li>
+<li class="LeftNav_Guidelines">
+<a href="/support/webmasters/bin/answer.py?answer=35769"  onclick="track('LeftNav', 'Guidelines');">Webmaster Guidelines</a>
+</li>
+<li class="LeftNav_Blog">
+<a href="http://googlewebmastercentral.blogspot.com/"  onclick="track('LeftNav', 'Blog');">Webmaster Central blog</a>
+</li>
+<li class="LeftNav_Explore">
+Explore Google
+</li>
+<li class="LeftNav_AboutSearch">
+<a href="http://www.google.com/support/bin/static.py?page=searchguides.html&ctx=results"  onclick="track('LeftNav', 'AboutSearch');">About Google search results</a>
+</li>
+<li class="LeftNav_Services">
+<a href="http://www.google.com/intl/en/options/"  onclick="track('LeftNav', 'Services');">Services and tools</a>
+</li>
+<li class="LeftNav_BizSolutions">
+<a href="http://www.google.com/intl/en/services/index.html"  onclick="track('LeftNav', 'BizSolutions');">Business solutions</a>
+</li>
+<li class="LeftNav_Ads">
+<a href="http://www.google.com/intl/en/ads/index.html"  onclick="track('LeftNav', 'Ads');">Advertising</a>
+</li>
+<div id="ChatSupportRosterSection"></div>
+</td>
+<td class="content new-ui">
+<div class="inner_content ">
+<p class="breadcrumbs">
+<a href="http://www.google.com/webmasters/tools/">Webmaster Tools</a>
+&rsaquo;
+<a href="http://www.google.com/support/webmasters/">Help articles</a>
+&rsaquo;
+<a href="/support/webmasters/bin/topic.py?topic=8476">Sitemaps</a>
+&rsaquo; About Sitemaps
+&nbsp;</p>
+<div id="hcError" style="display:none"></div>
+<a name="content"></a>
+<div id="page-content">
+<div id="zippy-dropdown-container"
+class="zippy-dropdown-container-hide"></div>
+<div class="answer_heading">
+<h2 class="answer-title">
+About Sitemaps
+</h2>
+<div class="answer-features">
+<a class="share-page"
+href="javascript:toggleLayer('share-links');
+track('Page Actions', 'Share');">Share</a>
+<div id="share-links" style="display:none">
+<img src="//www.google.com/help/hc/images/icon_close.gif"
+onclick="hideLayer('share-links')"
+class="icon-close" />
+<ul id="share-links">
+<li style="background-image:url(//www.google.com/help/hc/images/share_icon_twitter.gif);">
+<a href="javascript:shareOnTwitter('http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare', 'About+Sitemaps');;
+track('Page Actions',
+'Share - Twitter')">
+Twitter</a>
+</li>
+<li style="background-image:url(//www.google.com/help/hc/images/share_icon_googlemail.gif);">
+<a href="https://mail.google.com/mail/?ui=2&view=cm&fs=1&tf=1&su=About+Sitemaps&body=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare%0A%0AShared+with+Google+Share+Button"
+onclick="track('Page Actions',
+'Share - Gmail')"
+target="_blank">Gmail</a>
+</li>
+<li style="background-image:url(//www.google.com/images/icons/product/blogger-16.png);">
+<a href="http://www.blogger.com/blog_this.pyra?u=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare&n=About+Sitemaps"
+onclick="track('Page Actions',
+'Share - Blogger')"
+target="_blank">Blogger</a>
+</li>
+<li style="background-image:url(//www.google.com/help/hc/images/share_icon_buzz.gif);">
+<a href="http://www.google.com/buzz/post?url=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare"
+onclick="track('Page Actions',
+'Share - Buzz')"
+target="_blank">Buzz</a>
+</li>
+<li style="background-image:url(//www.google.com/images/icons/product/orkut-16.png);">
+<a href="http://promote.orkut.com/preview?nt=orkut.com&du=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare&tt=About+Sitemaps"
+onclick="track('Page Actions',
+'Share - Orkut')"
+target="_blank">Orkut</a>
+</li>
+<li style="background-image:url(//www.google.com/images/icons/product/reader-16.png);">
+<a href="http://www.google.com/reader/link?url=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare&title=About+Sitemaps"
+onclick="track('Page Actions',
+'Share - Reader')"
+target="_blank">Google Reader</a>
+</li>
+<li style="background-image:url(//www.google.com/help/hc/images/share_icon_bookmarks.gif);">
+<a href="https://www.google.com/bookmarks/mark?op=edit&bkmk=http%3A%2F%2Fwww.google.com%2Fsupport%2Fwebmasters%2Fbin%2Fanswer.py%3Fhl%3Den%26answer%3D156184%26ctx%3Dshare&title=About+Sitemaps"
+onclick="track('Page Actions',
+'Share - Bookmarks')"
+target="_blank">Bookmarks</a>
+</li>
+<li><a href="http://www.google.com/support/chrome/bin/answer.py?hl=en&answer=174566"
+onclick="track('Page Actions',
+'Share - More for Chrome')"
+target="_blank">&raquo; More</a></li>
+</ul>
+</div>
+<a class="comment-on-page"
+id="sidewiki-open-ui-button"
+onclick="track('Page Actions', 'Comment')">Comment</a>
+<a class="print-page" href="javascript:window.print();"
+target=""
+onclick="track('Page Actions', 'Print')">Print</a>
+</div>
+<div class="clear"></div>
+</div>
+<div class="article_content" id="article-content-div">
+<p>Sitemaps are a way to tell Google about pages on your site we might not otherwise discover. In its simplest terms, a XML Sitemap—usually called Sitemap, with a capital S—is a list of the pages on your website. Creating and submitting a Sitemap helps make sure that Google knows about all the pages on your site, including URLs that may not be discoverable by Google's normal crawling process.</p>
+<div class="lightbulb">
+<p>You can create a Sitemap based on the <a href="http://www.sitemaps.org">Sitemap protocol</a>, or you can submit a text file or RSS/Atom feed as a Sitemap. <a href="answer.py?answer=183668">How to create a Sitemap.</a></p>
+</div>
+<p>In addition, you can also use Sitemaps to provide Google with metadata about specific types of content on your site, including <a href="answer.py?answer=80471">video</a>, <a href="answer.py?answer=178636">images</a>, <a href="answer.py?answer=34627">mobile</a>, <a href="http://www.google.com/support/news_pub/bin/answer.py?answer=75717">News</a>, <a href="answer.py?answer=75225">software source code</a>, and <a href="answer.py?answer=94554">geographical (KML)</a>. For example, a video Sitemap entry can specify the running time, category, and family-friendly status of a video; an image Sitemap entry can provide information about an image’s subject matter, type, and license. You can also use a Sitemap to provide <a href="answer.py?answer=71936">additional information about your site</a>, such as the date it was last updated, and how often you expect the page to change. We recommend that you use a separate Sitemap to submit News information.</p>
+<p>Sitemaps are particularly helpful if:</p>
+<ul>
+<li>Your site has dynamic content. </li>
+<li>Your site has pages that aren't easily discovered by Googlebot during the crawl process&mdash;for example, pages featuring rich AJAX or images.</li>
+<li>Your site is new and has few links to it. (Googlebot crawls the web by following links from one page to another, so if your site isn't well linked, it may be hard for us to discover it.)</li>
+<li>Your site has a large archive of content pages that are not well linked to each other, or are not linked at all.</li>
+</ul>
+<p>Google doesn't guarantee that we'll crawl or index all of your URLs. However, we use the data in your Sitemap to learn about your site's structure, which will allow us to improve our crawler schedule and do a better job crawling your site in the future. In most cases, webmasters will benefit from Sitemap submission, and in no case will you be penalized for it.</p>
+<p>Google adheres to Sitemap Protocol 0.9 as defined by <a href="http://www.sitemaps.org/">sitemaps.org</a>. Sitemaps created for Google using Sitemap Protocol 0.9 are therefore compatible with other search engines that adopt the standards of sitemaps.org.</p>
+<script type="text/javascript">
+if(document.getElementById('kb_other') != null)
+showLayer('kb_other');
+if(document.getElementById('kb_other_') != null)
+showLayer('kb_other_');
+if(document.getElementById('z_other') != null)
+toggleZippy('z_other');
+if(document.getElementById('z_other_') != null)
+toggleZippy('z_other_');
+if(document.getElementById('kb_'))
+showLayer('kb_');
+if(document.getElementById('z_'))
+toggleZippy('z_');
+if(document.getElementById('kb_other'))
+showLayer('kb_other');
+if(document.getElementById('z_other'))
+toggleZippy('z_other');
+if(document.getElementById('kb_US'))
+showLayer('kb_US');
+if(document.getElementById('z_US'))
+toggleZippy('z_US');
+</script>
+</div>
+<p class="last_updated">
+updated
+07/22/2011
+</p>
+<a href="#" name="helpful" ></a>
+</div>
+<div class="clear"></div>
+</div>
+</td>
+<td class="right_column">
+<div class="module">
+<h2>Recommended articles</h2>
+<ul class="no_bullets">
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=48620&ctx=cb&src=cb&cbid=y3iol732jawv&cbrank=0"
+onclick="track('Recommended Articles Module', 'cb 48620');">
+Changing Google's crawl rate</a>
+</li>
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=34397&ctx=cb&src=cb&cbid=o7f62f7v6x9o&cbrank=1"
+onclick="track('Recommended Articles Module', 'cb 34397');">
+Adding a site to Google</a>
+</li>
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=71453&ctx=cb&src=cb&cbid=-184s8yakf6non&cbrank=2"
+onclick="track('Recommended Articles Module', 'cb 71453');">
+Sitemap index file</a>
+</li>
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=35256&ctx=cb&src=cb&cbid=184cd1gozmndn&cbrank=3"
+onclick="track('Recommended Articles Module', 'cb 35256');">
+Special Google searches</a>
+</li>
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=93633&ctx=cb&src=cb&cbid=mc5brsifrb0v&cbrank=4"
+onclick="track('Recommended Articles Module', 'cb 93633');">
+301 redirects</a>
+</li>
+<li>
+<a href="/support/webmasters/bin/answer.py?hl=en&answer=47334&ctx=cb&src=cb&cbid=1emo38njfihxv&cbrank=5"
+onclick="track('Recommended Articles Module', 'cb 47334');">
+Sitelinks</a>
+</li>
+</ul>
+</div>
+<div class="module">
+<h2>Help resources</h2>
+<ul class="combo-mod">
+<li style="background-image:url(//www.google.com/webmasters/start/images/tools.gif)" class="combo-mod-item ">
+<a href="http://www.google.com/webmasters/docs/search-engine-optimization-starter-guide.pdf"
+onclick="track('Combo Module', 'seo');" >Search Engine Optimization</a>
+<p>Improve your site's performance in search [PDF]</p>
+</li>
+<li style="background-image:url(//www.google.com/help/hc/images/babyblocks-35.gif)" class="combo-mod-item ">
+<a href="http://code.google.com/p/sitemap-generators/wiki/SitemapGenerators"
+onclick="track('Combo Module', '3rd');" >Third-party Sitemap Tools</a>
+<p>Tools for creating Sitemaps</p>
+</li>
+<li style="background-image:url(//www.google.com/options/icons/youtube.gif)" class="combo-mod-item ">
+<a href="http://www.youtube.com/googlewebmasterhelp"
+onclick="track('Combo Module', 'yt');" >Webmaster Tools on YouTube</a>
+<p>See tips and tricks</p>
+</li>
+<li style="background-image:url(//www.google.com/help/hc/images/arrowr.png)" class="combo-mod-item ">
+<a href="http://services.google.com/breeze/webmasters/googleforwebmasters/"
+onclick="track('Combo Module', 'tutorial');" >Video tutorial</a>
+<p>Tools for webmasters</p>
+</li>
+<li style="background-image:url()" class="combo-mod-item no-subtext">
+<a href="http://www.google.com/howgoogleworks"
+onclick="track('Combo Module', 'how_google_works');" >How Google Works</a>
+</li>
+</ul>
+</div>
+</td>
+</tr></table>
+<div class="footer-nav">
+<p>
+<a href="http://www.google.com/webmasters/tools/"
+onclick="track('Footer', 'Product home')">Webmaster Tools</a>
+-
+<a href="http://www.google.com/support/?hl=en"
+onclick="track('Footer', 'Help with other products')">Help with other Google products</a>
+<form method="post" id="changelang" name="changelang"
+action="javascript:
+setCookies_default('WebmasterLocale',
+this.document.changelang.lang.value, 'dropdown');
+track('LanguageDropdown', this.document.changelang.lang.value);"
+class="lang_dropdown">
+<label for="lang">Change language:</label>
+<select name="lang" id="lang"
+onchange="document.getElementById('changelang').submit();">
+<option value="ar" >العربية</option>
+<option value="bg" >Български</option>
+<option value="id" >Bahasa Indonesia</option>
+<option value="ca" >Català</option>
+<option value="cs" >Česky</option>
+<option value="sr" >Српски</option>
+<option value="da" >Dansk</option>
+<option value="de" >Deutsch</option>
+<option value="en" selected="selected" class="selected">English</option>
+<option value="en-GB" >English (GB)&lrm;</option>
+<option value="es" >Español</option>
+<option value="es-419" >Español (Latinoamérica)&lrm;</option>
+<option value="et" >Eesti keel</option>
+<option value="fa" >پارسی</option>
+<option value="fil" >Filipino</option>
+<option value="fr" >Français</option>
+<option value="it" >Italiano</option>
+<option value="lv" >Latviešu</option>
+<option value="lt" >Lietuvių</option>
+<option value="hu" >Magyar</option>
+<option value="nl" >Nederlands</option>
+<option value="no" >Norsk</option>
+<option value="pl" >Polski</option>
+<option value="pt" >Português (Portugal)&lrm;</option>
+<option value="br" >Português (Brasil)&lrm;</option>
+<option value="hr" >Hrvatski</option>
+<option value="ro" >Română</option>
+<option value="sk" >Slovenský</option>
+<option value="sl" >Slovenščina</option>
+<option value="fi" >Suomi</option>
+<option value="sv" >Svenska</option>
+<option value="ru" >Русский</option>
+<option value="th" >ภาษาไทย</option>
+<option value="tl" >Tagalog</option>
+<option value="tr" >Türkçe</option>
+<option value="el" >Ελληνικά</option>
+<option value="iw" >עברית</option>
+<option value="hi" >हिन्दी</option>
+<option value="vi" >Tiếng Việt</option>
+<option value="cn" >中文（简体）&lrm;</option>
+<option value="b5" >中文（繁體）&lrm;</option>
+<option value="jp" >日本語</option>
+<option value="kr" >한국어</option>
+</select>
+</form>
+</p>
+<div><p>
+<span class="footer-copyright">
+&copy;2011 Google
+</span>
+<span>
+-
+<a href="http://www.google.com/intl/en/"
+onclick="track('Footer', 'GoogleHome');
+">Google Home</a>
+</span>
+<span>
+-
+<a href="http://www.google.com/intl/en/privacy.html"
+onclick="track('Footer', 'PrivacyPolicy');
+">Privacy Policy</a>
+</span>
+<span>
+-
+<a href="http://www.google.com/accounts/TOS?hl=en&loc=US"
+onclick="track('Footer', 'Terms');
+">Terms of Service</a>
+</span>
+</p></div>
+</div>
+</div>
+<script type="text/javascript">
+googlehelp.Links.initLinks(
+[autoExpand, browser, browserGroup, os, osGroup, country], internal);
+if (googlehelp.initEls) {
+if (autoExpand) {
+googlehelp.initEls([autoExpand], userSettings, userSettingsDropdownText);
+} else {
+googlehelp.initEls([autoExpand, browser, browserGroup, os, osGroup,
+country, countryGroup], userSettings, userSettingsDropdownText);
+}
+}
+</script>
+<script src='//www.google-analytics.com/ga.js'
+type='text/javascript'></script>
+<script type="text/javascript">
+var analytics_async = 0;
+</script>
+<script
+src="//www.google.com/support/webmasters/bin/resource/urchin_util.js?v=7"
+type="text/javascript"></script>
+<script type="text/javascript">
+var cookiePathArray = [];
+</script>
+<script type="text/javascript">
+urchinTracker('\x2Fsupport\x2Fwebmasters\x2Fbin\x2Fanswer.py?answer=156184\x26hl=en');
+</script>
+<script
+src="//www.google.com/support/webmasters/bin/resource/js_validate_static.js?v=17"
+type="text/javascript"></script>
+<script type="text/javascript">
+track('LeftNav',
+'GetStarted - Impression');
+track('LeftNav',
+'Guidelines - Impression');
+track('LeftNav',
+'Blog - Impression');
+track('LeftNav',
+'Explore - Impression');
+track('LeftNav',
+'AboutSearch - Impression');
+track('LeftNav',
+'Services - Impression');
+track('LeftNav',
+'BizSolutions - Impression');
+track('LeftNav',
+'Ads - Impression');
+</script>
+<script src="//www.google.com/sidewiki/static/sidebar_element/sidebar-element-compiled.js"></script>
+<script defer="defer">
+var sidebarElement = new google.elements.sidewiki.SidebarElement(
+window.location.href,false);
+sidebarElement.bindToElement("sidewiki-open-ui-button");
+</script>
+</body>
+</html>

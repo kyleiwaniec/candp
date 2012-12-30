@@ -124,15 +124,15 @@ ErrorDocument 404 /missing.php
 #  php_admin_flag engine on
 #</IfModule>
 
-#suPHP_ConfigPath /home/kylehami/public_html/candpgeneration.com/cgi-bin/
+suPHP_ConfigPath /home3/kylehami/public_html/candpgeneration.com/cgi-bin/
 
 RewriteEngine On 
 #RewriteBase / 
 #RewriteRule ^.htaccess$ - [F]
 
 
-RewriteCond %{REQUEST_URI} !^/http://m.candpgeneration.com/.*$
-RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
-RewriteRule ^(.*)$ http://m.candpgeneration.com/$1 [L,R=302]
+#RewriteCond %{REQUEST_URI} !^/http://m.candpgeneration.com/.*$
+#RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+#RewriteRule ^(.*)$ http://m.candpgeneration.com/$1 [L,R=302]
 
 

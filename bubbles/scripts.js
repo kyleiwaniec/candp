@@ -26,8 +26,8 @@ var icons = {
             
 //            if(touchSupport){ return } else {
             if($("#background").length === 0){ return } else {
-            var w = $(window).width()-20, 
-                h = $(document).height()-20,
+            var w = $(window).width()-1, 
+                h = $(document).height()-1,
             
                 bg = Raphael("background", w, h),
             

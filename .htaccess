@@ -124,7 +124,7 @@ ErrorDocument 404 /missing.php
 #  php_admin_flag engine on
 #</IfModule>
 
-suPHP_ConfigPath /home3/kylehami/public_html/candpgeneration.com/cgi-bin/
+suPHP_ConfigPath /home3/kylehami/public_html/dev-cnpgen/cgi-bin/
 
 RewriteEngine On 
 #RewriteBase / 

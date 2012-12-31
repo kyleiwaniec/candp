@@ -1,32 +1,24 @@
 <!DOCTYPE HTML>
-<!--[if lt IE 7 ]> <html class="ie6 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9 ie nojs" lang="en"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="nojs"> <!--<![endif]-->
-    <head>
+<!--[if lt IE 7 ]> <html class="ie6 nojs" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 nojs" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 nojs" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="nojs"> <!--<![endif]-->
+<head>
         <meta charset="UTF-8">
-        <title>graphic design and technology services - copy &amp; paste generation</title>
+        <title><?php echo $title ?></title>
 
+        <meta name="viewport" content="width=device-width; initial-scale=1;" /> 
+        <meta name="apple-mobile-web-app-capable" content="yes" /> 
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+        <link rel="apple-touch-startup-image" href="/startup.png">
 
+        <meta name="description" content="Graphic design and web development">
+        <meta name="author" content="C &amp; P Generation, LLC">
 
-        <meta name="description" content="">
-        <meta name="author" content="kyle hamilton">
-
-        <link rel="stylesheet" href="/css/styles2.css"/>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script src="/js/scripts.js"></script> 
+        <link rel="stylesheet" href="/css/main.css"/>
+        <link rel="stylesheet" href="/css/mobile-menu.css"/>
         
-
-    </head>
-
-    <body>
-        <?php include_once("analyticstracking.php") ?>
-
-        <div id="wrapper">
-
-            <?PHP
-            include_once("./includes/sidebar.html");
-            ?>
-            <div id="innerContent">
+</head>
+<body class="<?php echo $body_id ?>">
+<?php //include_once("analyticstracking.php") ?>
+<?php require_once 'mobile-menu.html'; ?>

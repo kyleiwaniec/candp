@@ -15,75 +15,78 @@ body, html{
                 outline:none;
             }
             
-            #container{
+            #outer-wrapper{
                 width:100%;
                 max-width:750px;
                 margin:0 auto;
             }
-            #home-wrapper{
+            .home #inner-wrapper{
                 width:100%;
                 max-width:440px;
                 margin:100px auto;
                 position:relative;
                 z-index:1;
             }
-            #wrapper{
+            #inner-wrapper{
                 padding:0 10px;
                 position:relative;
                 z-index:1;
             }
-            #top{
-                margin-bottom: 20px;
-            }
+            
             #background{
                 position:absolute;
                 top:0;
                 left:0;
             }
-            #logo{
-                position:absolute;
-                top:250px;
-                left:45%;
-                width:113px;
-                height:35px;
-                background-image: url(../images/logo.png);
-                background-size: 113px 35px;
-                
+            #top{
+                margin-bottom: 20px;
             }
-            #top #logo{
+            #logo{
                 position:relative;
                 float:left;
                 top:auto;
                 left:auto;
                 margin:40px 40px 0 0;
-              
+                width:113px;
+                height:35px;
+                background-image: url(/images/logo.png);
+                background-size: 113px 35px;
             }
+            #logo a{
+                text-indent: -999px;
+                display: block;
+                line-height: 30px;
+            }
+                .home #logo{
+                    position:absolute;
+                    top:200px;
+                    left:45%;
+                }
             #nav{
                 position:relative;
                 overflow:hidden;
-
-            }
-            #top #nav{
-                
-            }
-            #top #nav ul{
-                margin:30px auto;
             }
             #nav li, #nav ul{
                 list-style:none;
             }
             #nav ul{
-                margin:60px 0 0 0;
+                position:relative;
+                margin:32px auto;
                 padding:0;
                 text-align:center;
             }
+                .home #nav ul{
+                    margin:60px 0 0 0;
+                }
             #nav li{
                 float:left;
-                background-color:white;
                 padding:5px;
                 margin:0 10px 0 0;
                 line-height: 40px;
             }
+                #home #nav li{
+                    background-color:white;
+                }
             #nav li a{
                 color:#888;
                 text-decoration:none;
@@ -133,22 +136,36 @@ body, html{
                 font-weight:normal;
             }
             
-            
+            .info{
+                
+            }           
 
 /* mobile phones */
 
 /* landscape */
-@media screen and (max-width: 480px) {
-    #home-wrapper{
-        margin:40px 0;
+@media screen and (max-width: 599px) {
+    .home #outer-wrapper{
+        margin:0;
     }
-    #instructions .inst{
+    .home #inner-wrapper{
+        margin:20px auto;
+    }
+    .home #banner_mobile_wrapper,
+    #top,
+    #instructions, #instructions .inst{
         display:none;
     }
-    #instructions{
+/*    .home #instructions{
         height:35px;
-/*        position:absolute;*/
-        bottom:-65px;
+        bottom:0;
+        display:block;
+        position:absolute;
+    }*/
+/*    #background{
+        display:none;
+    }*/
+    .home #background{
+        display:block;
     }
     #logo{
        

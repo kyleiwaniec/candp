@@ -1,8 +1,8 @@
 var touchSupport = "createTouch" in document;
 
-setTimeout(function(){
-          window.scrollTo(0, 1);
-        }, 100);
+//setTimeout(function(){
+//          window.scrollTo(0, 1);
+//        }, 100);
 
 
 var icons = {
@@ -26,7 +26,7 @@ var icons = {
             
 //            if(touchSupport){ return } else {
             if($("#background").length === 0){ return } else {
-            var w = $(window).width()-10, 
+            var w = $(window).width()-10, // accommodate scrollbars
                 h = $(document).height()-10,
             
                 bg = Raphael("background", w, h),
@@ -125,10 +125,10 @@ var icons = {
             
             
             var giggle = new Audio();
-            
+            //giggle.src= '../sounds/giggle.m4a';
            
                 if (document.createElement('audio').canPlayType('audio/mpeg')) {
-                    giggle.src= '../sounds/giggle.m4a';
+                    giggle.src= '../sounds/giggle.mp3';
                 } else {
                     giggle.src= '../sounds/giggle.ogg';
                 }
@@ -168,7 +168,7 @@ var icons = {
             
 
             var tmr; //timer			
-            $("#nav li a").on({
+            $(".home #nav li a").on({
                 mouseenter : function(e){
                     var leftPos = $(this).position().left,
                         w = $(this).width(),
@@ -185,7 +185,6 @@ var icons = {
                             switch(id){
                                 case "contact" :
                                     contact.transform("t"+(offset+14.5)+",14.5s1");
-                                    //contact.attr({fill:"#888"});
                                     break;
                                 case "portfolio" :
                                     portfolio.transform("t"+(offset+14.5)+",18s1");
@@ -202,7 +201,10 @@ var icons = {
                             }
                         });
                         b.touchstart(function(){
-                          $("#container").load(that.attr("href"));
+                          $("#outer-wrapper").load(that.attr("href")+' #outer-wrapper', function(){
+                              $("body").attr("class", id);
+                              $("#background").remove();
+                          });
                         });
                     }, 100 );
                 },
@@ -240,10 +242,9 @@ var icons = {
                         offset = leftPos + w/2 - 30,
                         id = $(this).attr("id");
                     
-                switch(id){
+                            switch(id){
                                 case "contact" :
                                     contact.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",14.5s1");
-                                   
                                     break;
                                 case "portfolio" :
                                     portfolio.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",18s1");
@@ -257,9 +258,50 @@ var icons = {
                                     break;
                                 case "sandbox" :
                                     sandbox.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",14.5s1");
-                                    //sandbox.mouseover(function(){sandbox.attr({fill: "#f06"});});
                                     break;									
                             }
+                            $(this).on({
+                                mouseenter : 
+                                    function(){
+                                    switch(id){
+                                            case "contact" :
+                                                contact.attr({fill: "#f06"});
+                                                break;
+                                            case "portfolio" :
+                                                portfolio.attr({fill: "#f06"});
+                                                break;
+                                            case "info" :
+                                                info.attr({fill: "#f06"});
+                                                break;
+                                            case "services" :
+                                                services.attr({fill: "#f06"});
+                                                break;
+                                            case "sandbox" :
+                                                sandbox.attr({fill: "#f06"});
+                                                break;									
+                                        }
+                                    },
+                                mouseleave : 
+                                    function(){
+                                    switch(id){
+                                            case "contact" :
+                                                contact.attr({fill: "#ccc"});
+                                                break;
+                                            case "portfolio" :
+                                                portfolio.attr({fill: "#ccc"});
+                                                break;
+                                            case "info" :
+                                                info.attr({fill: "#ccc"});
+                                                break;
+                                            case "services" :
+                                                services.attr({fill: "#ccc"});
+                                                break;
+                                            case "sandbox" :
+                                                sandbox.attr({fill: "#ccc"});
+                                                break;									
+                                        }
+                                    }
+                            })
                 
             });
             

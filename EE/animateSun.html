@@ -1,0 +1,90 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            
+            Math.log = (function() {
+                var log = Math.log;
+                return function(n, base) {
+                    return log(n)/(base ? log(base) : 1);
+                };
+                })();
+
+            Math.log(5, 10);
+            
+            
+            var sunInterval;
+            var sun = $('.sun');
+            var ypos = sun.offset().top;
+            var x = ypos, y;
+            
+                function rise(){
+                    
+                    if(ypos > 0){
+                        //var y = Math.log(x, 10);
+                        y = Math.pow(x, 1/3);
+                        //console.log(y);
+                        ypos -= y;
+                    }else{
+                        clearInterval(sunInterval);
+                    }
+                    
+                    x /= 1.035;
+                    //x--;
+                    //console.log(x);
+                    sun.css({top: ypos});
+                };
+            
+            
+            //rise();
+            sunInterval = setInterval(function(){
+                rise();
+            }, 20);
+            
+        });
+    </script>
+    <style>
+        .sun{
+      height: 200px;
+      width:200px;
+      position:absolute;
+      bottom:0;
+      left:0;
+      background: #C1FFC1;
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 6%, rgba(255,255,255,0.06) 23%, rgba(255,255,255,0.41) 32%, rgba(193,255,193,0.96) 46%, rgba(193,255,193,1) 47%, rgba(193,255,193,1) 99%, rgba(193,255,193,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(6%,rgba(255,255,255,1)), color-stop(23%,rgba(255,255,255,0.06)), color-stop(32%,rgba(255,255,255,0.41)), color-stop(46%,rgba(193,255,193,0.96)), color-stop(47%,rgba(193,255,193,1)), color-stop(99%,rgba(193,255,193,1)), color-stop(100%,rgba(193,255,193,1)));
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 6%,rgba(255,255,255,0.06) 23%,rgba(255,255,255,0.41) 32%,rgba(193,255,193,0.96) 46%,rgba(193,255,193,1) 47%,rgba(193,255,193,1) 99%,rgba(193,255,193,1) 100%);
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 6%,rgba(255,255,255,0.06) 23%,rgba(255,255,255,0.41) 32%,rgba(193,255,193,0.96) 46%,rgba(193,255,193,1) 47%,rgba(193,255,193,1) 99%,rgba(193,255,193,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 6%,rgba(255,255,255,0.06) 23%,rgba(255,255,255,0.41) 32%,rgba(193,255,193,0.96) 46%,rgba(193,255,193,1) 47%,rgba(193,255,193,1) 99%,rgba(193,255,193,1) 100%);
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 6%,rgba(255,255,255,0.06) 23%,rgba(255,255,255,0.41) 32%,rgba(193,255,193,0.96) 46%,rgba(193,255,193,1) 47%,rgba(193,255,193,1) 99%,rgba(193,255,193,1) 100%);
+
+
+
+}
+html{
+    background-color: #C1FFC1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#C1FFC1', GradientType=0 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*html
+ {
+      min-height: 100%;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#6600ff00', GradientType=0 );  IE6-9 fallback on horizontal gradient 
+      background: -moz-radial-gradient(180px 180px, circle closest-corner, rgba(0,0,0,0) 2%, rgba(0,255,0,.2) 50%, rgba(0,255,0,.3) 70%, rgba(0,255,0,.4) 100%);  FF3.6+ 
+      background: -webkit-radial-gradient(180px 180px, circle closest-corner, rgba(0,0,0,0) 2%,rgba(0,255,0,.2) 50%,rgba(0,255,0,.3) 70%,rgba(0,255,0,.4) 100%);  Chrome10+,Safari5.1+ 
+      
+}*/
+    </style>
+  </head>
+  <body>
+      <div class="sun"></div>
+  </body>
+</html>

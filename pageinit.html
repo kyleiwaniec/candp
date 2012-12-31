@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <title>List</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" rel="stylesheet"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+        <script> 
+            $(function() {
+                    
+                
+                  if($("div[data-role='page']").attr('id') == "page_main"){  
+                    var buf = '';
+                    buf += "<ul id='lstView' data-role='listview'>";
+                    buf += "<li>Google</li>";
+                    buf += "<li>Yahoo</li>";
+                    buf += "</ul>";
+                    $('#div_list_01').html(buf);
+                  
+                  }else{
+                      var buf = '';
+                    buf += "<ul id='lstView' data-role='listview'>";
+                    buf += "<li>myspace</li>";
+                    buf += "<li>facebook</li>";
+                    buf += "</ul>";
+                    $('#div_list_01').html(buf);
+                  }
+                        			
+            });
+                
+                
+        </script>
+
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js" type="text/javascript"></script>
+
+
+    </head> 
+    <body> 
+        <div data-role="page" id="page_main">
+            <div data-role="header">
+                <h1>List</h1>
+            </div>
+            <div data-role="content" id="div_list_01"></div>
+        </div>
+    </body>
+</html>

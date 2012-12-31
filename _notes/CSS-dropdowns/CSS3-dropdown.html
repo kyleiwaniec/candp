@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta  charset="UTF-8" />
+    <title>Nav</title>
+
+    <style>
+        body { /* you don't need this */
+            margin:20px;
+            padding:0;
+        }
+
+        /* the main menu */
+        .navigation {
+            display:block;
+            position:absolute;
+            width:500px;
+            z-index:1000;
+
+        }
+        .navigation ul{
+            list-style :none;
+            margin:0; 
+            padding:0; /* gets rid of any inherited margins and padding */
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            position:relative;
+            z-index:1000;
+        }
+        .navigation > ul > li { 
+            position : relative;
+            float : left;
+            margin-right : 20px;
+            font-size: 15px; /* this is here and not above, so that the subs can be made smaller using a % */
+
+        }
+        .navigation > ul > li > a {
+            background-color: #2c2c2c; /*  grey */
+            display:block;
+            padding:8px 14px;
+            text-decoration:none;
+            color:#aaaaaa; 
+        }
+
+        .navigation > ul > li > a:hover{
+            background-color:#c905e6; /* purple */
+            color:#e5cfe8; /* purple */
+        }
+        
+        
+        /* the show/hide effects */
+        /* the drop-down box */
+
+        .navigation ul li ul{
+            position:absolute;
+            border:1px dotted hotpink;
+            
+            z-index:100;
+            width:340px; /* you need a width to avoid weird line breaks */
+            
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: height 0.3s ease-in;
+            -moz-transition: height 0.3s ease-in;
+            -o-transition: height 0.3s ease-in;
+            -ms-transition: height 0.3s ease-in;
+            transition: height 0.3s ease-in;
+        }
+        .navigation ul li ul li{
+            background-color:#eaeaea; /* grey */
+            width:170px;
+        }
+        .navigation > ul > li:hover ul, .navigation > ul > li > a:hover ul{
+            height:200px;
+            
+        } 
+        
+        
+        /* don't display 2nd level dropdown */
+        .navigation > ul > li:hover ul ul, .navigation > ul > li > a:hover ul ul{
+            height:0;
+            
+        }
+        /* the 2nd level drop-down items */
+        .navigation ul ul ul{
+            height: 0;
+            overflow: hidden;
+            -webkit-transition: height 0.3s ease-in;
+            -moz-transition: height 0.3s ease-in;
+            -o-transition: height 0.3s ease-in;
+            -ms-transition: height 0.3s ease-in;
+            transition: height 0.3s ease-in;
+            left:170px;
+            width:170px;
+        }
+        .navigation ul ul li:hover > ul, .navigation ul ul li a:hover > ul{
+            height:200px;
+            
+        }
+        
+        
+        
+        
+        /* the 1st level drop-down items */
+
+        
+        .navigation ul ul li:hover {
+            background-color:#666666;
+        }
+        .navigation ul ul li a {
+            display:block;
+            text-decoration:none;
+            margin:0 12px;
+            padding:5px 0;
+            color:#4c4c4c; /* grey */
+            border-bottom:1px solid #999;
+        }
+        .navigation ul ul li a:hover, .navigation ul ul li:hover > a {
+            color:#ffffff; /* white */
+            border-bottom:1px solid #666666;
+        }
+
+        .navigation ul ul li:last-child a{
+            border:0;
+
+        }
+        
+        .header{width: 500px; height:50px; border:1px dotted grey;}
+        .content{position:relative; width: 500px; height:500px; color:white; background-color: black;}
+        .item{position:absolute; top:20px; left:20px; width: 400px; height:400px; background-color: #e6056f;}
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Main 1</a>
+                    <ul>
+                        <li><a href="#">Item 1</a></li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                        <li><a href="#">Item 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Main 2</a>
+                    <ul>
+                        <li>
+                            <ul>
+                                <li><a href="#">Item 1</a></li>
+                                <li><a href="#">Item 2</a></li>
+                                <li><a href="#">Item 3</a></li>
+                                <li><a href="#">Item 4</a></li>
+                                <li><a href="#">Item 5</a></li>
+                            </ul>
+                            <a href="#">Item 1</a>
+                            
+                        </li>
+                        <li><a href="#">Item 2</a></li>
+                        <li><a href="#">Item 3</a></li>
+                        <li><a href="#">Item 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Main 3</a></li>
+                <li><a href="#">Main 4</a></li>
+            </ul>
+        </div> <!-- navigation -->
+    </div><!-- header -->
+
+
+    <div class="content">
+        <p>[content: A relatively positioned element]</p>
+        <div class="item"><p>[An absolutely positioned element]</p>
+            <p>NOTES:</p>
+            <p>
+                A relatively positioned element under the menu is often used with absolutely positioned elements for the purpose of an image fader/gallery
+            </p>
+            <p>
+                The Menu container has to have position:static for the menu to work in IE when content has position relative, because of a stacking order difference in IE.
+            </p>
+        </div>
+        
+    </div>
+
+
+</body>
+</html>

@@ -98,8 +98,16 @@ body, html{
                 position:absolute;
                 top:0;
             }
-            #boy{cursor:pointer;width:130px; margin:30px 0 0 40px;}
-            #byline{font-family:courier;font-size:14px;}
+            #boy{cursor:pointer;width:110px; margin:30px 0 0 40px;}
+            #byline{
+                font-family: helvetica;
+                font-size: 14px;
+                text-align: center;
+                color: #666;
+                text-transform: lowercase;
+                font-weight: bold;
+                display:none;
+            }
             #instructions{
                 position:fixed;
                 bottom:0;
@@ -138,20 +146,96 @@ body, html{
             
             .info{
                 
-            }           
+            }    
+            
+/* hide mobile */
+#mobile-home-nav{
+    display: none;
+}
+/* mobile homepage buttons  */  
 
+.mb {
+        padding: .6em 15px;
+        float:left;
+	border: 1px solid #ccc;
+        
+	background-color: #eee;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0.6)), color-stop(0.49, rgba(255, 255, 255, 0.3)), color-stop(0.51, rgba(255, 255, 255, 0.0)), to(rgba(255, 255, 255, 0.2)));
+        background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.0) 51%, rgba(255, 255, 255, 0.2) 100%);
+        background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.0) 51%, rgba(255, 255, 255, 0.2) 100%);
+        background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.0) 51%, rgba(255, 255, 255, 0.2) 100%);
+        background-image: linear-gradient(top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.0) 51%, rgba(255, 255, 255, 0.2) 100%);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+.mb a {
+	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
+        font-weight: bold;
+	color: #444;
+	text-shadow: 0 1px 1px #fff;
+} 
+.mb:hover{
+        background-color: #ccc;
+}
+.mb:active {
+        border: 1px solid #f06;
+	background-color: #f06;
+}
+.mb:active a{
+        color:white;
+        text-shadow: none;
+}
+.mb-right {
+   -moz-border-radius-topright: 	.5em;
+-webkit-border-top-right-radius: 	.5em;
+	border-top-right-radius: 	.5em;
+   -moz-border-radius-bottomright: 	.5em;
+-webkit-border-bottom-right-radius:     .5em;
+	border-bottom-right-radius: 	.5em;
+        border-left:0;
+}
+.mb-right:active{
+        margin-left:-1px;
+}
+.mb-left {
+   -moz-border-radius-topleft: 		.5em;
+-webkit-border-top-left-radius: 	.5em;
+	border-top-left-radius: 	.5em;
+   -moz-border-radius-bottomleft: 	.5em;
+-webkit-border-bottom-left-radius: 	.5em;
+	border-bottom-left-radius: 	.5em;
+        border-right:0;
+}
+.mb-left:active{
+        margin-right:-1px;
+}
+        
+/* end mobile homepage buttons  */           
+            
 /* mobile phones */
 
 /* landscape */
 @media screen and (max-width: 599px) {
+    #mobile-home-nav, #banner_mobile_wrapper,
+    #byline
+    { display: block; }
+    
+    #mobile-home-nav{
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
     .home #outer-wrapper{
         margin:0;
     }
     .home #inner-wrapper{
+        width:auto;
         margin:20px auto;
     }
     .home #banner_mobile_wrapper,
-    #top,
+    #top, #nav,
     #instructions, #instructions .inst{
         display:none;
     }
@@ -167,10 +251,16 @@ body, html{
     .home #background{
         display:block;
     }
-    #logo{
-       
+    .home #logo{
+       position: relative;
+        top: auto;
+        left: auto;
+        width: 113px;
+        height: 35px;
+        margin: 0 auto 10px auto;
+        float: none;
     }
-    
+    #boy{margin:20px auto;}
 }
 /* portrait */
 @media screen and (max-width: 320px){

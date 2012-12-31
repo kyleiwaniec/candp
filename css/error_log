@@ -1,0 +1,2 @@
+[09-Apr-2012 08:35:29] PHP Warning:  include_once(includes/sidebar.html) [<a href='function.include-once'>function.include-once</a>]: failed to open stream: No such file or directory in /home3/kylehami/public_html/candp/css/portfolio.php on line 65
+[09-Apr-2012 08:35:29] PHP Warning:  include_once() [<a href='function.include'>function.include</a>]: Failed opening 'includes/sidebar.html' for inclusion (include_path='.:/usr/lib64/php:/usr/lib/php:/usr/share/pear') in /home3/kylehami/public_html/candp/css/portfolio.php on line 65

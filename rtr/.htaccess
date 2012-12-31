@@ -1,0 +1,49 @@
+Options +Indexes
+<Files "formmail.ini">
+Order Deny,Allow
+Deny from all
+Allow from none
+</Files>
+Options -Indexes
+AddType text/x-vcard .vcf
+
+<FilesMatch "\.(ttf|otf)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
+
+ErrorDocument 404 /missing.php
+
+# For security reasons, Option followsymlinks cannot be overridden.
+#Options +FollowSymLinks
+Options +SymLinksIfOwnerMatch
+RewriteEngine on
+RewriteRule 308broad /308Broad [R=301]
+
+RewriteRule 708norway$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5945821 [R=301]
+RewriteRule 708Norway$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5945821 [R=301]
+
+RewriteRule 39stratford$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5928734 [R=301]
+RewriteRule 39Stratford$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5928734 [R=301]
+
+RewriteRule 19doreen$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5955290 [R=301]
+RewriteRule 19Doreen$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5955290 [R=301]
+
+RewriteRule 58juniper$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5955380 [R=301]
+RewriteRule 58Juniper$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=5955380 [R=301]
+
+RewriteRule 28brophy$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=6019325 [R=301]
+RewriteRule 28Brophy$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=6019325 [R=301]
+
+RewriteRule 834Hughes$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=6051430 [R=301]
+RewriteRule 834hughes$ http://homes.roberttherealtor.com/idx/9250/details.php?idxID=216&listingID=6051430 [R=301]
+
+RewriteRule propertySites/834hughesdrive/public.php$ http://834hughesdrive.com/360.php?section=360 [R=301]
+
+RewriteRule 28brophydr.htm$ http://28brophydrive.com/360.php?section=360 [R=301]
+
+RewriteRule exclusive-listings$ /exclusiveListings.php [R=301]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]

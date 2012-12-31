@@ -1,0 +1,36 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script>
+            window.onload = function(){
+                teamname = document.forms[0].elements['Teamname'];
+            };
+            function getIdofSelected(list){
+                return list.options[list.selectedIndex].getAttribute('value');
+            };
+            function setValue(field, list){
+                field.value = getIdofSelected(list);
+            };
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <select name="TeamOption" id="me" onchange="setValue(teamname, this);" tabindex="6">
+                <option value="0">saints</option>
+                <option value="1">bulls</option>
+                <option value="2">devils</option>
+                <option value="3">kyles</option>
+            </select>
+            <input type="text" name="Teamname" />
+        </form>
+    </body>
+</html>
+
+onchange="teamname.value = this.options[this.selectedIndex].getAttribute('id');

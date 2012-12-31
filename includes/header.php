@@ -14,9 +14,9 @@
 
         <meta name="description" content="Graphic design and web development">
         <meta name="author" content="C &amp; P Generation, LLC">
-
-        <link rel="stylesheet" href="/css/main.css"/>
         <link rel="stylesheet" href="/css/mobile-menu.css"/>
+        <link rel="stylesheet" href="/css/main.css"/>
+        
         
 </head>
 <body class="<?php echo $body_id ?>">

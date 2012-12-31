@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Validation Test</title>
+
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+        <script>
+            $(function(){
+                $("#btnClickMe").click(
+                function(){
+                    $(".js-required").each(
+                    function(){
+                        var that = $(this);
+                        var input = $.trim(that.val());
+                        if(input == ""){
+                            that.prev("label").addClass("mandatory");
+                        }else{
+                            that.prev("label").removeClass("mandatory");
+
+                        }
+                    }
+                );
+                    
+                if($("input[name='groupPurpose']:checked").length > 0){
+                    
+                            // all the labels:
+                            $("input[name='groupPurpose']").parents(".radioButtons").find("label").removeClass("mandatory");
+                            // just the title:
+                            $("#PurposeGeneral").removeClass("mandatory");
+                        }else{
+                            // all the labels:
+                            $("input[name='groupPurpose']").parents(".radioButtons").find("label").addClass("mandatory");
+                            
+                            // just the title:
+                            $("#PurposeGeneral").addClass("mandatory");
+                    }
+                });
+            });
+        </script>
+
+        <style>
+            .mandatory{
+                color:red;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="TextBox1">
+            First Name</label>
+        <input type="text" id="TextBox1" class="js-required" data-validate="isFilled" />
+        <br />
+        <br />
+        <label class="title" for="purpose-general" id="PurposeGeneral">What is the purpose of your enquiry?</label>
+        <div class="radioButtons">
+            <div>
+                <label for="PurposeTravel">
+                    <span class="js-required" data-validate="isChecked">
+                        <input id="PurposeGeneral" type="radio" name="groupPurpose" value="rdbPurposeGeneral" />
+                        <label for="PurposeGeneral">General Enquiries</label>
+                    </span>
+                </label>
+                <label for="PurposeTravel">
+                    <span class="js-required" data-validate="isChecked">
+                        <input id="PurposeTravel" type="radio" name="groupPurpose" value="rdbPurposeTravel" />
+                        <label for="PurposeTravel">Travel Services Enquiries</label>
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label for="PurposeAir">
+                    <span class="js-required" data-validate="isChecked">
+                        <input id="PurposeAir" type="radio" name="groupPurpose" value="rdbPurposeAir" />
+                        <label for="PurposeAir">Air Services Enquiries</label></span>
+                </label>
+                <label for="PurposePress">
+                    <span class="js-required" data-validate="isChecked">
+                        <input id="PurposePress" type="radio" name="groupPurpose" value="rdbPurposePress" />
+                        <label for="PurposePress">Press Information</label></span>
+                </label>
+            </div>
+        </div>
+        <br />
+        <input id="btnClickMe" onclick="" type="button" value="Click Me To Validate" />
+    </body>
+</html>

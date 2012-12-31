@@ -1,0 +1,6 @@
+
+RewriteEngine On 
+
+RewriteRule ^(.*)$ http://www.candpgeneration.com/ [L,R=301]
+
+

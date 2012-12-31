@@ -3,7 +3,22 @@ var touchSupport = "createTouch" in document;
 //setTimeout(function(){
 //          window.scrollTo(0, 1);
 //        }, 100);
-
+//Raphael(function () {
+//    var img = document.getElementById("photo");
+//    img.style.display = "none";
+//    var r = Raphael("holder", 600, 540);
+//    
+//    r.image(img.src, 140, 140, 320, 240);
+//    r.image(img.src, 140, 380, 320, 240).attr({
+//        transform: "s1-1",
+//        opacity: .5
+//    });
+//    r.rect(0, 380, 600, 160).attr({
+//        fill: "90-#333-#333",
+//        stroke: "none",
+//        opacity: .5
+//    });
+//});
 
 var icons = {
                 lightBulb : "M15.5,2.833c-3.866,0-7,3.134-7,7c0,3.859,3.945,4.937,4.223,9.499h5.553c0.278-4.562,4.224-5.639,4.224-9.499C22.5,5.968,19.366,2.833,15.5,2.833zM15.5,28.166c1.894,0,2.483-1.027,2.667-1.666h-5.334C13.017,27.139,13.606,28.166,15.5,28.166zM12.75,25.498h5.5v-5.164h-5.5V25.498z",
@@ -100,7 +115,7 @@ var icons = {
             if($("#boy").length === 0){ return } else {
                 
             
-            var boy = Raphael("boy", 130,200);
+            var boy = Raphael("boy", 130,150);
             
             var tail = "M58,111c14.782,26.955,44,16.25,44,16.25c6.25-3.25,8.5,3.75,6.5,5.25s-6.25,5.75-24,5S49,121,47,113.5S53.75,103.25,58,111z";
             var body = "M78.75,46.25C78.75,59.367,65.542,70,49.25,70s-29.5-10.633-29.5-23.75S32.958,22.5,49.25,22.5S78.75,33.133,78.75,46.25z M31.5,91.5c1.5,0-2.879,41.734-3,43.25c-0.377,4.734,10.75,5.75,11.25,1s1.785-13.747,2-16c0.5-5.25,10.5-5.75,11,1.5s0.39,12.754,0.25,15c-0.25,4,11.11,5.243,11.5-1c0.25-4-1.75-42.502,0.331-43.541c0.388-0.194,5.354,3.835,8.919,8.291c3,3.75,9.25-0.25,6.75-5c-1.872-3.556-7.668-11.735-18.855-15.938C78.317,74.322,93.25,61.833,93.25,41c0-27.476-25.454-39.478-44.698-39.499C29.347,0.249,3.14,10.55,1.333,37.976c-1.42,21.558,13.954,36.116,31.137,41.238c-10.682,5.357-15.665,14.142-17.152,17.875c-1.986,4.987,4.65,8.307,7.238,4.262C25.633,96.544,30.822,91.227,31.5,91.5z";
@@ -189,8 +204,8 @@ var icons = {
                                 case "portfolio" :
                                     portfolio.transform("t"+(offset+14.5)+",18s1");
                                     break;
-                                case "info" :
-                                    info.transform("t"+(offset+14.5)+",14.5s1");
+                                case "about" :
+                                    about.transform("t"+(offset+14.5)+",14.5s1");
                                     break;
                                 case "services" :
                                     services.transform("t"+(offset+14.5)+",14.5s1");
@@ -201,10 +216,11 @@ var icons = {
                             }
                         });
                         b.touchstart(function(){
-                          $("#outer-wrapper").load(that.attr("href")+' #outer-wrapper', function(){
-                              $("body").attr("class", id);
-                              $("#background").remove();
-                          });
+//                          $("#outer-wrapper").load(that.attr("href")+' #outer-wrapper', function(){
+//                              $("body").attr("class", id);
+//                              $("#background").remove();
+//                          });
+
                         });
                     }, 100 );
                 },
@@ -217,19 +233,29 @@ var icons = {
                       
                     contact.transform("s0");
                     portfolio.transform("s0");
-                    info.transform("s0");
+                    about.transform("s0");
                     services.transform("s0");
                     sandbox.transform("s0");
                     
                     b.animate({path: "[M30,80], [C30,55, 55,47.5, 55,30], [C55,16, 45,5, 30,5], [C16,5, 5,16, 5,30], [C5,47.5,30,55,30,80z]", transform: "t"+offset+",0s0"}, 600, ">"); 
                 },
                 click : function(){
-                    if(touchSupport){return false};
+                    $(this).toggleClass("disabled");
+                    $(this).parent('li').siblings().children('a').removeClass("disabled");
+                    if(touchSupport){
+                       if($(this).hasClass("disabled")){
+                            return false
+                        }else{
+                          //  animate back
+                          $(this).trigger("mouseleave");
+                        }
+                     };
+                     
                 }
             });	
             
             
-            var info = paper.path(icons.lightBulb).attr({fill: "#eee", stroke: "none"}).transform("s0");	
+            var about = paper.path(icons.lightBulb).attr({fill: "#eee", stroke: "none"}).transform("s0");	
             var services = paper.path(icons.spanner).attr({fill: "#eee", stroke: "none"}).transform("s0");
             var portfolio = paper.path(icons.heart).attr({fill: "#eee", stroke: "none"}).transform("s0");
             var contact = paper.path(icons.envelope).attr({fill: "#eee", stroke: "none"}).transform("s0");	
@@ -250,8 +276,8 @@ var icons = {
                                     portfolio.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",18s1");
                                    
                                     break;
-                                case "info" :
-                                    info.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",14.5s1");
+                                case "about" :
+                                    about.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",14.5s1");
                                     break;
                                 case "services" :
                                     services.attr({fill: "#ccc"}).transform("t"+(offset+14.5)+",14.5s1");
@@ -270,8 +296,8 @@ var icons = {
                                             case "portfolio" :
                                                 portfolio.attr({fill: "#f06"});
                                                 break;
-                                            case "info" :
-                                                info.attr({fill: "#f06"});
+                                            case "about" :
+                                                about.attr({fill: "#f06"});
                                                 break;
                                             case "services" :
                                                 services.attr({fill: "#f06"});
@@ -290,8 +316,8 @@ var icons = {
                                             case "portfolio" :
                                                 portfolio.attr({fill: "#ccc"});
                                                 break;
-                                            case "info" :
-                                                info.attr({fill: "#ccc"});
+                                            case "about" :
+                                                about.attr({fill: "#ccc"});
                                                 break;
                                             case "services" :
                                                 services.attr({fill: "#ccc"});

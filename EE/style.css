@@ -1,0 +1,13 @@
+/* 
+    Document   : style
+    Created on : Oct 10, 2012, 1:02:28 PM
+    Author     : khamilto
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+div { 
+    display: block;
+    color:red;
+}
+

@@ -1,0 +1,43 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="http://mootools.net/download/get/mootools-core-1.4.5-full-compat-yc.js"></script>
+    <script>
+        
+            window.onload = function(){
+            var myAnchor = new Element('a', {
+                href: 'http://mootools.net',
+                'class': 'myClass',
+                html: 'Click me!',
+                styles: {
+                    display: 'block',
+                    border: '1px solid black'
+                },
+                events: {
+                    click: function(){
+                        doAlert(this); // <- HERE
+                        return false; // disable the link
+                    }
+                    }
+                }).inject(document.getElementsByTagName("body")[0]);
+                
+                function doAlert(var1){
+                    alert(var1);
+                }
+                //alert(myAnchor);
+                }
+    </script>
+    <style>
+        
+    </style>
+  </head>
+  <body>
+      <div>TODO write content</div>
+  </body>
+</html>

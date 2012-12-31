@@ -1,0 +1,70 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script>
+            // event listeners:
+// Event.add(element, event, handler)
+ var Event = {
+	add: function(obj,type,fn) {
+		if (obj.attachEvent) {
+			obj['e'+type+fn] = fn;
+			obj[type+fn] = function() { obj['e'+type+fn](window.event); }
+			obj.attachEvent('on'+type,obj[type+fn]);
+		} else
+		obj.addEventListener(type,fn,false);
+	},
+	remove: function(obj,type,fn) {
+		if (obj.detachEvent) {
+			obj.detachEvent('on'+type,obj[type+fn]);
+			obj[type+fn] = null;
+		} else
+		obj.removeEventListener(type,fn,false);
+	}
+}
+            
+            
+           var init = {
+               change: function(teamlist, teamname){
+                Event.add(teamlist, change, setValue(teamname, teamlist));
+               }
+            }
+            
+            
+            function getIdofSelected(list){
+                return list.options[list.selectedIndex].getAttribute('id');
+            };
+            function setValue(field, list){
+                field.value = getIdofSelected(list);
+            };
+            
+window.onload = function(){
+                teamname = document.forms[0].elements['Teamname'];
+                teamlist = document.forms[0].elements['TeamOption'];
+                init.change(teamlist, teamname);
+                //Event.add(teamlist, onchange, setValue(teamname, teamlist));
+                
+            };
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <select name="TeamOption" id="me" tabindex="6">
+                <option id="0">saints</option>
+                <option id="1">bulls</option>
+                <option id="2">devils</option>
+                <option id="3">kyles</option>
+            </select>
+            <input type="text" name="Teamname" value="name"/>
+        </form>
+    </body>
+</html>
+
+onchange="teamname.value = this.options[this.selectedIndex].getAttribute('id');
+onchange="setValue(teamname, this);" 

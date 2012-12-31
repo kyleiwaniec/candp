@@ -1,6 +1,6 @@
 
     #banner_mobile_wrapper{
-        display:block;
+        display:none;
         z-index: 100;
         position: relative;
         margin-bottom:10px;

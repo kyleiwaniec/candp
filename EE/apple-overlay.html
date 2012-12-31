@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <script>
+        $(function(){
+            $("a[rel]").overlay({
+            mask: 'black',
+            effect:'apple',
+            closeOnClick: true,
+            onBeforeLoad: function() 
+            {
+               var wrap = this.getOverlay().find(".contentWrap");
+                wrap.load(this.getTrigger().attr("href"));
+              }
+     
+        });
+        });
+    </script>
+    <style>
+        
+    </style>
+  </head>
+  <body>
+      <div class="apple_overlay" id="overlay">
+<div class="contentWrap"></div>
+</div>
+<div style="clear:both;">
+  <ul class="top_navigation">
+        <li><a href="#">My Profile</a></li>
+        <li><a href="animateSun.html" rel="#overlay">Settings</a></li>
+        <li><a href="/XYZ/login/logout" class="last">Logout</a></li>
+  </ul>
+</div>
+  </body>
+</html>

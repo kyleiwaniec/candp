@@ -1,0 +1,87 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script>
+            $(function(){
+                $("#tabForm").change(function(){
+                
+                    var cb = $("input[type='checkbox']");
+                
+                    $(cb).each(function(){
+                        var that = $(this);
+                    
+                        if(that.is(":checked")){
+                            that.next("label").addClass("active");
+                            }else{
+                                that.next("label").removeClass("active");
+                            }
+                        });
+                });
+            });
+        </script>
+        <style>
+            #tabForm  ul, li{
+                list-style: none;
+                margin:10px;
+                padding:0;
+            }
+            #tabForm  li{
+                display:block;
+                overflow:hidden;
+            }
+            #tabForm  input{
+                display:block;
+                float:left;
+            }
+            #tabForm label{
+                background-image:url(cars/cars.png);
+                background-repeat:no-repeat;
+                width:150px;
+                height:96px;
+                display:block;
+                float:left;
+                cursor:pointer;
+            }
+            
+            /* define all the images below: */
+            #body-4x4-l{background-position: 0 bottom;}
+                #body-4x4-l.active{background-position: 0 top;}
+            #body-Allroad-l{background-position: -150px bottom;}
+                #body-Allroad-l.active{background-position: -150px top;}
+            #body-Avant-l{background-position: -300px bottom;}
+                #body-Avant-l.active{background-position: -300px top;}
+            #body-Cabriolet-l{background-position: -450px bottom;}
+                #body-Cabriolet-l.active{background-position: -450px top;}
+            /* etc.. */
+            
+        </style>
+    </head>
+    <body>
+        <form id="tabForm">
+            <ul id="bodyul" class="tabList">
+                <li>
+                    <input type="checkbox" id="body-4x4" name="body" value="44">
+                    <label for="body-4x4" id="body-4x4-l">4x4</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="body-Allroad" name="body" value="19">
+                    <label for="body-Allroad" id="body-Allroad-l">Allroad</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="body-Avant" name="body" value="18">
+                    <label for="body-Avant" id="body-Avant-l" >Avant</label>
+                </li>
+                <li><input type="checkbox" id="body-Cabriolet" name="body" value="5">
+                    <label for="body-Cabriolet" id="body-Cabriolet-l" >Cabriolet</label>
+                </li>
+            </ul>
+        </form>
+    </body>
+</html>

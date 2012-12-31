@@ -1,0 +1,51 @@
+<!DOCTYPE HTML> 
+<html lang='en'> 
+    <head> 
+        <meta charset='UTF-8'> 
+        <style>
+
+            #canvas{
+                position:absolute;
+                width:800px;
+                height:800px;
+                right:0;
+
+            }
+
+            
+
+        </style>
+        <script src="fractal-iterate.js"></script>
+        <script>
+                var $canvas = $("#canvas");
+                
+                var angle = $("#angle").val();
+                angle = angle != "" ? angle : 4;
+                
+                $.FractalTree({
+                    color: "rgba(0,0,0,.5)", 
+                    initX: 400, 
+                    initY: 700, 
+                    max_sub_branch: 5,
+//                    max_sub_angle: Math.PI/4,
+    max_sub_angle: Math.PI/angle,
+                    max_size: 5,
+                    branch_length: 50, 
+                    canvas:$canvas
+                });
+
+         
+        </script>
+
+    </head> 
+    <body> 
+
+
+        <canvas id="canvas" width="800" height="800">
+            <em> (You can't see this animation, because your browser doesn't support &lt;canvas&gt;.<br />
+                For a better internet experience go <a href="http://www.google.com/chrome">download google chrome</a>)</em>
+
+        </canvas>
+
+    </body>
+</html>

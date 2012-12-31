@@ -1,0 +1,2 @@
+[27-Jun-2012 03:49:22] PHP Warning:  scandir(images/portfolio/rtr/) [<a href='function.scandir'>function.scandir</a>]: failed to open dir: No such file or directory in /home3/kylehami/public_html/candp/get_images_in_dir.php on line 3
+[27-Jun-2012 03:49:22] PHP Warning:  scandir() [<a href='function.scandir'>function.scandir</a>]: (errno 2): No such file or directory in /home3/kylehami/public_html/candp/get_images_in_dir.php on line 3

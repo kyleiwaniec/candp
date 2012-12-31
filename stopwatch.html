@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            var start, end, timer, run ;
+            $("#start").click(function(){
+                start = new Date().getTime();
+                
+                clearInterval(timer);
+
+                                timer = setInterval ( function(){
+                                    run = new Date().getTime();
+                                  $("#time").text(run-start);  
+                                }, 100 );
+            });
+            $("#stop").click(function(){
+                end = new Date().getTime();
+                clearInterval(timer);
+                $("#time").text((end - start)+" milliseconds");
+                console.log(end - start);
+            });
+            
+            
+            
+        });
+    </script>
+    <style>
+        
+    </style>
+  </head>
+  <body>
+      <div><button id="start">start</button><button id="stop">stop</button></div>
+      <div>Time: <span id="time"></span> </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'MetaWeb-Normal';
+    src: url('meta/MetaWeb-Normal.eot');
+    src: url('meta/MetaWeb-Normal.eot?#iefix') format('embedded-opentype'),
+         url('meta/MetaWeb-Normal.woff') format('woff'),
+         url('meta/MetaOT-Norm.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+
+}

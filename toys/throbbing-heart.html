@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]> <html class="ie6 nojs" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 nojs" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 nojs" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="nojs"> <!--<![endif]-->
+<head>
+<meta name="description" content="HTML5 Throbbing Heart">
+<meta name="author" content="Kyle Hamilton">
+    <meta  charset="UTF-8" />
+    <title>HTML5 Throbbing Heart</title>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            var w = $(window).width();
+            var h = $(window).height();
+            var canvas = $("canvas");
+            
+            var ch = canvas.height();
+            
+            canvas.css({"margin-top":h/2 - ch/2});
+            
+        });
+    </script>
+    <style>
+        html, body{
+                color:#444444;
+            }
+        *:focus{
+                outline:none;
+        }
+
+        
+.wrapper{
+    margin:0 auto;
+    max-width:250px;
+}
+.code{
+    border-top:1px dotted grey;
+    border-bottom:1px dotted grey;
+    padding-top:15px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+    <canvas id="canvas" width="250">
+    <em> (You can't see this really awesome animation, because your browser doesn't support &lt;canvas&gt;.<br />
+        For a better internet experience go <a href="http://www.google.com/chrome">download google chrome</a>)</em>
+      
+    </canvas>
+<script src="/js/heart.js"></script>
+    </div>
+</body>
+</html>

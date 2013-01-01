@@ -44,19 +44,21 @@ var icons = {
                 if(clickstate){
                     pencilLine = "M"+x+","+y+",S";
                     
-                    $(document).on('mousemove touchmove',function(e){
-                        e.preventDefault();
+                    $(document).on('mousemove touchmove', function(e){
+                        e.preventDefault(); 
+                        
                         x = getPosition(e)[0];
                         y = getPosition(e)[1];
-                         
+                        
                         pencilLine += x+","+y+",";
                         dl.attr({path: pencilLine});
+                        
                     });
                     
                     
                 }else{
                     if(ev.type != "touchstart"){
-                        $(document).off('mousemove');
+                        $(document).off('mousemove touchmove');
                     }
                 }
                });
@@ -224,7 +226,7 @@ var icons = {
  // helper functions:
  function getPosition(event){
                 var x, y, pos = [];
-                if(event.type == "touchstart"){
+                if(event.type == "touchstart" || event.type == "touchmove"){
                             var touches = event.originalEvent.touches;
                             var l = touches.length;
                             for (var i = 0; i < l; i++) {

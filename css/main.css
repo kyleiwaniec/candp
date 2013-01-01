@@ -1,18 +1,26 @@
 body, html{
                 margin:0;
                 padding:0;
-        -webkit-touch-callout: none;
+/*        -webkit-touch-callout: none;
         -webkit-user-select: none;
          -khtml-user-select: none;
            -moz-user-select: none;
             -ms-user-select: none;
-                user-select: none;
+                user-select: none;*/
         -webkit-tap-highlight-color:rgba(0,0,0,0);
         -webkit-text-size-adjust: none;
+                font-size: 1em;
+                line-height: 1.4;
             }
             img{
                 border:0;
                 outline:none;
+            }
+            ::selection {
+/*            background: #4F90CC; blue */
+            background:#f06; /* pink */
+            color: white;
+            text-shadow: none;
             }
             
             #outer-wrapper{
@@ -211,7 +219,7 @@ body, html{
 .mb-left:active{
         margin-right:-1px;
 }
-        
+   
 /* end mobile homepage buttons  */           
             
 /* mobile phones */
@@ -252,7 +260,7 @@ body, html{
         display:block;
     }
     .home #logo{
-       position: relative;
+        position: relative;
         top: auto;
         left: auto;
         width: 113px;
@@ -260,6 +268,14 @@ body, html{
         margin: 0 auto 10px auto;
         float: none;
     }
+    .bm_logo{
+        background-image: url(/images/logo.png);
+        background-repeat: no-repeat;
+        background-size: 95px 30px;
+        height: 50px;
+        background-position: 50%;
+    }
+    
     #boy{margin:20px auto;}
 }
 /* portrait */
@@ -271,9 +287,7 @@ body, html{
     #contact-button{
         display:block;
     }
-    #logo{
-      
-    }
+    
     
 }
 /*  retina */

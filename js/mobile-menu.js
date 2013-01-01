@@ -108,6 +108,11 @@ var getSubsections = (function(id){
                         }
                         $(".bm_ssul").html(sub_section_markup);
              });
+var z = 1000;
+var openSubsection = ( function (id) {
+                    //$("#"+id).css({"z-index":z++});
+                    $('.bm_nav_sub[data-subnav="'+id+'"]').css({'z-index':z++});
+});
 
 $(function(){   
             
@@ -141,7 +146,7 @@ $(function(){
                     
                     
                     // For links which do no go anywhere, trigger opening the subsection:
-                    $(".bm_slia").each(function(){
+                    $(".bm_slia, .bm_cslia").each(function(){
                         var that = $(this);
                         if(that.attr("href")==""){
                             that.on("click", function(e){
@@ -153,7 +158,7 @@ $(function(){
                     
                     
                     nav_main.on('click', '.bm_slide_btn', function(){
-                        try{getSubsections(this.id);}catch(e){}
+                        openSubsection($(this).data("id"));
                         doSlide($(this).data('btn'));
                         
                         return false;
@@ -177,7 +182,7 @@ $(function(){
                             },
                         1 : function(){
                             action.open(nav_outer, menu_btn);
-                            getSections();
+                            //getSections();
                             },
                         2 : function(){
                             action.open(search_outer, search_btn);
@@ -208,7 +213,7 @@ $(function(){
                         8 : function(){
                             action.close(search_outer, search_btn);
                             action.open(nav_outer, menu_btn);
-                            getSections();
+                            //getSections();
                         }
                     }
                     var ua = navigator.userAgent.toLowerCase();

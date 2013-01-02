@@ -163,14 +163,24 @@ $(function(){
                         
                         return false;
                     });
+                    
                     try{ 
                         if(!$.fn.touchwipe){throw 'touchwipe plugin was not loaded'}
                         nav_sub.touchwipe({
                             wipeRight: function() { doSlide(0); }
                         });
+                        
+                        nav_main.touchwipe({
+                            wipeDown: function() { doSlide(0); }
+                        });
+                        
+                        
                     }catch(e){
                         console.log("Error: " + e);
                     }
+                    
+                    
+                    
                     function doSlide(button){
                         state = statesArray[state][button];
                         transition[state]();

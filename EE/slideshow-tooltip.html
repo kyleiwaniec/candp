@@ -1,0 +1,309 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+<script type="text/javascript">
+// <![CDATA[
+var slo=null;
+var sola = Array();
+var prev = 0;
+var cur = 1;
+var timi=null
+
+$(document).ready(function() {
+	sol = document.getElementById('slidy').getElementsByTagName('li')
+	var sho = document.getElementById('slidya').getElementsByTagName('a');
+	for(var i=1;i<sho.length-1; i++)sola.push(sho[i])		
+	for(var i=1;i<sol.length; i++)sol[i].style.display = 'none';
+	timi = window.setInterval('doslide()',7000);
+})
+
+function doslide()
+{
+	$(sol[prev]).fadeOut(500);
+	$(sol[cur]).fadeIn(500);
+	sola[prev].className = 'number'
+	sola[cur].className = 'number select'
+	
+	prev = cur++;
+	if(cur>sol.length-1)
+	{
+		cur=0;
+		prev= sol.length-1;
+	}
+	
+}
+
+function prevnext(mode)
+{
+	window.clearInterval(timi);timi=null;
+	
+	if(mode)
+	{
+		if(cur>sol.length-1)
+		{
+			cur=0;
+			prev= sol.length-1;
+		}
+		doslide();		
+	}
+	else
+	{
+		cur--;
+		prev--;
+		
+		if(prev<0)
+		{
+			cur=0;
+			prev= sol.length-1;
+		}
+		if(cur<0)
+		{
+			cur=sol.length-1;
+			prev=cur-1 ;		
+		}
+		
+
+		$(sol[cur]).fadeOut(500);
+		$(sol[prev]).fadeIn(500);
+		sola[cur].className = 'number'
+		sola[prev].className = 'number select'	
+	}
+	timi = window.setInterval('doslide()',7000)
+}
+
+function thisisit(aiyo)
+{
+	cur = aiyo
+	window.clearInterval(timi);timi=null;
+	
+	$(sol[cur]).fadeIn(500);
+	$(sol[prev]).fadeOut(500);
+	sola[cur].className = 'number select'
+	sola[prev].className = 'number'	
+	
+	prev=cur
+	++cur;
+	if(prev<0)prev = sol.length-1;
+	timi = window.setInterval('doslide()',7000)		
+}
+// ]]>
+</script>
+
+    <script type="text/javascript">
+    <!--
+
+    $(function () {
+        $('.bubbleInfo').each(function () {
+            var distance = 10;
+            var time = 250;
+            var hideDelay = 300;
+
+            var hideDelayTimer = null;
+
+            var beingShown = false;
+            var shown = false;
+            var trigger = $('.trigger', this);
+            var info = $('.popup', this).css('opacity', 0);
+
+
+            $([trigger.get(0), info.get(0)]).mouseover(function () {
+                if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                if (beingShown || shown) {
+                    // don't trigger the animation again
+                    return;
+                } else {
+                    // reset position of info box
+                    beingShown = true;
+
+                    info.css({
+                        top: 225,
+                        left: '55%',
+                        display: 'block'
+                    }).animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 1
+                    }, time, 'swing', function() {
+                        beingShown = false;
+                        shown = true;
+                    });
+                }
+
+                return false;
+            }).mouseout(function () {
+                if (hideDelayTimer) clearTimeout(hideDelayTimer);
+                hideDelayTimer = setTimeout(function () {
+                    hideDelayTimer = null;
+                    info.animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 0
+                    }, time, 'swing', function () {
+                        shown = false;
+                        info.css('display', 'none');
+                    });
+
+                }, hideDelay);
+
+                return false;
+            });
+        });
+    });
+    
+    //-->
+	//<!--
+
+    $(function () {
+        $('.bubbleInfo2').each(function () {
+            var distance = 10;
+            var time = 250;
+            var hideDelay2 = 300;
+
+            var hideDelayTimer2 = null;
+
+            var beingShown2 = false;
+            var shown2 = false;
+            var trigger2 = $('.trigger2', this);
+            var info2 = $('.popup2', this).css('opacity', 0);
+			var winW = document.documentElement.offsetWidth;
+
+
+            $([trigger2.get(0), info2.get(0)]).mouseover(function () {
+                if (hideDelayTimer2) clearTimeout(hideDelayTimer2);
+                if (beingShown2 || shown2) {
+                    // don't trigger the animation again
+                    return;
+                } else {
+                    // reset position of info box
+                    beingShown2 = true;
+					if(winW<=500){
+                    info2.css({
+                        top: 100,
+                        left: '25%',
+                        display: 'block'
+                    }).animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 1
+                    }, time, 'swing', function() {
+                        beingShown2 = false;
+                        shown2 = true;
+                    });
+					}
+					else if(winW<=350){
+                    info2.css({
+                        top: 100,
+                        left: '20%',
+                        display: 'block'
+                    }).animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 1
+                    }, time, 'swing', function() {
+                        beingShown2 = false;
+                        shown2 = true;
+                    });
+					}
+					else
+					{
+					info2.css({
+                        top: 100,
+                        left: '44%',
+                        display: 'block'
+                    }).animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 1
+                    }, time, 'swing', function() {
+                        beingShown2 = false;
+                        shown2 = true;
+                    });
+					}
+                }
+
+                return false;
+            }).mouseout(function () {
+                if (hideDelayTimer2) clearTimeout(hideDelayTimer2);
+                hideDelayTimer2 = setTimeout(function () {
+                    hideDelayTimer2 = null;
+                    info2.animate({
+                        top: '-=' + distance + 'px',
+                        opacity: 0
+                    }, time, 'swing', function () {
+                        shown2 = false;
+                        info2.css('display', 'none');
+                    });
+
+                }, hideDelay2);
+
+                return false;
+            });
+        });
+    });
+    
+    //-->
+    </script>
+<style type="text/css">
+.popup {
+        	background-image: url(images/tag1.png);
+	background-repeat: no-repeat;
+	height: 146px;
+	width: 293px;
+	position:relative;
+	
+        }
+
+    .popup2 {
+	background-image: url(images/tag2.png);
+	background-repeat: no-repeat;
+	height: 244px;
+	width: 415px;
+	position:absolute;
+	
+} 
+.img1
+{background-image:url(images/blue-1.jpg); background-repeat:no-repeat; height:700px; width:100%; background-position:center center;}
+.img2
+{background-image:url(images/green-1.jpg);background-repeat:no-repeat; height:700px; width:100%; background-position:center;}
+</style>
+</head>
+<body>
+<div id="container"> 
+  
+  <!--center part start-->
+  <div id="slidy" class="slidepart fl" >
+  <ul>
+            <li> 
+                <div class="bubbleInfo">
+                    <div class="fir_as">
+                        <div  class="img1 trigger"></div>
+                        <div class="popup" id="dpop" ></div>
+                    </div>
+                </div>
+                <div class="bubbleInfo2">
+                    <div class="fir_bs">
+                        <div  class="img2 trigger2" ></div>
+                        <div class="popup2" id="dpop2"></div>
+                    </div>
+                </div>
+            </li>
+    </ul>
+  </div>
+
+  <div class="sl_paginationpart" style="position:absolute; top:350px;" >
+    <ul id="slidya" class="slpagination">
+      <li style="float:left;width:50%;"><a href="javascript: prevnext(0);" class="prev"></a></li>
+      <li style="display:none;"><a href="javascript: thisisit(0)" class="number select"></a></li>
+      <li style="display:none;"><a href="javascript: thisisit(1)" class="number "></a></li>
+      <li style="float:left; width:50%;"><a href="javascript: prevnext(1);" class="next"></a></li>
+    </ul>
+  </div>
+ <!-- End center part-->
+</div>
+
+    </body>
+</html>

@@ -220,19 +220,49 @@ var icons = {
          }());	// end bubbles
          
         ( function ui_elements() {
-                if($("#contact-button").length === 0){ ; } else {
-                    var c_button = Raphael("contact-button", 30,30);
-                        c_button.path(icons.envelope).attr({fill: "#eee", stroke: "none"});
+          
+          var button_icons = {}
+          
+                 if ($("#homebutton").length === 0){ ; } else {
+                    var homebutton = Raphael("homebutton", 30,50);
+                        button_icons.homebutton = homebutton.path(icons.home).attr({fill: "#f06", stroke: "none"}).transform("t0,5s.8");
+                    }
+                 if ($("#mb_about_icon").length === 0){ ; } else {  
+                    var mb_about_icon = Raphael("mb_about_icon", 30,30);
+                        button_icons.mb_about_icon = mb_about_icon.path(icons.lightBulb).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
+                 }
+                 if ($("#mb_services_icon").length === 0){ ; } else {  
+                    var mb_services_icon = Raphael("mb_services_icon", 30,30);
+                        button_icons.mb_services_icon = mb_services_icon.path(icons.spanner).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
+                 }
+                 if ($("#mb_contact_icon").length === 0){ ; } else {  
+                    var mb_contact_icon = Raphael("mb_contact_icon", 30,30);
+                        button_icons.mb_contact_icon = mb_contact_icon.path(icons.envelope).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
+                 }
+                 if ($("#mb_portfolio_icon").length === 0){ ; } else {  
+                    var mb_portfolio_icon = Raphael("mb_portfolio_icon", 30,30);
+                        button_icons.mb_portfolio_icon = mb_portfolio_icon.path(icons.heart).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
+                 }
+                 if ($("#mb_sandbox_icon").length === 0){ ; } else {  
+                    var mb_sandbox_icon = Raphael("mb_sandbox_icon", 30,30);
+                        button_icons.mb_sandbox_icon = mb_sandbox_icon.path(icons.scull).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
                  }
                  
-                 if ($("#homebutton").length === 0){ ; } else {
-                    var h_button = Raphael("homebutton", 30,50);
-                        h_button.path(icons.home).attr({fill: "#f06", stroke: "none"}).transform("t0,5s.8");
-                    }
-                    
+                 $(".mb_nav_main li").on({
+                     mouseenter : function(){
+                         var icon_id = $(this).children(".mb_icon").attr("id");
+                         button_icons[icon_id].attr({fill: "#f06"});
+                     },
+                     mouseleave : function(){
+                         var icon_id = $(this).children(".mb_icon").attr("id");
+                         button_icons[icon_id].attr({fill: "#ccc"});
+                     }
+                 })
+                 
             }());
             
 
+     
  //   $("#page-title").text($("title").text());  
 
 
@@ -276,3 +306,9 @@ var icons = {
 //        opacity: .5
 //    });
 //});
+
+
+    
+
+
+  

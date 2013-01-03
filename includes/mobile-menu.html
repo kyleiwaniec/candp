@@ -1,56 +1,56 @@
 <!-- **[ start mobile toprail ]** -->
-<div id="banner_mobile_wrapper">
-    <div id="banner_mobile">
-        <div class="bm_bar">
-            <div class="bm_bar-left bm_btn bm_menu_icon" id="bm_menu_btn" data-btn="0"></div>
-            <div class="bm_bar-center">
-                <div class="bm_logo" id="page-title"></div>
+<div id="mobile_banner_wrapper">
+    <div id="mobile_banner">
+        <div class="mb_bar">
+            <div class="mb_bar-left mb_btn mb_menu_icon" id="mb_menu_btn" data-btn="0"></div>
+            <div class="mb_bar-center">
+                <div class="mb_logo" id="page-title"></div>
             </div>
-            <div class="bm_bar-right">
-                <!--  <div class="bm_btn">Sign In</div>-->
-<!--                <div class="bm_btn" id="bm_search_btn" data-btn="1"><div id="homebutton"></div></div>-->
-<div class="bm_btn"><a href="/"><div id="homebutton"></div></a></div>
+            <div class="mb_bar-right">
+                <!-- <div class="mb_btn">Sign In</div>-->
+                <!-- <div class="mb_btn" id="mb_search_btn" data-btn="1"><div id="homebutton"></div></div>-->
+                     <div class="mb_btn_disabled" ><a href="/"><div id="homebutton"></div></a></div>
             </div>
         </div>
     </div>
-    <div id="bm_nav_outer">
-        <div id="bm_nav_inner">
-            <div class="bm_nav_main">
-                <ul class="bm_sec_nav">
-                    <li class="bm_sli"><a class="bm_slia" href="/about.php">About</a></li>
-                    <li class="bm_sli"><a class="bm_slia" href="/services.php">Services</a></li>
-                    <li class="bm_sli"><a class="bm_slia" href="/contact.php">Contact</a></li>
+    <div id="mb_nav_outer">
+        <div id="mb_nav_inner">
+            <div class="mb_nav_main">
+                <ul class="mb_main_left_ul">
+                    <li class="mb_sli"><span class="mb_icon" id="mb_about_icon"></span><a class="mb_slia" href="/about.php">About</a></li>
+                    <li class="mb_sli"><span class="mb_icon" id="mb_services_icon"></span><a class="mb_slia" href="/services.php">Services</a></li>
+                    <li class="mb_sli"><span class="mb_icon" id="mb_contact_icon"></span><a class="mb_slia" href="/contact.php">Contact</a></li>
 
                 </ul>
-                <ul class="bm_class_nav">
-                    <li class="bm_csli"><span class="bm_slide_btn" data-id="portfolio" data-btn="2"><a class="bm_cslia" href="">Portfolio</a></span></li>
-                    <li class="bm_csli"><span class="bm_slide_btn" data-id="sandbox" data-btn="2"><a class="bm_cslia" href="">Sandbox</a></span></li>
+                <ul class="mb_main_right_ul">
+                    <li class="mb_csli"><span class="mb_icon" id="mb_portfolio_icon"></span><span class="mb_slide_btn" data-id="portfolio" data-btn="2"><a class="mb_cslia" href="">Portfolio</a></span></li>
+                    <li class="mb_csli"><span class="mb_icon" id="mb_sandbox_icon"></span><span class="mb_slide_btn" data-id="sandbox" data-btn="2"><a class="mb_cslia" href="">Sandbox</a></span></li>
                     
                 </ul>
             </div>
-            <div class="bm_nav_sub" data-subnav="portfolio">
-                <ul class="bm_ssul">
-                    <li class="bm_ssli even"><a class="bm_sslia" href="websites.php">Websites</a></li>
-                    <li class="bm_ssli odd"><a class="bm_sslia" href="identity.php">Identity</a></li>
-                    <li class="bm_ssli even"><a class="bm_sslia" href="print.php">Print</a></li>
+            <div class="mb_nav_sub" data-subnav="portfolio">
+                <ul class="mb_sub_ul">
+                    <li class="mb_ssli even"><a class="mb_sslia" href="websites.php">Websites</a></li>
+                    <li class="mb_ssli odd"><a class="mb_sslia" href="identity.php">Identity</a></li>
+                    <li class="mb_ssli even"><a class="mb_sslia" href="print.php">Print</a></li>
                 </ul>
             </div>
-            <div class="bm_nav_sub" data-subnav="sandbox">
-                <ul class="bm_ssul">
-                    <li class="bm_ssli even"><a class="bm_sslia" href="canvas.php">HTML5 Canvas</a></li>
-                    <li class="bm_ssli odd"><a class="bm_sslia" href="css.php">CSS 3</a></li>
-                    <li class="bm_ssli even"><a class="bm_sslia" href="javascript.php">JavaScript</a></li>
-                    <li class="bm_ssli odd"><a class="bm_sslia" href="java.php">Java</a></li>
-                    <li class="bm_ssli even"><a class="bm_sslia" href="misc.php">Miscellaneous</a></li>
+            <div class="mb_nav_sub" data-subnav="sandbox">
+                <ul class="mb_sub_ul">
+                    <li class="mb_ssli even"><a class="mb_sslia" href="canvas.php">HTML5 Canvas</a></li>
+                    <li class="mb_ssli odd"><a class="mb_sslia" href="css.php">CSS 3</a></li>
+                    <li class="mb_ssli even"><a class="mb_sslia" href="javascript.php">JavaScript</a></li>
+                    <li class="mb_ssli odd"><a class="mb_sslia" href="java.php">Java</a></li>
+                    <li class="mb_ssli even"><a class="mb_sslia" href="misc.php">Miscellaneous</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div id="bm_search_outer">
-        <div class="bm_search_inner">
+    <div id="mb_search_outer">
+        <div class="mb_search_inner">
             <form method="get" action="http://search.masslive.com/sp">
-                <input placeholder="Search..." type="text" id="adv-site-search" name="keywords" />
-                <input type="submit" id="adv-site-search-submit" value="" />
+                <input placeholder="Search..." type="text" id="site-search" name="keywords" />
+                <input type="submit" id="site-search-submit" value="" />
             </form>
         </div>
     </div>

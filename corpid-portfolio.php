@@ -59,7 +59,7 @@
 
                        echo "<div class='corpidItem'>
                              <div style='background-image:url($file)'></div>
-                            </div><!-- corpid item -->";
+                             </div><!-- corpid item -->";
                     }
                 ?>
 

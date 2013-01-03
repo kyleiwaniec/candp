@@ -13,6 +13,14 @@ body, html{
                 line-height: 1.4;
                 font-family: georgia;
             }
+            .home{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+         -khtml-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+            }
             img{
                 border:0;
                 outline:none;
@@ -68,12 +76,13 @@ body, html{
             }
                 .home #logo{
                     position:absolute;
-                    top:200px;
+                    top:170px;
                     left:45%;
                 }
             #nav{
                 position:relative;
-                overflow:hidden;
+/*                overflow:hidden;*/
+                float: left;
             }
             #nav li, #nav ul{
                 list-style:none;
@@ -102,6 +111,15 @@ body, html{
                 font-family:helvetica;
                 font-weight:bold;
                 font-size:12px;
+            }
+            #dropdown{
+                position:absolute;
+                display:none;
+                z-index:100;
+                margin-left: -7px;
+            }
+            #nav li:hover #dropdown{
+                display:block;
             }
             #circles{
                 position:absolute;
@@ -157,10 +175,17 @@ body, html{
                 font-weight:normal;
             }
             #content{
+                clear: both;
                 position: relative;
-                height: 1000px;
+/*                height: 1000px;*/
                 overflow:hidden;
-       
+/*                height: 197px;*/ /* set with js based on panel height */
+        -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+                
+                padding-top: 20px;
             }
             #inner-content{
                 display: block;
@@ -178,14 +203,15 @@ body, html{
             }
                 .main-panel, .sub-panel{
                     display: block;
-                    height: 100%;
+/*                    height: 100%;*/ /* set with js */
                     width: 100%;
-                    position: absolute;
+/*                    position: absolute;*/ /* set with js */
                     z-index: 1;
                  }
                 .sub-panel {
                     background-color: #fff;
                     left: 100%;
+                    padding-bottom:20px;
                    }
                    
                    /* slide to make sub-section visible: */
@@ -228,7 +254,7 @@ body, html{
 #content .larger{font-size:1.4em}
 #content .largest{font-size:1.8em}
 .sub-panel ul{
-    padding: 0 0 0 20px;
+    padding: 0 100px 0 40px;
     margin:0;
 }
 .sub-panel li{
@@ -255,10 +281,17 @@ body, html{
     cursor: pointer;
     border-bottom: 1px solid #ccc;
 }
+.mp-li:hover{
+    
+}
+.mp-li:hover a{
+    text-decoration: underline;
+}
 .mp-li a{
     font-family: helvetica;
     color:#444;
     text-decoration: none;
+    display:block;
 }
 /* hide mobile */
 #mobile-home-nav{
@@ -267,7 +300,7 @@ body, html{
 /* mobile homepage buttons  */  
 
 .mb {
-        padding: .6em 15px;
+        padding: .6em 15px .4em;
         float:left;
 	border: 1px solid #ccc;
         
@@ -323,7 +356,12 @@ body, html{
 .mb-left:active{
         margin-right:-1px;
 }
-   
+.mb-single{
+    
+-webkit-border-radius:  .5em;
+   -moz-border-radius:  .5em;
+        border-radius:  .5em;
+}   
 /* end mobile homepage buttons  */           
             
 /* mobile phones */
@@ -379,8 +417,13 @@ body, html{
         height: 50px;
         background-position: 50%;
     }
-    
+    .sub-panel ul{
+        padding: 0 0 0 20px;
+    }
     #boy{margin:20px auto;}
+    #content{
+        padding-top: 0;
+    }
 }
 /* portrait */
 @media screen and (max-width: 320px){

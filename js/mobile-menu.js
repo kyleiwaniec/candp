@@ -2,12 +2,20 @@
  * jQuery Plugin to obtain touch gestures from iPhone, iPod Touch and iPad, should also work with Android mobile phones (not tested yet!)
  * Common usage: wipe images (left and right to show the previous or next image)
  * 
+ * @author kyle hamilton
+ * NOTES: Added preventDefault or wipeLeft and wipeRight only.
+ * 
  * @author Andreas Waltl, netCU Internetagentur (http://www.netcu.de)
  * @version 1.1.1 (9th December 2010) - fix bug (older IE's had problems)
  * @version 1.1 (1st September 2010) - support wipe up and wipe down
  * @version 1.0 (15th July 2010)
  */
-(function($){$.fn.touchwipe=function(settings){var config={min_move_x:20,min_move_y:20,wipeLeft:function(){},wipeRight:function(){},wipeUp:function(){},wipeDown:function(){},preventDefaultEvents:false};if(settings)$.extend(config,settings);this.each(function(){var startX;var startY;var isMoving=false;function cancelTouch(){this.removeEventListener('touchmove',onTouchMove);startX=null;isMoving=false}function onTouchMove(e){if(config.preventDefaultEvents){e.preventDefault()}if(isMoving){var x=e.touches[0].pageX;var y=e.touches[0].pageY;var dx=startX-x;var dy=startY-y;if(Math.abs(dx)>=config.min_move_x){cancelTouch();if(dx>0){config.wipeLeft()}else{config.wipeRight()}}else if(Math.abs(dy)>=config.min_move_y){cancelTouch();if(dy>0){config.wipeDown()}else{config.wipeUp()}}}}function onTouchStart(e){if(e.touches.length==1){startX=e.touches[0].pageX;startY=e.touches[0].pageY;isMoving=true;this.addEventListener('touchmove',onTouchMove,false)}}if('ontouchstart'in document.documentElement){this.addEventListener('touchstart',onTouchStart,false)}});return this}})(jQuery);
+(function($){$.fn.touchwipe=function(settings){var config={min_move_x:20,min_move_y:20,wipeLeft:function(){},wipeRight:function(){},wipeUp:function(){},wipeDown:function(){},preventDefaultEvents:false};if(settings)$.extend(config,settings);this.each(function(){var startX;var startY;var isMoving=false;function cancelTouch(){this.removeEventListener('touchmove',onTouchMove);startX=null;isMoving=false}function onTouchMove(e){if(config.preventDefaultEvents){e.preventDefault()}if(isMoving){var x=e.touches[0].pageX;var y=e.touches[0].pageY;var dx=startX-x;var dy=startY-y;if(Math.abs(dx)>=config.min_move_x){e.preventDefault();cancelTouch();if(dx>0){config.wipeLeft()}else{config.wipeRight()}}else if(Math.abs(dy)>=config.min_move_y){cancelTouch();if(dy>0){config.wipeDown()}else{config.wipeUp()}}}}function onTouchStart(e){if(e.touches.length==1){startX=e.touches[0].pageX;startY=e.touches[0].pageY;isMoving=true;this.addEventListener('touchmove',onTouchMove,false)}}if('ontouchstart'in document.documentElement){this.addEventListener('touchstart',onTouchStart,false)}});return this}})(jQuery);
+
+
+// temp test
+
+//console.log("main-panel: "+$(".main-panel").height()+" content: "+$("#content").height());
 
 
 /** ------------------------[ MOBILE MENU ]----------------------------------- **
@@ -45,11 +53,31 @@ var action = {
 var zindex = 1000;
 
 var slidePage = ( function(){
-    
+                    
+                    
+                    
                     function getPanel(){
+                        
+                        $(".main-panel, .sub-panel").css({"height":"auto", "position":"static"});
+                        
                         var hash = location.hash;
                         $("#inner-content")[ hash != '' ? 'addClass' : 'removeClass' ]( 'open' );
-                        $('.sub-panel[data-panel="'+( hash.replace( /^#/, '' ))+'"]').css({'z-index':zindex});
+                        $('.sub-panel[data-panel="'+( hash.replace( /^#/, '' ))+'"]').css({'z-index':zindex}).addClass("active").siblings().removeClass("active");
+                        
+                        var mainPanel = $(".main-panel").outerHeight();
+                        var subPanel = $(".active").outerHeight();
+                        
+                        console.log(mainPanel+", "+subPanel);
+                        
+                        if (hash != ''){
+                            $("#content").height(subPanel+20);
+                            
+                        }else{
+                            $("#content").height(mainPanel);
+                        }
+                        
+                        $(".main-panel, .sub-panel").css({"height":"100%", "position":"absolute"});
+                        
                     }
                     $(window).hashchange(getPanel);
                     $(window).hashchange();
@@ -58,6 +86,12 @@ var slidePage = ( function(){
                     mp_lia.on("click", function(){
                         zindex += 1;
                     });
+                    
+                    
+                    function setHeight(){
+                        
+                    }
+                    
                     
                     $(".sub-panel").touchwipe({
                             wipeRight: function() { 
@@ -110,7 +144,9 @@ var slideNav = ( function () {
                     try{ 
                         if(!$.fn.touchwipe){throw 'touchwipe plugin was not loaded'}
                         nav_sub.touchwipe({
-                            wipeRight: function() { doSlide(0); }
+                            wipeRight: function() { 
+                                doSlide(0); 
+                            }
                         });
                         
 //                        nav_main.touchwipe({

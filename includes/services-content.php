@@ -40,8 +40,8 @@
                     </li><li>Wordpress themes
                     </li><li>Whatever your heart desires! (we’re talking websites here…)
                     </li></ul>
-
-                    <a href="web-portfolio.php" style="float: right;">&raquo; Website Examples</a>
+                    <p class="mb mb-single"><a href="web-portfolio.php">Website Examples</a></p>
+                    <p>&nbsp;</p>
                 </div>
                 <div class="sub-panel" data-panel="branding">
                     <div class="title"><h2>[ <a href="services.php" onclick="window.history.back(); return false">&#9664;</a> ] BRANDING: Corporate Identity and Logos</h2></div>
@@ -74,8 +74,8 @@
                     </li><li>	<strong>Versatile:</strong>
                     <br />	An effective logo should be able to work across a variety of mediums and applications. For this reason a logo should be designed in vector format, to ensure that it can be scaled to any size. The logo must work in just one color too.
                     </li></ul>
-                    <a href="corpid-portfolio.php" style="float: right;">&raquo; Corp Id Examples</a>
-                    
+                    <p class="mb mb-single"><a href="corpid-portfolio.php">Corp Id Examples</a></p>
+                     <p>&nbsp;</p>
                 </div>
                 <div class="sub-panel" data-panel="print">
                     <div class="title"><h2>[ <a href="services.php" onclick="window.history.back(); return false">&#9664;</a> ] Design For Print & Traditional Media</h2></div>

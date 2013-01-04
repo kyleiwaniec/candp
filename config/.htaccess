@@ -1,0 +1,141 @@
+<FilesMatch "\.(ttf|otf|eot|woff)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Proper MIME type for all files
+# ----------------------------------------------------------------------
+
+#cache manifest
+AddType text/cache-manifest .appcache
+
+# audio
+
+AddType audio/mpeg mp3
+AddType audio/mp4 m4a
+AddType audio/mp4a-latm m4a
+AddType audio/ogg ogg
+AddType audio/ogg oga
+AddType audio/webm webma
+AddType audio/wav wav
+
+# video
+
+AddType video/mp4 mp4
+AddType video/mp4 m4v
+AddType video/ogg ogv
+AddType video/webm webm
+AddType video/webm webmv
+
+# Proper svg serving. Required for svg webfonts on iPad
+#   twitter.com/FontSquirrel/status/14855840545
+AddType     image/svg+xml              svg svgz 
+AddEncoding gzip                       svgz
+                                       
+# webfonts                             
+AddType application/vnd.ms-fontobject  eot
+AddType font/truetype                  ttf
+AddType font/opentype                  otf
+AddType application/x-font-woff        woff
+
+# assorted types                                      
+AddType image/x-icon                   ico cur
+AddType image/webp                     webp
+AddType text/cache-manifest            appcache manifest
+AddType text/x-component               htc
+AddType application/x-chrome-extension crx
+AddType application/x-xpinstall        xpi
+AddType application/octet-stream       safariextz
+
+# ----------------------------------------------------------------------
+# gzip compression
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+
+
+# force deflate for mangled headers developer.yahoo.com/blogs/ydn/posts/2010/12/pushing-beyond-gzipping/
+<IfModule mod_setenvif.c>
+  <IfModule mod_headers.c>
+    SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s,?\s(gzip|deflate)?|X{4,13}|~{4,13}|-{4,13})$ HAVE_Accept-Encoding
+    RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+  </IfModule>
+</IfModule>
+# html, txt, css, js, json, xml, htc:
+<IfModule filter_module>
+  FilterDeclare   COMPRESS
+  FilterProvider  COMPRESS  DEFLATE resp=Content-Type /text/(html|css|javascript|plain|x(ml|-component))/
+  FilterProvider  COMPRESS  DEFLATE resp=Content-Type /application/(javascript|json|xml|x-javascript)/
+  FilterChain     COMPRESS
+  FilterProtocol  COMPRESS  change=yes;byteranges=no
+</IfModule>
+
+<IfModule !mod_filter.c>
+  # Legacy versions of Apache
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript 
+  AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+</IfModule>
+
+# webfonts and svg:
+  <FilesMatch "\.(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Prevent 404 errors for non-existing redirected folders
+# ----------------------------------------------------------------------
+
+# without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist 
+#   e.g. /blog/hello : webmasterworld.com/apache/3808792.htm
+
+# Options -MultiViews 
+
+# open php pages without the suffix
+#ForceType application/x-httpd-php
+#ForceType text/html
+
+# ----------------------------------------------------------------------
+# custom 404 page
+# ----------------------------------------------------------------------
+
+# You can add custom pages to handle 500 or 403 pretty easily, if you like.
+ErrorDocument 404 /missing.php
+
+
+# To rewrite "domain.com -> www.domain.com" uncomment the following lines.
+# Be aware that the following rule might not be a good idea if you
+# use "real" subdomains for certain parts of your website.
+
+ #<IfModule mod_rewrite.c>
+ #  RewriteCond %{HTTPS} !=on
+ #  RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+ #  RewriteCond %{HTTP_HOST} (.+)$ [NC]
+ #  RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
+ #</IfModule>
+
+# ----------------------------------------------------------------------
+# this doesn't work on Arvixe, oh well 
+# ----------------------------------------------------------------------
+#<IfModule mod_php5.c>
+#  php_value include_path ".:/Volumes/Victoria/Rosemary/work/sites/candp/includes"
+#  php_value include_path ".:/home/kylehami/public_html/candpgeneration.com/includes"
+   
+#  php_admin_flag engine on
+#</IfModule>
+
+suPHP_ConfigPath /home3/kylehami/public_html/dev-cnpgen/cgi-bin/
+
+RewriteEngine On 
+#RewriteBase / 
+#RewriteRule ^.htaccess$ - [F]
+
+
+#RewriteCond %{REQUEST_URI} !^/http://m.candpgeneration.com/.*$
+#RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+#RewriteRule ^(.*)$ http://m.candpgeneration.com/$1 [L,R=302]
+
+

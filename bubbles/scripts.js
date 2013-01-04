@@ -248,21 +248,21 @@ var icons = {
                     var mb_sandbox_icon = Raphael("mb_sandbox_icon", 30,30);
                         button_icons.mb_sandbox_icon = mb_sandbox_icon.path(icons.scull).attr({fill: "#ccc", stroke: "none"}).transform("s.8");
                  }
-                 if ($("#dropdown").length === 0){ ; } else {  
-                    var dropdown = Raphael("dropdown", 86,94);
-                        button_icons.dropdown = dropdown.path(icons.dropdown).attr({fill: "#f06", stroke: "none"}).transform("s1");
-                 }
-                 
-                 $("#nav #portfolio").on({
-                     mouseenter : function(){
-                         
-                         //button_icons.dropdown.transform("s1");
-                     },
-                     mouseleave : function(){
-                         
-                        // button_icons.dropdown.transform("s0");
-                     }
-                 })
+//                 if ($("#dropdown").length === 0){ ; } else {  
+//                    var dropdown = Raphael("dropdown", 86,94);
+//                        button_icons.dropdown = dropdown.path(icons.dropdown).attr({fill: "#f06", stroke: "none"}).transform("s1");
+//                 }
+//                 
+//                 $("#nav #portfolio").on({
+//                     mouseenter : function(){
+//                         
+//                         //button_icons.dropdown.transform("s1");
+//                     },
+//                     mouseleave : function(){
+//                         
+//                        // button_icons.dropdown.transform("s0");
+//                     }
+//                 })
                  
                  $(".mb_nav_main li").on({
                      mouseenter : function(){

@@ -1,0 +1,7 @@
+CACHE MANIFEST
+# http://www.whatwg.org/specs/web-apps/current-work/#applicationcache
+# set these up when in production:
+#index.php
+#css/main.css
+#images/logo.png
+#js/scripts.js

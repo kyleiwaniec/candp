@@ -40,7 +40,7 @@
                     </li><li>Wordpress themes
                     </li><li>Whatever your heart desires! (we’re talking websites here…)
                     </li></ul>
-                    <p class="mb mb-single"><a href="web-portfolio.php">Website Examples</a></p>
+                    <p class="mb mb-single"><a href="websites.php">Website Examples</a></p>
                     <p>&nbsp;</p>
                 </div>
                 <div class="sub-panel" data-panel="branding">
@@ -74,7 +74,7 @@
                     </li><li>	<strong>Versatile:</strong>
                     <br />	An effective logo should be able to work across a variety of mediums and applications. For this reason a logo should be designed in vector format, to ensure that it can be scaled to any size. The logo must work in just one color too.
                     </li></ul>
-                    <p class="mb mb-single"><a href="corpid-portfolio.php">Corp Id Examples</a></p>
+                    <p class="mb mb-single"><a href="corpid.php">Corp Id Examples</a></p>
                      <p>&nbsp;</p>
                 </div>
                 <div class="sub-panel" data-panel="print">

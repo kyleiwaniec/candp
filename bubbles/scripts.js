@@ -1,5 +1,6 @@
 var touchSupport = "createTouch" in document;
 
+
 var icons = {
                 lightBulb : "M15.5,2.833c-3.866,0-7,3.134-7,7c0,3.859,3.945,4.937,4.223,9.499h5.553c0.278-4.562,4.224-5.639,4.224-9.499C22.5,5.968,19.366,2.833,15.5,2.833zM15.5,28.166c1.894,0,2.483-1.027,2.667-1.666h-5.334C13.017,27.139,13.606,28.166,15.5,28.166zM12.75,25.498h5.5v-5.164h-5.5V25.498z",
                 spanner   : "M26.834,14.693c1.816-2.088,2.181-4.938,1.193-7.334l-3.646,4.252l-3.594-0.699L19.596,7.45l3.637-4.242c-2.502-0.63-5.258,0.13-7.066,2.21c-1.907,2.193-2.219,5.229-1.039,7.693L5.624,24.04c-1.011,1.162-0.888,2.924,0.274,3.935c1.162,1.01,2.924,0.888,3.935-0.274l9.493-10.918C21.939,17.625,24.918,16.896,26.834,14.693z",
@@ -130,7 +131,7 @@ var icons = {
             // bubbles and icons
             ( function bubbles () {
             
-            var paper = Raphael("circles", 600, 60);
+            var paper = Raphael("circles", 400, 60);
         
             var b = paper.path("[M30,80], [C30,55, 55,47.5, 55,30], [C55,16, 45,5, 30,5], [C16,5, 5,16, 5,30], [C5,47.5,30,55,30,80z]")
                    .attr({stroke: "#c0e", "stroke-width": 0, "stroke-linecap": "round", fill:"#f06"}) //fc059c
@@ -276,8 +277,106 @@ var icons = {
                  })
                  
             }());
-            
 
+$("img.lazy").lazyload({
+    failure_limit : 1000,
+    //effect : "fadeIn",
+    threshold : 200
+});
+
+//$(function() {          
+//     
+// });
+// $(window).on("load", function() { 
+//     var timeout = setTimeout(function() { $("img.lazy").trigger("autoload") }, 2000);
+// }); 
+
+var scrollimages = (function(){
+        var z = 101, ml = 0,
+            pics = $(".pics");
+        
+        
+        $(window).resize(function(){
+                 var divWidth = $(".scroll").innerWidth();
+                 $(".scroll").find("img").width(divWidth);
+             }).trigger("resize");
+             
+             
+          
+         pics.each(function(){
+             
+             var self = $(this);
+             var arrLeft = self.parents(".webItem").find(".arrows .left"),
+                 arrRight = self.parents(".webItem").find(".arrows .right");
+             
+             
+             self.ml = 0;
+             
+             self.children("div").first().addClass("current");
+             
+             self.touchwipe({
+                            wipeLeft: function() { 
+                                var active = self.children(".current");
+                                if(self.children("div:last").hasClass("current")){ ; }else{
+                                        active.removeClass("current").next().addClass("current");
+                                        self.ml -= 100;
+                                        self.css({"margin-left": self.ml+"%"});
+                                        $(window).trigger("scroll");
+                                }
+                                
+                            },
+                            wipeRight: function() { 
+                                var active = self.children(".current");
+                                if(self.children("div:first").hasClass("current")){ ; }else{
+                                        active.removeClass("current").prev().addClass("current");
+                                        self.ml += 100;
+                                        self.css({"margin-left": self.ml+"%"}); 
+                                        $(window).trigger("scroll");
+                                }
+                            }
+                });
+                
+                
+                arrRight.on("click", function(){
+                        var that = $(this),
+                            active = that.parents(".webItem").find(".current"),
+                            pics = that.parents(".webItem").find(".pics");
+
+
+                    if(that.parents(".webItem").find(".pics div:last").hasClass("current")){
+                            that.addClass("disabled");
+                    }else{
+                            active.removeClass("current").next().addClass("current");
+                            self.ml -= 100;
+                            pics.css({"margin-left": self.ml+"%"}); 
+                            arrLeft.removeClass("disabled");
+                            }; 
+                            
+                            $(window).trigger("scroll");
+                    });
+
+                arrLeft.on("click", function(){
+                    var that = $(this),
+                            active = that.parents(".webItem").find(".current"),
+                            pics = that.parents(".webItem").find(".pics");
+
+                    if(that.parents(".webItem").find(".pics div:first").hasClass("current")){
+                        that.addClass("disabled");
+                    }else{
+                            active.removeClass("current").prev().addClass("current");
+                            self.ml += 100;
+                            pics.css({"margin-left": self.ml+"%"});
+                            arrRight.removeClass("disabled");
+                            };
+                            $(window).trigger("scroll");
+                    });
+                
+         });   
+    
+                    
+     
+         
+})();
      
  //   $("#page-title").text($("title").text());  
 

@@ -1,0 +1,44 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+        
+        
+        
+    </head>
+    <body>
+        <div>
+            
+            <a href="/">link1</a><br/><br/>
+            <a href="/">link2</a><br/><br/>
+            <a href="/">link3</a><br/><br/>
+            
+        </div>
+        
+        <script>
+            
+                
+                $("div").on({
+                    click : function(e){
+                                e.preventDefault();alert("woohoo!");
+                                }
+                    
+                    },
+                    "a"
+                );
+                    
+                 $("div").append("<button class='me-button'>me button</button>");
+                 
+                 //$(".me-button").on("click", function(){alert("ooooh!")})
+                 $(".me-button").click(function(){alert("ooooh!")})
+            
+        </script>
+    </body>
+</html>

@@ -18,10 +18,15 @@
         <meta name="description" content="Graphic design and web development">
         <meta name="author" content="C &amp; P Generation, LLC">
         <link rel="stylesheet" href="/css/mobile-menu.css"/>
+<!--        <link rel="stylesheet" href="/css/scrollable.css"/>-->
+        
         <link rel="stylesheet" href="/css/main.css"/>
         
         
 </head>
 <body class="<?php echo $body_id ?>">
 <?php //include_once("analyticstracking.php") ?>
-<?php require_once 'mobile-menu.html'; ?>
+<?php 
+require_once "functions.php";
+require_once 'mobile-menu.html'; 
+?>

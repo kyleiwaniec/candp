@@ -1,0 +1,58 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            
+        });
+    </script>
+    <style>
+        .boxcont{
+            position:relative;
+width: 150px;
+height: 100px;
+background-color: red;
+        }
+        .box:before{
+            content: "";
+border-top-left-radius: 0;
+border-top-right-radius: 120px;
+border-bottom-right-radius: 120px;
+border-bottom-left-radius: 0;
+width: 100px;
+height: 120px;
+top:-10px;
+background-color: blueviolet;
+position: absolute;
+left: -50px;
+z-index: 100;
+        }
+        .box:after{
+            content: "";
+border-top-left-radius: 50px;
+border-top-right-radius: 0;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 50px;
+width: 40px;
+height: 120px;
+top:-10px;
+background-color: white;
+position: absolute;
+right:-20px;
+z-index: 100;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="boxcont">
+      <div class="box"></div>
+      </div>
+  </body>
+</html>

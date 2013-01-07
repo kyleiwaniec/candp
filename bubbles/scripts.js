@@ -427,3 +427,44 @@ var scrollimages = (function(){
 
 
   
+          $(".hidden").css({"display":"none"}); // so that nojs gets labels
+                 
+          var contact = $("#contact-form");
+          contact.validate({
+              
+          rules: {
+                        email : {
+                            email : true,
+                            required : true
+                        }
+          },
+          messages: {
+                        email: "Please enter a valid email address.",
+                        FirstName: "Please enter your first name.",
+                        LastName: "Please enter your last name.",
+                        phone: "Please enter your phone number.",
+                        notes: "Please enter a message."
+          },
+          submitHandler : function(){
+            $.post("includes/send_regular.php",{
+              first_name : $("#FirstName").val(),
+              last_name : $("#LastName").val(),
+              email : $("#email").val(),
+              phone : $("#phone").val(),
+              notes : $("#notes").val()
+            }, function(d){
+              contact.hide();
+              $("#thanks").fadeIn();
+              $("#yourname").text($("#FirstName").val());
+            });
+          },
+          errorPlacement: function(label, element) {
+                        // position error label after generated textarea
+                        if (element.is("textarea, input")) {
+                            label.insertAfter(element.next());
+                        }else{
+                            label.insertAfter(element);
+                        }
+                                
+                    }
+        });

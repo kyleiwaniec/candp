@@ -428,6 +428,7 @@ body, html{
         }
         .arrows a:active{
             background:#f06;
+            color:#ccc;
         }
         
         .arrows .left:before, .arrows .right:before{
@@ -445,7 +446,59 @@ body, html{
             color:#ccc;
             cursor:default;
         }
+        .arrows a.disabled:active{
+            background:none;
+        }
+        .corpidItem{
+            width: 45%;
+            float: left;
+            border: 1px solid #CCC;
+            padding: 2%;
+            margin-bottom: 1%;
+            text-align: center;
+        }
+        .corpidItem:nth-child(even){
+            margin-left: 1%;
+        }
+        .corpidItem img{
+            max-width:100%;
+        }
+        /* contact */
+        
+        label.error{display:block; padding-left: 7px; color:#ee3162; background-image: none;}
+            .valid{
 
+                background-image: url(http://www.candpgeneration.com/images/checked.png) !important;
+                background-repeat: no-repeat;
+                background-position: right top;
+            }
+            .error{background-image: url(../images/greypx.gif);}
+            .nocheck{background-image: url(../images/greypx.gif) !important;}
+        
+            #thanks{
+                display:none;
+            }
+            input[type='text'], input[type='tel'], input[type='email'], textarea{
+                padding: 8px 10px;
+                border: 1px solid #CCC;
+                min-width: 270px;
+                box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .1);
+                border-radius: 3px;
+                background-color: #F6F6F6;
+                -webkit-appearance: none;
+                margin-top: 5px;
+            }
+            input[type='submit']{
+                -webkit-appearance: none;
+                padding: 8px 20px;
+                font-size: inherit;
+                font-family: helvetica;
+                border: 1px solid #CCC;
+                color: #F06;
+            }
+            input[type='submit']:active{
+                color:white;
+            }
 /* hide mobile */
 #mobile-home-nav{
     display: none;
@@ -599,6 +652,17 @@ body, html{
         .arrows{
             right: 10px;
             left: auto;
+        }
+        
+        .corpidItem{
+            width: 95.5%;
+            float: none;
+            border: 1px solid #CCC;
+            padding: 2%;
+            margin-bottom: 1%;
+        }
+        .corpidItem:nth-child(even){
+            margin-left: 0;
         }
 }
 /* portrait */

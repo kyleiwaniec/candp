@@ -29,9 +29,7 @@
 
 <div id="wrapper">
 
-<?PHP
-include_once("./includes/sidebar.html");
-?>
+
 <div id="content">
 <p>&nbsp;</p>
 <p>&nbsp;</p>

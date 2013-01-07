@@ -7,6 +7,60 @@
         <div id="content">
             <div class="title"><h1>Websites &nbsp;&nbsp;&nbsp;[ <a href="corpid.php">Corp Id</a> ]&nbsp;[ <a href="print">Print</a> ]</h1></div>
             <div class="portfolio-items">
+                <div class="webItem">
+
+                <div class="scroll">
+                    <div class="pics">
+
+                        <?php drawImages("images/portfolio/500/nj*"); ?>
+
+                    </div>
+                </div>
+                <div class="arrows">
+                    <a class="back browse left"></a>
+                    <a class="forward browse right"></a>
+                </div>
+                <div class="info">
+                    
+                        <span class="link"><a href="http://nj.com">nj.com</a><br/><br/>
+
+                        <span class="item-title">Category:</span><br/>	
+                        <span class="item-descrip">News</span><br/><br/>
+                   
+                        <span class="item-title">Technology:</span><br/>
+                        <span class="item-descrip">Fully Responsive desktop and mobile layout - HTML5, CSS3, JS & jQuery</span><br/><br/>
+
+                        <span class="item-title">Concept & Execution:</span><br/>
+                        <span class="item-descrip">Mobile Menu</span>
+                </div>
+
+            </div><!-- web item -->
+            <div class="webItem dev">
+
+                <div class="scroll">
+                    <div class="pics">
+<?php drawImages("images/portfolio/500/pk*"); ?>
+
+                    </div>
+                </div>
+                <div class="arrows">
+                    <a class="back browse left"></a>
+                    <a class="forward browse right"></a>
+                </div>
+                <div class="info">
+                    <span class="link">Keene IP Law<br/>[ <em>Under Development</em> ]<br/><br/>
+
+                        <span class="item-title">Category:</span><br/>	
+                        <span class="item-descrip">Law</span><br/><br/>
+
+                        <span class="item-title">Technology:</span><br/>
+                        <span class="item-descrip">HTML5, CSS3, JS & jQuery, PHP/MySQL (custom CMS)</span><br/><br/>
+
+                        <span class="item-title">Design:</span><br/>
+                        <span class="item-descrip">Website, Logo</span><br/><br/>
+                </div>
+
+            </div><!-- web item -->
             <div class="webItem">
 
                 <div class="scroll">
@@ -363,32 +417,7 @@
 
 
 
-            <div class="webItem dev">
-
-                <div class="scroll">
-                    <div class="pics">
-<?php drawImages("images/portfolio/500/pk*"); ?>
-
-                    </div>
-                </div>
-                <div class="arrows">
-                    <a class="back browse left"></a>
-                    <a class="forward browse right"></a>
-                </div>
-                <div class="info">
-                    <span class="link">Keene IP Law<img src="images/construction_stripes.png" title="Under Construction" alt="Under Construction"/><br/><br/>
-
-                        <span class="item-title">Category:</span><br/>	
-                        <span class="item-descrip">Law</span><br/><br/>
-
-                        <span class="item-title">Technology:</span><br/>
-                        <span class="item-descrip">HTML5, CSS3, JS & jQuery, PHP/MySQL (custom CMS)</span><br/><br/>
-
-                        <span class="item-title">Design:</span><br/>
-                        <span class="item-descrip">Website, Logo</span><br/><br/>
-                </div>
-
-            </div><!-- web item -->
+            
             <div class="webItem dev">
 
                 <div class="scroll">

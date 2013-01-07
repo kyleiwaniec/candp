@@ -6,7 +6,7 @@
                 <div id="mobile-home-nav">
                     <span class="mb mb-left"><a href="portfolio.php">Portfolio</a></span>
                     <span class="mb mb-center"><a href="about.php">About</a></span>
-                    <span class="mb mb-right"><a href="sandbox.php">Sandbox</a></span>
+                    <span class="mb mb-right"><a href="http://candpgeneration.com/toys/">Sandbox</a></span>
                 </div>
             </div>
         </div>

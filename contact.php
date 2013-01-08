@@ -41,7 +41,7 @@ require_once "header.php";
                     </div><!-- end form -->
                     <div id="thanks">
                          <h1>
-Thank You <span style="text-transform:capitalize;" id="yourname"></span>
+Thank You <span style="text-transform:uppercase;" id="yourname"></span>
 </h1>
     <div>
 <p>Your form was successfully submitted.<br />

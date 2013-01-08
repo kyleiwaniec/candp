@@ -15,6 +15,7 @@ body, html{
                 line-height: 1.4;
                 font-family: georgia;
             }
+		a{border:0; outline:none;}
             .home{
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -189,7 +190,7 @@ body, html{
            -moz-transition: all .5s ease;
              -o-transition: all .5s ease;
                 transition: all .5s ease;
-                
+               
                 padding-top: 20px;
             }
             #inner-content{
@@ -218,7 +219,12 @@ body, html{
                     left: 100%;
                     padding-bottom:20px;
                    }
-                   
+            /* ie garbage */
+                .ie .sub-panel{
+			left:0;
+			display:none;	
+		}    
+       	    /* end ie garbage */	
                    /* slide to make sub-section visible: */
             #inner-content.open {
                
@@ -465,6 +471,17 @@ body, html{
         .corpidItem img{
             max-width:100%;
         }
+        .printItem{
+            padding:10px;
+            border:1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        .printItem img{
+            display: block;
+            margin: 0 auto;
+            max-width:100%;
+        }
+        
         /* contact */
         
         label.error{display:block; padding-left: 7px; color:#ee3162; background-image: none;}

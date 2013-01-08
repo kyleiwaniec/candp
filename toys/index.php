@@ -51,6 +51,8 @@ require_once "header.php";
                         <li><a href="http://candpgeneration.com/arty-farty/pretty2.html" title="Pink Worm">Worm</a></li>
                         <li><a href="http://candpgeneration.com/toys/moore.php" title="FSM">Moore FSM menu</a></li>
                     </ul>
+                </li>
+                <li>
                     Java Samples
                     <ul>
                         <li>

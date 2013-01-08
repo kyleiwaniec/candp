@@ -22,7 +22,34 @@
     <link rel="stylesheet" href="/css/overlay-apple.css"/>
     <link rel="stylesheet" href="/css/scrollable.css"/>
     <link rel="stylesheet" href="/css/styles2.css"/>
-   
+    <style>
+        
+        .littlePeopleImg a{
+            text-indent: -9999em;
+            display:block;
+            position:relative;
+            width:100%;
+            height:100%;
+        }
+        
+        @media screen and (max-width: 599px) {
+            #content{
+                width:95%;
+                height:auto;
+            }
+            #littlePeople{
+                overflow:visible;
+                width:100px;
+                margin: 0 auto;
+            }
+            .littlePeopleImg{
+                display:none;
+            }
+            .jp-controls a{
+                top:auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -37,7 +64,7 @@
 <p>That means the file you're looking for could not be found - Well that's hairy...</p>
 <p>&nbsp;</p>
 <div id="littlePeople">
-<div class="littlePeopleImg"></div> 
+<div class="littlePeopleImg"><a href="http://candpgeneration.com/arty-farty/pretty2.html">>> click me <<</a></div> 
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
   <div class="jp-audio" >
     <div class="jp-type-single">

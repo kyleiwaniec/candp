@@ -72,6 +72,9 @@ body, html{
                 background-image: url(/images/logo.png);
                 background-size: 113px 35px;
             }
+            .ielt9 #logo{
+            	background-image: url(/images/logo-sm.png);
+            }
             #logo a{
                 text-indent: -999px;
                 display: block;

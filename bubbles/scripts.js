@@ -97,8 +97,10 @@ var icons = {
                 boy.path(bodyLaugh).attr({stroke: "#f06", "stroke-width": 0, "stroke-linecap": "round", fill:"90-#f68ca8-#f06", transform:"s0"})
             );
             
-            
-            var giggle = new Audio();
+            (function playAudio(){
+            	return !!document.createElement('audio').canPlayType;
+            	
+            	 var giggle = new Audio();
             //giggle.src= '../sounds/giggle.m4a';
            
                 if (document.createElement('audio').canPlayType('audio/mpeg')) {
@@ -106,6 +108,9 @@ var icons = {
                 } else {
                     giggle.src= '../sounds/giggle.ogg';
                 }
+            	
+            })();
+           
             
             var giggleState = false;
             

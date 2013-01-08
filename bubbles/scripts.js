@@ -108,13 +108,10 @@ var icons = {
                 } else {
                     giggle.src= '../sounds/giggle.ogg';
                 }
-            	
-            })();
-           
+                
+            	var giggleState = false;
             
-            var giggleState = false;
-            
-            $("#boy").on("click", function(e){
+            	$("#boy").on("click", function(e){
             	e.stopPropagation();
                 giggleState = !giggleState;
                 
@@ -128,6 +125,10 @@ var icons = {
                         boy_set_laugh.transform("s0");
                       }
                 });
+            })();
+           
+            
+            
             }
             }()); // end laughingBoy
             

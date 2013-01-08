@@ -219,7 +219,9 @@ body, html{
                     left: 100%;
                     padding-bottom:20px;
                    }
-            	
+            	.ie .main-panel{
+            		left:0;
+            	}
                    /* slide to make sub-section visible: */
             #inner-content.open {
                
@@ -231,9 +233,9 @@ body, html{
             #inner-content.openAndroid{
                 right:100%;
             }
-           /* .ie #inner-content.open{
+           .ie #inner-content.open{
                 right:100%;
-            } */
+            } 
             
 #content .testimonials a{
     color: #111;

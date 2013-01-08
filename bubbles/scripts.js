@@ -349,7 +349,7 @@ var scrollimages = (function(){
                             pics = that.parents(".webItem").find(".pics");
 
 
-                    if(that.parents(".webItem").find(".pics div:last").hasClass("current")){
+                    if(that.parents(".webItem").find(".pics div").last().hasClass("current")){
                             that.addClass("disabled");
                     }else{
                             active.removeClass("current").next().addClass("current");
@@ -366,7 +366,7 @@ var scrollimages = (function(){
                             active = that.parents(".webItem").find(".current"),
                             pics = that.parents(".webItem").find(".pics");
 
-                    if(that.parents(".webItem").find(".pics div:first").hasClass("current")){
+                    if(that.parents(".webItem").find(".pics div").first().hasClass("current")){
                         that.addClass("disabled");
                     }else{
                             active.removeClass("current").prev().addClass("current");

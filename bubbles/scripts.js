@@ -349,14 +349,14 @@ var scrollimages = (function(){
                             pics = that.parents(".webItem").find(".pics");
 
 
-                 //   if(that.parents(".webItem").find(".pics div").last().hasClass("current")){
-                 //           that.addClass("disabled");
-                 //   }else{
+                   if(that.parents(".webItem").find(".pics div").last().hasClass("current")){
+                           that.addClass("disabled");
+                   }else{
                             active.removeClass("current").next().addClass("current");
                             self.ml -= 100;
                             pics.css({"margin-left": self.ml+"%"}); 
                             arrLeft.removeClass("disabled");
-                   //         }; 
+                           }; 
                             
                             $(window).trigger("scroll");
                     });

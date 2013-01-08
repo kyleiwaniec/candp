@@ -98,7 +98,7 @@ var icons = {
             );
             
             (function playAudio(){
-            	return !!document.createElement('audio').canPlayType;
+            	return !document.createElement('audio').canPlayType;
             	
             	 var giggle = new Audio();
             //giggle.src= '../sounds/giggle.m4a';

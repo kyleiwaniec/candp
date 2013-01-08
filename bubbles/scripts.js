@@ -433,7 +433,7 @@ var scrollimages = (function(){
 
 
   
-          $(".hidden").css({"display":"none"}); // so that nojs gets labels
+        //  $(".hidden").css({"display":"none"}); // so that nojs gets labels
                  
           var contact = $("#contact-form");
           contact.validate({

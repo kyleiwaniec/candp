@@ -231,9 +231,9 @@ body, html{
             #inner-content.openAndroid{
                 right:100%;
             }
-            .ie #inner-content.open{
+           /* .ie #inner-content.open{
                 right:100%;
-            }
+            } */
             
 #content .testimonials a{
     color: #111;

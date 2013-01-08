@@ -294,6 +294,9 @@ body, html{
     cursor: pointer;
     border-bottom: 1px solid #ccc;
 }
+.ielt9 .mp-li{
+     background-image: url(/images/arrow-rt-sm.png);
+}
 .mp-li:hover{
     
 }

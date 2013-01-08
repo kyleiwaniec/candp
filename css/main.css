@@ -170,6 +170,9 @@ body, html{
                 font-size: 18px;
                 font-weight: normal;
             }
+            #thanks h1{
+            	text-transform: capitalize;
+            }
             .title a{
                 color:#ccc;
                 text-decoration: none;

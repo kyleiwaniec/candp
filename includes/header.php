@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
-<!--[if lt IE 7 ]> <html class="ie6 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8 ie nojs" lang="en"> <![endif]-->
-<!--[if IE 9 ]>	   <html class="ie9 ie nojs" lang="en"> <![endif]-->	
+<!--[if lt IE 7 ]> <html class="ielt10 ielt9 ielt8 ielt7 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ielt10 ielt9 ielt8 ie7 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ielt10 ielt9 ie8 ie nojs" lang="en"> <![endif]-->
+<!--[if IE 9 ]>	   <html class="ielt10 ie9 ie nojs" lang="en"> <![endif]-->	
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="nojs" > <!--<![endif]-->
 <head>
     

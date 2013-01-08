@@ -1,4 +1,3 @@
-
     #mobile_banner_wrapper{
         display:none;
         z-index: 100;
@@ -365,6 +364,9 @@
                 margin-right:-10px;
                 
                 border-left:1px solid #ddd;*/
+            }
+            .ielt9 .mb_slide_btn a{
+                background-image: url(/images/arrow-rt-sm.png);
             }
             .mb_slide_btn:hover,
             .mb_slide_btn:active{

@@ -511,6 +511,7 @@ body, html{
                 background-color: #F6F6F6;
                 -webkit-appearance: none;
                 margin-top: 5px;
+                font-family: helvetica, sans-serif;
             }
             input[type='submit']{
                 -webkit-appearance: none;

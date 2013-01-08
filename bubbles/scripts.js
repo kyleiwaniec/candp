@@ -432,8 +432,10 @@ var scrollimages = (function(){
     
 
 
-  
-        //  $(".hidden").css({"display":"none"}); // so that nojs gets labels
+ 	  if('placeholder' in document.createElement('input')){
+  			$(".hidden").css({"display":"none"}); 
+  		 };
+   
                  
           var contact = $("#contact-form");
           contact.validate({

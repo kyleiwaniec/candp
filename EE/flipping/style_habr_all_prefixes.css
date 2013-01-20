@@ -1,0 +1,358 @@
+.flip-images img{
+	width: 300px;
+	height: 200px;
+}
+
+.flip-container{
+	width: 300px;
+	height: 200px;
+	position: relative;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	-ms-perspective: 600px;
+	-o-perspective: 600px;
+}
+
+.flip-top{
+	height: 100px;
+	overflow: hidden;
+	width: 300px;
+}
+
+.flip-bottom{
+	position: relative;
+	width: 300px;
+	height: 100px;
+}
+
+/*  Переднее изображение  */
+
+.front-image-top{ /*  Верхняя чать переднего изображения  */
+	display: block;
+	-webkit-backface-visibility: hidden; /*Делаем невидимой обратную сторону картинки*/
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	position: absolute;
+	top: 0px;
+	width: 300px;
+	height: 100px; /*Половиним высоту, чтобы была видна только верхняя часть изображения*/
+	overflow: hidden; /*Скрываем нижнюю часть*/
+	z-index: 900;
+}
+
+.front-image-bottom{ /*  Нижняя чать переднего изображения  */
+	height: 100px;
+	width: 300px;
+	overflow: hidden;
+	vertical-align: bottom;
+	position: absolute;
+	z-index: -2;
+}
+
+.front-image-bottom img{
+	position: absolute;
+	top: -100px; /*Смещаем картинку вверх на половину высоты, чтобы показать нижнюю часть*/
+}
+
+/*  Заднее изображение  */
+
+.back-image-top{
+	height: 100px;
+	position: absolute;
+	top: 0px;
+	vertical-align: top;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.back-image-bottom{
+	display: block;
+	position: absolute;
+	top: 0px;
+	height: 100px;
+	-webkit-transform: rotateY(180deg) rotateZ(180deg);  Переворачиваем картинку вверх ногами и лицевой стороной назад
+	-moz-transform: rotateY(180deg) rotateZ(180deg); 
+	-ms-transform: rotateY(180deg) rotateZ(180deg); 
+	-o-transform: rotateY(180deg) rotateZ(180deg); 
+	overflow: hidden;
+	width: 300px;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	z-index: 800;
+}
+
+.back-image-bottom img{
+	position: absolute;
+	top: -100px;
+}
+
+/*ТЕНИ*/
+
+.shadow-top-front{
+	position: absolute;
+	background: #000;
+	z-index: 1000;
+	width: 300px;
+	height: 100px;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	opacity: 0; /*Тень будет появляеться, поэтому сначала она невидима*/
+}
+
+.shadow-top-back{
+	position: absolute;
+	top: 0px;
+	width: 300px;
+	height: 100px;
+	background: #000;
+	z-index: 1000;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+
+	-webkit-transform: rotateY(180deg); /*Разворачиваем тень лицом назад, чтобы при перевороте её не было видно*/
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+
+	opacity: 1; /*Тень будет исчезать, поэтому сначала она видна*/
+}
+
+.shadow-bottom{
+	width: 300px;
+	height: 100px;
+	position: absolute;
+	z-index: -1;
+	background: #000;
+	opacity: 0;
+}
+
+/*АНИМАЦИИ*/
+
+@-webkit-keyframes flip{
+	0% {
+		-webkit-transform: rotate3d(1,0,0, 0deg);
+	}
+	50% {
+		-webkit-transform: rotate3d(1,0,0, -180deg);
+	}
+	60% {
+		-webkit-transform: rotate3d(1,0,0, -155deg);
+	}
+	70% {
+		-webkit-transform: rotate3d(1,0,0, -140deg);
+	}
+	100% {
+		-webkit-transform: rotate3d(1,0,0, -180deg);
+	}
+}
+
+@-moz-keyframes flip{
+	0% {	-moz-transform: rotate3d(1,0,0, 0deg);}
+	50% {-moz-transform: rotate3d(1,0,0, -180deg);}
+	60% {-moz-transform: rotate3d(1,0,0, -155deg);}
+	70% {-moz-transform: rotate3d(1,0,0, -140deg);}
+	100% {-moz-transform: rotate3d(1,0,0, -180deg);}
+}
+
+@-ms-keyframes flip{
+	0% {	-ms-transform: rotate3d(1,0,0, 0deg);}
+	50% {-ms-transform: rotate3d(1,0,0, -180deg);}
+	60% {-ms-transform: rotate3d(1,0,0, -155deg);}
+	70% {-ms-transform: rotate3d(1,0,0, -140deg);}
+	100% {-ms-transform: rotate3d(1,0,0, -180deg);}
+}
+
+@-o-keyframes flip{
+	0% {	-o-transform: rotate3d(1,0,0, 0deg);}
+	50% {-o-transform: rotate3d(1,0,0, -180deg);}
+	60% {-o-transform: rotate3d(1,0,0, -155deg);}
+	70% {-o-transform: rotate3d(1,0,0, -140deg);}
+	100% {-o-transform: rotate3d(1,0,0, -180deg);}
+}
+
+@-webkit-keyframes shadowTopFront {
+	0% {opacity: 0;}
+	70% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-webkit-keyframes shadowTopBack {
+	0% {	opacity: 0.8;}
+	50% {opacity: 0;}
+	60% {opacity: 0.05;}
+	70% {opacity: 0.1;}
+	100% {opacity: 0;}
+}
+
+@-webkit-keyframes shadowBottom {
+	0% {opacity: 0;}
+	50% {opacity: 0.6;}
+	60% {opacity: 0.4;}
+	70% {opacity: 0.3;}
+	100% {opacity: 0.5;}
+}
+
+@-moz-keyframes shadowTopFront {
+	0% {opacity: 0;}
+	70% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-moz-keyframes shadowTopBack {
+	0% {	opacity: 0.8;}
+	50% {opacity: 0;}
+	60% {opacity: 0.05;}
+	70% {opacity: 0.1;}
+	100% {opacity: 0;}
+}
+
+@-moz-keyframes shadowBottom {
+	0% {opacity: 0;}
+	50% {opacity: 0.6;}
+	60% {opacity: 0.4;}
+	70% {opacity: 0.3;}
+	100% {opacity: 0.5;}
+}
+
+@-ms-keyframes shadowTopFront {
+	0% {opacity: 0;}
+	70% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-ms-keyframes shadowTopBack {
+	0% {	opacity: 0.8;}
+	50% {opacity: 0;}
+	60% {opacity: 0.05;}
+	70% {opacity: 0.1;}
+	100% {opacity: 0;}
+}
+
+@-ms-keyframes shadowBottom {
+	0% {opacity: 0;}
+	50% {opacity: 0.6;}
+	60% {opacity: 0.4;}
+	70% {opacity: 0.3;}
+	100% {opacity: 0.5;}
+}
+
+@-o-keyframes shadowTopFront {
+	0% {opacity: 0;}
+	70% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+@-o-keyframes shadowTopBack {
+	0% {	opacity: 0.8;}
+	50% {opacity: 0;}
+	60% {opacity: 0.05;}
+	70% {opacity: 0.1;}
+	100% {opacity: 0;}
+}
+
+@-o-keyframes shadowBottom {
+	0% {opacity: 0;}
+	50% {opacity: 0.6;}
+	60% {opacity: 0.4;}
+	70% {opacity: 0.3;}
+	100% {opacity: 0.5;}
+}
+
+/*КЛАССЫ ДЛЯ ПРИМЕНЕНИЯ АНИМАЦИЙ*/
+
+.flip {
+	/*background: #ccc;*/
+	width: 300px;
+	height: 100px;
+	-webkit-transform-origin: bottom;
+	-moz-transform-origin: bottom;
+	-ms-transform-origin: bottom;
+	-o-transform-origin: bottom;
+
+	-webkit-animation: flip 1s; /*Задаем имя и длительнось анимации*/
+	-moz-animation: flip 1s;
+	-ms-animation: flip 1s;
+	-o-animation: flip 1s;
+
+	-webkit-animation-iteration-count: 1; /*Количество итераций для заданной анимации*/
+	-moz-animation-iteration-count: 1;
+	-ms-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+
+	-webkit-animation-timing-function: cubic-bezier(0,0,1,0.5); /*Задаем кривую Безье для просчета промежуточных значений анимированных параметров*/
+	-moz-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-ms-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-o-animation-timing-function: cubic-bezier(0,0,1,0.5);
+
+	-webkit-transform: rotate3d(1,0,0, 180deg); /*Задаем конечное значение поворота, иначе по окончанию анимации плоскость вернется в 0 градусов*/
+	-moz-transform: rotate3d(1,0,0, 180deg);
+	-ms-transform: rotate3d(1,0,0, 180deg);
+	-o-transform: rotate3d(1,0,0, 180deg);
+}
+
+.shadow-top-front-animate{
+	-webkit-animation: shadowTopFront 1s;
+	-moz-animation: shadowTopFront 1s;
+	-ms-animation: shadowTopFront 1s;
+	-o-animation: shadowTopFront 1s;
+
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-ms-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+
+	-webkit-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-moz-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-ms-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-o-animation-timing-function: cubic-bezier(0,0,1,0.5);
+
+	opacity: 0;
+}
+
+.shadow-top-back-animate{
+	-webkit-animation: shadowTopBack 1s;
+	-moz-animation: shadowTopBack 1s;
+	-ms-animation: shadowTopBack 1s;
+	-o-animation: shadowTopBack 1s;
+
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-ms-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+
+	-webkit-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-moz-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-ms-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-o-animation-timing-function: cubic-bezier(0,0,1,0.5);
+
+	opacity: 0;
+}
+
+.shadow-bottom-animate{
+	-webkit-animation: shadowBottom 1s;
+	-moz-animation: shadowBottom 1s;
+	-ms-animation: shadowBottom 1s;
+	-o-animation: shadowBottom 1s;
+
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-ms-animation-iteration-count: 1;
+	-o-animation-iteration-count: 1;
+
+	-webkit-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-moz-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-ms-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	-o-animation-timing-function: cubic-bezier(0,0,1,0.5);
+	opacity: 1;
+}
+
+
+
+

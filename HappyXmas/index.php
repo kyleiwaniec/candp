@@ -84,7 +84,7 @@
         p{color:black; margin-top:20px;}
    </style>
    <![endif]-->
-        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>
             jQuery.noConflict();
             (function($) { 
@@ -146,7 +146,7 @@
                 wrapper.css({height:h});
                 field.css({height:h-320});
                 
-                $(".goagain").live("click touchstart", function(){
+                $(".goagain").on("click touchstart", function(){
                     
                     location.reload(); 
                 });
@@ -217,23 +217,23 @@
                 }else{
                 
                     var down = false;
-                    overlay.bind("mousedown", function(e){
+                    overlay.on("mousedown", function(e){
                         down = true;
                         
                     });
         
-                    $(document).bind("mousemove", function(e){
+                    $(document).on("mousemove", function(e){
                         if (down){
                             shooter.css({left:e.pageX-50});
                             overlay.css({left:e.pageX-50});
                         }
-                    }).bind("mouseup", function(e){
+                    }).on("mouseup", function(e){
                         down = false;
                     });
         
                 };
                 
-                overlay.bind("click touchstart", function(e){
+                overlay.on("click touchstart", function(e){
                     // make it shoot
                    
                     var bullet = $("<div class='bullet'/>");
@@ -297,7 +297,7 @@
                             if(wid>=w){
                                 clearInterval(santaInt);
                                 clearInterval(bulletInt); 
-                                overlay.unbind();
+                                overlay.off();
                                 santa.detach();
                               
                                 field.html("<p>CONGRATULATIONS! <br/>YOU STOPPED CHRISTMAS FROM COMING!</p><p class='goagain'>You wanna go again?</p>")

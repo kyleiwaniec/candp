@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+        <div id="date"></div>
+        <script>
+            
+           ( function writeDate(){
+            var date    = new Date(),
+                month   = date.getMonth() + 1, // 0-11,
+                day     = date.getDate(),
+                year    = date.getFullYear(),
+                hour    = date.getHours(),
+                minute  = date.getMinutes();
+            
+                year = year.toString().slice(2,4);
+                month = month < 10 ? "0"+month : month;
+                minute = minute < 10 ? "0"+minute : minute;
+            
+                var dateContainer = document.getElementById("date");
+                dateContainer.innerHTML = day+"/"+month+"/"+year+" "+hour+":"+minute;
+            })();
+            </script>
+    </body>
+</html>

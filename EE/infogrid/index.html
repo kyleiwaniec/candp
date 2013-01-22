@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8' />
+        <script src='http://code.jquery.com/jquery-1.8.2.min.js'></script>
+
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            body, html{
+                background-color:#eee;
+                height:100%;
+            }
+            #page-wrap{
+                width:800px;
+                margin:0 auto;
+            }
+            .inner-container{
+                padding:10px;
+            }
+            .inner-container div{
+                margin-bottom: 10px;
+            }
+            .infoCol{
+                float:left;
+                width:25%;
+                overflow:hidden;
+                height:252px;
+                position:relative;
+                padding-top:40px;
+
+
+        -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+            }
+            .currentCol{
+                width:48%;
+        -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2);    
+           -moz-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            -ms-box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                box-shadow: 0 0 10px rgba(0,0,0,0.2);
+                
+                margin-bottom:-99999px;
+                padding-bottom: 99999px;
+                z-index:1000;
+                border-left:1px solid rgba(0,0,0,0.2);
+                border-right:1px solid rgba(0,0,0,0.2);
+            }
+            
+            .currentCol .image-container iframe{
+                width:365px;
+                height:275px;
+            }
+            
+            .image-container iframe{
+                width:180px;
+                height:150px;
+                
+        -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+
+            }
+            
+            .image-container{
+                width:auto;
+                background-color: #fff;
+                
+            }
+            .image-container img{
+                width:100%;
+                display:block;
+            }
+
+            .head{
+                padding:30px;
+                display:block;
+                text-align: center;
+                text-decoration: none;
+                color:#444;
+                outline:0;
+            }
+            .photos{
+                background-color:lightyellow;
+            }
+            .videos{
+                background-color:lightgreen;
+            }
+            .posts{
+                background-color:lightblue;
+            }
+
+
+
+        </style>
+
+
+    </head>
+
+    <body>
+
+        <div id="page-wrap">
+
+            <div class="infoCol">
+
+                <a class="photos head" href="">Photos</a>
+
+                <div class="image-container">
+                    <div  class="inner-container">
+                        <div class=""><img src="http://us.123rf.com/400wm/400/400/subbotina/subbotina1209/subbotina120900080/15275807-young-couple-lying-on-grass-outdoor.jpg" ></div>
+                        <div class=""><img src="http://www.nme.com/images/gallery/2012BbWithTopHatPointingInCarPhiladelphia1964DanielKramer281112.jpg" ></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="infoCol">
+                <a class="videos head" href="">Videos</a>
+                <div class="image-container">
+                    <div class="inner-container">
+                        <div>
+                            <iframe src="http://www.youtube.com/embed/Zce-QT7MGSE" frameborder="0"></iframe>
+                        </div>
+                        <div>
+                            <iframe src="http://www.youtube.com/embed/ZBAGEeOms-8" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="infoCol">
+
+                <a class="posts head" href="">Posts</a>
+                <div class="image-container">
+                    <div class="inner-container">
+                        <p>I had a fantastic day today!  Hope to see the sun shining tomorrow, too!</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu tincidunt tellus. Nam augue mi, pulvinar eget porta id, rhoncus a nisi. Curabitur dignissim scelerisque lorem, vitae venenatis mi ultricies eget. Ut et magna vitae risus laoreet consequat eu in elit. Phasellus elementum dictum feugiat. Nulla a nisi ac lacus rhoncus vulputate. Suspendisse a sapien in sem gravida feugiat id ut velit. Duis in erat in orci lobortis porttitor. Nulla et mattis felis. Etiam odio mi, venenatis quis ultricies id, rhoncus quis erat. Aenean condimentum lacus eu odio condimentum facilisis. Duis non turpis velit.
+
+                            Vestibulum quis nunc vitae arcu fermentum vestibulum. Maecenas aliquam vehicula commodo. Sed nec diam dui, et scelerisque justo. Fusce sed nibh quis mauris bibendum iaculis. Proin ac turpis justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum dignissim elit a mi malesuada ullamcorper. Sed nisi quam, ornare sit amet adipiscing id, ultrices sed ante. Sed euismod scelerisque mattis. Aliquam mattis dui sed turpis euismod sit amet gravida odio dapibus. Praesent ac metus sed nunc interdum vestibulum et non erat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script>
+            $(".head").on("click", function(e){
+                e.preventDefault();
+                var that = $(this);
+                if(supportsTransitions()){
+                   that.parent(".infoCol").addClass("currentCol").siblings().removeClass("currentCol");
+                   return;
+                }else{
+                    
+                   // scale the videos 
+                   that.parent(".infoCol").find("iframe").stop(true, true).animate({
+                        "width":"380px",
+                        "height":"275px"
+                   });
+                   that.parent(".infoCol").siblings().find("iframe").stop(true, true).animate({
+                        "width":"180px",
+                        "height":"150px"
+                   });
+                   
+                   // animate the columns
+                   that.parent(".infoCol").stop(true, true).animate({
+                        "width":"50%",
+                        "box-shadow": "0 0 10px rgba(0,0,0,0.2)",
+                        "margin-bottom":"-99999px",
+                        "padding-bottom": "99999px",
+                        "z-index":"1000",
+                        "border-left":"1px solid #ccc",
+                        "border-right":"1px solid #ccc"
+                    }).siblings().stop(true, true).animate({
+                        "width":"25%",
+                        "box-shadow": "0 0 0 rgba(0,0,0,0)",
+                        "margin-bottom":"0",
+                        "padding-bottom": "0",
+                        "z-index":"1",
+                        "border":0
+                    });
+                    
+                    
+                    
+                }
+            });
+            
+            
+            $(".posts").trigger("click");
+            
+            
+            
+            function supportsTransitions() {
+                var b = document.body || document.documentElement;
+                var s = b.style;
+                var p = 'transition';
+                if(typeof s[p] == 'string') {return true; }
+
+                // Tests for vendor specific prop
+                var v = ['Moz', 'Webkit', 'Khtml', 'O', 'ms'],
+                p = p.charAt(0).toUpperCase() + p.substr(1);
+                for(var i=0; i<v.length; i++) {
+                if(typeof s[v[i] + p] == 'string') { return true; }
+                }
+                return false;
+            }
+            
+            
+            
+        </script>
+    </body>
+
+</html>

@@ -78,37 +78,7 @@
 			</div>
 		</section>
 	</article>
-    
-    
-    <script type="text/javascript">
-          $(function () {
-              $(".ArrowExpand").bind({
 
-              mouseenter : 
-                function () {
-                    console.log($(this))
-//                    $(this).parent(".collapsePanelHeader").next(".Content").show("medium");
-//                    $(this).attr("class", "ArrowClose");
-                    },
-              mouseleave :   
-                function () {
-                    $(this).parent().next("div.Content").slideUp("fast");
-                    $(this).attr("class", "ArrowExpand");
-                    }
-               });
-            });
-            
-            $(".ContainerPanel").mouseenter(function(){
-                $(this).find(".Content").show("medium");
-                  $(this).find(".ArrowExpand").attr("class", "ArrowClose");
-            }).mouseleave(function(){
-                $(this).find(".Content").slideUp("fast");
-                $(this).find(".ArrowClose").attr("class", "ArrowExpand");
-            });
-            
-            
-    </script>
-    
     
 </body>
 </html>

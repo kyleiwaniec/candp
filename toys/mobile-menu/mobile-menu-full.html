@@ -9,18 +9,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1" />
 
+        <link rel="stylesheet" href="css/main.css"/>
 
-        <link rel="stylesheet" href="mobile-menu-slide.css" />
+        <link rel="stylesheet" href="css/mobile-menu-slide.css" />
         
-        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
         
             
-        <script src="mobile-menu-static.js"></script>
-    
+        <script src="js/mobile-menu-static.js"></script>
+        
         
     </head>
     <body>
-
+        <div class="wrapper">
+        <div id="desktopMenu"></div>
         <div id="menu_wrapper">
             <div id="menu_bar_wrapper">
 
@@ -69,7 +71,7 @@
 
                     <figure class="back">
                         
-                        <ul  class="subnav" data-subnav="Andromeda">
+                        <ul class="subnav" data-subnav="Andromeda">
                             <li><a href="http://en.wikipedia.org/wiki/Alpha_Andromedae">α And</a></li>
                             <li><a href="http://en.wikipedia.org/wiki/Beta_Andromedae">β And</a></li>
                             <li><a href="http://en.wikipedia.org/wiki/Gamma_Andromedae">γ1 And</a></li>
@@ -133,9 +135,105 @@
         <!-- end toprail -->
         <div role="main" id="main">
             <h2>Content</h2>
-            
-            
-             </div>
+            <div id="ie-test">
 
+                <ul id="boxLinks" class="group">
+                	<li><a href="#box1">Tab 19</a></li>
+                	<li><a href="#box2">Tab 20</a></li>
+                	<li><a href="#box3">Tab 21</a></li>
+                </ul>
+                
+                <div id="box">
+                	<div id="box1" class="box">
+                	   <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                        <li>Aliquam tincidunt mauris eu risus.</li>
+                        <li>Vestibulum auctor dapibus neque.</li>
+                       </ul>
+                       <!--[if IE]><b>.</b><![endif]-->
+                     </div>
+                	<div id="box2" class="box">Another box! <!--[if IE]><b>.</b><![endif]--></div>
+                	<div id="box3" class="box">Woot! <!--[if IE]><b>.</b><![endif]--></div>
+                </div>
+            
+            </div>
+            </div>
+             </div>
+        <script>
+            var winWidth = $(window).width();
+            
+            if(winWidth > 640){
+                
+                var desktopMenu = {
+                    
+                    links : {
+                                "col1" : [],
+                                "col2" : [],
+                                "back" : {}
+                                },
+                    
+                    getLinks : function(){
+                                
+                                desktopMenu.links.col1 = $(".col_1").find("a");
+                                desktopMenu.links.col2 = $(".col_2").find("a");
+
+                                $(".back ul").each(function(i){
+                                    
+                                    i = $(this).data("subnav");
+                                    
+                                    desktopMenu.links.back[i] = $(this).find("a");
+                                });
+                                return desktopMenu.links;
+                    },
+                    renderLinks : function(){
+                           // console.log(desktopMenu.getLinks().back.Aries[0]);
+                            
+                            var dm = $("#desktopMenu");
+                            var navigation = "<ul>";
+                            
+                            var outer = desktopMenu.getLinks().col1.length;
+                            
+                            for(var i = 0; i < outer; i++) {
+                               // console.log(desktopMenu.getLinks().col1[i]);
+                                
+                                navigation += "<li>"+desktopMenu.getLinks().col1[i].outerHTML;
+                                
+                                
+                                
+                                var sublink = desktopMenu.getLinks().col1[i].innerHTML;
+                                var sublinks = desktopMenu.getLinks().back[sublink];
+                                
+                                
+                                if(sublinks != undefined){
+                                    var inner = sublinks.length;
+                                    
+                                    navigation += "<ul>";
+                                    
+                                    for(var j = 0; j < inner; j++){
+                                      //console.log(sublinks[j].outerHTML); 
+                                      navigation += "<li>"+sublinks[j].outerHTML+"</li>";
+                                    }
+                                    navigation += "</ul>";
+                                }
+                                
+                                navigation += "</li>"
+                                
+                                
+                                
+                            }
+                            navigation += "</ul>";
+                            
+                            dm.html(navigation);
+                    }
+                    
+                };
+               
+                  desktopMenu.renderLinks();
+
+}
+            
+            
+            
+        </script>
     </body>
 </html>

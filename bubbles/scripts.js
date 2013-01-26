@@ -286,16 +286,11 @@ var icons = {
 
 $("img.lazy").lazyload({
     failure_limit : 1000,
-    //effect : "fadeIn",
+    effect : "fadeIn",
     threshold : 200
 });
 
-//$(function() {          
-//     
-// });
-// $(window).on("load", function() { 
-//     var timeout = setTimeout(function() { $("img.lazy").trigger("autoload") }, 2000);
-// }); 
+
 
 var scrollimages = (function(){
         var z = 101, ml = 0,
@@ -376,12 +371,7 @@ var scrollimages = (function(){
                             };
                             $(window).trigger("scroll");
                     });
-                
          });   
-    
-                    
-     
-         
 })();
      
  //   $("#page-title").text($("title").text());  
@@ -434,7 +424,7 @@ var scrollimages = (function(){
 
  	  if('placeholder' in document.createElement('input')){
   			$(".hidden").css({"display":"none"}); 
-  		 };
+  		 }
    
                  
           var contact = $("#contact-form");
@@ -473,6 +463,5 @@ var scrollimages = (function(){
                         }else{
                             label.insertAfter(element);
                         }
-                                
                     }
-        });
+          });

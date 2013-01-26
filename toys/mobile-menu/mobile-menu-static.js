@@ -55,6 +55,8 @@ $(function(){
                         extra_btn =     $("#extra_button");
 
                     // start the Machine (Moore: states are transitions, NOT end result)
+                    
+                    
                     var state = 0,
                         statesArray = [                                                                  // btn0:menu                           btn1:search                                 btn2:section item       btn3:extra
                                         [1,2,null,9],       // currentState 0  ( everything is closed       btn0 -> open nav                    btn1 -> open search                         btn2 -> null            btn3 -> open extra )
@@ -76,7 +78,7 @@ $(function(){
                                      ];
                         // nextState = statesArray[currState][button];
                         // menu button = 0, search button = 1, subsection button = 2, extra button = 3
-
+                        console.log(state);
                     $('.btn', mobile_menu).on('click', function(){
                         doSlide($(this).data('btn'));
                         return false;

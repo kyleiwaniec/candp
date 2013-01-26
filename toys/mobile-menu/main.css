@@ -1,0 +1,80 @@
+@media only screen and (min-width: 641px){
+ul, li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+ul{
+    clear:both;
+    display:block;
+       
+}
+.front li{
+    float:left;
+}
+.front li + li{
+    float:left;
+    margin-left:2px;
+}
+.front a{
+    display:inline-block;
+    padding:10px;
+    
+    text-decoration:none;
+    color:whitesmoke;
+}
+.front .col_1 a{
+    background-color: #f06;
+}
+.front .col_2 a{
+    background-color: #9ad41f;
+}
+.back{
+    display:none;
+}
+.back ul{
+    position:absolute;
+    background-color: orangered;
+}
+#nav_inner.open .back{
+    display:block;
+}
+
+
+}
+
+/*        #page-wrap { width: 960px; margin: 100px auto; }*/
+        .group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+        
+        .tabs { list-style: none; }
+        .tabs li { display: inline; }
+        .tabs li a { color: black; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: white; text-decoration: none; }
+        .tabs li a:hover { background: #ccc; }
+        
+        
+        /* Generic styles & example one */
+        
+        .tabbed-area { margin: 0 0 120px 0; }
+        .box-wrap { position: relative; min-height: 250px; }
+        .tabbed-area div div { background: white; padding: 20px; min-height: 250px; position: absolute; top: -1px; left: 0; width: 100%; }
+        .tabbed-area div div, .tabs li a { border: 1px solid #ccc; }
+        #box-one:target, #box-two:target, #box-three:target { z-index: 1; }
+        
+
+        
+        
+        /* Stuff for example seven - including conditionals below */
+        
+        #ie-test { position: relative; width: 100%; }
+        #boxLinks { list-style: none; overflow: hidden; }
+        #boxLinks li {  display: inline; }
+        #boxLinks li a { padding: 5px 10px; color: black; text-decoration: none; border: 1px solid #ccc; float: left; display: block; margin-left: -1px; position: relative; left: 1px; }
+        #boxLinks li a:hover { color: #fff; background: #000; }
+        #box { height: 250px; border: 1px solid #ccc; overflow: hidden; padding: 0px 30px 0px 30px; position: relative; top: -1px; }
+        .box { display: none; height: 250px; overflow: auto; display: block; position: relative; overflow-x: hidden; }
+        #box1:target, #box2:target, #box3:target { display: block; }
+
+    
+        .lt-ie9 .box { display: block; }
+        .lt-ie9 #box { overflow: hidden;position: relative; }
+        .lt-ie9 b { position: absolute; top: 0px; right: 0px; width:1px; height: 251px; overflow: hidden; text-indent: -9999px; }

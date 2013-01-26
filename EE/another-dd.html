@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Test Menu</title>
+<style>
+	nav a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color:#333;
+                font-family: geneva, sans-serif;
+                font-size:14px;
+                background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAUCAYAAABWMrcvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDI3NkI3QTlENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NDI3NkI3QUFENkJGMTFFMUJGRTg5MzBDRDYwNkY2QUEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo0Mjc2QjdBN0Q2QkYxMUUxQkZFODkzMENENjA2RjZBQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo0Mjc2QjdBOEQ2QkYxMUUxQkZFODkzMENENjA2RjZBQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pj1JbwwAAACNSURBVHjalNPfCkAwFMfxM8/ChRvcuVA8g2cmuZIX4E00v8lqtD/nrL4Z9alZG2mtCVXvk5WdaAl0ERv+EQv6UBKGUBTGUBCmkBdykBm1i9QjYSk9lJ1kxBuH+8JBMxo/XyL/dKEN9ZKNOFEp2fIVFUhx0YIGyTEyS2okB3ZHueRqTKiTXsJWct1vAQYAvmjcHUntj7AAAAAASUVORK5CYII=') right center no-repeat;
+
+            }
+            nav ul{
+                margin:0;
+                padding:0;
+            }
+            .menu li{
+                position:relative;
+                width:220px;
+                display:block;
+                background-color:#eee;
+                border-top:1px solid white;
+                border-bottom:1px solid white;
+                padding:0;
+                margin:0;
+                list-style: none;
+                
+                -webkit-transition: all 0.3s ease;
+                -moz-transition: all 0.3s ease;
+                -o-transition: all 0.3s ease;
+                -ms-transition: all 0.3s ease;
+                transition: all 0.3s ease;
+            }
+            .menu ul{
+                display:none;
+                width:0;
+                position:absolute;
+                left:220px;
+                top:-1px; /* accommodate the border */
+               
+            }
+            
+            .menu li a{
+                display:block;
+                padding:7px 7px 2px;
+                margin:3px;
+                -webkit-transition: all 0.5s ease;
+                -moz-transition: all 0.5s ease;
+                -o-transition: all 0.5s ease;
+                -ms-transition: all 0.5s ease;
+                transition: all 0.5s ease;
+            }
+            .menu li:hover{
+                background-color: #ccc;
+            }
+            .menu li:hover > a{
+                background-color: yellowgreen;
+                color:darkslategray;
+            }
+            
+            .menu li:hover > ul{
+                display:block;
+            }
+</style>
+</head>
+
+<body>
+
+<div id="top_menu">
+	<nav>
+		<ul class="menu">
+			<li><a href="#">PRODUCTS</a>
+				<ul>
+					<li><a href="#">AMPLIFIERS</a>
+						<ul>
+							<li><a href="#">MicroPro 200</a>
+								<ul>
+									<li><a href="#">Micro Proo 200 8"</a></li>
+									<li><a href="#">Micro Pro 200 10"</a></li>
+									<li><a href="#">Micro Pro 200 12"</a></li>
+									<li><a href="#">Micro Pro 200 Head</a></li>
+								</ul>
+							</li>
+							<li><a href="#">Aviator</a></li>
+						</ul>
+					</li>
+					<li><a href="#">CABINETS</a></li>
+					<li><a href="#">ACCESSORIES</a></li>
+				</ul>
+			</li>
+			<li><a href="#">EXPERIENCE</a></li>
+			<li><a href="#">PATRICK</a></li>
+			<li><a href="#">CONTACT</a></li>
+		</ul>
+	</nav>
+</div>
+</body>
+</html>

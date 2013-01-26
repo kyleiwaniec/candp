@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            * 
+{ box-sizing: border-box }
+
+html
+{ background: #eee }
+
+article {
+  position: relative;
+  margin: 50px auto;
+  padding: 50px;
+  width: 450px;
+  font: 14px/22px 'PT Serif',Georgia,serif;
+  color: #222;
+  text-align: justify;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+
+article h1 {
+  margin: 10px 0;
+  font: italic 700 22px/22px 'PT Serif',Georgia,serif;
+  color: #333;
+}
+
+article code 
+{ color: #28e }
+
+article:before,
+article:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  box-shadow: inherit;
+  transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+}
+
+article:after 
+{ transform: rotate(-1deg);
+-webkit-transform: rotate(-1deg);}
+        </style>
+    </head>
+    <body>
+        <article>
+  
+  <h1>Small pile of sheet</h1>
+  
+  <p>I like keeping things simple and stick to the basics. This small pile of notes is only one element. No containers or empty divs, just the regular article with styled <code>::before</code> and <code>::after</code> pseudo elements.</p>
+  
+  <p>Visually I think it looks best if you keep the width/height ratio somewhat like a normal sheet. This could probably be combined with some CSS background patterns to apply lines, but it works well in plain white as well. </p>
+  
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum sem mollis dui pretium quis porttitor nibh tempus. Vestibulum vitae odio at lectus consequat vehicula. Aliquam malesuada sollicitudin velit sit amet accumsan. Integer nec quam ipsum, in blandit augue. Phasellus turpis massa, aliquet a vehicula id, imperdiet sit amet dolor. Maecenas eu facilisis nisl. Aliquam nec libero augue, ac tempor ipsum.</p>
+  
+</article>
+    </body>
+</html>

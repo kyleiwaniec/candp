@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <style>
+            table{
+                width:80%;
+            }
+
+            .data-tr{
+                background-color:lightblue;
+                padding:20px;
+
+            }
+            ul, ul li{
+                list-style: none;
+                margin:0;
+                padding:0;
+
+            }
+            .list{
+                display:none;
+                position:absolute;
+                right:0;
+                background-color:orangered;
+                padding:10px;
+                min-width:100px;
+            }
+            .size{
+                position:relative;
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr class="actions-tr">
+
+                <td>
+                    <div class="size">
+                        <a href="#" class="actions">Actions</a>
+                        <ul class="list">
+                            <li>Link1</li>
+                            <li>Link2</li>                                    
+                        </ul>
+                    </div>
+
+                </td>
+
+            </tr>
+            <tr class="data-tr">
+                <td>
+                    data
+                </td>
+            </tr>
+        </table>
+        <script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+        <script>
+            $(".actions").click(function(){
+                $(this).parents(".size").find(".list").toggle();
+            });
+            
+        </script>
+    </body>
+</html>

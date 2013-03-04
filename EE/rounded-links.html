@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Untitled</title>
+  <style type="text/css">body {background-color: #B8B8B8;}
+  #divBox {width: 1000px; height: 400px; background-color: #FFFFFF; border-radius: 20px; margin-left: auto; margin-right: auto;}
+
+  #menu ul {list-style-type: none; margin: 0; padding: 0;}
+  #menu li {display: inline; position: relative;}
+  #menu #topMenu .ahref {display: inline-block; background-color: #5ECC3F; width: 150px; height: 35px; border-radius: 0px 0px 15px 15px;}
+  #menu #bottomMenu .ahref {display: inline-block; background-color: #5ECC3F; width: 150px; height: 35px; border-radius: 15px 15px 0px 0px;}
+  #topMenu {width: 1000px; text-align: center;}
+  #bottomMenu {margin-top: 10px; width: 1000px; text-align: center;}
+  #menu li div {position: absolute; left: -999em;}
+  #menu li:hover div {position: absolute; left: -3px; top: 35px; height: 200px; width: 200px; background-color: #301CCC; border-radius: 5px;}
+  </style>
+</head>
+
+<body>
+     <div id="divBox">
+       <div id="menu">
+         <div id="topMenu">
+            <ul>
+               <li><a class="ahref" href="default.php">Home</a></li>
+               <li><a class="ahref" href="news.php">News</a></li>
+               <li><a class="ahref" href="contact.php">Contact</a></li>
+            </ul>
+         </div>
+         <div id="bottomMenu">
+            <ul>
+               <li><a class="ahref" href="#">Home</a><div>hello<a href="#">test</a></div></li>
+               <li><a class="ahref" href="#">News</a><div></div></li>
+               <li><a class="ahref" href="#">Contact</a><div></div></li>
+               <li><a class="ahref" href="#">About</a><div></div></li>
+               <li><a class="ahref" href="#">About</a><div></div></li>
+            </ul>
+         </div>
+       </div>
+     </div>
+</body>
+
+</html>

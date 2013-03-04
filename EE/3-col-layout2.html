@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8" />
+
+        <title>CSS TEMPLATE</title> 
+        <style>
+            body, html { 
+                padding:0px;
+                margin:0px;
+                height: 100%;
+            }
+            .wrapper{
+                position:relative;
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -150px;
+                max-width: 960px;
+            }
+            .header{
+                height:150px;
+                background-color: lightcoral;
+            }
+            #content {
+                margin: 0px 200px 0px 200px;
+                background-color: #ffffff;    
+            }
+            .container{
+                padding: 20px;
+            }
+            #left {
+                position: absolute;
+                left: 0px;
+                width: 200px;
+                background-color: orange;
+            }
+            #right {
+                position: absolute;
+                right: 0px;        
+                width: 200px;
+                background-color: orange;
+            }
+            .footer, .push {
+                height: 150px;
+                max-width: 960px;
+                margin: 0 auto;
+                clear:both;
+            }
+            .footer{
+                background-color:lightslategray;
+                text-align: center;
+            }
+        </style>
+    </head> 
+
+    <body>
+        <div class="wrapper">
+        <div class="header">header stuff</div>
+
+        
+        <div id="left">
+            <div class="container">
+            <h2>MENU</h2> 
+            <p>content</p>
+            </div>
+        </div>
+
+        <div id="right"> 
+            <div class="container">
+            <h2>MENU</h2> 
+            <p>content</p>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="container">
+                    <h2>Section 1</h2>
+                    <p>Hello</p>
+                    <h2>Section 2</h2>
+                    <p>There</p>
+                   
+           </div>
+
+        </div>
+        <div class="push"><!-- footer is always on the bottom --></div>
+        </div>
+        <div class="footer">footer is always on the bottom</div>
+    </body>
+</html>

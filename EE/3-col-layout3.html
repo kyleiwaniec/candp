@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8" />
+        <title>CSS TEMPLATE</title> 
+        <style>
+            /* layout */
+            body, html { 
+                padding:0px;
+                margin:0px;
+                height: 100%;
+            }
+            .wrapper{
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -150px;
+                max-width: 960px;
+            }
+            .header{
+                height:150px;
+                background-color: lightcoral;
+            }
+            .content {
+                margin: 0px;
+                padding:0 200px;
+                background-color: #ffffff;    
+            }
+            .left {
+                float:left;
+                width: 200px;
+                background-color: orange;
+            }
+            .right {
+                float:right;        
+                width: 200px;
+                background-color: orange;
+            }
+            .footer, .push {
+                height: 150px;
+                max-width: 960px;
+                margin: 0 auto;
+                clear:both;
+            }
+            .footer{
+                background-color:lightslategray;
+                text-align: center;
+            }
+            /* styles */
+            .container{
+                padding: 20px;
+            }
+            @media all and (max-width: 640px) {
+                .right{
+                    float:left;
+                    clear: left;
+                }
+            }
+            @media all and (max-width: 480px) {
+                .right, .left, .content{
+                    float:none;
+                    width:auto;
+                }
+                .hide-on-mobile{
+                    display:none;
+                }
+                .content{
+                    padding: 0;
+                }
+            }
+            
+        </style>
+    </head> 
+
+    <body>
+        <div class="wrapper">
+            <div class="header">header stuff</div>
+            <div class="left">
+                <div class="container">
+                    <h2>Left</h2> 
+                    <p class="hide-on-mobile">content</p>
+                </div>
+            </div>
+            <div class="right"> 
+                <div class="container">
+                    <h2>Right</h2> 
+                    <p class="hide-on-mobile">content</p>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container">
+                    <h2>Section 1</h2>
+
+                </div>
+            </div>
+            <div class="push"><!-- footer is always on the bottom --></div>
+        </div>
+        <div class="footer">footer is always on the bottom</div>
+    </body>
+</html>

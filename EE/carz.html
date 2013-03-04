@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            html, body {
+                height: 100%;
+                margin:0;
+                padding:0;
+                background-color:black;
+            }
+            
+            .wrapper{
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -150px;
+                max-width: 960px;
+            }
+            .footer, .push {
+                height: 150px;
+                max-width: 960px;
+                margin: 0 auto;
+                clear:both;
+            }
+            .footer{
+                background-color:lightslategray;
+                text-align: center;
+            }
+            .main{
+                overflow:hidden;
+            }
+            .left-col, .center-col, .right-col{
+                float:left;
+            }
+            .left-col, .right-col{
+                width:25%;
+            }
+            .center-col{
+                width:50%;
+            }
+            div{
+                background-color:white;
+            }
+            .container{
+                padding:5px;
+                background-color:#eee;
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header"><div class="container">header</div></div>
+            <div class="ads"><div class="container">ads</div></div>
+            <div class="main">
+                <div class="left-col">
+                    <div class="container">left</div>
+                    
+                </div>
+                <div class="center-col">
+                    <div class="container">
+                        <div class="module-1">
+                            <h2>section1</h2>
+                            <p>content</p>
+                        </div>
+                        <div class="module-2">
+                            <h2>section2</h2>
+                            <p>content</p>
+                        </div>
+                        <div class="module-3">
+                            <h2>section3</h2>
+                            <p>content</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-col">
+                    <div class="container">
+                    right</div>
+                    </div>
+                <div class="push"></div>
+            </div>
+
+        </div>
+        <div class="footer"><div class="container">footer</div></div>
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script></script>
+    </body>
+</html>

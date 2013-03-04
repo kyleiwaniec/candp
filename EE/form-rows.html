@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head><title>Table Sample</title>
+
+
+        <style>
+            body { font: 0.8em Arial; }
+            .sample-table { width: 500px; }
+            .sample-table td { text-align: center; padding: 4px; border-bottom: 1px solid #aaa; }
+            .sample-table th { padding: 8px; border-bottom: 2px solid #000; }
+            .sample-table tr.template { display:none; }
+        </style>
+
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+		
+                var $form = $("#xSampleForm"),
+                    count = 10;
+        
+        
+                var $link = $form.find(".x-addrow").click(function(){
+                    count--;
+                    if (count == 0) {
+                        return ;
+                    } else {
+                        var last_id = $form.find("table:first tr:last").attr("id"),
+                        new_id = parseInt(last_id > 0 ? last_id : 0) + 1,
+                        html = '<tr>' +
+                            '<td><select name="select_condition_"><option value="New">New</option><option value="Used">Used</option></select></td>' +
+                            '<td><select name="select_quantity_"><cfloop from="1" to="100" index="idx"><option value="#idx#">#idx#</option></cfloop></select></td>' +
+                            '<td><input name="textbox_"></td>' +
+                            '<td><a class="x-delete" href="javascript:;">Delete</a></td>' +
+                            '</tr>';
+                        $row = $(html).appendTo($form.find("table:first"));
+			
+                        $row.attr("id", new_id).find("select, input").each(function(){
+                            this.name = this.name + new_id;
+                        });
+                    }      
+                });
+            
+       
+	
+	
+                $form.find(".x-delete").on("click", function(){
+                    $(this).parents("tr:first").remove();
+                });
+	
+                if ($form.find("tr").length == 1) {
+                    $link.trigger("click");
+                }
+            });
+        </script>
+    </head>
+    <body>
+
+        <form id="xSampleForm" action="#cgi.script_name#" method="post">
+            <input type="hidden" name="frmsubmit" value="Y">
+            <table class="sample-table">
+                <tr>
+                    <th>C</th>
+                    <th>Select Two</th>
+                    <th>Textbox</th>
+                    <th></th>
+                </tr>
+                <cfloop list="#form.fieldnames#" index="field">
+                    <cfif findNoCase("textbox_", field)>
+                          <cfset id = replaceNoCase(field, "textbox_", "")>
+                           <tr id="#id#">
+                                <td><select name="select_one_#id#"></select></td>
+                                <td><select name="select_two_#id#"></select></td>
+                                <td><input name="textbox_#id#" value="#evaluate("form.textbox_#id#")#"></td>
+                                <td><a class="x-delete" href="javascript:;">Delete</a></td>
+                            </tr>
+                    </cfif>
+                </cfloop>
+            </table>
+            <a class="x-addrow" href="javascript:;">Add New</a>
+            <input type="submit" value="Save">
+        </form>
+
+    </body>
+</html>

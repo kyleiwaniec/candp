@@ -19,6 +19,7 @@ require_once "header.php";
                                     Please fill in this form and we will get back to you within 24hours.
                                 </p>
                             </div>
+                            <div class="form-box">
                             <span class="hidden"><label for="FirstName" >First Name:</label><br /></span>
                             <input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="required"/>
                             <br />
@@ -34,8 +35,8 @@ require_once "header.php";
 
                             <br />
                             <span class="hidden"><label for="notes" >Tell us about your project:</label><br /> </span>
-                            <textarea name="notes" placeholder="Tell us about your project" class="notesArea required" id="notes"></textarea><br /> <br />
-
+                            <textarea name="notes" placeholder="Tell us about your project" class="notesArea required" id="notes"></textarea><br />
+                            </div>
                             <input type="submit" value="send" class="mb mb-single" />
                         </form>
                     </div><!-- end form -->

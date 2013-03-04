@@ -1,0 +1,109 @@
+<!doctype HTML>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+
+</style>
+</head>
+<body>
+
+<div id="ballLinks">
+        <ul>
+        <li><a href="ReEvaluate.asp"><img src="balls/one.png" name="ReEvaluate" width="90" height="58" border="0" id="ReEvaluate" rel="tooltip" title="WHERE TO START?"/></a></li>
+        <li><a href="ReAdjust.asp"><img src="balls/two.png" name="ReAdjust" width="90" height="58" border="0" id="ReAdjust" rel="tooltip" title="WHAT TO DO NEXT?"/></a></li>
+        <li><a href="ReIgnite.asp"><img src="balls/three.png" name="ReIgnite" width="90" height="58" border="0" id="ReIgnite" rel="tooltip" title="GET DOWN TO BUSINESS -ONLINE-"/></a></li>
+        <li><a href="ReFund.asp"><img src="balls/four.png" name="ReFund" width="90" height="58" border="0" id="ReFund" rel="tooltip" title="GET FUNDED"/></a></li>
+        <li><a href="ReEngage.asp"><img src="balls/blue.png" name="ReEngage" width="90" height="58" border="0" id="ReEngage" rel="tooltip" title="WE ARE HERE TO HELP" /></a></li>
+        <li><a href="ReSources.asp"><img src="balls/red.png" name="ReSources" width="90" height="58" border="0" id="ReSources" rel="tooltip" title="TOOLS AND TAKEAWAYS" /></a></li>      
+        </ul>
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script>
+
+
+
+
+var imgName;
+$("#ballLinks ul li a img").on({
+	mouseenter : function() {
+		imgName = $(this).attr("src").split(".");
+		console.log(imgName[0]);
+		$(this).attr("src", imgName[0] + "Roll.png");
+	},
+	mouseleave : function() {
+		console.log(imgName);
+		$(this).attr("src", imgName[0] + ".png");
+	}
+});
+
+
+	
+//var timeout;	
+// timeout = setTimeout(function(){
+//},1500);
+	
+$(function() {	
+
+	var imgs = $("#ballLinks ul li a img");
+	
+	var numOfimgs = imgs.length;
+	var i;
+	
+
+
+var d, e;
+for(i = 0, l = numOfimgs; i < l; i++) {
+    
+    d = new Date().getMilliseconds();
+    
+    //console.log(d);
+    
+    var delay = true;;
+    
+    while(delay){
+        e = new Date().getMilliseconds();
+        console.log("e: "+e);
+        console.log("d+10: "+(parseInt(d)+10));
+        if(d+100 < e){
+            //console.log(d+10);
+            
+            
+            delay = false;
+        }
+    }
+    console.log(delay);
+    if(delay == false) {callback(i)};
+     
+}
+
+	
+
+function callback(i) {  
+   //return function() {  
+  
+    //console.log(i);
+			var imgName = $(imgs[i]).attr("src").split(".");
+			
+			$(imgs[i]).attr("src", imgName[0] + "Roll.png");
+			
+			$(imgs[i-1]).attr("src", imgName[0] + ".png");
+			console.log(imgName);
+				
+    //  return false;
+  // };  
+} 
+
+
+});
+
+
+//inter = setInterval(function(){
+//				//for(var i=0; i < sub_branch; i++) {
+//                                if(inc > 10000){
+//                                    clearInterval(inter);
+//                                }else{}
+//                                }, 100);
+</script>
+</body>
+</html>

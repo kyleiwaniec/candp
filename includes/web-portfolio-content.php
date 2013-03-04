@@ -431,7 +431,7 @@
                     <a class="forward browse right"></a>
                 </div>
                 <div class="info">
-                    <span class="link">UnitedLightInc.org<img src="images/construction_stripes.png" title="Under Construction" alt="Under Construction"/><br/><br/>
+                    <span class="link">UnitedLightInc.org<br/><br/>
 
                         <span class="item-title">Category:</span><br/>	
                         <span class="item-descrip">Non-Profit</span><br/><br/>

@@ -1,0 +1,304 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<title>Netscape 4, CSS layout, 3 columns with Header and Footer</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<script type="text/javascript" src="ResizeReloadNN4.js"></script>
+
+<style type="text/css" media="screen">
+
+
+html, body
+	{
+	margin				: 0px;
+	padding				: 0px;
+	background-color	: #ffffff;
+	color				: #000000;
+	}
+
+div
+	{
+	border				: none;
+	margin				: 0px;
+	padding				: 0px;
+	}
+
+.header
+	{
+	margin				: 0px;
+	padding				: 0px;
+	color				: #000000;
+	background-color	: #666666;
+	}
+
+/* -21px is for who? Netscape 4, I would guess - er yes */
+.columns
+	{
+	margin				: 1px;
+	margin-top			: -21px;
+	padding				: 10px;
+	color				: #ffffff;
+	background-color	: #000000;
+	}
+/* NB - OmniWeb displays the 1px space as looking somewhat thicker, but set it to 0px and there is no space */
+/* IE5 gets the spacing all wrong: -18px puts it right. Then use the tantek-family hack to make everything right again */
+/*/*/
+.columns
+	{
+	margin-top			: -18px;
+	font-family			: helvetica;
+	font-family			: inherit;
+	margin-top			: 1px;
+	}
+/* */
+/* empty required to get IE5 vback on track */
+#empty{}
+
+.leftcolumn
+	{
+	float				: left;
+	left				: 0px;
+	width				: 200px;
+	margin				: 0px;
+	margin-top			: -11px;
+	padding				: 0px;
+	color				: #000000;
+	background-color	: #999999;
+	}
+.leftcolumn
+	{
+/*/*/
+	margin-top			: 0px;
+/* */
+	}
+
+/*
+make sure that the hack widths equals the value of .centercolumn's margin-right
+the initial width is for NN4 - experiment and set to what seems best
+*/
+.rightcolumn
+	{
+	position			: static;
+	float				: right;
+	width				: 200px;
+	margin				: 0px;
+	padding				: 0px;
+	z-index				: 3;
+	color				: #000000;
+	background-color	: #999999;
+	}
+
+/* 
+For NN4, -25px is the margin-left setting to make the centercolumn column but up against the left column. (OmniWeb is much the same, but this stylesheet makes no allowances for it).
+For other browsers, the equivalent margin-left setting is equal to the width of the left column.
+margin-right is set to the value of the overriding values for .rightcolumn's width. 
+A margin can be created between these two columns either by changing these values, or by setting the padding of the relevant #...padding divs.
+margin-top is set to -1px to make NN4 line up correctly.
+*/
+.centercolumn
+	{
+	margin				: 0px;
+	padding				: 0px;
+	color				: #000000;
+	background-color	: #cccccc;
+	z-index				: 4;
+	}
+.centercolumn
+	{
+	margin-right		: 0px;
+	margin-top			: -1px;
+	margin-bottom		: 0px;
+	margin-left			: -25px;
+	}
+/* IE5 once again goes awry - shift it down (29px is right for this layout but no doubt the exact value will vary [sigh]) and then zap 
+empty because otherwise IE5 goes rampaging on */
+/*/*/
+.centercolumn
+	{
+	margin-right		: 201px;
+	margin-left			: 201px;
+	margin-top			: 29px;
+	font-family			: "\"}\"";
+	font-family			: inherit;
+	margin-top			: 0px;
+	}
+#empty{}
+/*  */
+
+/* following bit only necessary if OmniWeb to be handled - the .fake bit is only picked up by OmniWeb, IE and, er, Amaya
+see  http://www.fu2k.org/alex/css/test/OmniWebInlineHack.mhtml
+But exclude it from IE5/mac */
+/*\*/
+.fake.centercolumn
+	{
+	margin-right		: 1px;
+	margin-left			: 1px;
+	}
+/* this bit resets for IE */
+* html .centercolumn
+	{
+	margin-right		: 201px;
+	margin-left			: 201px;
+	}
+/* End of OmniWeb shenanigans */
+
+.footer
+	{
+	clear				: both;
+	margin-top			: -11px;
+	padding				: 12px;
+	width				: 100%;
+	color				: #000000;
+	background-color	: #666666;
+	}
+.footer
+	{
+/*/*/
+	margin-top			: 0px;
+/* */
+	}
+
+
+.clear { clear : both; font-size: 1px; line-height: 0px; }
+
+
+.headerpadding, .leftpadding, .centerpadding, .rightpadding
+	{
+	margin				: 0px;
+	padding				: 10px;
+	}
+
+
+/* following styles have nothing to do with the structural layout */
+h1, h2
+	{
+	margin-top			: 0px;
+	}
+
+p
+	{
+	margin-bottom		: 0px;
+	}
+
+
+</style>
+
+
+</head>
+<body>
+
+
+
+<div class="header">
+<div class="headerpadding">
+<h1>3Col_NN4_RWS_A header</h1>
+<p>Basic NN4-compatible 3-column CSS layout.</p>
+<p>Provides:</p>
+<ul>
+<li>liquid header</li>
+<li>liquid center column</li>
+<li>liquid or fixed-width side columns</li>
+<li>footer</li>
+</ul>
+</div>
+</div>
+
+<div class="columns">
+
+<div class="leftcolumn">
+<div class="leftpadding">
+<h2>left</h2>
+<ul style="font-size:12px;">
+<li><strong>3Col_NN4_RWS_A</strong></li>
+<li><a href="3Col_NN4_RWS_B.mhtml" title="Totally liquid layout with column dividers">3Col_NN4_RWS_B</a></li>
+<li><a href="3Col_NN4_RWS_C.mhtml" title="Flexible column tallness through background images">3Col_NN4_RWS_C</a></li>
+<li><a href="3Col_NN4_RWS_D.mhtml" title="Flexible column tallness through background images - more NN4 friendly">3Col_NN4_RWS_D</a></li>
+<li><a href="3Col_NN4_AR.mhtml" title="Fixed side columns, total precision but less overall power">3Col_NN4_AR</a></li>
+<li><a href="3Col_NN4_P7.mhtml" title="Simple 3 col layout - flexible column order">3Col_NN4_P7</a></li>
+</ul>
+
+<p><a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="http://www.w3.org/Icons/valid-xhtml10" width="88" height="31" alt="Valid XHTML 1.0" /></a></p>
+<p><a href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="http://jigsaw.w3.org/css-validator/images/vcss" width="88" height="31" alt="Valid CSS" /></a></p>
+<p><a href="http://creativecommons.org/licenses/publicdomain" title="Public Domain Dedication"><img src="http://creativecommons.org/images/public/norights.gif" width="88" height="31" alt="Public Domain Dedication" /></a></p>
+<p><a href="http://www.fu2k.org/alex/css/index.mhtml" title="CSS Enterprise">Back to CSS index</a></p>
+
+</div>
+</div>
+
+<div class="rightcolumn">
+<div class="rightpadding">
+<h2>right</h2>
+
+<p>Due to the way NN4 calculates the width of the browser window, if you resize the browser, the width of this column will fluctuate rather unpredictably. If you don't mind the odd fleeting overlap, add a few percentage pointsor or pixels. To be certain of no overlap, you're probably safe sticking at the theoretically correct size.</p>
+
+<p>If the right column is not coloured in any way, this effect should be less noticeable.</p>
+
+</div>
+</div>
+
+
+
+
+<div class="centercolumn">
+<div class="centerpadding">
+<h2>center</h2>
+
+<p>This layout is derived from an <a href="http://www.realworldstyle.com/nn4_3col_header.html" title="Mark Newhouse's original NN4 3 col layout">original layout</a> by Mark Newhouse. It makes some enhancements and makes the structure more obvious (in particular the subtle (or not so subtle) differences between most other browsers and Netscape 4 [NN4]. It also no doubt introduces some quirks that were not present in the original. To echo his words, this is simply my humble attempt to create something that fits my needs. For other NN4-compatible CSS layouts, see Craig Saila's <a href="http://www.saila.com/usage/layouts/nn4-layouts.shtml" title="NN4-compatible CSS layouts">major roundup</a>.</p>
+
+<p>My design constraints, like Mark's, are fairly straightforward. I want a header and a footer, in addition to the three columns. I want something that will work in NN4 (not always, but sometimes - the desire that is, not the reliability). I also want to be able to set colours in <em>all</em> of the columns and position them reasonably precisely. You don't have to use colours if you don't want to. This layout merely shows that you can. The other layouts listed in the left column merely refine the basic idea. They are not polished designs - they demonstrate the grid effects possible by adapting this basic layout.</p>
+
+<p>The styling of the elements has been kept to a minimum so as not to detract from the structure of the layout and to demonstrate the liquidity and precise positioning of elements.</p>
+
+<p>The main improvement of this page is that no elements are absolutely positioned. This means that the header can be truly vertically liquid and browsers such as OmniWeb, which insists on placing absolutely positioned elements at the top of the browser window if no value for top is specified, can be catered for. It also means that footers can be used. More than that, it means that multiple blocks of columns can be placed one after the other if required.</p>
+
+<p>The layout also works in IE5 (Mac) which the original does not do.</p>
+
+<p>The center column is liquid. The left and right columns may be fixed or liquid. In theory, columns could be nested within columns although IE5 (Mac)'s bug regarding the positioning of nested elements means that should probably remain just a theory.</p>
+
+<p>The layout requires no javascript (except for that needed to overcome the NN4 onresize bug, but that doesn't count).</p>
+
+<p>The major drawback, because of the use of floats, is that the content must appear in the document in the order left - right - center.</p> 
+
+<p>Works fully in:</p>
+<ul>
+<li>IE 5 - 6 (PC)</li>
+<li>IE5 (Mac)</li>
+<li>Opera 5 - 7</li>
+<li>Gecko-derived browsers</li>
+<li>OmniWeb</li>
+</ul>
+
+<p>NN4 fails to render any space between the left and center columns. The amount of space between the center and the right columns is unpredictable though it is possible to prevent them overlapping until the browser window is shrunk considerably. The body appears to have a margin even though it does not (this is a common NN4 problem - it is fixable, but those hacks are beyond the scope of this layout). Some amount of "ghost space" may be seen inside the divs. That said, the intent of the layout structure and colours are all maintained. If you do require as much precision in NN4 as possible, try this alternative layout, <a href="3Col_NN4_AR.mhtml" title="Fixed side columns, total precision but no footer">3Col_NN4_AR</a>.</p>
+
+<p>Because of NN4's loss of styling information on resizing, the layout includes some javascript to force NN4 to reload which overcomes this bug</p>
+
+<p>IE5 (PC) needs the central column shifting down, and in this instance the columns container needs shifting back up. This seems to be almost as random as NN4, but with experimentation and IE5 hacking it is possible to overcome.</p>
+
+<p>Because of OmniWeb's failure to implement floats properly, OmniWeb would by default shift the content column over to the right in much the same way as NN4. It is trivial to hack the CSS for it to work in OmniWeb, but if you investigate you'll see that it makes the present code even less clear to understand since it requires. Mind you, it's better than the use of an additional stylesheet or javascript to write in an extra declaration just for OmniWeb. (NB. using javascript to sniff browsers is highly unreliable especially since OmniWeb provides the ability for the user to make it pretend to be anything they want it to be.) This and all the other layouts (see the left column) derived from this all cope with OmniWeb. You, of course, are free to decide not to cope with OmniWeb at all.</p>
+
+<p>If you do use any of these layouts as the basis for a site, please drop me a line.</p>
+
+<h4>Change Log</h4>
+<ul>
+<li>2003-01-27:- <a href="" title="current version">Fixed IE5 (PC) misplacement. Replaced OmniWeb javascript doc.write() with inline OmniWeb hack</a></li>
+<li>2003-01-10:- <a href="3Col_NN4_RWS_A_v01.mhtml" title="original version">Original Version</a></li>
+</ul>
+
+</div>
+</div>
+
+<!-- only necessary if side columns are (or might be) longer than the centercolumn column -->
+<div class="clear">&nbsp;</div>
+
+</div>
+
+<div class="footer">
+Footer
+</div>
+
+</body>
+</html>

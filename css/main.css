@@ -505,15 +505,21 @@ body, html{
             #thanks{
                 display:none;
             }
+            .form-box{
+                padding:10px;
+                background-color: #eee;
+                width: 295px;
+            }
             input[type='text'], input[type='tel'], input[type='email'], textarea{
                 padding: 8px 10px;
                 border: 1px solid #CCC;
                 min-width: 270px;
                 border-radius: 3px;
-                background-color: #F6F6F6;
+                background-color: #fff;
                 -webkit-appearance: none;
                 margin-top: 5px;
                 font-family: helvetica, sans-serif;
+                font-weight: 100;
                 font-size: 16px;
             }
             input[type='submit']{
@@ -692,6 +698,13 @@ body, html{
         .corpidItem:nth-child(even){
             margin-left: 0;
         }
+        .form-box{
+                padding:10px;
+                background-color: #eee;
+                width: auto;
+            }
+            input[type='text'], input[type='tel'], input[type='email'], textarea{min-width: 256px;width: 94%;
+}
 }
 /* portrait */
 @media screen and (max-width: 320px){

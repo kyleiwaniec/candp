@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+
+            /* accordion tabs */
+            .group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+            .tabs { list-style: none; }
+            .tabs li { display: inline; }
+            .tabs li a { color: black; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; background: white; text-decoration: none; }
+            .tabs li a:hover { background: #ccc; }
+
+
+            /* Generic styles & example one */
+
+            .tabbed-area { margin: 0 0 120px 0; }
+            .box-wrap { position: relative; min-height: 250px; }
+            .tabbed-area div div { background: white; padding: 20px; min-height: 250px; position: absolute; top: -1px; left: 0; width: 100%; }
+            .tabbed-area div div, .tabs li a { border: 1px solid #ccc; }
+            #box-one:target, #box-two:target, #box-three:target { z-index: 1; }
+
+
+
+
+            /* Stuff for example seven - including conditionals below */
+
+            #ie-test { position: relative; width: 100%; }
+            #boxLinks { list-style: none; overflow: hidden; }
+            #boxLinks li {  display: inline; }
+            #boxLinks li a { padding: 5px 10px; color: black; text-decoration: none; border: 1px solid #ccc; float: left; display: block; margin-left: -1px; position: relative; left: 1px; }
+            #boxLinks li a:hover { color: #fff; background: #000; }
+            #box { height: 250px; border: 1px solid #ccc; overflow: hidden; padding: 0px 30px 0px 30px; position: relative; top: -1px; }
+            .box { display: none; height: 250px; overflow: auto; display: block; position: relative; overflow-x: hidden; }
+            #box1:target, #box2:target, #box3:target { display: block; }
+
+
+            .lt-ie9 .box { display: block; }
+            .lt-ie9 #box { overflow: hidden;position: relative; }
+            .lt-ie9 b { position: absolute; top: 0px; right: 0px; width:1px; height: 251px; overflow: hidden; text-indent: -9999px; }
+
+        </style>
+    </head>
+    <body>
+        <div id="ie-test">
+
+            <ul id="boxLinks" class="group">
+                <li><a href="#box1">Tab 19</a></li>
+                <li><a href="#box2">Tab 20</a></li>
+                <li><a href="#box3">Tab 21</a></li>
+            </ul>
+
+            <div id="box">
+                <div id="box1" class="box">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                        <li>Aliquam tincidunt mauris eu risus.</li>
+                        <li>Vestibulum auctor dapibus neque.</li>
+                    </ul>
+                    <!--[if IE]><b>.</b><![endif]-->
+                </div>
+                <div id="box2" class="box">Another box! <!--[if IE]><b>.</b><![endif]--></div>
+                <div id="box3" class="box">Woot! <!--[if IE]><b>.</b><![endif]--></div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -5,15 +5,10 @@ $jq_version = "http://code.jquery.com/jquery-1.10.2.min.js";
 $stylesheet = "";
 $script = "";
 require_once ("custom-header.php");
-?>
-<?php
-
-
 
 $images = array();
-
 $filenames = glob("ireland/*.JPG");
-
+$count = 0;
 foreach($filenames as $file){
 
     //array_push($images, $file);
@@ -22,120 +17,83 @@ foreach($filenames as $file){
     $width = $imageSize[0];
     $height = $imageSize[1];
 
-    array_push($images, [
+    $images[$count] = [
         'src'=>$file,
         'width'=>$width,
         'height'=>$height
-        ]
-    );
+        ];
+    // array_push($images, [
+    //     'src'=>$file,
+    //     'width'=>$width,
+    //     'height'=>$height
+    //     ]
+    // );
+    $count++;    
 }
 
 // $file = fopen('data.json','w+');
 // fwrite($file, stripslashes(json_encode($images)));
 // fclose($file);
 
-
+echo "<script> var thumb_array_org = ".stripslashes(json_encode($images))."</script>";
 ?>       
  <style>
-        body, html{
-            background-color: #eee;
-            color:#444;
-            font-family: helvetica;
-            font-weight: normal;
-        }
-            .wrapper {
-                margin: 0 auto;
-                width:100%;
-                max-width: 100%;
-                text-align: center;
-            }
-            #thumbnail-grid{
-                margin: 0 auto;
-            }
-            .column {
-                padding: 10px;
-                border: 1px solid #ccc;
-                margin: 10px 5px;
-                background-color: #fff;
-                box-shadow: 0 0 3px #ccc;
-                border-radius: 3px;
-            }
-            .column img{
-                max-width: 100%;
-                display:block;
-            }
-            ul{
-                float:left;
-                margin:0;
-                padding:0;
-                list-style: none;
-                width: 300px;
-                box-sizing:border-box;
-            }
-            li{
-                margin:0;
-                padding:0;
-            }
-            li .caption{
-                height:30px;
-                padding-top:10px;
-                box-sizing:border-box;
-                font-size: .8rem;
-            }
-            .truncate{
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
-            }
-        </style>  
+    body, html{
+        background-color: #eee;
+        color:#444;
+        font-family: helvetica;
+        font-weight: normal;
+    }
+    .wrapper {
+        margin: 0 auto;
+        width:100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    #thumbnail-grid{
+        margin: 0 auto;
+    }
+    .column {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin: 10px 5px;
+        background-color: #fff;
+        box-shadow: 0 0 3px #ccc;
+        border-radius: 3px;
+    }
+    .column img{
+        max-width: 100%;
+        display:block;
+    }
+    ul{
+        float:left;
+        margin:0;
+        padding:0;
+        list-style: none;
+        width: 300px;
+        box-sizing:border-box;
+    }
+    li{
+        margin:0;
+        padding:0;
+    }
+    li .caption{
+        height:30px;
+        padding-top:10px;
+        box-sizing:border-box;
+        font-size: .8rem;
+    }
+    .truncate{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+</style>  
 <div class="wrapper">
 <h1>Column Organizer</h1>
     
 <div id="thumbnail-grid"></div>
-<?php echo "<script> var thumb_array_org = ".stripslashes(json_encode($images))."</script>";
-?>
-<script>
-// var thumb_array_org = [{"src":"http://www.candpgeneration.com/toys/warsaw/10219.jpg","height":638,"width":900},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/12541_3_800_000_1.jpg","height":400,"width":400},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/19072.jpg","height":638,"width":920},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/1977_Fiat_126-3.jpg","height":1200,"width":1600},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/309405.jpg","height":1200,"width":877},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/312076.jpg","height":912,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/314776.jpg","height":947,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/330645.jpg","height":826,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/355969.jpg","height":1083,"width":970},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/365369.jpg","height":582,"width":1100},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/17409.jpg","height":661,"width":1203},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/a3e448eb8f888fddmed.jpg","height":326,"width":500},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/115503.jpg","height":729,"width":1066},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/maly-fiat1.jpg","height":599,"width":795},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/maly-fiat2.jpg","height":375,"width":500},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/maly-fiat3.jpg","height":484,"width":832},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/12541_3_800_000_1.jpg","height":400,"width":400},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/19072.jpg","height":638,"width":920},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/1977_Fiat_126-3.jpg","height":1200,"width":1600},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/309405.jpg","height":1200,"width":877},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/312076.jpg","height":912,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/314776.jpg","height":947,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/330645.jpg","height":826,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/355969.jpg","height":1083,"width":970},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/365369.jpg","height":582,"width":1100},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/17409.jpg","height":661,"width":1203},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/a3e448eb8f888fddmed.jpg","height":326,"width":500},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/115503.jpg","height":729,"width":1066},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/309405.jpg","height":1200,"width":877},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/312076.jpg","height":912,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/314776.jpg","height":947,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/330645.jpg","height":826,"width":1300},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/355969.jpg","height":1083,"width":970},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/365369.jpg","height":582,"width":1100},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/17409.jpg","height":661,"width":1203},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/115503.jpg","height":729,"width":1066},
-//                             {"src":"http://www.candpgeneration.com/toys/warsaw/a3e448eb8f888fddmed.jpg","height":326,"width":500}
-//                             ]; 
-
-
-var winWidth = $(window).width();
+<script>var winWidth = $(window).width();
 var columns = parseInt(winWidth/300);
 
                        

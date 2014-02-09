@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Parametric Curves - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ 
+  <script src="parser.js"></script>
+	<script src="d3.v3.min.js"></script>
+  <style>
+  svg{
+/*    background-color: #eee;
+*/  }
+
+  #drawIt, #butterfly { 
+      fill:none;
+      stroke:hotpink;
+      stroke-width:1px;
+      stroke-linecap:round;
+      
+    }
+    graph{
+      display:block;
+    }
+    #xFn, #yFn{
+      width:300px;
+    }
+    #tMin,#tMax{
+      width:50px;
+    }
+    #butterfly{
+      stroke:purple;
+    }
+    svg{
+      margin:20px;
+      background:url(grid.png);
+    }
+    #doitagain{
+      display: block;
+    }
+    .plotContainer, .examples{
+      width:450px;
+      float:left;
+    }
+    .legend{clear:both;}
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #ccc;
+        shape-rendering: crispEdges;
+    }
+    /*panel{
+      -webkit-perspective:600;
+      position: relative;
+      display:block;
+      height:440px;
+    }
+
+    back{
+      position: absolute;
+      -webkit-transform: rotateX(180deg);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: visible;
+      transition: all .4s ease-in-out;
+    }*/
+
+  </style>
+</head>
+<body>
+  <p>NOTE: Best viewed in Chrome or Firefox. In Internet Explorer, the curves are not animated.</p>
+
+	 	
+<div class='plotContainer'>
+<span class='notes'>Use the letter t for parameter</span><br>
+<input id="tMin" type="text" value="0"/> &#8804; <label> t </label> &#8804; <input id="tMax" type="text" value="14*PI"/>
+<br>
+<label>x =</label>
+<input id='xFn' type='text' value='sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)'/>
+<br>
+<label>y =</label>
+<input id='yFn' type='text' value='cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)'/><br>
+<label>Animation Speed: </label><input id="speed" type="text" value="9"/>
+<button id="doit">Draw!</button> 
+<panel>
+  <front>
+
+  </front>
+  <back>
+      <graph></graph>
+  </back>
+</panel>
+
+</div>
+<div class='examples'>
+  <p>Examples</p>
+  <pre>
+  Butterfly:
+  <code>
+    t = (0,14PI);
+    sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+    cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+    <button id="drawButterfly">Draw</button>
+  </code>
+  Circular:
+  <code>
+    t = (0,14PI);
+    31*cos(t)-7*cos(31*t/7)
+    31*sin(t)-7*sin(31*t/7)
+    <button id="drawEx1">Draw</button>
+  </code>
+  <code>
+    t = (0,2*PI);
+    1.5*cos(t) - cos(30*t)
+    1.5*sin(t) - sin(30*t)
+    <button id="drawEx2">Draw</button>
+  </code>
+  <code>
+  Bean:  
+    t = (0,1/6*PI);
+    cos(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    sin(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    <button id="drawBean">Draw</button>
+  </code>
+  <code>
+  Flower:  
+    t = (0,2*PI);
+    cos(9*t)*sin(t)
+    cos(9*t)*cos(t)
+    <button id="drawFlower">Draw</button>
+  </code>
+  <code>
+  Heart:
+    t = (0,2*PI);
+    16*sin(t)^3
+    13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t)
+    <button id="drawHeart">Draw</button>
+
+  </code>
+  <code>
+  Lattice:
+    t = (0,2*PI);
+    16*sin(t*16)
+    19*cos(t*19)
+    <button id="drawLattice">Draw</button>
+
+  </code>
+  </pre>
+</div>
+<div class='legend'>
+<h2>Native JS Functions:</h2>
+<table>
+
+<tbody>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">sin(x)</th>
+<td>Sine of x (x is in radians)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">cos(x)</th>
+<td>Cosine of x (x is in radians)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">tan(x)</th>
+<td>Tangent of x (x is… well, you know)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">asin(x)</th>
+<td>Arc sine of x (in radians)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">acos(x)</th>
+<td>Arc cosine of x (in radians)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">atan(x)</th>
+<td>Arc tangent of x (in radians)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">sqrt(x)</th>
+<td>Square root of x. Result is NaN (Not a Number) if x is negative.</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">log(x)</th>
+<td><strong>Natural</strong> logarithm of x (not base-10). <a href="http://www.youtube.com/watch?v=hP0kWqJJZa4" onclick="javascript:_gaq.push(['_trackEvent','outbound-article','http://www.youtube.com']);" target="_blank">It’s log</a> instead of ln because that’s what JavaScript calls it.</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">abs(x)</th>
+<td>Absolute value (magnatude) of x</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">ceil(x)</th>
+<td>Ceiling of x — the smallest integer that’s &gt;= x.</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">floor(x)</th>
+<td>Floor of x — the largest integer that’s &lt;= x</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">round(x)</th>
+<td>X, rounded to the nearest integer, using “gradeschool rounding”.</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">exp(x)</th>
+<td><em>e</em><sup>x</sup> (exponential/antilogarithm function with base <em>e</em>)</td>
+</tr>
+</tbody>
+</table>
+<h2>Predefined Functions:</h2>
+<table>
+
+<tbody>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">random(n)</th>
+<td>Get a random number in the range [0, n). If n is zero, or not provided, it defaults to 1.</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">fac(n)</th>
+<td>n! (factorial of n: “n * (n-1) * (n-2) * … * 2 * 1″)</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">min(a,b,…)</th>
+<td>Get the smallest (“minimum”) number in the list</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">max(a,b,…)</th>
+<td>Get the largest (“maximum”) number in the list</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">pyt(a, b)</th>
+<td>Pythagorean function, <abbr title="id est (that is)">i.e.</abbr> the c in “c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>“</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">pow(x, y)</th>
+<td>x<sup>y</sup>. This is exactly the same as “x^y”. It’s just provided since it’s in the Math object from JavaScript</td>
+</tr>
+<tr>
+<th style="text-align: left; width: 6em; padding-right: 1em; vertical-align: top;">atan2(y, x)</th>
+<td>arc tangent of x/y. <abbr title="id est (that is)">i.e.</abbr> the angle between (0, 0) and (x, y) in radians.</td>
+</tr>
+</tbody>
+</table>
+<h2>Constants:</h2>
+<strong>E</strong><br>
+<strong>PI</strong>
+</div>
+<script type="text/javascript">
+
+
+ $("#drawLattice").on("click", function(){
+
+        drawIt("16*sin(t*16)","19*cos(t*19)","0","2*PI","3");
+    });
+    $("#drawEx1").on("click", function(){
+        drawIt("31*cos(t)-7*cos(31*t/7)","31*sin(t)-7*sin(31*t/7)","0","14*PI","3");
+    });
+
+    $("#drawEx2").on("click", function(){
+        drawIt("1.5*cos(t) - cos(30*t)","1.5*sin(t) - sin(30*t)","0","2*PI","3");
+    });
+
+    $("#drawFlower").on("click", function(){
+        drawIt("cos(9*t)*sin(t)","cos(9*t)*cos(t)","0","2*PI","3");
+    }); 
+
+    $("#drawButterfly").on("click", function(){
+        drawIt("sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)","cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)","0","12*PI","3");
+    });
+
+    $("#drawBean").on("click", function(){
+        drawIt("cos(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)","sin(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)","0","1/6*PI","3");
+    });
+
+     $("#drawHeart").on("click", function(){
+        drawIt("16*sin(t)^3","13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t)","0","2*PI","3");
+    });
+
+    $("#doit").on('click', function(){
+        xFn = $("#xFn").val().trim();
+        yFn = $("#yFn").val().trim();
+        tMin = $("#tMin").val().trim();
+        tMax = $("#tMax").val().trim();
+        speed = $("#speed").val().trim();
+        try{
+          drawIt(xFn,yFn,tMin,tMax,speed);
+        }catch(e){
+          console.log("An error occurred: "+e);
+        }finally{
+          console.log("finally")
+        }
+        
+    }).trigger('click');
+
+    function drawIt(xFn,yFn,tMin,tMax,speed){
+      var data = [], x, y = 0;
+      $("svg").detach();
+      var svgContainer = d3.select("graph").append("svg")
+                                          .attr("width", 420)
+                                          .attr("height", 420)
+                                          .attr("id","drawItContainer");
+
+      tMin = Parser.evaluate(tMin)*100;    
+      tMax = Parser.evaluate(tMax)*100;                                
+
+      for(var i = tMin; i < tMax; i = i+1){
+          x = Parser.parse(xFn).evaluate({t:i/100});
+          y = Parser.parse(yFn).evaluate({t:i/100});
+          data.push({"x":x, "y":y});
+      }
+
+      // SCALE:
+      var maxx = d3.max(data, function(d) { return d.x; });
+      var maxy = d3.max(data, function(d) { return d.y; });
+
+      var minx = d3.min(data, function(d) { return d.x; });
+      var miny = d3.min(data, function(d) { return d.y; });
+
+      // minx = minx < -210 ? minx : 0;
+      // miny = miny < -210 ? miny : 0;
+      var scale;
+     // if(maxx >= maxy){
+         xscale = d3.scale.linear()
+                     .domain([minx, d3.max(data, function(d) { return d.x; })])
+                     .range([0, 420]);
+     // }else{
+         yscale = d3.scale.linear()
+                     .domain([miny, d3.max(data, function(d) { return d.y; })])
+                     .range([0, 420]);           
+     // }
+      var xAxis = d3.svg.axis()
+                        .scale(xscale)
+                        .orient("bottom")
+                        .ticks(15);
+
+      var yAxis = d3.svg.axis()
+                  .scale(yscale)
+                  .orient("left")
+                  .ticks(15);
+                  
+       svgContainer.append("g")
+              .attr("class", "axis")
+              .attr("transform", "translate(30,0)")
+              .call(yAxis);                            
+      svgContainer.append("g")
+                    .attr("class", "axis")
+                    .attr("transform", "translate(0,370)")
+                    .call(xAxis);
+
+      var lineFunction = d3.svg.line()
+                              .x(function(d) { return xscale(d.x); })
+                              .y(function(d) { return yscale(d.y); })
+                              .interpolate("basis-open"); 
+
+      var lineGraph = svgContainer.append("path")
+                                .attr("d", lineFunction(data))
+                                .attr("id", "drawIt");
+
+      
+
+      var pathlength = document.getElementById('drawIt').getTotalLength();
+
+      d3.select("#drawIt").attr("stroke-dasharray", pathlength);
+
+      d3.select("#drawIt")
+        .attr("stroke-dasharray", pathlength)
+        .append("animate")
+        .attr("attributeName", "stroke-dashoffset")
+        .attr("from", pathlength)
+        .attr("to",0)
+        .attr("dur",speed+"s")
+        .attr("begin","rect.click;0s");
+  };
+</script>
+</body>
+</html>

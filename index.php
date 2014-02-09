@@ -1,4 +1,5 @@
 <?php 
+
 $title = "copy &amp; paste generation";
 $body_id = "home";
 require_once "header.php";

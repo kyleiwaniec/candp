@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Parametric Curves - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+  <!-->
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  </!-->
+  <script src="math.js"></script>
+	<script src="d3.v3.min.js"></script>
+  <style>
+  svg{background-color: #eee;}
+
+  #circleThingy, #butterfly { 
+      fill:none;
+      stroke:hotpink;
+      stroke-width:1px;
+      stroke-linecap:round;
+      
+    }
+    
+    #butterfly{
+      stroke:purple;
+    }
+    svg{margin:20px;}
+    #doitagain{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <p>NOTE: Best viewed in Chrome or Firefox. In Internet Explorer, the curves are not animated.</p>
+
+	 	<script type="text/javascript">
+
+    (function circleThingy(){
+        var data = [];
+
+    //The SVG Container
+    var svgContainer = d3.select("body").append("svg")
+                                        .attr("width", 210)
+                                        .attr("height", 210)
+                                        .attr("id","circleThingyContainer");
+
+    for(var i = 0; i < 16*Math.PI; i+=.01){
+      data.push(i);
+        }
+
+            //This is the accessor function we talked about above
+            var lineFunction = d3.svg.line()
+                                    .x(function(t) { return math.eval('31*cos('+t+')-7*cos(31*'+t+'/7)') *2.5 +105; })
+                                    .y(function(t) { return math.eval('31*sin('+t+')-7*sin(31*'+t+'/7)') *2.5  +105; })
+                                   .interpolate("linear");
+
+                                  
+            var lineGraph = svgContainer.append("path")
+                                      .attr("d", lineFunction(data))
+                                      .attr("id", "circleThingy");
+
+
+          var pathlength = document.getElementById('circleThingy').getTotalLength();
+
+
+          d3.select("#circleThingy").attr("stroke-dasharray", pathlength);
+
+          d3.select("#circleThingy")
+            .attr("stroke-dasharray", pathlength)
+            .append("animate")
+            .attr("attributeName", "stroke-dashoffset")
+            .attr("from", pathlength)
+            .attr("to",0)
+            .attr("dur","3s")
+            .attr("begin","rect.click;0s");
+    })();
+    
+
+    (function butterfly(){
+        var data = [];
+
+    //The SVG Container
+    var svgContainer = d3.select("body").append("svg")
+                                        .attr("width", 210)
+                                        .attr("height", 210)
+                                        .attr("id","butterflyContainer");;
+
+    for(var i = 0; i < 7*Math.PI; i+=.01){
+      data.push(i);
+        }
+
+            //This is the accessor function we talked about above
+            var lineFunction = d3.svg.line()
+                                    .x(function(d) { return math.eval('sin('+d+')*(e^cos('+d+') - 2*cos(4*'+d+') - sin('+d+'/12)^5)') *30 + 105; })
+                                    .y(function(d) { return math.eval('cos('+d+')*(e^cos('+d+') - 2*cos(4*'+d+') - sin('+d+'/12)^5)') *30 + 105; })
+                                   .interpolate("linear");
+
+            //var len = document.getElementById('butterfly').getTotalLength();
+            var lineGraph = svgContainer.append("path")
+                                      .attr("d", lineFunction(data))
+                                      .attr("id", "butterfly");
+
+
+          var pathlength = document.getElementById('butterfly').getTotalLength();
+
+
+          d3.select("#butterfly").attr("stroke-dasharray", pathlength);
+
+          d3.select("#butterfly")
+            .attr("stroke-dasharray", pathlength)
+            .append("animate")
+            .attr("attributeName", "stroke-dashoffset")
+            .attr("from", pathlength)
+            .attr("to",0)
+            .attr("dur","3s")
+            .attr("begin","rect.click;0s");
+    })();
+
+
+</script>
+<button id="doitagain" onclick="location.reload()">That was fun, do it again!</button>
+</body>
+</html>

@@ -1,0 +1,806 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Parametric Curves - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+  <script src="jquery.ba-throttle-debounce.min.js"></script> 
+  <script src="parser.js"></script>
+	<script src="d3.v3.js"></script>
+  <style>
+  body, html{
+    font-family: helvetica, sans-serif;
+    font-size:100%;
+    color:#444;
+  }
+
+  h1, h2, h3, h4, h5, h6,p{
+    margin-top:0;
+  }
+  h1{
+    color:#027bbf;
+  }
+  input{
+    padding:5px;
+    border:1px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+  svg{
+/*    background-color: #eee;
+*/  }
+  pre{
+    font-size: .85em;
+  }
+  #drawIt{ 
+      fill:none;
+      stroke:#f90176;
+      stroke-width:1px;
+      stroke-linecap:round;
+      
+    }
+    graph{
+      display:block;
+    }
+    #xFn, #yFn{
+      width:300px;
+    }
+    #tMin,#tMax{
+      width:50px;
+    }
+
+    .plotContainer{
+                -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+    }
+    .plotContainer{
+      width:450px;
+      margin-top: 20px;
+    }
+    .plotContainer, .examples, .legend{
+      
+      max-width:100%;
+      box-sizing:border-box;
+      float:left;
+
+    }
+    .examples, .legend{
+      padding:10px;
+      position:relative;
+    }
+    .legend div{
+      float:left;
+      width:90px;
+      border-left:1px solid #ccc;
+      padding-left:10px;
+    }
+    .legend span{
+      display:block;
+      font-size:.9em;
+    }
+    .legend tip{
+      position:absolute;
+      margin-left:80px;
+      margin-top:-30px;
+      padding:20px;
+      width:200px;
+      border:1px solid yellow;
+      border-radius: 2px;
+      display:none;
+      background-color: lightyellow;
+      font-size: .8em;
+      -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+    }
+    .legend span{
+      font-weight:bold;
+      margin:10px 0;
+      cursor:pointer;
+    }
+    .legend span:hover + tip{
+        display:inline;
+
+    }
+    .yaxis path, .xaxis path{
+        fill: none;
+        stroke: none;
+    }
+    .yaxis line, .xaxis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+    }
+
+    .yGridLines path, .xGridLines path{
+        fill: none;
+        stroke: none;
+    }
+    .yGridLines line, .xGridLines line {
+        fill: none;
+        stroke: #ccc;
+        shape-rendering: crispEdges;
+    }
+
+    .tick text{
+    	font-size:10px;
+    	fill: #ccc;
+    	font-family: sans-serif;
+      -webkit-transform:rotateX(180deg);
+
+    }
+    .xGridLines text{
+      -webkit-transform:translate(0,3px);
+    }
+    #userFunctions{
+      font-size: 12px;
+    }
+    #userFunctions label{
+        width:120px;
+        text-align: right;
+        display: inline-block;
+        margin-right:10px;
+    }
+    #userFunctions input[type='text'],
+    #userFunctions input[type='number']{
+        margin-bottom: 10px;
+    }
+    #userFunctions input[type='range']{
+      border:0;
+    }
+    
+    .warning{
+      color: #fd8a03;
+      margin-bottom: 30px;
+    }
+    .warning img{
+      width:30px;
+      vertical-align: middle;
+      padding-bottom:10px;
+    }
+    .green{
+      color:#0c79c6;
+    }
+    .small{
+      font-size: .75em;
+    }
+    .errorContainer{
+     /* margin:0 auto;
+      width:200px;*/
+      display:none;
+      color:#fd8a03;
+      text-align: center;
+      margin:0 auto;
+      padding:50px 20px;
+    }
+
+@media only screen and (max-width: 768px){
+  #userFunctions{margin-bottom:20px;}
+  .plotContainer{width:100%;}
+  .examples, .legend{width:50%;}
+  .warning, h1{margin-bottom:0;}
+}
+@media only screen and (max-width: 480px){
+  .examples, .legend{width:100%;overflow:hidden;padding:0;}
+  #userFunctions label{
+        width:auto;
+        text-align: left;
+        display: block;
+        margin-right:0;
+  }
+  #userFunctions input[type='text'],
+  #userFunctions input[type='number']{
+      font-size: 16px;
+      margin-bottom: 10px;
+      max-width:95%;
+      -webkit-appearance:none;
+  }
+  #userFunctions input[type='range']{
+    border:0;
+  }
+}
+
+  </style>
+  <style>
+
+    .first   .subtitle{
+        color:black;
+        padding-top:15px;
+    }
+    strong{
+        color:#ff0066;
+    }
+
+    button, .glossy-button{
+        font-family: helvetica, arial, sans-serif;
+        font-size:12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height:30px;
+        height:30px;
+        color:#fff;
+        cursor:pointer;
+        display: inline-block;
+        width:auto;
+        text-decoration:none !important;
+
+        position: static;
+        /* these rules for the button press effect */
+        padding-top:1px;
+        padding-bottom:2px;
+
+        margin-top:-1px;
+        margin-bottom:1px;
+
+        padding-left:10px;
+        padding-right:10px;
+
+        margin-left:-1px;
+        margin-right:1px;
+
+        /* default background-color */
+
+        background-color: #027bbf;
+
+        /* the mighty gradient */
+
+      background-image: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+      background-image: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+      background-image: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.2) 100%); /* Opera 11.10+ */
+      background-image: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+      background-image: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.2) 100%); /* W3C */
+
+        /* some nice roundy corners */
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -o-border-radius: 3px;
+        border-radius: 3px;
+
+        /* for links in chrome */
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -o-box-sizing: border-box; 
+        box-sizing: border-box; 
+
+
+        /* a very subtle drop-shadow that ehances the pressed button effect */
+        -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.30);
+        -moz-box-shadow:    1px 1px 3px rgba(0, 0, 0, 0.30);
+        box-shadow:         1px 1px 3px rgba(0, 0, 0, 0.30); 
+
+        /* remove any inherited or default borders - especially important for the <button> element*/
+        border: 0 !important;
+
+        /* a subtle text inset effect which will also help to enhance the pressed button effect */
+        text-shadow:  rgba(255, 255, 255, 0.1) -1px 0, rgba(0, 0, 0, 0.3) 1px 1px;
+
+
+        /* and of course a little animated background-color fade effect */
+
+        -webkit-transition: background-color 0.3s ease;
+        -moz-transition: background-color 0.3s ease;
+        -o-transition: background-color 0.3s ease;
+        -ms-transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease;
+
+    }
+
+    /* submit and reset buttons */
+    input.glossy-button{
+        vertical-align: middle;
+        line-height: normal !important;
+        padding-bottom: 0;
+    }
+
+
+    /* the colors */
+
+    .pinkish:hover{
+        background-color: #Ff3366;
+    }
+    .lime:hover{
+        background-color: #59b606;
+    }
+    .blue:hover{
+        background-color: #027bbf;
+    }
+    .coffee:hover{
+        background-color: #832f02;
+    }
+    .strawberry:hover{
+        background-color: #f92020;
+    }
+    .dark:hover{
+        background-color: #000000;
+    }
+
+    /* when pressed */
+    button:active, .glossy-button:active{
+        background-color: #59b606;
+        border-color: #59b606;
+        color:#eeeeee;
+
+        padding-top:0;
+        padding-bottom:0;
+
+        margin-top:0;
+        margin-bottom:0;
+
+        padding-left:10px;
+        padding-right:10px;
+
+        margin-left:0;
+        margin-right:0;
+
+        box-shadow: none;
+
+        text-shadow: rgba(0, 0, 0, 0.4) 0 -1px, rgba(255, 255, 255, 0.3) 0 1px;
+        color:rgba(255, 255, 255, 0.9);
+
+    } 
+
+    .ie9 button:active{
+        padding-top:0;
+        padding-bottom:2px;
+
+        margin-top:-1px;
+        margin-bottom:0;
+
+        padding-left:10px;
+        padding-right:10px;
+
+        margin-left:-1px;
+        margin-right:0;
+
+        border-top:1px solid white !important;
+        border-left:1px solid white !important;
+
+        height:31px;
+
+        border-radius: 5px;
+    }
+
+
+    .ie button, .ie .glossy-button {
+        background-image:url(../images/butt-bg_slither.png);
+        background-repeat: repeat-x;
+        background-position:center center;
+
+    }   
+    .ie8 button, .ie8 .glossy-button {
+        border:1px solid #ccc !important;
+        height:32px;
+    }
+    .ie7 button{
+        height:31px;
+    }
+    .ie7 .glossy-button{
+        height:28px;
+    }
+    .ie7 .glossy-button:active{
+        padding-bottom: 2px;
+
+    }
+
+</style>
+
+</head>
+<body>
+  
+<header>
+  <h1>Parametric Function Plotter</h1>
+  <p class="warning"><span class="green">Best viewed in <img src="chrome.png" alt="">Chrome.</span><br>All other browsers only have partial support for the features used in this demo. <span class="small">NOTE: If you do stuff like divide by zero, don't be surprised if nothing happens.</span></p>
+  
+  <form id="userFunctions">
+      <label> Use <em><strong>t </strong></em> for parameter:</label>
+      <input id="tMin" type="text" value="0"/> &#8804;  t  &#8804; <input id="tMax" type="text" value="14*PI"/>
+      <br>
+      <label>x =</label>
+      <input id='xFn' type='text' value='w'/>
+      <br>
+      <label>y =</label>
+      <input id='yFn' type='text' value='cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)'/><br>
+      <label>Seconds to draw: </label><input id="speed" type="range" min="1" max="15" /><span id="speedValue"></span><br>
+      <label></label><input type="submit" id="doit" class="glossy-button lime" value="Draw my function"/>
+  </form>
+  <div id="offset"></div>
+</header>
+	 	
+<div class='plotContainer'>
+<div class='errorContainer'>Sorry, I couldn't compute your input.<br><br><img src='grumpycat.png'/></div>
+<panel>
+  <front>
+
+  </front>
+  <back>
+      <graph></graph>
+  </back>
+</panel>
+
+</div>
+<div class='examples'>
+<h3>Examples</h3>
+<div>
+  
+  <pre>
+  Butterfly:
+  <code>
+    t = (0,14PI);
+    sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+    cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+    <button id="drawButterfly" class="glossy-button lime" >Draw</button>
+  </code>
+  Circular:
+  <code>
+    t = (0,14PI);
+    31*cos(t)-7*cos(31*t/7)
+    31*sin(t)-7*sin(31*t/7)
+    <button id="drawEx1" class="glossy-button lime" >Draw</button>
+  </code>
+  <code>
+    t = (0,2*PI);
+    1.5*cos(t) - cos(30*t)
+    1.5*sin(t) - sin(30*t)
+    <button id="drawEx2" class="glossy-button lime" >Draw</button>
+  </code>
+  <code>
+  Bean:  
+    t = (0,1/6*PI);
+    cos(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    sin(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    <button id="drawBean" class="glossy-button lime" >Draw</button>
+  </code>
+  <code>
+  Flower:  
+    t = (0,2*PI);
+    cos(9*t)*sin(t)
+    cos(9*t)*cos(t)
+    <button id="drawFlower" class="glossy-button lime" >Draw</button>
+  </code>
+  <code>
+  Heart:
+    t = (0,2*PI);
+    16*sin(t)^3
+    13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t)
+    <button id="drawHeart" class="glossy-button lime" >Draw</button>
+
+  </code>
+  <code>
+  Lattice:
+    t = (0,2*PI);
+    16*sin(t*16)
+    19*cos(t*19)
+    <button id="drawLattice">Draw</button>
+
+  </code>
+  </pre>
+</div>
+</div>
+<div class='legend'>
+<h3>Functions:</h3>
+<div>
+<span>sin(x)</span>
+<tip>Sine of x (x is in radians)</tip>
+
+<span>acos(x)</span>
+<tip>Arc cosine of x (in radians)</tip>
+
+
+<span>atan(x)</span>
+<tip>Arc tangent of x (in radians)</tip>
+
+
+<span>sqrt(x)</span>
+<tip>Square root of x. Result is NaN (Not a Number) if x is negative.</tip>
+
+
+<span>log(x)</span>
+<tip>Natural logarithm of x (not base-10). It’s log instead of ln because that’s what JavaScript calls it.</tip>
+
+
+<span>abs(x)</span>
+<tip>Absolute value (magnatude) of x</tip>
+</div>
+<div>
+
+<span>ceil(x)</span>
+<tip>Ceiling of x — the smallest integer that’s &gt;= x.</tip>
+
+
+<span>floor(x)</span>
+<tip>Floor of x — the largest integer that’s &lt;= x</tip>
+
+
+<span>round(x)</span>
+<tip>X, rounded to the nearest integer, using “gradeschool rounding”.</tip>
+
+
+<span>exp(x)</span>
+<tip>ex (exponential/antilogarithm function with base e)</tip>
+
+
+<span>random(n)</span>
+<tip>Get a random number in the range [0, n). If n is zero, or not provided, it defaults to 1.</tip>
+
+
+<span>fac(n)</span>
+<tip>n! (factorial of n: “n * (n-1) * (n-2) * … * 2 * 1″)</tip>
+</div>
+<div>
+
+<span>min(a,b,…)</span>
+<tip>Get the smallest (“minimum”) number in the list</tip>
+
+
+<span>max(a,b,…)</span>
+<tip>Get the largest (“maximum”) number in the list</tip>
+
+
+<span>pyt(a, b)</span>
+<tip>Pythagorean function, i.e. the c in “c2 = a2 + b2“</tip>
+
+
+<span>pow(x, y)</span>
+<tip>xy. This is exactly the same as “x^y”. It’s just provided since it’s in the Math object from JavaScript</tip>
+
+
+<span>atan2(y, x)</span>
+<tip>arc tangent of x/y. i.e. the angle between (0, 0) and (x, y) in radians.</tip>
+</div>
+<div>
+<span>E</span>
+<span>PI</span>
+</div>
+</div>
+<script type="text/javascript">
+
+  // function errorcheck(){
+  //    if(console != null){ 
+  //       var customError = console.error;   
+  //       //alert("error");
+  //       //$(".errorContainer").show();
+  //     }else{
+  //      // $(".errorContainer").hide();
+  //     }
+  // }
+
+
+
+    $("form").submit(function(e){
+      return false;
+    })
+
+    $("#drawLattice").on("click", function(){
+       drawIt("16*sin(t*16)","19*cos(t*19)","0","2*PI","3");
+       scrollToTop()
+    });
+    $("#drawEx1").on("click", function(){
+        drawIt("31*cos(t)-7*cos(31*t/7)","31*sin(t)-7*sin(31*t/7)","0","14*PI","3");
+        scrollToTop()
+    });
+
+    $("#drawEx2").on("click", function(){
+        drawIt("1.5*cos(t) - cos(30*t)","1.5*sin(t) - sin(30*t)","0","2*PI","15");
+        scrollToTop()
+    });
+
+    $("#drawFlower").on("click", function(){
+        drawIt("cos(9*t)*sin(t)","cos(9*t)*cos(t)","0","2*PI","3");
+        scrollToTop()
+    }); 
+
+    $("#drawButterfly").on("click", function(){
+        drawIt("sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)","cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)","0","12*PI","3");
+        scrollToTop()
+    });
+
+    $("#drawBean").on("click", function(){
+        drawIt("cos(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)","sin(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)","0","1/6*PI","3");
+        scrollToTop()
+    });
+
+     $("#drawHeart").on("click", function(){
+        drawIt("16*sin(t)^3","13*cos(t)-5*cos(2*t)-2*cos(3*t)-cos(4*t)","0","2*PI","3");
+        scrollToTop()
+    });
+
+    $("#doit").on('click', function(){
+        xFn = $("#xFn").val().trim();
+        yFn = $("#yFn").val().trim();
+        tMin = $("#tMin").val().trim();
+        tMax = $("#tMax").val().trim();
+        speed = $("#speed").val().trim();
+        drawIt(xFn,yFn,tMin,tMax,speed);
+        scrollToTop();
+    }).trigger('click');
+
+
+    // SLIDER
+    var speedValue = $('#speedValue');
+
+    $('#speed').change(function(){
+        speedValue.html(this.value);
+    }).trigger("change");
+
+
+    var winWidth = $(window).width();
+    if(winWidth > 768){
+      var  offsetTop = $("#offset").offset()
+                ,offsetBottom = 2000
+                ,plotContainer = $(".plotContainer")
+                ,examples = $(".examples");
+            $(window).scroll($.throttle( 50, function(){
+                 var winPos = $(window).scrollTop();
+                    if(offsetBottom.top <= winPos || winPos <= offsetTop.top){
+                        plotContainer.css({"position":"static"});
+                        examples.css({"margin-left": 0});
+                    }else if(offsetBottom.top > winPos || winPos > offsetTop.top){
+                        plotContainer.css({"position":"fixed","top":"20px"});
+                        examples.css({"margin-left": "450px"});
+                    };
+                 })
+                );
+
+    }else{
+      $("#userFunctions").insertAfter(".plotContainer"); 
+    }
+  //scroll to top of graph after click
+  function scrollToTop(){
+    if(winWidth <= 768){
+      $(window).scrollTop($("#offset").offset().top);
+    }
+  }
+
+
+
+    function drawIt(xFn,yFn,tMin,tMax,speed){
+      var data = [], x, y = 0, w = $(".plotContainer").width(), h = $(".plotContainer").width();
+      Parser.err = "";
+
+      $("graph").html("");
+      $("svg").detach();
+      
+      var svgContainer = d3.select("graph").append("svg")
+                        .attr("width", w)
+                        .attr("height", h)
+                        .attr("id","drawItContainer");
+                      
+       // evaluate then check for errors                   
+      tMin = Parser.evaluate(tMin)*100;    
+      tMax = Parser.evaluate(tMax)*100;     
+      if(Parser.err != ""){
+          $(".errorContainer").show();
+              return ;
+           }else{
+            $(".errorContainer").hide();
+      }                           
+
+      for(var i = tMin; i < tMax; i = i+1){
+          x = Parser.parse(xFn).evaluate({t:i/100});
+          y = Parser.parse(yFn).evaluate({t:i/100});
+
+           if(x === -Infinity || y === -Infinity || x === Infinity || y === Infinity || isNaN(x) || isNaN(y)){
+            $(".errorContainer").show();
+            return ;
+           }else{
+            $(".errorContainer").hide();
+            data.push({"x":x, "y":y});
+           }
+          
+      }
+      
+
+      // SCALE:
+      var maxx = d3.max(data, function(d) { return d.x; });
+      var maxy = d3.max(data, function(d) { return d.y; });
+
+      var minx = d3.min(data, function(d) { return d.x; });
+      var miny = d3.min(data, function(d) { return d.y; });
+
+      // minx = minx < -210 ? minx : 0;
+      // miny = miny < -210 ? miny : 0;
+      var scale;
+     // if(maxx >= maxy){
+         xscale = d3.scale.linear()
+                   .domain([minx, d3.max(data, function(d) { return d.x; })])
+                   .range([30, w-10]);
+     // }else{
+         yscale = d3.scale.linear()
+                   .domain([miny, d3.max(data, function(d) { return d.y; })])
+                   .range([30, h-10]);           
+     // }
+     
+     (function drawGrid(){
+          var xlines = d3.svg.axis()
+                  .scale(xscale)
+                  .orient("bottom")
+                  .ticks(17)
+                  .tickSize(-h, 0, 0);
+          var ylines = d3.svg.axis()
+                  .scale(yscale)
+                  .orient("left")
+                  .ticks(17)
+                  .tickSize(-w, 0, 0);
+
+          svgContainer.append("g")
+                  .attr("class", "yGridLines")
+                  .attr("transform", "translate(20,"+w+") scale(1,-1)")
+                  .call(ylines);
+
+          svgContainer.append("g")
+                  .attr("class", "xGridLines")
+                  .attr("transform", "translate(0,"+(h-20)+")")
+                  .call(xlines);
+
+     })();
+
+     (function drawAxis(){
+        var xAxis = d3.svg.axis()
+                  .scale(xscale)
+                  .orient("bottom")
+                  .ticks(1)
+                  .tickSize(-h, 0, 0)
+                  .tickFormat("");
+
+      var yAxis = d3.svg.axis()
+                  .scale(yscale)
+                  .orient("left")
+                  .ticks(1)
+                  .tickSize(-w, 0, 0)
+                  .tickFormat("");
+                  
+      svgContainer.append("g")
+                  .attr("class", "yaxis")
+                  .attr("transform", "translate(20,"+w+") scale(1,-1)")
+                  .call(yAxis);
+
+      svgContainer.append("g")
+                  .attr("class", "xaxis")
+                  .attr("transform", "translate(0,"+(h-20)+")")
+                  .call(xAxis);
+     })();
+      
+
+      var lineFunction = d3.svg.line()
+                  .x(function(d) { return xscale(d.x); })
+                  .y(function(d) { return yscale(d.y); })
+                  .interpolate("basis-open"); 
+
+      var lineGraph = svgContainer.append("path")
+                  .attr("d", lineFunction(data))
+                  .attr("id", "drawIt")
+                  .attr("transform", "translate(0,"+w+") scale(1,-1)");
+		      
+
+      var pathlength = document.getElementById('drawIt').getTotalLength();
+
+      d3.select("#drawIt").attr("stroke-dasharray", pathlength);
+
+      d3.select("#drawIt")
+                  .attr("stroke-dasharray", pathlength)
+                  .append("animate")
+                  .attr("attributeName", "stroke-dashoffset")
+                  .attr("from", pathlength)
+                  .attr("to",0)
+                  .attr("dur",speed+"s")
+                  .attr("begin","rect.click;0s");
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> testing </title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<style type="text/css">
+.video-info {
+	display: inline;
+	width: 350px;
+}
+#video-list {
+    height: auto;
+	overflow:auto;
+    width: auto;
+}
+ol li.playlist-video-item {
+	width: 700px;
+}
+ol li.playlist-video-item .thumb-container {
+	float: left;
+	width: 150px;
+}
+ol li.playlist-video-item {
+	padding:10px 10px 15px 0;
+}
+ol li.playlist-video-item:nth-child(even) {
+	background: #ebebeb;
+}
+.videoyt:hover {
+	cursor: pointer;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script type="text/javascript">
+ 
+$(function () {
+//(function($) {	
+	//$("ol li.playlist-video-item").css("background-color","red");
+	var iframe = $('<iframe frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>');
+    var dialog = $("<div></div>").append(iframe).appendTo("body").dialog({
+        autoOpen: false,
+        modal: true,
+        resizable: false,
+        width: "auto",
+        height: "auto",
+        close: function () {
+            iframe.attr("src", "");
+        }
+    });
+   
+    $(".videoyt a, .video-title-container a").on("click", function (e) {
+//	  $(".videoyt a, .video-title-container a").click(function(e) {
+        e.preventDefault();
+        var src = $(this).attr("href");
+        var title = $(this).attr("data-title");
+        var width = $(this).attr("data-width");
+        var height = $(this).attr("data-height");
+        iframe.attr({
+            width: +width,
+            height: +height,
+            src: src
+        });
+        dialog.dialog("option", "title", title).dialog("open");
+       // dialog.dialog({ title: title }).dialog("open");
+    });
+});
+//})(jQuery);
+</script>
+
+<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" />
+
+</head>
+
+<body>
+<div id="main">
+    <div id="container">
+
+
+<div id="wrapper">
+	<div id="column">
+
+<div id="content">
+    		<div id="content-col">
+  
+   	 		
+
+     <h1>Testing video youtube dialog jquery UI</h1>
+      <div id="video-list">
+              <div id="panels">
+                <div id="gh-activityfeed" class="branded-page-v2-body">
+                  <ol>
+                    <li class="playlist-video-item">
+                      <div class="video-container">
+                        <div class="thumb-container">
+                          <div class="videoyt"> <a href="http://www.youtube-nocookie.com/embed/e9SeJIgWRPk" data-title="" data-width="512" data-height="384"><img width="106" height="60" src="image1.JPG" /></a> </div>
+                        </div>
+                        <div class="video-info">
+                          <div class="video-overview">
+                            <h3 class="video-title-container"><a href="http://www.youtube-nocookie.com/embed/e9SeJIgWRPk" data-title="Katy Perry" data-width="512" data-height="384">Katy Perry - Roar</a></h3>
+                            <!--<p class="video-details"> Date: 13 September 2013 </p>-->
+                            <p class="video-description">This is katy perry's music video</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="playlist-video-item">
+                      <div class="video-container">
+                        <div class="thumb-container">
+                          <div class="videoyt"> <a href="http://www.youtube-nocookie.com/embed/9bZkp7q19f0" data-title=" " data-width="512" data-height="384"><img width="106" height="60" src="feisVideoPage_files/images/iamge2.JPG" /></a> </div>
+                        </div>
+                        <div class="video-info">
+                          <div class="video-overview">
+                            <h3 class="video-title-container"><a href="http://www.youtube-nocookie.com/embed/9bZkp7q19f0" data-title="" data-width="512" data-height="384">Gangnam Style</a> </h3>
+                            <!--<p class="video-details"> Date: 13 September 2013 </p>-->
+                            <p class="video-description">This is the popular gangnam style video</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                   
+                    
+                  </ol>
+        
+                </div>
+              </div>
+            </div>
+         
+     
+    
+
+     	<!-- END: Main page content -->
+     </div>
+          
+     </div>
+     <div class="clear">&nbsp;</div>
+   </div>
+</div>  
+</div>
+</div>
+<div id="footer">
+		<div id="foot">
+			<ul>
+				 <li></li>
+			</ul>
+			<ul>
+<!-- END FOOTER WRTIER -->
+			</ul>
+			
+		</div>
+</div>
+
+</body>
+</html>

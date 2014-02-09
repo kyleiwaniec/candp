@@ -16,8 +16,7 @@
                 
                 <div class="sub-panel" data-panel="webdev">
                     <div class="title"><h2>[ <a href="services.php" onclick="window.history.back(); return false">&#9664;</a> ] Web Design & Development. For Desktop and Mobile. </h2></div>
-
-                    <p class="listTitle">Our custom website is usually made up of these parts:</p>
+                    <p class="listTitle">Website components:</p>
                     <ul><li>
                     Information Architecture (IA) – how your content is organized.
                     </li><li>User Interface Design (UI) – how your content is presented.
@@ -26,19 +25,18 @@
                     </li><li>Back-End technology – the code that makes your site work.
                     </li><li>SEO best practices – We’ll get you started on Search Engine Optimization – but as you probably know, that’s a whole industry onto itself…
                     </li></ul>
-                    <p class="listTitle">We like to code in:</p>
+                    <p class="listTitle">Favorite technologies:</p>
                     <ul><li>HTML5/CSS3
-                    </li><li>JavaScript (and the mighty jquery library)
+                    </li><li>JavaScript - including backbone.js, angular.js, jquery.js, and other supporting libraries.
                     </li><li>LAMP [Linux, Apache, PHP, MySQL]
                     </li><li>JAVA
                     </li><li>Anything Open-Source!
                     </li></ul>
 
-                    <p class="listTitle">We also do:</p>
+                    <p class="listTitle">Other experience:</p>
                     <ul><li>E-Commerce
                     </li><li>Data integration through API’s (e.g. - FaceBook, Flickr, Google[Maps, News, etc..], Schools, Mortgage Rates - whatever your fancy…)
                     </li><li>Wordpress themes
-                    </li><li>Whatever your heart desires! (we’re talking websites here…)
                     </li></ul>
                     <p class="mb mb-single"><a href="websites.php">Website Examples</a></p>
                     <p>&nbsp;</p>

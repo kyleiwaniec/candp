@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript">
+       
+            function submitForm() {
+                console.log("submitting");
+                if (document.forms.length) {
+                    console.log("length");
+                    document.forms[0].action = "/RaceData/Edit/@Model.raceNotesId"
+                    document.forms[0].submit();
+                }
+
+                return true;
+            }
+             
+        </script>
+    </head>
+    <body>
+
+
+
+
+
+
+        <a href="/Home/" data-icon="back" data-rel="back">Cancel</a>
+        <a href="#"  onclick="submitForm();" data-icon="check">Save</a>
+
+        <h3>ViewBag.Title</h3>
+
+
+        <form method="post" >
+            <div data-role="fieldcontain">
+
+
+
+
+
+                <textarea  id="raceNotes" name="raceNotes" placeholder="raceNotes"  >@Model.raceNotes</textarea>
+                <!--<input type="text" style="height:100px;" name="raceNotes" id="raceNotes" value="@Model.raceNotes" placeholder="raceNotes" />-->
+
+                <label for="raceNotes">Notes</label>
+
+                <input type="text"  name="raceDate" id="raceDate" value="@Model.raceDate" placeholder="raceDate" />
+                <label for="raceDate">Race Date</label>
+
+
+
+
+            </div>
+
+        </form>
+
+
+    </body>
+</html>

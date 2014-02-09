@@ -483,6 +483,8 @@ img {
     width:20px;
     
 }
+.ie7 .headertest{
+}
 .not-ie .headertestExcep{
     vertical-align: bottom;
 /*    position:relative;*/

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/styles.css" type="text/css" / >
+            <title></title>
+            <style>
+
+                #form1 ul{
+                    clear:both;
+                }
+                #form1 ul, #form1 ul li{
+                    list-style: none;
+                    margin:0;
+                    padding:0;
+                }
+                #form1 ul li{
+                    float:left;
+                    margin-right:20px;
+                }
+                #form1 ul li:first-child label{
+                    width:60px;
+                    display:inline-block;
+                }
+                #zip{width:60px;}
+                #state{width:30px;}
+                .container{
+                    overflow:hidden;
+                    border:1px solid #ddd;
+                    width:600px;
+                    padding:10px;
+                    margin:10px;
+                }
+                .important{
+                    color:red;
+                    padding-left:3px;
+                    font-size:x-small;
+                    padding-top:1px;
+                }
+
+
+            </style>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <div id="right" class="container">
+                <h4>Mailing Name and Address:</h4>
+                <ul>
+                    <li>
+                        <label for="adddress">Address</label>
+                        <input id="address" type="text" />
+                    </li>
+                    <li>
+                        <label for="email">Salutation</label>
+                        <input id="email" type="text" value="" name="email"/>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="city">City</label>
+                        <input id="city" type="text" value="" name="city" />
+                    </li>
+                    <li>
+                        <label for="state">State</label>
+                        <input id="state" type="text" value=""  name="state" />
+                    </li>
+                    <li>
+                        <label for="zip">Zip</label>
+                        <input id="zip" type="text" value="" name="zip" />
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <label for="country">Country</label>
+                        <input id="country" type="text" value="" name="country" />
+                    </li>
+                </ul>
+            </div> 
+
+        </form>
+    </body>
+</html>

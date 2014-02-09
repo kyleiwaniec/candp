@@ -68,8 +68,8 @@ $(function(){
                 });
             });
             
-          $("#sidebar").draggable({containment: "body", scroll: false});
-           $("#sidebar").disableSelection();
+         // $("#sidebar").draggable({containment: "body", scroll: false});
+          // $("#sidebar").disableSelection();
                                 
             // prevent scrolling (in any direction)
             /*  
@@ -87,7 +87,7 @@ $(function(){
                                    top: $(this).position().top,
                                    //width: $(this).innerWidth(),
                                    opacity: 1
-                                   }, 200, 'easeOutBack');
+                                   }, 200);
                        }).mouseleave(function(){
                        hoverBox.stop(true, true).animate({
                                     opacity: 0
@@ -100,28 +100,28 @@ $(function(){
 
         // if the function argument is given to overlay,
         // it is assumed to be the onBeforeLoad event listener
-        $("a[rel]").overlay({
+  //       $("a[rel]").overlay({
 
-		mask: '#2d3641',
-		effect: 'apple',
-                fixed: false,
+		// mask: '#2d3641',
+		// effect: 'apple',
+  //               fixed: false,
 
-		onBeforeLoad: function() {
+		// onBeforeLoad: function() {
 
-			// grab wrapper element inside content
-			var wrap = this.getOverlay().find(".contentWrap");
+		// 	// grab wrapper element inside content
+		// 	var wrap = this.getOverlay().find(".contentWrap");
 
-			// load the page specified in the trigger
-			wrap.load(this.getTrigger().attr("href"));
+		// 	// load the page specified in the trigger
+		// 	wrap.load(this.getTrigger().attr("href"));
                         
             
-           },
+  //          },
             
-        onClose: function() {
-        // something
-            $(document).enableSelection();
-            }    
-        });
+  //       onClose: function() {
+  //       // something
+  //           $(document).enableSelection();
+  //           }    
+  //       });
         
         
          // expanding panels //
@@ -136,10 +136,10 @@ $(function(){
           var h =  me.next().children("div").height();
           //h += 30;
           
-          me.next().animate({height:h}, 500, 'easeInOutCubic').siblings('.panelContent').animate({height:'0'}, 500, 'easeInOutCubic');
+          me.next().animate({height:h}, 500).siblings('.panelContent').animate({height:'0'}, 500);
           me.siblings().removeClass("moveme");
            }else{
-               me.next().animate({height:'0'}, 500, 'easeInOutCubic');
+               me.next().animate({height:'0'}, 500);
                $("h3").removeClass("moveme"); 
                 }
             });
@@ -161,15 +161,15 @@ $(function(){
 		    // end icons animate
                     // 
      // enable circular scrollables with a click handler on web portfolio page
-    $(".scroll").scrollable({ circular: true }).click(function() {
-            $(this).data("scrollable").next();		
-    });
-    $(".forward").click(function() {
-            $(this).parent().siblings(".scroll").data("scrollable").next();		
-    });
-    $(".back").click(function() {
-            $(this).parent().siblings(".scroll").data("scrollable").prev();		
-    });
+    // $(".scroll").scrollable({ circular: true }).click(function() {
+    //         $(this).data("scrollable").next();		
+    // });
+    // $(".forward").click(function() {
+    //         $(this).parent().siblings(".scroll").data("scrollable").next();		
+    // });
+    // $(".back").click(function() {
+    //         $(this).parent().siblings(".scroll").data("scrollable").prev();		
+    // });
     
     
     

@@ -12,6 +12,61 @@
                 <div class="scroll">
                     <div class="pics">
 
+                        <?php drawImages("images/portfolio/500/snap*"); ?>
+
+                    </div>
+                </div>
+                <div class="arrows">
+                    <a class="back browse left"></a>
+                    <a class="forward browse right"></a>
+                </div>
+                <div class="info">
+                    
+                        <span class="link"><a href="https://www.mysnapsecure.com/">mysnapsecure.com</a><br/><br/>
+
+                        <span class="item-title">Category:</span><br/>  
+                        <span class="item-descrip">Device Security and Parental Controls</span><br/><br/>
+                   
+                        <span class="item-title">Technology:</span><br/>
+                        <span class="item-descrip">backbone.js/underscore.js, HTML5, CSS3</span><br/><br/>
+
+                </div>
+
+            </div><!-- web item -->
+                <div class="webItem">
+
+                <div class="scroll">
+                    <div class="pics">
+
+                        <?php drawImages("images/portfolio/500/hm*"); ?>
+
+                    </div>
+                </div>
+                <div class="arrows">
+                    <a class="back browse left"></a>
+                    <a class="forward browse right"></a>
+                </div>
+                <div class="info">
+                    
+                        <span class="link"><a href="https://hosseinmousavian.com">hosseinmousavian.com</a><br/><br/>
+
+                        <span class="item-title">Category:</span><br/>  
+                        <span class="item-descrip">Society/Politics</span><br/><br/>
+                   
+                        <span class="item-title">Technology:</span><br/>
+                        <span class="item-descrip">Custom Wordpress Theme</span><br/><br/>
+
+                        <span class="item-title">Design:</span><br/>
+                        <span class="item-descrip">Website</span><br/><br/>
+
+                </div>
+
+            </div><!-- web item -->
+                <div class="webItem">
+
+                <div class="scroll">
+                    <div class="pics">
+
                         <?php drawImages("images/portfolio/500/nj*"); ?>
 
                     </div>
@@ -224,32 +279,7 @@
                 </div>
 
             </div><!-- web item -->
-            <div class="webItem">
-
-                <div class="scroll">
-                    <div class="pics">
-<?php drawImages("images/portfolio/500/sprhe*"); ?>
-
-                    </div>
-                </div>
-                <div class="arrows">
-                    <a class="back browse left"></a>
-                    <a class="forward browse right"></a>
-                </div>
-                <div class="info">
-                    <span class="link"><a href="https://square-peg-round-hole-emporium.com">sprhe.com</a><br/><br/>
-
-                        <span class="item-title">Category:</span><br/>	
-                        <span class="item-descrip">E-commerce, Art</span><br/><br/>
-
-                        <span class="item-title">Technology:</span><br/>
-                        <span class="item-descrip">HTML5, CSS3, JS & jQuery, AJAX, PHP/MySQL, Opencart, Facebook Graph API</span><br/><br/>
-
-                        <span class="item-title">Design:</span><br/>
-                        <span class="item-descrip">Website, Logo</span><br/><br/>
-                </div>
-
-            </div><!-- web item -->
+           
             <div class="webItem">
 
                 <div class="scroll">
@@ -331,33 +361,6 @@
 
             </div><!-- web item -->
 
-
-            <div class="webItem">
-
-                <div class="scroll">
-                    <div class="pics">
-<?php drawImages("images/portfolio/500/cr*"); ?>
-
-                    </div>
-                </div>
-                <div class="arrows">
-                    <a class="back browse left"></a>
-                    <a class="forward browse right"></a>
-                </div>
-                <div class="info">
-                    <span class="link"><a href="http://www.SplendidlyImperfect.com">SplendidlyImperfect.com</a><br/><br/>
-
-                        <span class="item-title">Category:</span><br/>	
-                        <span class="item-descrip">Art</span><br/><br/>
-
-                        <span class="item-title">Technology:</span><br/>
-                        <span class="item-descrip">HTML5, CSS3, JS & jQuery</span><br/><br/>
-
-                        <span class="item-title">Design:</span><br/>
-                        <span class="item-descrip">Logo, Website</span><br/><br/>
-                </div>
-
-            </div><!-- web item -->
             <div class="webItem">
 
                 <div class="scroll">
@@ -411,7 +414,29 @@
                 </div>
 
             </div><!-- web item -->
+            <div class="webItem">
 
+                <div class="scroll">
+                    <div class="pics">
+<?php drawImages("images/portfolio/500/dv*"); ?>
+
+                    </div>
+                </div>
+                <div class="arrows">
+                    <a class="back browse left"></a>
+                    <a class="forward browse right"></a>
+                </div>
+                <div class="info">
+                    <span class="link"><a href="http://www.DianaVincent.com">DianaVincent.com</a><br/><br/>
+
+                        <span class="item-title">Category:</span><br/>  
+                        <span class="item-descrip">Jewelry</span><br/><br/>
+
+                        <span class="item-title">Design:</span><br/>
+                        <span class="item-descrip">Website</span><br/><br/>
+                </div>
+
+            </div><!-- web item -->
 
             <h2 class="deve">Currently in Development:</h2>
 

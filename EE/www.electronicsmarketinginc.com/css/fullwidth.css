@@ -1,0 +1,269 @@
+/*-----------------------------------------------------------------------------
+
+         MOVED MOVED MOVED TO RF-SETTINGS CSS FILE
+
+/*-----------------------------------------------------------------------------
+REVOLUTION RESPONSIVE BASIC STYLES OF HTML DOCUMENT
+
+MOVED MOVED MOVED TO RF-SETTINGS CSS FILE
+
+FROM ORIGINAL REVOLUTION CREATOR
+AS POSTED IN WORDPRESS ONE
+APRIL CHANGED THESE MARKED AS ONE TO AVOID CONFLICT
+
+Screen Stylesheet
+
+version:   	1.0
+date:      	26/06/12
+author:		themepunch
+email:     	support@themepunch.com
+website:   	http://www.themepunch.com
+-----------------------------------------------------------------------------*/
+@import url(http://fonts.googleapis.com/css?family=Oswald:700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,400italic);
+
+/* Full Width Banner */
+.fullwidthbanner-container {
+  overflow: hidden;
+  position: relative;
+	width: auto !important;
+  max-height: 400px;
+  padding: 0;
+  z-index: 5;
+}
+
+
+/* Full Width Banner 
+.fullwidthbanner-containerONE {
+	overflow: hidden !important;
+	width: auto !important;
+	max-height: 400px !important;
+	padding: 0;
+	z-index: 5;
+	
+}
+*/
+
+
+
+
+
+
+.tp-caption.big_grey{
+	position: absolute; 
+	color: #444444 !important;
+	text-shadow: none; 
+	font-weight: 700; 
+	font-size: 32px; 
+	line-height: 36px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none;															
+}
+
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.customfont_black{
+	color : #000000;
+	font-weight: 700; 
+	font-family:"Oswald" !important;
+	font-size:55px;
+	line-height:64px;
+	letter-spacing: -2px;
+}
+
+.tp-caption.customfont_white{
+	color : #ffffff;
+	font-weight: 700; 
+	font-family:"Oswald" !important;
+	font-size:55px;
+	line-height:64px;
+	letter-spacing: -2px;
+}
+
+.tp-caption.customfont_grey{
+	color : #777777;
+	font-weight: 700; 
+	font-family:"Oswald" !important;
+	font-size:36px;
+	line-height:55px;
+	letter-spacing: -2px;
+}
+
+.tp-caption.customfont_color{
+	color : #2da0ce;
+	font-weight: 700; 
+	font-family:"Oswald" !important;
+	font-size:36px;
+	line-height:55px;
+	letter-spacing: -2px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.medium_black{
+	position: absolute; 
+	text-shadow: none; 
+	font-size: 22px;
+	line-height: 30px; 
+	padding: 0px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+	color: #000000;
+	font-weight: 700;													
+}
+	
+.tp-caption.medium_white{
+	position: absolute; 
+	text-shadow: none; 
+	font-size: 22px;
+	line-height: 30px; 
+	padding: 0px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+	color: #ffffff;
+	font-weight: 700;												
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.small_black{
+	position: absolute; 
+	text-shadow: none; 
+	font-size: 16px;
+	line-height: 22px; 
+	padding: 0px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+	color: #000000;
+	font-weight: 700;													
+}
+.tp-caption.small_grey{
+	position: absolute; 
+	text-shadow: none; 
+	font-size: 16px;
+	line-height: 22px; 
+	padding: 0px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+	color: #444444;
+	font-weight: 700;												
+}	
+.tp-caption.small_white{
+	position: absolute; 
+	text-shadow: none; 
+	font-size: 16px;
+	line-height: 22px; 
+	padding: 0px; 
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+	color: #ffffff;
+	font-weight: 700;												
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.medium_text_black{
+	position: absolute; 
+	color: #000000; 
+	text-shadow: none; 
+	font-size: 14px; 
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+
+}
+.tp-caption.medium_text_grey{
+	position: absolute; 
+	color: #444444 !important;;
+	text-shadow: none; 
+	font-size: 14px;
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+
+}
+.tp-caption.medium_text_brightgrey{
+	position: absolute; 
+	color: #777777; 
+	text-shadow: none; 
+	font-size: 14px;
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+.tp-caption.medium_text_white{
+	position: absolute; 
+	color: #ffffff; 
+	text-shadow: none; 
+	font-size: 14px;
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.small_text_black{
+	position: absolute; 
+	color: #777777; 
+	text-shadow: none; 
+	font-size: 12px; 
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+.tp-caption.small_text_grey{
+	position: absolute; 
+	color: #444444; 
+	text-shadow: none; 
+	font-size: 12px; 
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+.tp-caption.small_text_brightgrey{
+	position: absolute; 
+	color: #777777; 
+	text-shadow: none; 
+	font-size: 12px; 
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+.tp-caption.small_text_white{
+	position: absolute; 
+	color: #ffffff; 
+	text-shadow: none; 
+	font-size: 12px; 
+	line-height: 1.6 !important;
+	margin: 0px; 
+	border-width: 0px; 
+	border-style: none; 
+}
+
+/* ------------------------------------------------------------------------ */
+
+.tp-caption.noshadow {
+	text-shadow: none;		
+}	
+
+.tp-caption a { 
+	color: #2da0ce; text-shadow: none;	-webkit-transition: all 0.2s ease-out; -moz-transition: all 0.2s ease-out; -o-transition: all 0.2s ease-out; -ms-transition: all 0.2s ease-out;	 
+}			
+.tp-caption a:hover { 
+	color: #666666; 
+}

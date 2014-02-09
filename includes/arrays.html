@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>arrays</title>
+	<script type="text/javascript">
+
+	var songOne = {0:{src:"songOne"}, config:{one:"one", two:"two"}};
+	var songTwo = {0:{src:"SongTwo"}, config:{one:"one", two:"two"}};
+	var songThree = {0:{src:"songThree"}, config:{one:"one", two:"two"}};
+
+	var songArr = [songOne,songTwo,songThree];
+
+Array.prototype.shuffle = function() {
+ 	var len = this.length;
+	var i = len;
+	 while (i--) {
+	 	var p = parseInt(Math.random()*len);
+		var t = this[i];
+	  	this[i] = this[p];
+	  	this[p] = t;
+	 	}
+    };
+
+	var idx = songArr.indexOf(songTwo);
+	alert(idx);
+
+	songArr.shuffle();
+	idx = songArr.indexOf(songTwo);
+	alert(idx);
+
+	</script>
+</head>
+<body>
+	indexes
+</body>
+</html>

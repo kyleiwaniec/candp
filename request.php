@@ -1,7 +1,7 @@
 <?php
     
     //$data = explode(",", $_POST['data']);
-    echo "you basterd!";
+   
 
     $ip = $_POST['ip'];
     $date = $_POST['date'];

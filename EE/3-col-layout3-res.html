@@ -6,6 +6,15 @@
         <!--[if (lt IE 9) & (!IEMobile)]>
         <script src="../js/css3-mediaqueries.js"></script>
         <![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+        <script>
+             $(function(){
+                 $("#fill").on("click", function(){
+                     $("#loremipsum").toggle();
+                 });
+             });           
+        </script>
         <style>
             /* layout */
             body, html { 
@@ -22,22 +31,22 @@
             }
             .header{
                 height:150px;
-                background-color: lightcoral;
+                background-color: #eee;
             }
             .content {
                 margin: 0px;
                 padding:0 200px;
-                background-color: #ffffff;
+                background-color: #fff;
             }
             .left {
                 float:left;
                 width: 200px;
-                background-color: orange;
+                background-color: #aaa;
             }
             .right {
                 float:right;        
                 width: 200px;
-                background-color: orange;
+                background-color: #aaa;
             }
             .footer, .push {
                 height: 150px;
@@ -46,8 +55,7 @@
                 clear:both;
             }
             .footer{
-                background-color:lightslategray;
-                text-align: center;
+                background-color:#eee;
             }
             /* resets */
             h1, h2, h3, h4, h5, h6, p{
@@ -57,8 +65,9 @@
             /* styles */
             .container{
                 padding: 20px;
-                 border:1px solid #ccc;
+/*                border:1px solid #ccc;*/
             }
+            #loremipsum{display:none;}
             
             @media all and (max-width: 640px) {
                 .right{
@@ -91,11 +100,14 @@
             }
             
         </style>
+        
     </head> 
 
     <body>
         <div class="wrapper">
-            <div class="header">header stuff</div>
+            <div class="header">
+                <div class="container">header </div>
+            </div>
             <div class="left">
                 <div class="container">
                     <h2 class="arrow">Left</h2> 
@@ -110,12 +122,29 @@
             </div>
             <div class="content">
                 <div class="container">
-                    <h2>Section 1</h2>
-
+                    <h2>Content</h2>
+                    <button id="fill">Show/hide content</button>
+                    <div id="loremipsum">
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque hendrerit faucibus dui, ac consectetur elit sollicitudin in. Pellentesque sit amet enim sed neque pellentesque tempor quis in nunc. Quisque et sem sit amet nibh malesuada tempor. Ut libero libero, rhoncus in tristique ut, blandit a tortor. Nam a tortor id tortor porta placerat id eu est. Etiam sollicitudin enim id turpis rhoncus semper. Etiam eu libero erat. Fusce id nibh leo, vel commodo purus. Integer et mauris vitae nunc tincidunt lacinia.
+                        </p>
+                        <p>
+                        In sed orci eget tortor dapibus tempor ac in elit. Integer a mollis mi. Phasellus vel lorem sed felis vestibulum fermentum. Nam dignissim dictum est. Sed cursus nisl sed massa vestibulum sit amet volutpat magna rutrum. In quis luctus massa. Nullam dictum, purus sed feugiat lacinia, nibh erat condimentum est, eget pulvinar elit dolor a augue. Aliquam feugiat massa et ante aliquet cursus. Suspendisse orci tortor, cursus ac egestas vitae, adipiscing non lectus. Mauris ligula sapien, hendrerit vel dictum ut, adipiscing sit amet massa. In eu placerat libero. Praesent ultrices bibendum nulla, quis pulvinar quam aliquet id.
+                        </p>
+                        <p>
+                        Suspendisse potenti. Sed sodales nibh massa. Suspendisse eleifend tincidunt magna, eu fringilla turpis sodales eu. Suspendisse nec velit ut metus vehicula interdum. Nunc fermentum, tellus sed faucibus viverra, enim augue sodales quam, eget feugiat est nibh id nulla. Nullam ut ultrices est. Morbi porta lorem eu velit tristique a elementum magna adipiscing. Nunc pulvinar, orci et placerat accumsan, sapien est ullamcorper tortor, eget porttitor elit magna sed augue. Nunc quis tortor eget felis vestibulum condimentum. Nunc eu felis eu leo ornare venenatis. Nullam eu ante sit amet enim semper placerat. Curabitur tempor porttitor mauris, eu dictum tellus egestas non. Nulla eu lacus at quam rhoncus adipiscing.
+                        </p>
+                        <p>
+                        Nam ac mi ut odio dignissim hendrerit. Donec aliquam nisi hendrerit odio pulvinar porta a vitae nulla. Duis congue sem eget enim porttitor hendrerit. Cras ligula sem, lacinia vitae tincidunt non, molestie ac erat. Aenean elementum tristique mi et malesuada. Cras tempor mauris vitae mauris ullamcorper suscipit sed non felis. Sed dictum viverra dolor, quis condimentum eros congue sed. Morbi volutpat pharetra purus vitae blandit. Etiam non lectus et ligula eleifend rutrum. Duis laoreet felis vitae magna ultricies ultricies. Maecenas nec felis a tellus fringilla dapibus id at metus. Nullam diam lectus, pretium at laoreet eu, consectetur eu ligula. Aliquam erat volutpat.
+                        </p>
+                        <p>
+                        Nullam commodo lectus in sem vulputate eu imperdiet tortor facilisis. Phasellus laoreet condimentum consequat. Proin tempor lacinia mi, vel dictum nisi sagittis et. Duis in erat a augue varius lobortis. Etiam facilisis, eros et auctor luctus, ligula est sagittis nisi, vel laoreet elit purus vitae orci. Cras non ultrices lacus. Nam congue eros ac ante facilisis consequat.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="push"><!-- footer is always on the bottom --></div>
         </div>
-        <div class="footer">footer is always on the bottom</div>
+        <div class="footer"><div class="container">footer is always on the bottom</div></div>
     </body>
 </html>

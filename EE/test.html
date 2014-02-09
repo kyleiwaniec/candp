@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style type="text/css">
+            body, html {
+                padding:0px;
+                margin:0px;
+                height: 100%;
+                background-color: #FC3;
+            }
+
+            .wrapper{
+                min-height: 100%;
+                height: auto !important;
+                height: 100%;
+                margin: 0 auto -150px;
+                max-width: 1000px;
+                background-color: #CCC;
+            }
+            .header{
+                overflow:auto;
+                padding: 20px;
+            }
+
+            #logo {
+                float:left;
+                width: 200px;
+                border: 2px solid #1E5A72;
+            }
+
+            #nav {
+                float:right;
+                border: 2px solid #1E5A72;
+                margin-top: 20px; /* adjust or remove as desired */
+            }
+            .main{
+                padding:20px;
+                overflow: hidden;
+            }
+            .content {
+                width: 700px;
+                float:left;
+                border: 2px solid #1E5A72;
+            }
+            .sidebar{
+                width:200px;
+                float:right;
+            }
+            .ad{
+                border:2px solid grey;
+            }
+            .footer, .push {
+                height: 150px;
+                max-width: 100%;
+                margin: 0 auto;
+                clear:both;
+                background-color: #369;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div id="logo">Logo image goes here but is ignoring the css left and top positioning</div>
+                <div id="nav">Navigation buttons go here but is ignoring the css left and top positioning</div>
+            </div>
+            <div class="main">
+                <div class="content">
+                    <p>My page content that could be any height, depends on the pages content hold long it goes</p>
+                    <p>It ignoring the css left and top positioning. The width of 700px is correct.</p>
+                    <p>3</p><p>4</p><p>5</p><p>6</p><p>7</p><p>8</p>
+                    <p>9</p><p>10</p><p>12</p><p>13</p><p>14</p><p>15</p><p>16</p><p>17</p>
+                    <p>18</p><p>19</p><p>20</p><p>21</p><p>22</p><p>23</p><p>24</p><p>25</p>
+                    <p>26</p><p>27</p><p>28</p><p>30</p><p>31</p><p>32</p><p>33</p><p>34</p>
+                    <p>35</p><p>36</p><p>37</p><p>38</p><p>39</p><p>40</p>
+                </div>
+                <div class="sidebar">
+                    <div class="ad">ad - 1</div> 
+                    <div class="ad">ad - 2</div> 
+                </div>
+            </div>
+            <div class="push"><!-- footer is always on the bottom --></div>
+        </div>
+
+        <div class="footer">This is correct, footer is always on the bottom of page even <br />
+            if you have to scroll and 100% width of browser window.</div>
+    </body>
+</html>

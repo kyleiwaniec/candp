@@ -1,0 +1,342 @@
+/* 
+    Document   : card-flip
+    Created on : Jun 11, 2012, 9:48:18 AM
+    Author     : kylehamilton
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+
+
+.flipper {
+    float: left;
+    height: 100%;
+    position: relative;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+
+
+
+
+        -webkit-transform-origin: right center;
+        -moz-transform-origin: right center;
+        -o-transform-origin: right center;
+        transform-origin: right center;
+}
+
+.flipper .front {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+    -webkit-transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+
+    cursor:pointer;
+}
+.flipper:hover .front {
+    z-index: 900;
+    border-color: #eee;
+    -webkit-transform: rotateY(180deg);
+}
+
+.flipper .back {
+    float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 800;
+    width: inherit;
+    height: inherit;
+
+
+    -webkit-transform: translateX( -100% ) rotateY( -180deg );
+        -moz-transform: translateX( -100% ) rotateY( -180deg );
+        -o-transform: translateX( -100% ) rotateY( -180deg );
+        transform: translateX( -100% ) rotateY( -180deg );
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+}
+
+.flipper:hover .back {
+    z-index: 1000;
+    -webkit-transform: rotateY(0deg);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+}
+
+
+
+/********* STYLING ********/
+.square, .front, .back
+{
+    position:relative;
+    margin:0;
+    padding:0;
+}
+
+.front, .back{
+    margin:0;
+    padding:0;
+    height:100%;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+
+ .square .flipper .front .squarediv{
+    display:-webkit-flex;
+    -webkit-flex-flow: column; 
+    -webkit-justify-content: center;
+    position:absolute;  
+    bottom:2px;
+    background-color:rgba(51,51,51,.2);
+    left:3px;
+    right:0;
+    color:white;
+    height:15%;
+    font-size:1.2em;
+    font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+
+.page_main_squares{
+    display:-webkit-flex;
+    -webkit-flex-flow: row wrap; 
+    height:100%;
+    width:100%;
+}
+
+.square{
+    height:33.33%;
+    width:25%;
+    display:-webkit-flex;
+    -webkit-flex-flow: column; 
+
+    border-bottom:1px white solid ;
+    border-right:1px white solid ;
+    
+    
+}
+
+.sq1, .sq2, .sq3, .sq4
+{
+    border-top:1px white solid ;
+    
+}
+
+.sq1, .sq5, .sq9
+{
+    border-left:1px white solid ;
+}
+
+.square .flipper .front
+{
+    height:100%;
+    width:100%;
+    background-repeat:no-repeat;
+}
+
+.square .flipper .back
+{
+    height:100%;
+    width:100%;
+}
+
+.square .flipper .back ol{
+    padding:2px 5px 2px 5px;
+    cursor:pointer;
+}
+
+ .square .flipper .back ol li
+{
+    height:20%;
+    width:25%;
+    margin:1px;
+}
+
+ .square .flipper .back ol li 
+{
+    background-color:rgba(51,51,51,.2);
+    padding:2px 0 2px 0;
+    margin:2px 0 2px 0;
+    font-size:1em;
+    width:100%;
+    color:white;
+    font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+  .sq1 .flipper .front
+{
+    background-image:url(../images/menu_lib.png), -webkit-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    background-image:url(../images/menu_lib.png), -moz-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    
+    background-position:center center;
+}
+
+  .sq1 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    background-image:-moz-linear-gradient(left top, #bf1818,#e55151); /* Red */
+}
+
+  .sq2 .flipper .front
+{
+    background-image:url(../images/menu_doc.png), -webkit-linear-gradient(left top, #2734b0,#5664e5); /* Dark Blue */
+    background-image:url(../images/menu_doc.png), -moz-linear-gradient(left top, #2734b0,#5664e5); /* Dark Blue */
+    background-position:center center;
+}
+
+  .sq2 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #2734b0,#5664e5); /* Dark Blue */
+    background-image:-moz-linear-gradient(left top, #2734b0,#5664e5); /* Dark Blue */
+}
+
+  .sq3 .flipper .front
+{
+    background-image:url(../images/menu_rep.png), -webkit-linear-gradient(left top, #e75302,#f57c3b); /* Orange */
+    background-image:url(../images/menu_rep.png), -moz-linear-gradient(left top, #e75302,#f57c3b); /* Orange */
+    background-position:center center;
+}
+
+  .sq3 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #e75302,#f57c3b); /* Orange */
+    background-image:-moz-linear-gradient(left top, #e75302,#f57c3b); /* Orange */
+}
+
+  .sq4 .flipper .front
+{
+    background-image:url(../images/menu_new.png), -webkit-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+        background-image:url(../images/menu_new.png), -moz-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+    background-position:center center;
+}
+
+  .sq4 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+        background-image:-moz-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+}
+
+  .sq5 .flipper .front
+{
+    background-image:url(../images/menu_enq.png), -webkit-linear-gradient(left top, #8b552a,#ac7345); /* Brown */
+    background-image:url(../images/menu_enq.png), -moz-linear-gradient(left top, #8b552a,#ac7345); /* Brown */
+    background-position:center center;
+}
+
+  .sq5 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #8b552a,#ac7345); /* Brown */
+    background-image:-moz-linear-gradient(left top, #8b552a,#ac7345); /* Brown */
+}
+
+  .sq6 .flipper .front
+{
+    background-image:url(../images/menu_equ.png), -webkit-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+    background-image:url(../images/menu_equ.png), -moz-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+    background-position:center center;
+}
+
+  .sq6 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #28b55d,#49d87f); /* Green */ 
+        background-image:-moz-linear-gradient(left top, #28b55d,#49d87f); /* Green */ 
+}
+
+  .sq7 .flipper .front
+{
+    background-image:url(../images/menu_est.png), -webkit-linear-gradient(left top, #fbcf00,#f1d659); /* Yellow */
+        background-image:url(../images/menu_est.png), -moz-linear-gradient(left top, #fbcf00,#f1d659); /* Yellow */
+    background-position:center center;
+}
+
+  .sq7 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #fbcf00,#f1d659); /* Yellow */
+    background-image:-moz-linear-gradient(left top, #fbcf00,#f1d659); /* Yellow */
+}
+
+  .sq8 .flipper .front
+{
+    background-image:url(../images/menu_hea.png), -webkit-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+    background-image:url(../images/menu_hea.png), -moz-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+    background-position:center center;
+}
+
+  .sq8 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+        background-image:-moz-linear-gradient(left top, #28b55d,#49d87f); /* Green */
+}
+
+  .sq9 .flipper .front
+{
+    background-image:url(../images/menu_inv.png), -webkit-linear-gradient(left top, #ca0021,#f03b59); /* Claret */
+    background-image:url(../images/menu_inv.png), -moz-linear-gradient(left top, #ca0021,#f03b59); /* Claret */
+    background-position:center center;
+}
+
+  .sq9 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #ca0021,#f03b59); /* Claret */
+    background-image:-moz-linear-gradient(left top, #ca0021,#f03b59); /* Claret */
+}
+
+  .sq10 .flipper .front
+{
+    background-image:url(../images/menu_per.png), -webkit-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+    background-image:url(../images/menu_per.png), -moz-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+    background-position:center center;
+
+}
+
+  .sq10 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+    background-image:-moz-linear-gradient(left top, #4796ef,#7bb2f1); /* Light Blue */
+
+}
+
+  .sq11 .flipper .front
+{
+    background-image:url(../images/menu_pur.png), -webkit-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    background-image:url(../images/menu_pur.png), -moz-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    background-position:center center;
+}
+
+  .sq11 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #bf1818,#e55151); /* Red */
+    background-image:-moz-linear-gradient(left top, #bf1818,#e55151); /* Red */
+}
+
+
+  .sq12 .flipper .front
+{
+    background-image:url(../images/menu_pro.png), -webkit-linear-gradient(left top, #2d5ec1,#4e7ad5); /* Med Blue */
+    background-image:url(../images/menu_pro.png), -moz-linear-gradient(left top, #2d5ec1,#4e7ad5); /* Med Blue */
+    background-position:center center;
+}
+
+  .sq12 .flipper .back
+{
+    background-image:-webkit-linear-gradient(left top, #2d5ec1,#4e7ad5); /* Med Blue */
+    background-image:-moz-linear-gradient(left top, #2d5ec1,#4e7ad5); /* Med Blue */
+}

@@ -6,14 +6,10 @@
 
         <div id="content">
             <div class="title"><h1>About Copy & Paste</h1></div>
-            <p>We are a boutique agency providing graphic design and web development. We work with both large and small firms and individuals, artists, musicians, and consultants in a multitude of industries.</p>
-            <p class="large pink">
-                <em>We like to make beautiful things that work beautifully.</em>
-            </p>
-
+            <p>I am a Designer, Artist and Software Engineer, with a BFA from Cooper Union, and a Computer Science Certificate from MCCC. I work with both large and small firms and individuals, artists, musicians, and consultants in a multitude of industries.</p>
+           
             <p>
-                We also like to lend a hand to fellow developers. 
-                Here are some nice things people have said about kozaiwaniec (that would be us) on experts-exchange.com:
+                Here are some nice things people have said about kozaiwaniec (that's me) on experts-exchange.com:
             </p>
             <div class="testimonials">
             <p><a href="http://www.experts-exchange.com/Web_Development/Web_Languages-Standards/CSS/Q_27842358.html#a38335167">I'm very impressed with kozaiwaniec dedication and expertise on specific requests. It is always spot on. I always look forward to responses to my requests as I know there is always something to learn.</a></p>

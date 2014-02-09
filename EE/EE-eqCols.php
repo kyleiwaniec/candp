@@ -10,19 +10,15 @@
           width: 200px; 
           margin-bottom: -2000px; 
           padding-bottom: 2000px; 
-      }      
+      }
+      #container .col1 { background: red; }        
       #container .col2 { background: #eee; }	
+      #container .col3 { background: blue; }  
 </style>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script>
-$(function(){
-       
-});
-</script>
 <body>
 <div id="container">
-	   <div>
+	   <div class="col1">
 	      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec ac lectus ac ligula cursus ullamcorper. Aliquam iaculis nonummy libero. Nulla nisi libero, faucibus quis, egestas non, congue vel, dolor. Nulla facilisi. Quisque non metus malesuada libero suscipit cursus. Nam eget metus. Aliquam non quam. Integer sit amet pede eu est gravida fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed vulputate tempus felis. Vestibulum tincidunt elit sit amet est. Sed ultricies tempus enim. Curabitur quam augue, fringilla ac, imperdiet et, dignissim sit amet, erat. Aenean ornare. Quisque turpis neque, suscipit pretium, aliquet sed, eleifend vitae, elit. Ut velit neque, venenatis non, convallis at, nonummy tincidunt, nisl. Morbi sapien.</p>
 	   </div>
 	   <div class="col2">

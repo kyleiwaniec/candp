@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vectors Literature Search</title>
+	<style>
+	body, html{
+		font-size: 100%;
+		font-family: helvetica, sans-serif;
+	}
+	.wrapper{
+		margin:0 auto;
+		padding-bottom:40px;
+		max-width:600px;
+	}
+	.highlight{
+		background-color:yellow;
+	}
+	.source{
+		font-size: .85em;
+	}
+	.caption{
+		margin-top:0;
+		font-size: .7em;
+		font-style: italic;
+	}
+	img{
+		max-width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+	<h1>Vectors Literature Search</h1>
+	<img src="706px-Descartes_magnetic_field.jpg"/>
+	<p class="caption">René Descartes, from his Principia Philosophiae, 1644. This was one of the first drawings of the concept of a magnetic field. It shows the magnetic field of the Earth.</p>
+	<h2>1. <a href="http://www.sciencedirect.com/science/article/pii/S1877050913006790">Location Identification Using a Magnetic-field-based FFT Signature</a></h2>
+	<p class="source">Procedia Computer Science, Volume 19, 2013, Pages 533–539, The 4th International Conference on Ambient Systems, Networks and Technologies (ANT 2013), the 3rd International Conference on Sustainable Energy Information Technology (SEIT-2013)</p>
+	<h3>Abstract</h3>
+<p>User indoor positioning has been under constant improvement especially with the availability of new sensors integrated to the modern mobile devices. These sensory devices allow us to exploit not only infrastructures made for every day use, such as Wifi, but also natural infrastructure, as is the case of natural <span class="highlight">magnetic fields</span>. In this work, we propose a novel approach that takes advantage of the benefits of using the magnetic sensor incorporated in most modern mobile devices, and the negligible variations of the Earth's magnetic field to position an individual with high accuracy. Most importantly, the methodology proposed allows us to avoid the burden of having to collect magnetic information in different directions in order to construct an accurate magnetic map, showing an improvement on methods that require the individuals to construct bigger magnetic maps that contain redundant information such as <span class="highlight">magnitude in different directions.</span></p>
+<p><a href="location-identification.pdf"><img src="pdf.png"/>View Article</a> ( The first appearance of the word <span class="highlight">'vector' is bookmarked</span> and hightlighted at the top of page 3 ).</p>
+<p><strong>Summary</strong>:<br>
+The authors propose an indoor positioning technique based on the Earth's magentic field, by recording the unique magnetic field signature in each room of the building. The system compares the user’s energy signature against the collected data. A tablet computer with a built-in three-axis sensor with appropriate software applications to collect magnetic data in used. The application is implemented in Java and makes use of Google libraries to obtain a link to the magnetic sensor of the device. The application collects data of the three physical axis x, y, and z of the magnetic field and stores them in the device for later processing. </p>
+<p>
+<em>While this is interesting, and relevant to my current job (I develop a web-based Security application for mobile devices, including geofencing, parental controls, device use detection while driving, etc...), I found another article on the topic of magnetic fields, which, while it does not mention 'vectors' explicitly, is far more interesting to me, so just for kicks, here it is:</em>
+</p>
+<hr>
+<img src="magneticfields2.jpg"/><p class="caption">Down the rabbit hole..</p>
+<h2>2. <a href="http://www.nature.com/nature/journal/v494/n7435/full/nature11817.html"> Magnetic-field-controlled reconfigurable
+semiconductor logic</a></h2>
+
+<p class="source">Nature 494, 72–76 (07 February 2013) doi:10.1038/nature11817<br>
+Received 31 July 2012 Accepted 20 November 2012 Published online 30 January 2013</p>
+<h3>Abstract</h3>
+<p>Logic devices based on magnetism show promise for increasing computational efficiency while decreasing consumed power. They offer zero quiescent power and yet combine novel functions such as programmable logic operation and non-volatile built-in memory. However, practical efforts to adapt a magnetic device to logic suffer from a low signal-to-noise ratio and other performance attributes that are not adequate for logic gates. Rather than exploiting magnetoresistive effects that result from spin-dependent transport of carriers, we have approached the development of a magnetic logic device in a different way: we use the phenomenon of large magnetoresistance found in non-magnetic semiconductors in high electric fields. <span class="highlight">Here we report a device showing a strong diode characteristic that is highly sensitive to both the <strong>sign <em>(ie. direction)</em> and the magnitude</strong> of an external magnetic field</span>, offering a reversible change between two different characteristic states by the application of a magnetic field. This feature results from magnetic control of carrier generation and recombination in an InSb p–n bilayer channel. Simple circuits combining such elementary devices are fabricated and tested, and Boolean logic functions including AND, OR, NAND and NOR are performed. They are programmed dynamically by external electric or magnetic signals, demonstrating magnetic-field-controlled semiconductor reconfigurable logic at room temperature. <span class="highlight">This magnetic technology permits a new kind of spintronic device, characterized as a current switch rather than a voltage switch, and provides a simple and compact platform for non-volatile reconfigurable logic devices<span>.</p>
+
+
+<p><a href="magenetic-field-semi-conductor-logic.pdf"><img src="pdf.png"/>View Article</a> 
+
+<p><strong>Summary</strong>:<br>
+	This is a potentially revolutionary approach to the way semiconductor logic is physically implemented. Instead of the traditional process of adjusting voltage to control a transistor's state (saturation), the direction of the semicunductor's magnetic feild can be used to indicate on/off states, and hence the various boolean logic operations at the core of a microprocessor. This allows for operations at lower tempatures, and potetially without the use of wires - microwaves could be used to influence the magnetic feild - potentially reducing propagation delay - the time it takes for signal to travel down the wire (makes for faster operations), and energy consumption - less reliance on electricity and lower operating tempratures.</p>
+<hr>
+<h4>Related:</h4>
+<p><img src="pdf.png"/><a href="http://129.16.137.67/nanoscience/Lectures/L13_NanostructuredMaterials/Supplimentary/Paper%207%20Heron%20PhysRevLett.107.217202%202011.pdf">Electric-Field-Induced Magnetization Reversal in a Ferromagnet-Multiferroic Heterostructure</a>
+</p>
+<hr>
+<h4>Human readable:</h4>
+<p><a href="http://en.wikipedia.org/wiki/Spintronics">Spintronics</a><br>
+	<span class="caption">Wikipedia</span><br>
+Spintronics, also known as <span class="highlight">magnetoelectronics</span>, is an emerging technology exploiting both the intrinsic spin of the electron and its associated magnetic moment, in addition to its fundamental electronic charge, in solid-state devices.
+</p>
+	<p><a href="http://www.spacedaily.com/reports/New_magnetic_semiconductor_material_holds_promise_for_spintronics_999.html">New magnetic semiconductor material holds promise for spintronics</a><br>
+	<span class="caption">by Staff Writers, Raleigh NC (SPX) Sep 14, 2013</span><br>
+	Researchers at North Carolina State University have created a new compound that can be integrated into silicon chips and is a dilute magnetic semiconductor - meaning that it could be used to make "spintronic" devices, which rely on magnetic force to operate, rather than electrical currents.</p>
+<a href="http://www.popsci.com/technology/article/2011-07/future-magnetic-microprocessors-will-be-1-million-times-more-efficient-todays-computers">Magnetic Microprocessors Could Enable the Most Efficient Computers Physically Possible</a><br>
+<span class="caption">By Rebecca Boyle for the Space Daily, Posted 07.07.2011 at 11:04 am</span>
+</br></br>
+<a href="http://www.sciencedaily.com/releases/2006/06/060623095150.htm">Magnetic Fields Could Make Computers 500 Times Faster</a><br>
+<span class="caption">Science Daily, June 23, 2006</span>
+</p>
+</div>
+</body>
+</html>

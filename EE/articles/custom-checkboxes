@@ -1,0 +1,199 @@
+CSS3 Custom checkboxes
+
+Works in: Chrome, FF, Safari, Opera, IE9+
+Uses modernizr.js to check for :checked pseudo class, falling back to plain old checkboxes (IE8 and below)
+
+This article shows how to style the checkbox form element using only CSS.
+
+The basic premise is that we will hide the checkbox and style the label - taking advantage of the fact that clicking on the label toggles the checkbox's checked state.
+
+Based on the above principle we can check whether the checkbox is checked and style the label accordingly. To check the state of the checkbox we'll use the :checked pseudo class.
+
+For this tutorial, we'll make a group of checkboxes that allow the user to select days of the week. It will look like this:
+
+[picture]
+
+Let's start by creating the HTML template:
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>CSS3 Custom Checkboxes</title>
+<style>
+</style>
+</head>
+<body>
+<div class="checkbox-group">
+              <ul>
+                <li>
+                	<input type="checkbox" id="mon"/>
+	                <label for="mon">MON</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="tue"/>
+	                <label for="tue">TUE</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="wed"/>
+	                <label for="wed">WED</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="thur"/>
+	                <label for="thur">THUR</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="fri"/>
+	                <label for="fri">FRI</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="sat"/>
+	                <label for="sat">SAT</label>
+                </li>
+                <li>
+                	<input type="checkbox" id="sun"/>
+	                <label for="sun">SUN</label>
+                </li>
+              </ul>
+</div>
+</body>
+</html>
+
+Each week day is an input type="checkbox" with corresponding label. The id of the input must match the 'for' attribute of its label.
+
+We give the container a class of 'checkbox-group'. We will use this class to qualify the rest of the css rules. This is so we can isolate our custom checkboxes as they pertain to the group. Because at a later date we might want a different style applied to single check boxes, etc..
+
+The first thing is just making sure the list is displayed horizontally:
+
+Copy the following css rules between the <style> tags in the head of your document:
+
+.checkbox-group {
+  margin: 20px 0; /* optionally give the whole group some top and bottom margin */
+}
+.checkbox-group ul {
+  display: inline-block;
+  *display: inline; /* old IE does not support inline-block */
+  margin-bottom: 0;
+  margin-left: 0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  *zoom: 1; /* give old IE hasLayout*/
+ -webkit-padding-start: 0; /* reset default webkit left padding of 40px */
+}
+
+.checkbox-group ul > li {
+  display: inline; /* display list items horizontally */
+}
+
+Next we'll hide the input element:
+(for now don't worry about the 'csschecked' class. This has to do with making sure there is a fallback for browsers that do not support the :checked pseudo class, and will be explained later)
+
+Copy and paste the following immediately after the above CSS rules:
+
+.checkbox-group input{
+	float:left; /* making sure the checkboxes line up correctly in all browsers */
+}
+.csschecked .checkbox-group input{
+	display:none; /* hide the checkboxes in supported browsers */
+}
+
+Now it's time to style the labels. Here the sky's the limit. You can make them look however you like. This code will mimick the above screenshot:
+
+.csschecked .checkbox-group ul > li > label {
+	float: left;
+	padding: 5px 12px 2px 12px;
+	line-height: 20px;
+	text-decoration: none;
+	background-color: transparent;
+	color: #444;
+	border: 1px solid #ccc;
+	border-left-width: 0;
+	font-family:helvetica;
+	font-size:12px;
+}
+.csschecked .checkbox-group ul > li:first-child > label {
+
+  border-left-width: 1px;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+
+.csschecked .checkbox-group ul > li:last-child > label {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+
+And here's where the magic happens:
+When the checkbox is checked, the label gets a different style, making it appear 'selected':
+
+.csschecked .checkbox-group ul > li > :checked + label{
+	background-color: #39C;
+	color: white;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.2)));
+	background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+Now we want to add :hover and :focus states:
+
+.csschecked .checkbox-group ul > li > :checked + :hover, 
+.csschecked .checkbox-group ul > li > :checked + label:focus{
+	background-color: #39c;
+	background-image: none;
+}
+
+
+.csschecked .checkbox-group ul > li > label:hover, 
+.csschecked .checkbox-group ul > li > label:focus{
+	color:white;
+	background-color: #ccc;
+	background-image: none;
+	cursor: pointer;
+}
+
+
+And that's it!
+Well, actually it's not.
+
+If you want to support older browsers gracefully, you'll need a little help from modernizr. We'll use modernizr to detect whether the :checked pseudo class is supported and use the 'csschecked' class to target supported browsers.
+
+If you don't care about backwards support, all you need to do at this point is remove the 'csschecked' from the above CSS.
+
+
+Add the following into the head of your document above the style element:
+Since modernizr doesn't have a check for :checked by default, we've extended it in our own script. (The next version of modernizr which is not out yet has this functionality already in it, so in the future you won't need the extra script)
+
+<script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+<script>
+Modernizr.addTest('csschecked', function () {
+		  return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {
+		    var chx = document.createElement('input');
+		    chx.type = "checkbox";
+		    chx.checked = "checked";
+		    elem.appendChild(chx);
+		    return elem.lastChild.offsetLeft >= 20;
+		  });
+		});
+</script>
+
+
+That's it - for real this time!
+
+Enjoy!
+
+
+
+
+

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+/*****************/
+/**WRAPPER CSS ***/
+/*****************/
+
+html {
+    height: 100%;
+}
+
+body{	
+	height:100%;
+}
+
+
+#big_page{
+	display:-webkit-flex;
+	-webkit-flex-flow: column; 
+	background-color:grey;	
+	height:100%;
+	width:100%
+}
+
+.page_main_wrapper
+{
+	height:100%;
+	width:100%;
+	background-color:#75b4fb; /* sky Blue */
+	background-image:-webkit-linear-gradient(top, #75b4fb,#b1d4fb); /* sky Blue */
+	background-image:-moz-linear-gradient(top, #75b4fb,#b1d4fb); /* sky Blue */
+	padding: 2% 0 2% 0;
+	display:-webkit-flex;
+	-webkit-flex-flow: row; 
+	-webkit-justify-content: center;
+	
+}
+
+.page_header{
+	height:10%;
+	width:100%;
+	border-bottom:1px #b9c6d5 solid; /*Light Grey*/
+}
+
+	
+.page_main{
+	height:85%;
+	width:94%;
+	position:relative;
+	overflow:hidden;
+}
+
+.page_footer{
+	height:5%;
+	width:100%;
+	background-color:grey;
+	border-top:1px #b9c6d5 solid; /*Light Grey*/
+}
+
+
+/*****************/
+/*Micro Clear Fix*/
+/*****************/
+
+.clear:after{
+content : " ";
+display:table;
+clear:both;	
+	
+}
+
+.clear
+{
+zoom:1;	
+	
+}
+
+/* End of Micro Clear Fix */
+
+	
+	
+/*****************/
+/**** jQueryUI ***/
+/*****************/
+
+div.ui-tooltip
+{
+ 	font-size:12px;
+}
+	
+div.ui-datepicker
+{
+	font-size:12px;
+}
+
+.tooltip_colour
+{
+	background-color: rgb(251,181,97); /*Orange*/
+	background-image: none;	
+	border: none;
+}

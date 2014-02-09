@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Parametric Curves - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="parser.js"></script>
+	<script src="d3.v3.min.js"></script>
+  <style>
+  svg{
+/*    background-color: #eee;
+*/  }
+
+  #drawIt, #butterfly { 
+      fill:none;
+      stroke:hotpink;
+      stroke-width:1px;
+      stroke-linecap:round;
+      
+    }
+    graph{
+      display:block;
+    }
+    #xFn, #yFn{
+      width:300px;
+    }
+    #tMin,#tMax{
+      width:50px;
+    }
+    #butterfly{
+      stroke:purple;
+    }
+    svg{
+      margin:20px;
+      background:url(grid.png);
+    }
+    #doitagain{
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <p>NOTE: Best viewed in Chrome or Firefox. In Internet Explorer, the curves are not animated.</p>
+
+	 	
+
+<span class='notes'>Use the letter t for parameter</span><br>
+<input id="tMin" type="text" value="0"/> &#8804; <label> t </label> &#8804; <input id="tMax" type="text" value="2*PI"/>
+<br>
+<label>x =</label>
+<input id='xFn' type='text' value='16*sin(t)^3'/>
+<br>
+<label>y =</label>
+<input id='yFn' type='text' value='-13*cos(t)+5*cos(2*t)+2*cos(3*t)+cos(4*t)'/><br>
+<label>Animation Speed: </label><input id="speed" type="text" value="2"/>
+<button id="doit" onclick="drawIt()">Draw!</button> 
+<graph></graph>
+
+<div>
+  <p>Examples</p>
+  <pre>
+  Butterfly:
+  <code>
+    sin(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+    cos(t)*(E^cos(t) - 2*cos(4*t) - sin(t/12)^5)
+  </code>
+  Circular:
+  <code>
+    t = (0,14PI);
+    31*cos(t)-7*cos(31*t/7)
+    31*sin(t)-7*sin(31*t/7)
+  </code>
+  <code>
+    t = (0,2*PI);
+    1.5*cos(t) - cos(30*t)
+    1.5*sin(t) - sin(30*t)
+  </code>
+  <code>
+  Bean:  
+    t = (0,1/6*PI);
+    cos(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    sin(2*PI*t)*((cos(2*PI*t))^3 + (sin(2*PI*t))^3)
+    <a href=""></a>
+  </code>
+  <code>
+  Flower:  
+    cos(9*t)*sin(t)
+    cos(9*t)*cos(t)
+    <button onclick='drawIt({xFn:"cos(9*t)*sin(t)", yFn : "cos(9*t)*cos(t)", tMin : "0", tMax : "2*PI", speed : "3"})'>Draw</button>
+  </code>
+  <code>
+  Heart:
+    16*sin(t)^3
+    -13*cos(t)+5*cos(2*t)+2*cos(3*t)+cos(4*t)
+    <button onclick='drawIt({xFn:"16*sin(t)^3", yFn : "-13*cos(t)+5*cos(2*t)+2*cos(3*t)+cos(4*t)", tMin : "0", tMax : "2*PI", speed : "3"})'>Draw</button>
+
+  </code>
+  </pre>
+</div>
+<script type="text/javascript">
+     function drawIt(o) {
+      //$("svg").detach();
+      console.log(o);
+      // var xFn = $("#xFn").val(),
+      //       yFn = $("#yFn").val(),
+      //       tMin = $("#tMin").val(),
+      //       tMax = $("#tMax").val(),
+      //       speed = $("#speed").val();
+
+      var options = {
+            // xFn : xFn.trim(),
+            // yFn : yFn.trim(),
+            // tMin : tMin.trim(),
+            // tMax : tMax.trim(),
+            // speed : speed.trim()
+        };
+        
+        o = o || {};
+        o = $.extend(options, o);
+
+      
+      var svgContainer = d3.select("graph").append("svg")
+                                          .attr("width", 420)
+                                          .attr("height", 420)
+                                          .attr("id","drawItContainer");
+
+      // o.xFn = o.xFn;
+      // o.yFn = o.yFn;
+      // o.tMin = o.tMin;
+      // o.tMax = o.tMax;
+      // o.speed = o.speed;
+      var data = [];
+      var x,y=0;
+
+      o.tMin = Parser.evaluate(o.tMin)*100;    
+      o.tMax = Parser.evaluate(o.tMax)*100;                                
+
+      for(var i = o.tMin; i < o.tMax; i = i+1){
+          x = Parser.parse(o.xFn).evaluate({t:i/100});
+          y = Parser.parse(o.yFn).evaluate({t:i/100});
+          data.push({"x":x, "y":y});
+        }
+
+       console.log(data); 
+      // SCALE:
+      var maxx = d3.max(data, function(d) { return d.x; });
+      var maxy = d3.max(data, function(d) { return d.y; });
+
+      var minx = d3.min(data, function(d) { return d.x; });
+      var miny = d3.min(data, function(d) { return d.y; });
+
+      // minx = minx < -210 ? minx : 0;
+      // miny = miny < -210 ? miny : 0;
+
+      if(maxx >= maxy){
+        var scale = d3.scale.linear()
+                     .domain([minx, d3.max(data, function(d) { return d.x; })])
+                     .range([0, 280]);
+      }else{
+        var scale = d3.scale.linear()
+                     .domain([miny, d3.max(data, function(d) { return d.y; })])
+                     .range([0, 280]);           
+      }
+
+      var lineFunction = d3.svg.line()
+                              .x(function(d) { return scale(d.x) + 70; })
+                              .y(function(d) { return scale(d.y) + 70; })
+                              .interpolate("basis-open");
+                            
+      var lineGraph = svgContainer.append("path")
+                                .attr("d", lineFunction(data))
+                                .attr("id", "drawIt");
+
+      var pathlength = document.getElementById('drawIt').getTotalLength();
+
+      d3.select("#drawIt").attr("stroke-dasharray", pathlength);
+
+      d3.select("#drawIt")
+        .attr("stroke-dasharray", pathlength)
+        .append("animate")
+        .attr("attributeName", "stroke-dashoffset")
+        .attr("from", pathlength)
+        .attr("to",0)
+        .attr("dur",speed+"s")
+        .attr("begin","rect.click;0s");
+  };
+
+  
+    drawIt({xFn:"16*sin(t)^3", yFn : "-13*cos(t)+5*cos(2*t)+2*cos(3*t)+cos(4*t)", tMin : "0", tMax : "2*PI", speed : "3"});
+  
+</script>
+</body>
+</html>

@@ -4,31 +4,66 @@
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
-            div{
-                height:80px;
+            .header{
+                height:60px;
                 border:1px solid blue;
                 
             }
-            div h2{
+            .header h2{
                 float: left;
                 width: 50px;
                 border: 1px solid grey;
                 margin: auto 10px;
-                line-height: 50px;
-                padding-top: 10px;
+                line-height: 60px;
+                height:100%;
             }
-            span{
+            .header span{
                 display: inline-block;
-                line-height: 25px;
+                line-height: 20px;
+                background-color: yellow;
+                vertical-align: middle;
             }
         </style>
     </head>
     <body>
-        <div>
-            <h2><span>liner</span></h2>
-            <h2><span>two liner</span></h2>
-            <h2><span>two liner</span></h2>
-            <h2><span>liner</span></h2>
+
+        <div class="header">
+            <h2><span>one</span></h2>
+            <h2><span>one two</span></h2>
+            <h2><span>one two three</span></h2>
+            <h2><span>one</span></h2>
         </div>
+
+        <p>CSS:</p>
+        <pre>
+            .header{
+                height:60px;
+                <em>border:1px solid blue;</em>
+                
+            }
+            .header h2{
+                float: left;
+                width: 50px;
+                margin: auto 10px; /* customize, or use padding */
+                line-height: 60px;
+                height:100%;
+                <em>border: 1px solid grey;</em>
+            }
+            .header span{
+                display: inline-block;
+                line-height: 20px;
+                vertical-align: middle;
+                <em>background-color: yellow;</em>
+            }
+        </pre>
+        <p>HTML:</p>
+        <pre>
+            &lt;div class="header"&gt;
+                &lt;h2&gt;&lt;span&gt;one&lt;/span&gt;&lt;/h2&gt;
+                &lt;h2&gt;&lt;span&gt;one two&lt;/span&gt;&lt;/h2&gt;
+                &lt;h2&gt;&lt;span&gt;one two three&lt;/span&gt;&lt;/h2&gt;
+                &lt;h2&gt;&lt;span&gt;one&lt;/span&gt;&lt;/h2&gt;
+            &lt;/div&gt;
+        </pre>
     </body>
 </html>

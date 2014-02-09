@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="raphael-min.js"></script>
+  <style>
+  svg{background-color: #eee;}
+  </style>
+</head>
+<body>
+<div id="background"></div>
+	 	<script type="text/javascript">
+( function scribble () {
+var nIntervId;
+
+            var w = $(window).width()-10, // -10 accommodates scrollbars
+                h = $(document).height()-10,
+            
+                bg = Raphael("background", w, h),
+            
+                pencilLine = "",
+                clickstate = false,
+                x,y; x=y=0;
+                
+                pencilLine = "M"+x+","+y+",S";
+           var dl = bg.path().attr({stroke: "#ccc", "stroke-width": 1, "stroke-linecap": "round"});
+                //ev.stopPropagation();
+      for(var i = 0; i < 2*Math.PI; i+=.01){
+        
+
+           // nIntervId = setInterval(function(index){
+              
+
+                                x = Math.cos(i)*100 + 102;
+                                y = Math.sin(3*i)*100 + 102;
+                                
+                               
+                                
+                                
+                                    pencilLine += x+","+y+",";
+                                    
+
+
+             //   }(i), 500);
+
+            }
+            dl.animate({path: pencilLine});
+      
+            
+}()); // end scribble
+           // helper functions:
+ function getPosition(event){
+                var x, y, pos = [];
+                //if(touchSupport){
+                    if(event.type == "touchstart" || event.type == "touchmove"){
+                            var touches = event.originalEvent.touches;
+                            var l = touches.length;
+                            for (var i = 0; i < l; i++) {
+                                x = touches[i].pageX;
+                                y = touches[i].pageY;
+                            }
+                        }else{
+                            x = event.pageX;
+                            y = event.pageY;
+                        }
+                        pos = [x,y];
+                        return pos;
+            } 
+
+</script>
+</body>
+</html>

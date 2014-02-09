@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="">
+    <head>
+        <meta charset="UTF-8"/>
+        <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
+        <script>
+            Modernizr.addTest('csschecked', function () {
+                return Modernizr.testStyles("#modernizr input {margin-left:0px;} #modernizr input:checked {margin-left: 20px;}", function (elem) {
+                    var chx = document.createElement('input');
+                    chx.type = "checkbox";
+                    chx.checked = "checked";
+                    elem.appendChild(chx);
+                    return elem.lastChild.offsetLeft >= 20;
+                });
+            });
+        </script>
+        <style>
+
+            .checkbox-group {
+                margin: 20px 0;
+            }
+            .checkbox-group ul {
+                display: inline-block;
+                *display: inline;
+                margin-bottom: 0;
+                margin-left: 0;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                *zoom: 1;
+                -webkit-padding-start: 0;
+            }
+
+            .checkbox-group ul > li {
+                display: inline;
+            }
+            .checkbox-group input{
+                float:left;
+            }
+            .csschecked .checkbox-group input{
+                display:none;
+            }
+            .csschecked .checkbox-group ul > li > label {
+                float: left;
+                padding: 5px 12px 2px 12px;
+                line-height: 20px;
+                text-decoration: none;
+                background-color: transparent;
+                color: #444;
+                border: 1px solid #ccc;
+                border-left-width: 0;
+                font-family:helvetica;
+                font-size:12px;
+            }
+            .csschecked .checkbox-group ul > li:first-child > label {
+
+                border-left-width: 1px;
+                -webkit-border-bottom-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                -webkit-border-top-left-radius: 4px;
+                border-top-left-radius: 4px;
+                -moz-border-radius-bottomleft: 4px;
+                -moz-border-radius-topleft: 4px;
+            }
+
+            .csschecked .checkbox-group ul > li:last-child > label {
+                -webkit-border-top-right-radius: 4px;
+                border-top-right-radius: 4px;
+                -webkit-border-bottom-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                -moz-border-radius-topright: 4px;
+                -moz-border-radius-bottomright: 4px;
+            }
+
+            .csschecked .checkbox-group ul > li > :checked + label{
+                background-color: #39C;
+                color: white;
+                background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.2)));
+                background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+                background-image: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+            }
+            .csschecked .checkbox-group ul > li > :checked + :hover, 
+            .csschecked .checkbox-group ul > li > :checked + label:focus{
+                background-color: #39c;
+                background-image: none;
+            }
+
+
+            .csschecked .checkbox-group ul > li > label:hover, 
+            .csschecked .checkbox-group ul > li > label:focus{
+                color:white;
+                background-color: #ccc;
+                background-image: none;
+                cursor: pointer;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <h1>CSS3 Custom checkboxes</h1>
+        <div class="checkbox-group">
+            <ul>
+                <li>
+                    <input type="checkbox" id="mon"/>
+                    <label for="mon">MON</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="tue"/>
+                    <label for="tue">TUE</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="wed"/>
+                    <label for="wed">WED</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="thur"/>
+                    <label for="thur">THUR</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="fri"/>
+                    <label for="fri">FRI</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="sat"/>
+                    <label for="sat">SAT</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="sun"/>
+                    <label for="sun">SUN</label>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+</html>

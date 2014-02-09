@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            window.onload = init;
+ 
+            function init() {
+                disableDraggingFor(document.getElementById("draggingDisabled"));
+            }
+
+            function disableDraggingFor(element) {
+                // this works for FireFox and WebKit in future according 
+                // to http://help.dottoro.com/lhqsqbtn.php
+                element.draggable = false;
+                // this works for older web layout engines
+                element.onmousedown = function(event) {
+                    event.preventDefault();
+                    return false;
+                };
+            }
+        </script>
+        <style>
+            html, body{
+                margin:0;
+                padding:0;
+            }
+            #draggingDisabled{
+                position:absolute;
+                top:0;
+                left:0;
+                width:100%;
+                height:100%; /* optional */
+                user-select:none;
+                /* -webkit-user-select: none;
+                   -webkit-user-drag: none; */
+            }
+            .content{
+                position:relative;
+                z-index:100;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="content"><h1>Lorem ipsum dolor sit amet</h1></div>
+    <img id="draggingDisabled" src="http://www.designmyprofile.com/images/graphics/backgrounds/background0194.jpg"/>  
+    </body>
+</html>

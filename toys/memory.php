@@ -9,6 +9,7 @@ require_once ("sandbox-header.php");
 <style>
     .wrapper{
       max-width:1400px !important;
+      margin:auto;
     }
    
 </style>
@@ -112,11 +113,11 @@ require_once ("sandbox-header.php");
         var cards = [];
         
         var cardimg = [ "url(images/memory/image1.jpg)",
-                        "url(images/memory/image2.jpg)",
-                        "url(images/memory/image3.jpg)",
-                        "url(images/memory/image4.jpg)",
-                        "url(images/memory/image5.jpg)",
-                        "url(images/memory/image6.jpg)"
+                    "url(images/memory/image2.jpg)",
+                    "url(images/memory/image3.jpg)",
+                    "url(images/memory/image4.jpg)",
+                    "url(images/memory/image5.jpg)",
+                    "url(images/memory/image6.jpg)"
                     ];
         
         

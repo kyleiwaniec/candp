@@ -1,3 +1,5 @@
+#AddHandler application/x-httpd-php5 .php
+
 <FilesMatch "\.(ttf|otf|eot|woff)$">
 <IfModule mod_headers.c>
 Header set Access-Control-Allow-Origin "*"
@@ -7,6 +9,9 @@ Header set Access-Control-Allow-Origin "*"
 # ----------------------------------------------------------------------
 # Proper MIME type for all files
 # ----------------------------------------------------------------------
+
+#cache manifest
+AddType text/cache-manifest .appcache
 
 # audio
 
@@ -117,14 +122,11 @@ ErrorDocument 404 /missing.php
 # ----------------------------------------------------------------------
 # this doesn't work on Arvixe, oh well 
 # ----------------------------------------------------------------------
-#<IfModule mod_php5.c>
-#  php_value include_path ".:/Volumes/Victoria/Rosemary/work/sites/candp/includes"
-#  php_value include_path ".:/home/kylehami/public_html/candpgeneration.com/includes"
-   
-#  php_admin_flag engine on
-#</IfModule>
+php_value include_path ".:/Volumes/Victoria/Rosemary/work/sites/candp/includes"
 
-suPHP_ConfigPath /home3/kylehami/public_html/dev-cnpgen/cgi-bin/
+<IfModule mod_suphp.c>
+suPHP_ConfigPath /Volumes/Victoria/Rosemary/work/sites/candp/cgi-bin/
+</IfModule>
 
 RewriteEngine On 
 #RewriteBase / 

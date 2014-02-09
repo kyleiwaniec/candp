@@ -1,0 +1,152 @@
+
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Parametric Curves - D3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+
+	<script src="jquery.min.js"></script> 
+	<script src="d3.v3.js"></script>
+  <style>
+  body, html{
+    font-family: helvetica, sans-serif;
+    font-size:100%;
+    color:#444;
+  }
+
+  h1, h2, h3, h4, h5, h6,p{
+    margin-top:0;
+  }
+  h1{
+    color:#027bbf;
+  }
+  input{
+    padding:5px;
+    border:1px solid #ccc;
+    border-radius: 2px;
+    vertical-align: middle;
+  }
+  svg{
+    background-color: #eee;
+  }
+  pre{
+    font-size: .85em;
+  }
+  #drawIt{ 
+      fill:#ccc;
+      stroke:#f90176;
+      stroke-width:1px;
+      stroke-linecap:round;
+      
+    }
+    graph{
+      display:block;
+    }
+
+    .plotContainer{
+                -webkit-transition: all .5s ease;
+           -moz-transition: all .5s ease;
+             -o-transition: all .5s ease;
+                transition: all .5s ease;
+        -webkit-transform-style: preserve-3d;
+           -moz-transform-style: preserve-3d;
+             -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+    }
+    .plotContainer{
+      width:450px;
+      margin-top: 20px;
+    }
+
+@media only screen and (max-width: 768px){
+  .plotContainer{width:100%;}
+
+}
+@media only screen and (max-width: 480px){
+
+}
+
+  </style>
+
+
+</head>
+<body>
+<div class='plotContainer'>
+  <graph></graph>
+</div>
+
+<script type="text/javascript">
+  Array.prototype.sum = function(){
+    for(var i=0,sum=0;i<this.length;sum+=this[i++]);
+    return sum;
+  }
+
+ 
+
+      var w = $(".plotContainer").width(), h = $(".plotContainer").width();
+
+      var pieData = [2,7,3,5], theta = [0], nextTheta = 0, x = 0, y = 0, pathData = [{"x":0, "y":0}];
+
+      var ratio = (Math.PI*2)/pieData.sum();
+
+      for(var i = 0; i < pieData.length; i++){
+        theta.push(pieData[i] * ratio);
+      }
+    
+      for(var i = 0; i <= pieData.length; i++){
+        nextTheta += theta[i];
+
+       (function(d){
+          
+          for(var j = nextTheta; j <= nextTheta + theta[d+1]; j+=.001){
+            x = Math.cos(j);
+            y = Math.sin(j);
+
+            pathData.push({"x":x, "y":y});
+          };
+          pathData.push({"x":0, "y":0});
+        })(i);
+
+      }
+
+      
+      var svgContainer = d3.select("graph").append("svg")
+                        .attr("width", w)
+                        .attr("height", h)
+                        .attr("id","drawItContainer");
+                      
+      // SCALE:
+      var xscale = d3.scale.linear()
+                 .domain([0, 3])
+                 .range([0, w]);
+      var yscale = d3.scale.linear()
+                 .domain([0, 3])
+                 .range([0, h]); 
+
+      var lineFunction = d3.svg.line()
+                  .x(function(d) { return xscale(d.x); })
+                  .y(function(d) { return xscale(d.y); })
+                  .interpolate("linear"); 
+
+      var lineGraph = svgContainer.append("path")
+                  .attr("d", lineFunction(pathData))
+                  .attr("id", "drawIt")
+                  .attr("transform", "translate("+w/2+","+h/2+") scale(1,-1)");
+		      
+      // ANIMATION:            
+      var pathlength = document.getElementById('drawIt').getTotalLength();
+
+      d3.select("#drawIt").attr("stroke-dasharray", pathlength);
+
+      d3.select("#drawIt")
+                  .attr("stroke-dasharray", pathlength)
+                  .append("animate")
+                  .attr("attributeName", "stroke-dashoffset")
+                  .attr("from", pathlength)
+                  .attr("to",0)
+                  .attr("dur","2s")
+                  .attr("begin","rect.click;0s");
+</script>
+</body>
+</html>

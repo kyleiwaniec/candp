@@ -87,28 +87,23 @@ THE 2ND PART OF THE PROCESS takes the viewer into an entirely different dynamic 
 </div><!-- #wrapper -->
 
 
-<script src="js/jquery.tools.min.js"></script> 
-<script src="js/jquery-ui-1.8.13.custom.min.js"></script> 
-<script src="js/jquery.imageLoader.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="js/portfolio.js"></script> 
 <?php
-    echo "<script>
-        var ip;
-        \$('#resizer').mouseenter(function(){
-        ip = '"; echo $_SERVER['REMOTE_ADDR']; echo "';
-            console.log(ip);
-            });";
-        // ajax
-        echo "
-            \$('#resizer').click(function(){
-                console.log('clicked');
+        echo "<script>
+            \$('#resizer').click(function(e){
+                e.preventDefault();
+                var ip = '"; echo $_SERVER['REMOTE_ADDR']; echo "';
                 var date = new Date();
                 date = date.toUTCString();
                 var usrAgent = navigator.userAgent;
-                console.log(usrAgent);
-                // do ajax
-                 \$.post('request.php', {ip : ip, date : date, usrAgent: usrAgent}, function(data){console.log(data);});
-                // \$.post('/request.php');
+                    $.ajax({
+                      type: 'POST',
+                      url: '/request.php',
+                      data: {ip : ip, date : date, usrAgent : usrAgent},
+                      error : function(error){console.log(error)}
+                    });
                 });
                 </script>";
 ?>

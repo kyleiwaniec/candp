@@ -19,6 +19,7 @@ foreach($filenames as $file){
 
     $images[$count] = [
         'src'=>$file,
+        'src_lg'=>'ireland_lg/'.$file,
         'width'=>$width,
         'height'=>$height
         ];
@@ -35,7 +36,6 @@ foreach($filenames as $file){
 // fwrite($file, stripslashes(json_encode($images)));
 // fclose($file);
 
-echo "<script> var thumb_array_org = ".stripslashes(json_encode($images))."</script>";
 ?>       
  <style>
     body, html{
@@ -88,29 +88,33 @@ echo "<script> var thumb_array_org = ".stripslashes(json_encode($images))."</scr
         overflow: hidden;
         white-space: nowrap;
     }
-</style>  
+</style>
+<link rel="stylesheet" href="colorbox/colorbox.css">
+<script src="colorbox/jquery.colorbox-min.js"></script>
 <div class="wrapper">
 <h1>Column Organizer</h1>
     
 <div id="thumbnail-grid"></div>
-<script>var winWidth = $(window).width();
-var columns = parseInt(winWidth/300);
+<?php echo "<script> var config = {}; config.thumb_array_org = ".stripslashes(json_encode($images))."</script>"; ?> 
+<script>
 
-                       
+    config.colWidth = 300;
+    config.padding = 30;
+    config.columns = parseInt($(window).width()/config.colWidth);
 
 
-var init = function(){
-    var thumb_array = thumb_array_org.slice(0);
+var initColumns = function(){
+    var thumb_array = config.thumb_array_org.slice(0);
     var thumbColumns = [];
-    for(var i = 0; i < columns; i++){
+    for(var i = 0; i < config.columns; i++){
         var thumb = thumb_array.shift();
-        var relativeHeight = (300*(thumb.height/thumb.width))+60;
+        var relativeHeight = (config.colWidth*(thumb.height/thumb.width))+config.padding;
         thumbColumns[i] = {"thumbs": [thumb], "height" : relativeHeight};
     }
     var length = thumb_array.length;
     for(var i = 0; i < length; i++){
         var thumb = thumb_array.shift();
-        var relativeHeight = (300*(thumb.height/thumb.width))+60;
+        var relativeHeight = (config.colWidth*(thumb.height/thumb.width))+config.padding;
         var shortest = getShortestCol(thumbColumns);
         thumbColumns[shortest]["thumbs"].push(thumb);
         thumbColumns[shortest]["height"] += (relativeHeight);
@@ -128,32 +132,32 @@ var init = function(){
         }
         return idx;
     }
-    var grid = $("#thumbnail-grid").html("").width(columns*300);
+    var grid = $("#thumbnail-grid").html("").width(config.columns*config.colWidth);
     var gridFrag = "";
-    for(var i = 0; i < columns; i++){
+    for(var i = 0; i < config.columns; i++){
         gridFrag += "<ul id='col"+i+"'></ul>";
     }
     grid.append(gridFrag);
-    for(var i = 0; i < columns; i++){
+    for(var i = 0; i < config.columns; i++){
         var frag = "";
         for(var j = 0; j < thumbColumns[i]["thumbs"].length; j++){
-            frag += "<li class='column'><img src='"+thumbColumns[i]["thumbs"][j]["src"]+"'/><div class='caption truncate'>"+thumbColumns[i]["thumbs"][j]["src"]+"</div></li>";
+            frag += "<li class='column'><a class='gallery' href='"+thumbColumns[i]["thumbs"][j]["src_lg"]+"'><img src='"+thumbColumns[i]["thumbs"][j]["src"]+"' title='"+thumbColumns[i]["thumbs"][j]["src"]+"'/></a>"
+                    //+"<div class='caption truncate'>"+thumbColumns[i]["thumbs"][j]["src"]+"</div></li>"
+                    ;
         }
         $("#col"+i).append(frag);
     }
 }
 
 $(window).on("resize", function(){
-    winWidth = $(window).width();
-    columns = parseInt(winWidth/300);
-    init();
+    config.columns = parseInt($(window).width()/config.colWidth);
+    initColumns();
 });  
 
-init();
-</script>
-     
-        </div><!-- #wrapper -->
+initColumns();
 
-       
+$('a.gallery').colorbox({rel:'gal', scalePhotos:true, maxWidth:"95%"});
+</script>
+        </div><!-- #wrapper -->
     </body>
 </html>
